@@ -1,18 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --font-serif: "Cormorant Garamond", "Playfair Display", serif;
   --font-mono: "JetBrains Mono", monospace;
   --font-bodoni: "Bodoni Moda", serif;
-  --font-jost: "Jost", sans-serif;
 
-  --color-primary: #FFFFFF;
-  --color-secondary: #F8F9FA;
-  --color-accent: #0D0D0D;
-  --color-muted: #6C757D;
-  --color-border: #E9ECEF;
+  /* King of Detailing — Gold & Black Royal Palette */
+  --color-primary: #F5F0E8;           /* warm cream — light section backgrounds */
+  --color-secondary: #EDE8DF;         /* slightly deeper cream */
+  --color-accent: #0A0A0A;            /* near-black text */
+  --color-gold: #C9A84C;              /* deep burnished gold — primary accent */
+  --color-gold-light: #E2C97A;        /* lighter gold — highlights */
+  --color-gold-dark: #9A7835;         /* darker gold — hover states */
+  --color-black-king: #0A0A0A;        /* rich black */
+  --color-muted: #8A8070;             /* warm muted text */
+  --color-border: #DDD5C5;            /* warm cream border */
 }
 
 @layer base {
@@ -21,6 +25,8 @@
   }
   body {
     @apply bg-primary text-accent antialiased overflow-x-hidden;
+    background-color: #F5F0E8;
+    color: #0A0A0A;
   }
 }
 
@@ -30,7 +36,7 @@
   }
   
   .glass-dark {
-    @apply bg-black/5 backdrop-blur-xl border border-black/5;
+    @apply bg-black/10 backdrop-blur-xl border border-black/10;
   }
 
   .text-balance {
@@ -41,7 +47,7 @@
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   }
 
-  /* Seamless hero → body fade — subtle, only at the very bottom edge */
+  /* Seamless hero → body fade to warm cream */
   .hero-fade-bottom {
     position: relative;
   }
@@ -51,33 +57,81 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 140px;
+    height: 160px;
     background: linear-gradient(
       to bottom,
       transparent 0%,
-      transparent 55%,
-      rgba(255,255,255,0.25) 75%,
-      rgba(255,255,255,0.7) 90%,
-      #ffffff 100%
+      transparent 50%,
+      rgba(245, 240, 232, 0.3) 70%,
+      rgba(245, 240, 232, 0.75) 88%,
+      #F5F0E8 100%
     );
     pointer-events: none;
     z-index: 25;
   }
 
+  /* Gold shimmer border effect */
+  .gold-border {
+    border: 1px solid #C9A84C;
+    box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.15), inset 0 0 0 1px rgba(201, 168, 76, 0.05);
+  }
+
   .bento-card {
-    @apply bg-secondary rounded-[32px] p-8 border border-border transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-2 hover:border-black/10 cursor-pointer;
+    background-color: #EDE8DF;
+    border-radius: 32px;
+    padding: 2rem;
+    border: 1px solid #DDD5C5;
+    transition: all 500ms;
+    cursor: pointer;
+  }
+  .bento-card:hover {
+    box-shadow: 0 20px 50px rgba(201, 168, 76, 0.15);
+    transform: translateY(-8px);
+    border-color: rgba(201, 168, 76, 0.4);
   }
 
   .bento-card-dark {
-    @apply bg-black rounded-[32px] p-8 border border-white/10 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:-translate-y-2 hover:border-white/20 cursor-pointer;
+    background-color: #0A0A0A;
+    border-radius: 32px;
+    padding: 2rem;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    transition: all 500ms;
+    cursor: pointer;
+  }
+  .bento-card-dark:hover {
+    box-shadow: 0 20px 50px rgba(201, 168, 76, 0.2);
+    transform: translateY(-8px);
+    border-color: rgba(201, 168, 76, 0.5);
   }
 
   .hotspot {
-    @apply absolute w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125 hover:bg-white/40;
+    @apply absolute w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-125;
+    background: rgba(201, 168, 76, 0.25);
+    border: 1px solid rgba(201, 168, 76, 0.6);
+  }
+  .hotspot:hover {
+    background: rgba(201, 168, 76, 0.5);
   }
 
   .hotspot-pulse {
-    @apply absolute inset-0 rounded-full bg-white/40 animate-ping;
+    @apply absolute inset-0 rounded-full animate-ping;
+    background: rgba(201, 168, 76, 0.4);
+  }
+
+  /* Gold accent text */
+  .text-gold {
+    color: #C9A84C;
+  }
+  .text-gold-light {
+    color: #E2C97A;
+  }
+
+  /* Gold gradient text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #E2C97A 0%, #C9A84C 50%, #9A7835 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
@@ -92,6 +146,11 @@
     filter: blur(0px);
     transform: translateY(0px);
   }
+}
+
+@keyframes gold-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
 .animate-blur-up {

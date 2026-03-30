@@ -118,6 +118,20 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
         );
     }
 
+    if (item.type === 'iframe') {
+        return (
+            <div className={`${className} relative overflow-hidden bg-white/5 flex items-center justify-center`} onClick={onClick}>
+                <iframe
+                    src={item.url}
+                    className="w-full h-full border-0 pointer-events-none"
+                    scrolling="no"
+                    allowTransparency={true}
+                    allow="encrypted-media"
+                />
+            </div>
+        );
+    }
+
     return (
         <img
             src={item.url} // Image source URL
@@ -152,7 +166,7 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
+                className="fixed inset-0 bg-black/40 backdrop-blur-xl z-40"
                 onClick={onClose}
             />
 
@@ -166,10 +180,10 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                     stiffness: 400,
                     damping: 30
                 }}
-                className="fixed inset-4 sm:inset-8 md:inset-16 rounded-2xl overflow-hidden z-50 shadow-2xl"
+                className="fixed inset-4 sm:inset-8 md:inset-16 rounded-3xl overflow-hidden z-50 shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-white/10"
             >
                 {/* Main Content */}
-                <div className="h-full flex flex-col bg-gray-950">
+                <div className="h-full flex flex-col bg-white/5 backdrop-blur-3xl">
                     <div className="flex-1 p-2 sm:p-3 md:p-4 flex items-center justify-center">
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -239,8 +253,8 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                 className="fixed z-[55] left-1/2 bottom-6 -translate-x-1/2 touch-none"
             >
                 <motion.div
-                    className="relative rounded-2xl bg-black/60 backdrop-blur-xl 
-                             border border-white/20 shadow-2xl
+                    className="relative rounded-3xl bg-white/10 backdrop-blur-3xl 
+                             border border-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.5)]
                              cursor-grab active:cursor-grabbing px-4 py-3"
                 >
                     <div className="flex items-center -space-x-2">
@@ -314,9 +328,8 @@ const InteractiveBentoGallery: React.FC<InteractiveBentoGalleryProps> = ({ media
         <div className="container mx-auto px-4 py-8 max-w-4xl">
             <div className="mb-8 text-center">
                 <motion.h1
-                    className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent 
-                             bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
-                             dark:from-white dark:via-gray-200 dark:to-white"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold"
+                    style={{ color: '#0A0A0A' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -324,7 +337,8 @@ const InteractiveBentoGallery: React.FC<InteractiveBentoGalleryProps> = ({ media
                     {title}
                 </motion.h1>
                 <motion.p
-                    className="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400"
+                    className="mt-2 text-sm sm:text-base font-medium"
+                    style={{ color: '#6A6058' }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
