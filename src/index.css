@@ -28,6 +28,17 @@
     background-color: #F5F0E8;
     color: #0A0A0A;
   }
+  
+  ::selection {
+    background-color: #C9A84C;
+    color: #0A0A0A;
+    text-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
+  }
+  ::-moz-selection {
+    background-color: #C9A84C;
+    color: #0A0A0A;
+    text-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
+  }
 }
 
 @layer utilities {

@@ -559,17 +559,17 @@ const HowItWorks = () => {
   });
 
   const steps = [
-    { num: "01", title: "BOOK YOUR APPOINTMENT", desc: "Select a package online or call us for a custom quote. We'll find a time that fits your schedule." },
-    { num: "02", title: "WE COME TO YOU", desc: "Our fully-equipped mobile unit arrives at your location — home, office, or anywhere you need us." },
-    { num: "03", title: "SIT BACK & ENJOY", desc: "We handle everything. You get a freshly detailed car with a satisfaction guarantee." },
+    { num: "01", title: "COMMISSION YOUR DETAIL", desc: "Choose your level of perfection online or request a bespoke consultation. We adapt seamlessly to your demanding schedule." },
+    { num: "02", title: "THE ROYAL DISPATCH", desc: "Our state-of-the-art mobile studio arrives at your estate or office. We bring unparalleled automotive luxury directly to your door." },
+    { num: "03", title: "RECLAIM YOUR CROWN", desc: "Step back into a breathtaking, meticulously restored vehicle. Flawless gloss, supreme protection, and a finish fit for royalty." },
   ];
 
   return (
     <section id="how-it-works" ref={sectionRef} className="pt-24 pb-8 px-6 md:px-12 relative overflow-hidden" style={{ background: '#0A0A0A', borderTop: '1px solid rgba(201,168,76,0.15)' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: GOLD }}>How It Works</h2>
-          <h3 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 uppercase">Simple 3-Step<br className="hidden md:block" /> Process</h3>
+          <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: GOLD }}>The Royal Blueprint</h2>
+          <h3 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 uppercase">A Seamless 3-Step<br className="hidden md:block" /> Experience</h3>
         </div>
 
         <div className="relative mt-12 md:mt-24">
@@ -689,34 +689,33 @@ const AboutSection = () => {
   return (
     <section className="relative w-full" style={{ background: '#F5F0E8' }}>
       {/* Brand Marquee Section */}
-      <div className="pt-12 pb-20" style={{ background: '#0A0A0A' }}>
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          <div className="md:w-1/3 shrink-0 relative z-20">
+      <div className="py-8" style={{ background: '#0A0A0A' }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+          <div className="shrink-0 relative z-20 md:w-1/2">
             <h3 className="text-xl md:text-2xl font-black italic tracking-wider text-white uppercase leading-tight">
-              Luton's Trusted Choice<br />
-              <span style={{ color: GOLD }}>For Quality Car Care.</span>
+              Luton's Trusted Choice For Quality Car Care.
             </h3>
           </div>
-          <div className="md:w-2/3 overflow-hidden relative">
-            <div className="absolute left-0 top-0 bottom-0 w-16 z-10" style={{ background: 'linear-gradient(to right, #0A0A0A, transparent)' }} />
-            <div className="absolute right-0 top-0 bottom-0 w-16 z-10" style={{ background: 'linear-gradient(to left, #0A0A0A, transparent)' }} />
-            <motion.div
-              className="flex items-center gap-12"
-              animate={{ x: ["0%", "-33.33%"] }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
-            >
-              {doubledLogos.map((logo, i) => (
-                <div key={i} className="shrink-0">
-                  {logo.svg}
-                </div>
-              ))}
-            </motion.div>
+          <div className="md:w-1/2 flex justify-center md:justify-end">
+            <div className="w-full max-w-[320px] md:max-w-[420px] overflow-hidden relative" style={{ maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)' }}>
+              <motion.div
+                className="flex items-center gap-12 w-fit"
+                animate={{ x: ["0%", "-33.33%"] }}
+                transition={{ repeat: Infinity, ease: "linear", duration: 15 }}
+              >
+                {doubledLogos.map((logo, i) => (
+                  <div key={i} className="flex flex-col items-center justify-center shrink-0 opacity-80 transition-opacity hover:opacity-100" style={{ minWidth: '100px' }}>
+                    {logo.svg}
+                  </div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* About Us Detail Section */}
-      <div className="py-24 px-6 md:px-12 relative overflow-hidden">
+      <div className="pt-16 pb-24 px-6 md:px-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
           {/* Image Side */}
           <motion.div
@@ -760,7 +759,7 @@ const AboutSection = () => {
               Detailing.
             </h3>
             <p className="text-base leading-relaxed mb-8 font-light" style={{ color: '#5A5040' }}>
-              From deep cleans to ceramic coatings, King of Detailing brings studio-grade precision directly to your driveway. Fully insured. Fully mobile. Obsessively meticulous.
+              Uncompromising standards. Unmatched convenience. From deep corrective cleans to glass-like ceramic coatings, King of Detailing delivers an obsessive level of meticulous care directly to your driveway. Fully insured. Fully mobile.
             </p>
             <div className="flex items-center gap-6 flex-wrap">
               <a
@@ -770,7 +769,7 @@ const AboutSection = () => {
                 className="px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 text-black"
                 style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 10px 30px rgba(201,168,76,0.3)` }}
               >
-                <div className="mr-3 italic font-black opacity-60">//</div> LEARN MORE
+                <div className="mr-3 italic font-black opacity-60">//</div> EXPLORE OUR CRAFT
               </a>
               <div className="flex items-center gap-4 border-l border-[#0A0A0A]/10 pl-6">
                 <div className="flex -space-x-3">
@@ -1100,37 +1099,37 @@ const Testimonials = () => {
   const reverseMarqueeItems = [...marqueeItems].reverse();
 
   return (
-    <section className="py-12 md:py-16 px-6 md:px-12 overflow-hidden" style={{ background: '#F5F0E8' }}>
+    <section className="py-8 md:py-10 px-6 md:px-12 overflow-hidden" style={{ background: '#F5F0E8' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-3" style={{ color: GOLD }}>Testimonials</h2>
-          <h3 className="text-3xl md:text-5xl font-bold tracking-tight" style={{ color: '#0A0A0A' }}>Real Cars. Real Owners.<br className="hidden md:block" /> Real Results.</h3>
+        <div className="text-center mb-6">
+          <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-2" style={{ color: GOLD }}>Testimonials</h2>
+          <h3 className="text-2xl md:text-4xl font-bold tracking-tight" style={{ color: '#0A0A0A' }}>Real Cars. Real Owners.<br className="hidden md:block" /> Real Results.</h3>
         </div>
 
         {/* Row 1: Right to Left */}
-        <div className="relative mb-4 overflow-hidden">
+        <div className="relative mb-3 overflow-hidden">
           <div className="absolute left-0 top-0 bottom-0 w-24 z-10" style={{ background: 'linear-gradient(to right, #F5F0E8, transparent)' }} />
           <div className="absolute right-0 top-0 bottom-0 w-24 z-10" style={{ background: 'linear-gradient(to left, #F5F0E8, transparent)' }} />
           <motion.div
             className="flex gap-4"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
           >
             {marqueeItems.map((t, i) => (
-              <div key={`r1-${i}`} className="shrink-0 w-[380px] p-6 md:p-7 rounded-[28px] flex flex-col justify-between" style={{ background: '#EDE8DF', border: '1px solid #DDD5C5' }}>
+              <div key={`r1-${i}`} className="shrink-0 w-[300px] p-5 md:p-6 rounded-[24px] flex flex-col justify-between" style={{ background: '#EDE8DF', border: '1px solid #DDD5C5' }}>
                 <div>
-                  <div className="flex gap-1 mb-4">
+                  <div className="flex gap-1 mb-3">
                     {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3 h-3" style={{ fill: GOLD, color: GOLD }} />)}
                   </div>
-                  <p className="text-base font-medium leading-relaxed mb-6 italic" style={{ color: '#2A2018' }}>"{t.text}"</p>
+                  <p className="text-sm font-medium leading-relaxed mb-4 italic" style={{ color: '#2A2018' }}>"{t.text}"</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs text-black" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs text-black" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>
                     {t.name[0]}
                   </div>
                   <div>
-                    <p className="font-bold text-xs" style={{ color: '#0A0A0A' }}>{t.name}</p>
-                    <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: GOLD }}>{t.car}</p>
+                    <p className="font-bold text-[11px]" style={{ color: '#0A0A0A' }}>{t.name}</p>
+                    <p className="text-[8px] font-mono uppercase tracking-widest" style={{ color: GOLD }}>{t.car}</p>
                   </div>
                 </div>
               </div>
@@ -1145,23 +1144,23 @@ const Testimonials = () => {
           <motion.div
             className="flex gap-4"
             animate={{ x: ["-50%", "0%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 45 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 35 }}
           >
             {reverseMarqueeItems.map((t, i) => (
-              <div key={`r2-${i}`} className="shrink-0 w-[380px] p-6 md:p-7 rounded-[28px] flex flex-col justify-between" style={{ background: '#EDE8DF', border: '1px solid #DDD5C5' }}>
+              <div key={`r2-${i}`} className="shrink-0 w-[300px] p-5 md:p-6 rounded-[24px] flex flex-col justify-between" style={{ background: '#EDE8DF', border: '1px solid #DDD5C5' }}>
                 <div>
-                  <div className="flex gap-1 mb-4">
+                  <div className="flex gap-1 mb-3">
                     {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3 h-3" style={{ fill: GOLD, color: GOLD }} />)}
                   </div>
-                  <p className="text-base font-medium leading-relaxed mb-6 italic" style={{ color: '#2A2018' }}>"{t.text}"</p>
+                  <p className="text-sm font-medium leading-relaxed mb-4 italic" style={{ color: '#2A2018' }}>"{t.text}"</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs text-black" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs text-black" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>
                     {t.name[0]}
                   </div>
                   <div>
-                    <p className="font-bold text-xs" style={{ color: '#0A0A0A' }}>{t.name}</p>
-                    <p className="text-[9px] font-mono uppercase tracking-widest" style={{ color: GOLD }}>{t.car}</p>
+                    <p className="font-bold text-[11px]" style={{ color: '#0A0A0A' }}>{t.name}</p>
+                    <p className="text-[8px] font-mono uppercase tracking-widest" style={{ color: GOLD }}>{t.car}</p>
                   </div>
                 </div>
               </div>
@@ -1696,8 +1695,8 @@ export default function App() {
       <FeatureHighlights />
       <Services />
       <HowItWorks />
-      <AboutSection />
       <Testimonials />
+      <AboutSection />
       <CompanyStripeMarquee />
       <BookingFlow />
       <Gallery />
