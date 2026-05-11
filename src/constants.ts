@@ -39,21 +39,21 @@ export const SERVICES = [
 
 export const TESTIMONIALS = [
   {
-    name: 'Mohammed A.',
-    car: 'Mercedes C-Class',
-    text: 'Absolutely blown away by the results. The Deep Clean package left my car looking better than when I bought it. Every inch was spotless — the engine bay included. King of Detailing is the real deal, highly recommend.',
+    name: 'Katrin Ivanova',
+    car: 'Deep Clean',
+    text: 'I cannot recommend Philip enough! Excellent service, extremely professional, passionate and my car was cleaned to a very high standard. I had a little mark on the back seat which he cleaned for me even though cleaning the seats was not included in my package. I\'ve also received a little spray gift which smells amazing. Thank you so much again for cleaning my car so well.',
     stars: 5,
   },
   {
-    name: 'Priya S.',
-    car: 'Range Rover Evoque',
-    text: 'Booked the Protect package and could not be happier. The ceramic coating is incredible — water just beads straight off. The team was professional, punctual, and kept me updated throughout. Worth every penny.',
+    name: 'David',
+    car: 'Red Sports Car',
+    text: 'Just had Phil out for my car, wow what a transformation! My car is my pride and joy and was in very much need of some tlc. Used Phil for first time after switching valeter what a difference. Attention to detail is faultless and the time is taken to get the ultimate new car again finish. Will highly recommend and be using his service again and again.',
     stars: 5,
   },
   {
-    name: 'Daniel H.',
-    car: 'BMW 3 Series',
-    text: 'I\'ve tried a few detailers around Luton and nothing comes close to King of Detailing. The Enhance package transformed my paintwork — swirl marks completely gone. The finish is mirror-perfect. Won\'t go anywhere else.',
+    name: 'Victoria',
+    car: 'Full Detail',
+    text: 'After recommendations on Facebook, I contacted King of Detailing, to clean my daughters car. The communication was excellent. Everything clear and easy to book. Philip arrived today for our appointment, on time and got to work straight away. Was a excellent job and very efficient. The car was spotless and smelt so clean. The carpets/mats were like brand new again. Highly recommend and will definitely be using him again.',
     stars: 5,
   },
 ];
