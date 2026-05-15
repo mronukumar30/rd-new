@@ -24,6 +24,7 @@ import {
   Crown,
   Zap,
   Timer,
+  Linkedin,
 } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 import { cn } from "./lib/utils";
@@ -54,7 +55,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-black overflow-hidden border border-white/10" style={{ boxShadow: `0 0 20px ${GOLD}40` }}>
-            <img src="/logo.png" alt="King of Detailing Logo" className="w-full h-full object-contain p-1.5" />
+            <img src="/logo.png" alt="King of Detailing Logo" className="w-full h-full object-contain p-0.5" />
           </div>
           <div className="flex flex-col leading-tight">
             <span className="font-bold text-base md:text-lg tracking-[0.1em] uppercase text-white">King of Detailing</span>
@@ -1650,7 +1651,7 @@ const Footer = () => {
             {/* Brand */}
             <div className="flex items-center gap-5 mb-10">
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center bg-black overflow-hidden border-2 border-white/10" style={{ boxShadow: `0 0 30px ${GOLD}50` }}>
-                <img src="/logo.png" alt="King of Detailing Logo" className="w-full h-full object-contain p-2" />
+                <img src="/logo.png" alt="King of Detailing Logo" className="w-full h-full object-contain p-0.5" />
               </div>
               <div>
                 <span className="font-black text-4xl md:text-5xl tracking-tighter text-white block uppercase leading-none mb-2">KING Detailing</span>
@@ -1747,10 +1748,41 @@ const Footer = () => {
           <h2 className="text-[12vw] md:text-[8vw] font-black tracking-tighter text-white/5 leading-none select-none">
             KING DETAILING
           </h2>
-          <div className="mt-[-4vw] md:mt-[-3vw] text-center">
+          <div className="mt-[-4vw] md:mt-[-3vw] text-center mb-16">
             <span className="text-sm md:text-base font-bold tracking-[0.5em] text-white uppercase opacity-100">
               KING DETAILING
             </span>
+          </div>
+
+          {/* Agency Signature */}
+          <div className="w-full flex flex-col items-center md:items-start pt-8 border-t border-white/10">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+              <a href="https://vertexlabs-in.vercel.app/" target="_blank" rel="noopener noreferrer" className="group">
+                <img src="/hero section/logo png white.png" alt="Vertex Labs Logo" className="h-32 md:h-40 scale-125 object-contain transition-all duration-500 group-hover:scale-[1.4] group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+              </a>
+              <div className="flex flex-col items-center md:items-start gap-3">
+                <a href="https://vertexlabs-in.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-[10px] md:text-xs font-mono uppercase tracking-[0.15em] text-white transition-colors flex flex-wrap justify-center md:justify-start items-center gap-x-2">
+                  <span>Site Designed & Developed and managed By</span>
+                  <span className="text-blue-400 font-bold inline-block hover:scale-110 hover:-translate-y-0.5 transition-all duration-300 animate-pulse">
+                    Vertex Labs
+                  </span>
+                </a>
+                <span className="text-[9px] md:text-[10px] font-mono uppercase tracking-widest text-white/90">
+                  © 2026 All Rights Reserved.
+                </span>
+                <div className="flex gap-5 mt-3">
+                  <a href="https://www.instagram.com/kumar_om26/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                  <a href="https://www.facebook.com/profile.php?id=100024623864475" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/onu-kumar/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 hover:scale-125 hover:-translate-y-1 transition-all duration-300">
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

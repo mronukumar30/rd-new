@@ -76,6 +76,7 @@ export const COMPANY_DETAILS = {
   whatsapp: 'https://wa.me/447725727176',
   instagram: 'https://www.instagram.com/king.ofdetailing/',
   facebook: 'https://www.facebook.com/profile.php?id=61575679937406',
+  linkedin: 'https://www.linkedin.com/',
   websiteUrl: 'https://www.kingofdetailinguk.com/',
 };
 
