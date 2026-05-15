@@ -150,7 +150,7 @@ const Hero = () => {
           initial={{ scale: 1.08, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2.2, ease: "easeOut" }}
-          src="/cinematic-hero.png"
+          src="/hero section/can_you_edit_this_image_202605151337.jpeg"
           alt="King of Detailing — Premium mobile car detailing in Luton and surrounding areas"
           className="w-full h-full object-cover object-center"
         />
@@ -1286,7 +1286,7 @@ const GALLERY_ITEMS = [
     title: "Trusted Choice",
     service: "Ceramic Coating",
     desc: "Pushing the boundaries of automotive care every single day.",
-    url: "/Please like-share to friends and family 🫶🏼As always we push to be better then yesterday ✔️📍 B.jpg",
+    url: "/hero section/can_you_edit_this_image_202605151336.jpeg",
   },
   {
     id: 7,
@@ -1315,10 +1315,10 @@ const GALLERY_ITEMS = [
   {
     id: 10,
     type: "image" as const,
-    title: "Premium Care Bookings",
+    title: "Signature Maintenance",
     service: "Maintenance Clean",
-    desc: "April spaces are limited. Secure your spot for the King treatment.",
-    url: "/We are now open for bookings in April!spaces are LIMITED Premium car care to you! We are a Bedfo (1).jpg",
+    desc: "Preserving that showroom finish with regular, professional care.",
+    url: "/hero section/can_you_edit_this_image_202605151336 (1).jpeg",
   },
 ];
 

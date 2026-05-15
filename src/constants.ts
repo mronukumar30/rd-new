@@ -15,7 +15,7 @@ export const SERVICES = [
     description: 'Intensive decontamination + 12-month ceramic coating. Includes engine bay & interior. Upgrade to 24-month coating for just £80 extra. Qualifies for 12 months of maintenance.',
     price: 'From £250',
     duration: '6–7 Hours',
-    image: '/Please like-share to friends and family 🫶🏼As always we push to be better then yesterday ✔️📍 B.jpg',
+    image: '/hero section/can_you_edit_this_image_202605151336.jpeg',
   },
   {
     id: 'enhance',
@@ -34,8 +34,7 @@ export const SERVICES = [
     description: 'Available after Deep Clean (up to 6 months), Protect (12–24 months), or Enhance (24 months). Regular scheduling keeps your protection performing at its best.',
     price: 'From £90',
     duration: '3–4 Hours',
-    image: '/gallaryimg2.jpg',
-    objectPosition: 'top',
+    image: '/hero section/can_you_edit_this_image_202605151336 (1).jpeg',
   },
 ];
 
@@ -126,7 +125,7 @@ export const GALLERY_MEDIA = [
     type: "image",
     title: "Trusted Choice",
     desc: "Pushing the boundaries of automotive care every single day.",
-    url: "/Please like-share to friends and family 🫶🏼As always we push to be better then yesterday ✔️📍 B.jpg",
+    url: "/hero section/can_you_edit_this_image_202605151336.jpeg",
     span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
   },
   {
@@ -156,9 +155,9 @@ export const GALLERY_MEDIA = [
   {
     id: 10,
     type: "image",
-    title: "Premium Care Bookings",
-    desc: "April spaces are limited. Secure your spot for the King treatment.",
-    url: "/We are now open for bookings in April!spaces are LIMITED Premium car care to you! We are a Bedfo (1).jpg",
+    title: "Signature Maintenance",
+    desc: "Preserving that showroom finish with regular, professional care.",
+    url: "/hero section/can_you_edit_this_image_202605151336 (1).jpeg",
     span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
   },
 ];
