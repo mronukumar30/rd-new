@@ -85,7 +85,7 @@ const Navbar = () => {
         {/* CTA Button */}
         <div className="hidden md:block">
           <a
-            href={COMPANY_DETAILS.whatsapp}
+            href={COMPANY_DETAILS.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-all duration-500 text-black"
@@ -123,13 +123,13 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href={COMPANY_DETAILS.whatsapp}
+              href={COMPANY_DETAILS.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 w-full py-5 rounded-full text-center font-bold uppercase tracking-widest text-black"
               style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}
             >
-              Book Now — WhatsApp
+              Book Now
             </a>
           </motion.div>
         )}
@@ -206,7 +206,7 @@ const Hero = () => {
                     boxShadow: `0 20px 50px rgba(201,168,76,0.3)`
                   }}
                 >
-                  Book via WhatsApp
+                  Enquiry via WhatsApp
                   <div className="w-6 h-6 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all">
                     <ArrowRight className="w-3 h-3" />
                   </div>
@@ -535,7 +535,7 @@ const Services = () => {
                   </div>
                 </div>
                 <a
-                  href={COMPANY_DETAILS.whatsapp}
+                  href={COMPANY_DETAILS.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-sm font-bold group/link uppercase tracking-widest pb-2 w-fit transition-all duration-200"
@@ -909,7 +909,7 @@ const BookingFlow = () => {
   ];
 
   const stepTitles: Record<number, { heading: string; sub: string }> = {
-    1: { heading: "What do you drive?", sub: "Tell us about your vehicle so we can tailor our service to you." },
+    1: { heading: "Get a Personal Quote via WhatsApp", sub: "Select your vehicle type below to start your direct WhatsApp enquiry." },
     2: { heading: "Select a package", sub: "Choose the level of care your vehicle deserves." },
     3: { heading: "Preferred timeframe?", sub: "When would you like us to work our magic?" },
     4: { heading: "Almost done!", sub: "Review your choices and send them directly to our team." },
