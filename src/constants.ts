@@ -15,7 +15,7 @@ export const SERVICES = [
     description: 'Intensive decontamination + 12-month ceramic coating. Includes engine bay & interior. Upgrade to 24-month coating for just £80 extra. Qualifies for 12 months of maintenance.',
     price: 'From £250',
     duration: '6–7 Hours',
-    image: '/hero section/can_you_edit_this_image_202605151336.jpeg',
+    image: '/722406960_1513876637133998_1504754795098428094_n.jpg',
   },
   {
     id: 'enhance',
@@ -24,7 +24,7 @@ export const SERVICES = [
     description: 'Paint correction via machine polishing + 24-month ceramic coating. Qualifies for 24 months of regular maintenance.',
     price: 'From £380',
     duration: '1–1.5 Days',
-    image: '/gallaryimg2.jpg',
+    image: '/723830648_1378888127406224_6906315408035488946_n.jpg',
     objectPosition: 'bottom',
   },
   {
@@ -34,7 +34,7 @@ export const SERVICES = [
     description: 'Available after Deep Clean (up to 6 months), Protect (12–24 months), or Enhance (24 months). Regular scheduling keeps your protection performing at its best.',
     price: 'From £90',
     duration: '3–4 Hours',
-    image: '/hero section/can_you_edit_this_image_202605151336 (1).jpeg',
+    image: '/722603920_1672180454069237_87820404347023918_n.jpg',
   },
 ];
 
@@ -102,7 +102,7 @@ export const GALLERY_MEDIA = [
     type: "image",
     title: "Signature Gloss",
     desc: "Flawless reflection and ultimate clarity on every surface.",
-    url: "/gallaryimg1.webp",
+    url: "/722960210_1691017691793648_3341247485208045390_n.jpg",
     span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
   },
   {
@@ -110,7 +110,7 @@ export const GALLERY_MEDIA = [
     type: "image",
     title: "Ceramic Shield",
     desc: "Advanced protection for a long-lasting, showroom finish.",
-    url: "/gallaryimg2.jpg",
+    url: "/723830648_1378888127406224_6906315408035488946_n.jpg",
     span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
   },
   {
@@ -118,7 +118,7 @@ export const GALLERY_MEDIA = [
     type: "image",
     title: "Ultimate Protection",
     desc: "Extreme water beading and superior environmental resistance.",
-    url: "/gallaryimg3.jpg",
+    url: "/724038861_5485032541722527_4697859893829064116_n.jpg",
     span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
   },
   {
@@ -126,7 +126,7 @@ export const GALLERY_MEDIA = [
     type: "image",
     title: "Trusted Choice",
     desc: "Pushing the boundaries of automotive care every single day.",
-    url: "/hero section/can_you_edit_this_image_202605151336.jpeg",
+    url: "/722406960_1513876637133998_1504754795098428094_n.jpg",
     span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
   },
   {
@@ -158,7 +158,15 @@ export const GALLERY_MEDIA = [
     type: "image",
     title: "Signature Maintenance",
     desc: "Preserving that showroom finish with regular, professional care.",
-    url: "/hero section/can_you_edit_this_image_202605151336 (1).jpeg",
+    url: "/722603920_1672180454069237_87820404347023918_n.jpg",
     span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
+  },
+  {
+    id: 11,
+    type: "image",
+    title: "Meticulous Finish",
+    desc: "Every detail crafted to perfection.",
+    url: "/722489492_4006805506281970_7029725171011983426_n.jpg",
+    span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
   },
 ];

@@ -281,9 +281,9 @@ const Hero = () => {
             </div>
             <div className="order-1 md:order-2 flex items-center gap-6">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-white">Luton</span>
+                <span className="text-xs font-bold text-white">Luton, Surrounding</span>
                 <span className="text-white/40">&</span>
-                <span className="text-xs font-bold text-white/60">Bedfordshire</span>
+                <span className="text-xs font-bold text-white/60">Nationwide</span>
               </div>
             </div>
             <div className="order-2 md:order-3">
@@ -325,13 +325,11 @@ const FeatureHighlights = () => {
   const scaleCar = useTransform(scrollYProgress, [0, 1], [1.1, 0.95]);
 
   const hotspots = [
-    { id: 1, x: "18%", y: "58%", position: "up", title: "PPF", desc: "Paint Protection Film." },
-    { id: 2, x: "38%", y: "45%", position: "up", title: "Engine Bay", desc: "Deep degreasing." },
-    { id: 3, x: "55%", y: "25%", position: "up", title: "Glass Coating", desc: "Water repellency." },
-    { id: 4, x: "78%", y: "30%", position: "up", title: "Interior Detailing", desc: "Deep cleaning." },
-    { id: 5, x: "65%", y: "55%", position: "down", title: "Ceramic Coating", desc: "12–24m protection." },
-    { id: 6, x: "88%", y: "45%", position: "down", title: "Paint Correction", desc: "Eliminate swirl marks." },
-    { id: 7, x: "28%", y: "80%", position: "down", title: "Wheel Protection", desc: "Ceramic shielding." },
+    { id: 2, x: "40%", y: "63%", position: "up", title: "Engine Bay", desc: "Deep degreasing." },
+    { id: 3, x: "57.5%", y: "35%", position: "up", title: "Glass Coating", desc: "Water repellency." },
+    { id: 4, x: "81%", y: "42%", position: "up", title: "Interior Detailing", desc: "Deep cleaning." },
+    { id: 5, x: "70%", y: "52%", position: "down", title: "Ceramic Coating", desc: "12–24m protection." },
+    { id: 6, x: "88%", y: "38%", position: "down", title: "Paint Correction", desc: "Eliminate swirl marks." },
   ];
 
   return (
@@ -355,10 +353,10 @@ const FeatureHighlights = () => {
         </motion.div>
 
         {/* Interactive Car Image */}
-        <div className="relative mb-24 rounded-[48px] overflow-hidden bg-black p-6 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.3)]" style={{ border: '1px solid rgba(201,168,76,0.2)' }}>
+        <div className="relative mb-24 rounded-[48px] overflow-hidden bg-black p-6 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.3)] max-w-6xl mx-auto" style={{ border: '1px solid rgba(201,168,76,0.2)' }}>
           <motion.img
             style={{ scale: scaleCar }}
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=1600"
+            src="/722146985_1472920484875090_4630907555464459328_n.jpg"
             alt="King Detailing — Professional car treatment"
             className="w-full h-auto rounded-3xl shadow-2xl opacity-90"
           />
@@ -909,7 +907,7 @@ const BookingFlow = () => {
   ];
 
   const stepTitles: Record<number, { heading: string; sub: string }> = {
-    1: { heading: "Get a Personal Quote via WhatsApp", sub: "Select your vehicle type below to start your direct WhatsApp enquiry." },
+    1: { heading: "Contact us via WhatsApp", sub: "Select your vehicle type below to start your direct WhatsApp enquiry." },
     2: { heading: "Select a package", sub: "Choose the level of care your vehicle deserves." },
     3: { heading: "Preferred timeframe?", sub: "When would you like us to work our magic?" },
     4: { heading: "Almost done!", sub: "Review your choices and send them directly to our team." },
@@ -1263,7 +1261,7 @@ const GALLERY_ITEMS = [
     title: "Signature Gloss",
     service: "Deep Clean",
     desc: "Flawless reflection and ultimate clarity on every surface.",
-    url: "/gallaryimg1.webp",
+    url: "/722960210_1691017691793648_3341247485208045390_n.jpg",
   },
   {
     id: 4,
@@ -1271,7 +1269,7 @@ const GALLERY_ITEMS = [
     title: "Ceramic Shield",
     service: "Ceramic Coating",
     desc: "Advanced protection for a long-lasting, showroom finish.",
-    url: "/gallaryimg2.jpg",
+    url: "/723830648_1378888127406224_6906315408035488946_n.jpg",
   },
   {
     id: 5,
@@ -1279,7 +1277,7 @@ const GALLERY_ITEMS = [
     title: "Ultimate Protection",
     service: "Ceramic Coating",
     desc: "Extreme water beading and superior environmental resistance.",
-    url: "/gallaryimg3.jpg",
+    url: "/724038861_5485032541722527_4697859893829064116_n.jpg",
   },
   {
     id: 6,
@@ -1287,7 +1285,7 @@ const GALLERY_ITEMS = [
     title: "Trusted Choice",
     service: "Ceramic Coating",
     desc: "Pushing the boundaries of automotive care every single day.",
-    url: "/hero section/can_you_edit_this_image_202605151336.jpeg",
+    url: "/722406960_1513876637133998_1504754795098428094_n.jpg",
   },
   {
     id: 7,
@@ -1319,7 +1317,15 @@ const GALLERY_ITEMS = [
     title: "Signature Maintenance",
     service: "Maintenance Clean",
     desc: "Preserving that showroom finish with regular, professional care.",
-    url: "/hero section/can_you_edit_this_image_202605151336 (1).jpeg",
+    url: "/722603920_1672180454069237_87820404347023918_n.jpg",
+  },
+  {
+    id: 11,
+    type: "image" as const,
+    title: "Meticulous Finish",
+    service: "Paint Correction",
+    desc: "Every detail crafted to perfection.",
+    url: "/722489492_4006805506281970_7029725171011983426_n.jpg",
   },
 ];
 
