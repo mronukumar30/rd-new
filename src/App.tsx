@@ -206,7 +206,7 @@ const Hero = () => {
                     boxShadow: `0 20px 50px rgba(201,168,76,0.3)`
                   }}
                 >
-                  Enquiry via WhatsApp
+                  Contact me via WhatsApp
                   <div className="w-6 h-6 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all">
                     <ArrowRight className="w-3 h-3" />
                   </div>
