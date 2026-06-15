@@ -67,7 +67,7 @@ export const ACCREDITATIONS = [
 export const COMPANY_DETAILS = {
   name: 'King of Detailing',
   tagline: 'Premium Car Care · Luton & Bedfordshire',
-  address: 'Delivering Automotive Perfection Across Luton, Herts, Beds & Bucks',
+  address: 'Delivering Automotive Perfection Across Luton, Herts, Beds, Bucks & Nationwide',
   travelRange: 'Happy to travel 1 hour driving distance',
   phone: '07749 311494',
   phoneRaw: '07749311494',

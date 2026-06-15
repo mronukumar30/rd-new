@@ -1665,11 +1665,11 @@ const Footer = () => {
               </div>
               <div>
                 <span className="font-black text-4xl md:text-5xl tracking-tighter text-white block uppercase leading-none mb-2">KING Detailing</span>
-                <span className="text-xs md:text-sm uppercase tracking-[0.4em] font-bold" style={{ color: GOLD }}>Premium Car Care · Luton</span>
+                <span className="text-xs md:text-sm uppercase tracking-[0.4em] font-bold" style={{ color: GOLD }}>Premium Car Care · Luton, Beds & Nationwide</span>
               </div>
             </div>
             <p className="text-lg leading-relaxed mb-8 max-w-md font-light italic" style={{ color: 'rgba(255,255,255,0.95)' }}>
-              "Beyond cleaning — automotive restoration. We are Bedfordshire's elite mobile detailing specialists, delivering fully insured, studio-grade perfection directly to your driveway across Luton, Herts, Beds, and Bucks."
+              "Beyond cleaning — automotive restoration. We are Bedfordshire's elite mobile detailing specialists, delivering fully insured, studio-grade perfection directly to your driveway across Luton, Herts, Beds, Bucks, and nationwide."
             </p>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
