@@ -24,7 +24,7 @@ export const SERVICES = [
     description: 'Paint correction via machine polishing + 24-month ceramic coating. Qualifies for 24 months of regular maintenance.',
     price: 'From £380',
     duration: '1–1.5 Days',
-    image: '/723830648_1378888127406224_6906315408035488946_n.jpg',
+    image: '/gallaryimg2.jpg',
     objectPosition: 'bottom',
   },
   {
@@ -110,7 +110,7 @@ export const GALLERY_MEDIA = [
     type: "image",
     title: "Ceramic Shield",
     desc: "Advanced protection for a long-lasting, showroom finish.",
-    url: "/723830648_1378888127406224_6906315408035488946_n.jpg",
+    url: "/gallaryimg2.jpg",
     span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
   },
   {
@@ -168,5 +168,40 @@ export const GALLERY_MEDIA = [
     desc: "Every detail crafted to perfection.",
     url: "/722489492_4006805506281970_7029725171011983426_n.jpg",
     span: "md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2",
+  },
+];
+
+export const FAQ_DATA = [
+  {
+    question: "How much does car detailing cost in Luton?",
+    answer: "Our car detailing packages in Luton start from £90 for a maintenance clean, £160 for a deep clean, £250 for ceramic coating protection, and £380 for full paint correction with ceramic coating. Prices vary depending on the size and condition of your vehicle. Contact us for a personalised quote."
+  },
+  {
+    question: "Do you offer mobile car detailing in Luton and Bedfordshire?",
+    answer: "Yes! King of Detailing is a fully mobile car detailing service. We come directly to your home or office across Luton, Bedfordshire, Hertfordshire, and Buckinghamshire. We're happy to travel up to 1 hour driving distance from Luton, and we also take on nationwide projects."
+  },
+  {
+    question: "How long does a car detail take?",
+    answer: "The duration depends on the package you choose. A maintenance clean takes 3–4 hours, a deep clean takes 5–6 hours, our ceramic coating protection package takes 6–7 hours, and the full enhance package with paint correction takes 1 to 1.5 days."
+  },
+  {
+    question: "Is King of Detailing fully insured?",
+    answer: "Absolutely. King of Detailing is fully insured for your complete peace of mind. Every job we carry out is covered by our comprehensive insurance policy, so your vehicle is always fully protected while in our care."
+  },
+  {
+    question: "What areas do you cover for mobile car detailing?",
+    answer: "We're based in Luton and primarily cover Bedfordshire, Hertfordshire, and Buckinghamshire. Our standard service radius is approximately 1 hour's drive from Luton. We also travel nationwide for larger or specialist projects — just get in touch to discuss."
+  },
+  {
+    question: "How do I book a car detail in Luton?",
+    answer: "Booking is easy! You can message us directly on WhatsApp, call us on 07749 311494, or use our online booking system. We're open 7 days a week, Monday to Sunday, from 8am to 8pm. We'll confirm your appointment and arrive at your chosen time and location."
+  },
+  {
+    question: "What is ceramic coating and is it worth it?",
+    answer: "Ceramic coating is a liquid polymer applied to your vehicle's exterior that chemically bonds with the paint to create a long-lasting layer of protection. It provides exceptional gloss, outstanding water repellency, and superior resistance to environmental contaminants like bird droppings, tree sap, and UV damage. Our coatings last 12–24 months and are absolutely worth it for maintaining your car's value and appearance."
+  },
+  {
+    question: "What's the difference between a deep clean and a maintenance clean?",
+    answer: "A deep clean is our comprehensive entry-level package — a full interior and exterior detail including the engine bay, restoring your car to a like-new finish. A maintenance clean is a lighter, regular service designed to preserve and extend the results of your initial deep clean, scheduled every 3–6 weeks. You need a deep clean before you can access our maintenance plan."
   },
 ];

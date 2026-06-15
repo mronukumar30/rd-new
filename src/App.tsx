@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 import { cn } from "./lib/utils";
-import { SERVICES, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS } from "./constants";
+import { SERVICES, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS, FAQ_DATA } from "./constants";
 import InteractiveBentoGallery from "./components/ui/interactive-bento-gallery";
 
 const GOLD = "#C9A84C";
@@ -152,8 +152,10 @@ const Hero = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2.2, ease: "easeOut" }}
           src="/hero section/can_you_edit_this_image_202605151337.jpeg"
-          alt="King of Detailing — Premium mobile car detailing in Luton and surrounding areas"
+          alt="Premium mobile car detailing service in Luton, Bedfordshire — King of Detailing deep clean, ceramic coating and paint correction"
           className="w-full h-full object-cover object-center"
+          width={1920}
+          height={1080}
         />
       </div>
 
@@ -182,10 +184,12 @@ const Hero = () => {
                 </span>
               </motion.div>
 
-              <h1 className="text-5xl md:text-[90px] font-bold leading-[0.9] tracking-tighter text-white mb-6">
+              {/* Visually hidden SEO H1 for search engines */}
+              <h1 className="sr-only">Premium Mobile Car Detailing in Luton, Bedfordshire — Deep Clean, Ceramic Coating & Paint Correction | King of Detailing</h1>
+              <p aria-hidden="true" role="presentation" className="text-5xl md:text-[90px] font-bold leading-[0.9] tracking-tighter text-white mb-6">
                 Your Car.{' '}<br />
                 <span className="italic font-serif font-light" style={{ color: GOLD_LIGHT }}>Royally Treated.</span>
-              </h1>
+              </p>
               <p className="text-base md:text-lg text-white/60 max-w-lg font-light leading-relaxed mb-8">
                 Bedfordshire's most meticulous mobile detailing service. Deep cleans, ceramic coatings, paint correction — all at your driveway. Fully insured. Fully mobile.
               </p>
@@ -357,7 +361,7 @@ const FeatureHighlights = () => {
           <motion.img
             style={{ scale: scaleCar }}
             src="/722146985_1472920484875090_4630907555464459328_n.jpg"
-            alt="King Detailing — Professional car treatment"
+            alt="Professional car detailing treatment by King of Detailing in Luton — ceramic coating, paint correction and engine bay cleaning"
             className="w-full h-auto rounded-3xl shadow-2xl opacity-90"
           />
 
@@ -413,7 +417,7 @@ const FeatureHighlights = () => {
               </div>
             </div>
             <div className="w-full md:w-64 aspect-square rounded-3xl overflow-hidden shadow-xl">
-              <img src="/DEEP CLEAN 🚨We had this beautiful bmw 535d in for a deep cleanWe manage to reset the leather se (1).jpg" alt="King Detailing BMW Deep Clean" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+              <img src="/DEEP CLEAN 🚨We had this beautiful bmw 535d in for a deep cleanWe manage to reset the leather se (1).jpg" alt="BMW 535d deep clean car detailing in Luton — interior and exterior restoration by King of Detailing" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
             </div>
           </motion.div>
 
@@ -496,7 +500,7 @@ const Services = () => {
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300 z-10" />
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} car detailing package in Luton, Bedfordshire — King of Detailing`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   style={{ objectPosition: (service as any).objectPosition || 'center' }}
                 />
@@ -1269,7 +1273,7 @@ const GALLERY_ITEMS = [
     title: "Ceramic Shield",
     service: "Ceramic Coating",
     desc: "Advanced protection for a long-lasting, showroom finish.",
-    url: "/723830648_1378888127406224_6906315408035488946_n.jpg",
+    url: "/gallaryimg2.jpg",
   },
   {
     id: 5,
@@ -1796,19 +1800,131 @@ const Footer = () => {
   );
 };
 
+const FAQSection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section id="faq" className="py-24 px-6 md:px-12" style={{ background: '#EDE8DF' }}>
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: GOLD }}>Frequently Asked Questions</h2>
+          <h3 className="text-4xl md:text-5xl font-bold tracking-tight" style={{ color: '#0A0A0A' }}>
+            Everything You Need<br className="hidden md:block" /> to Know
+          </h3>
+          <p className="mt-6 text-base max-w-lg mx-auto leading-relaxed" style={{ color: '#8A8070' }}>
+            Got questions about our mobile car detailing services in Luton and Bedfordshire? Find your answers below.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {FAQ_DATA.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="rounded-[24px] overflow-hidden transition-all duration-300"
+              style={{
+                background: openIndex === index ? '#F5F0E8' : '#F5F0E8',
+                border: openIndex === index ? `1px solid rgba(201,168,76,0.4)` : '1px solid #DDD5C5',
+                boxShadow: openIndex === index ? '0 10px 40px rgba(201,168,76,0.1)' : 'none'
+              }}
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full flex items-center justify-between p-6 md:p-8 text-left group"
+              >
+                <h4 className="text-base md:text-lg font-bold pr-4" style={{ color: '#0A0A0A' }}>
+                  {faq.question}
+                </h4>
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
+                  style={{
+                    background: openIndex === index ? GOLD : 'rgba(201,168,76,0.15)',
+                    transform: openIndex === index ? 'rotate(180deg)' : 'rotate(0deg)'
+                  }}
+                >
+                  <ChevronRight
+                    className="w-4 h-4 rotate-90"
+                    style={{ color: openIndex === index ? '#000' : GOLD }}
+                  />
+                </div>
+              </button>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 md:px-8 pb-6 md:pb-8">
+                      <div className="w-full h-[1px] mb-5" style={{ background: 'rgba(201,168,76,0.2)' }} />
+                      <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A5040' }}>
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA below FAQ */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <p className="text-sm mb-6" style={{ color: '#8A8070' }}>Still have questions? We'd love to hear from you.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={COMPANY_DETAILS.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 text-black inline-flex items-center gap-3"
+              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 10px 30px rgba(201,168,76,0.3)` }}
+            >
+              <MessageCircle className="w-4 h-4" />
+              Ask on WhatsApp
+            </a>
+            <a
+              href={`tel:${COMPANY_DETAILS.phoneRaw}`}
+              className="px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 inline-flex items-center gap-3"
+              style={{ border: `2px solid rgba(201,168,76,0.3)`, color: '#0A0A0A' }}
+            >
+              <Phone className="w-4 h-4" />
+              Call {COMPANY_DETAILS.phone}
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 export default function App() {
   return (
     <div className="min-h-screen selection:text-black" style={{ '--tw-selection-bg': GOLD, background: '#F5F0E8' } as React.CSSProperties}>
-      <Navbar />
-      <Hero />
-      <FeatureHighlights />
-      <Services />
-      <HowItWorks />
-      <Testimonials />
-      <AboutSection />
-      <CompanyStripeMarquee />
-      <BookingFlow />
-      <Gallery />
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Hero />
+        <FeatureHighlights />
+        <Services />
+        <HowItWorks />
+        <Testimonials />
+        <AboutSection />
+        <CompanyStripeMarquee />
+        <BookingFlow />
+        <Gallery />
+        <FAQSection />
+      </main>
       <Footer />
 
       {/* WhatsApp Floating Button */}
@@ -1816,6 +1932,7 @@ export default function App() {
         href={COMPANY_DETAILS.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Message King of Detailing on WhatsApp"
         className="fixed bottom-8 right-8 z-50 w-16 h-16 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all group bg-green-500 hover:bg-green-600"
       >
         <MessageCircle className="w-8 h-8" />
@@ -1830,6 +1947,7 @@ export default function App() {
           href={COMPANY_DETAILS.instagram}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Follow King of Detailing on Instagram"
           className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-all group"
           style={{ background: 'linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)' }}
         >
@@ -1842,6 +1960,7 @@ export default function App() {
           href={COMPANY_DETAILS.facebook}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Follow King of Detailing on Facebook"
           className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-all group bg-blue-600 hover:bg-blue-700"
         >
           <Facebook className="w-5 h-5" />

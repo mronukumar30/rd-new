@@ -1,0 +1,10 @@
+# King of Detailing — robots.txt
+# https://www.kingofdetailinguk.com/
+
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /*.map$
+
+# Sitemap
+Sitemap: https://www.kingofdetailinguk.com/sitemap.xml
