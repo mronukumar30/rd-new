@@ -15,7 +15,7 @@ export const SERVICES = [
     description: 'Intensive decontamination + 12-month ceramic coating. Includes engine bay & interior. Upgrade to 24-month coating for just £80 extra. Qualifies for 12 months of maintenance.',
     price: 'From £250',
     duration: '6–7 Hours',
-    image: '/722406960_1513876637133998_1504754795098428094_n.jpg',
+    image: '/724038861_5485032541722527_4697859893829064116_n.jpg',
   },
   {
     id: 'enhance',
@@ -34,7 +34,7 @@ export const SERVICES = [
     description: 'Available after Deep Clean (up to 6 months), Protect (12–24 months), or Enhance (24 months). Regular scheduling keeps your protection performing at its best.',
     price: 'From £90',
     duration: '3–4 Hours',
-    image: '/722603920_1672180454069237_87820404347023918_n.jpg',
+    image: '/722406960_1513876637133998_1504754795098428094_n.jpg',
   },
 ];
 
@@ -158,7 +158,7 @@ export const GALLERY_MEDIA = [
     type: "image",
     title: "Signature Maintenance",
     desc: "Preserving that showroom finish with regular, professional care.",
-    url: "/722603920_1672180454069237_87820404347023918_n.jpg",
+    url: "/722406960_1513876637133998_1504754795098428094_n.jpg",
     span: "md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2",
   },
   {

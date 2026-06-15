@@ -1321,7 +1321,7 @@ const GALLERY_ITEMS = [
     title: "Signature Maintenance",
     service: "Maintenance Clean",
     desc: "Preserving that showroom finish with regular, professional care.",
-    url: "/722603920_1672180454069237_87820404347023918_n.jpg",
+    url: "/722406960_1513876637133998_1504754795098428094_n.jpg",
   },
   {
     id: 11,
