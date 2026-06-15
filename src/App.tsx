@@ -1238,8 +1238,8 @@ const GALLERY_SERVICES = [
   "All Work",
   "Deep Clean",
   "Ceramic Coating",
-  "Paint Correction",
   "Maintenance Clean",
+  "Paint Correction",
 ];
 
 const GALLERY_ITEMS = [

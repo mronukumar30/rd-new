@@ -4,37 +4,28 @@ export const SERVICES = [
     title: 'Deep Clean',
     benefit: 'Your vehicle, transformed inside and out. Our entry-level package is a comprehensive deep clean of both interior and exterior — every surface meticulously restored to a like-new, factory-fresh finish. Includes the engine bay.',
     description: 'Full interior & exterior detail including engine bay. Qualifies you for 6 months of regular maintenance cleans every 3–8 weeks.',
-    price: 'From £160',
+    price: 'From £150',
     duration: '5–6 Hours',
     image: '/DEEP CLEAN 🚨We had this beautiful bmw 535d in for a deep cleanWe manage to reset the leather se.jpg',
   },
   {
-    id: 'protect',
-    title: 'Protect',
-    benefit: 'Industry-leading vehicle protection designed to preserve your car\'s value, enhance its appearance, and keep it looking cleaner for longer. Exceptional gloss, outstanding water repellency, and superior resistance to environmental contaminants.',
-    description: 'Intensive decontamination + 12-month ceramic coating. Includes engine bay & interior. Upgrade to 24-month coating for just £80 extra. Qualifies for 12 months of maintenance.',
-    price: 'From £250',
-    duration: '6–7 Hours',
-    image: '/724038861_5485032541722527_4697859893829064116_n.jpg',
+    id: 'maintenance',
+    title: 'Maintenance Clean',
+    benefit: 'Keep your investment protected. Our maintenance clean is designed for clients who want to preserve and extend the results of their initial package — scheduled every 3 to 6 weeks to keep your car in showroom condition.',
+    description: 'Available after Deep Clean (up to 6 months) or Enhance (24 months). Regular scheduling keeps your protection performing at its best.',
+    price: 'From £100',
+    duration: '3–4 Hours',
+    image: '/722406960_1513876637133998_1504754795098428094_n.jpg',
   },
   {
     id: 'enhance',
     title: 'Enhance',
     benefit: 'Precision machine polishing eliminates defects — swirl marks, light scratches, water etchings. Your exterior finish is restored to its absolute peak before a 24-month protective coating locks in that perfection.',
     description: 'Paint correction via machine polishing + 24-month ceramic coating. Qualifies for 24 months of regular maintenance.',
-    price: 'From £380',
+    price: 'From £650',
     duration: '1–1.5 Days',
     image: '/gallaryimg2.jpg',
     objectPosition: 'bottom',
-  },
-  {
-    id: 'maintenance',
-    title: 'Maintenance Clean',
-    benefit: 'Keep your investment protected. Our maintenance clean is designed for clients who want to preserve and extend the results of their initial package — scheduled every 3 to 6 weeks to keep your car in showroom condition.',
-    description: 'Available after Deep Clean (up to 6 months), Protect (12–24 months), or Enhance (24 months). Regular scheduling keeps your protection performing at its best.',
-    price: 'From £90',
-    duration: '3–4 Hours',
-    image: '/722406960_1513876637133998_1504754795098428094_n.jpg',
   },
 ];
 
@@ -174,7 +165,7 @@ export const GALLERY_MEDIA = [
 export const FAQ_DATA = [
   {
     question: "How much does car detailing cost in Luton?",
-    answer: "Our car detailing packages in Luton start from £90 for a maintenance clean, £160 for a deep clean, £250 for ceramic coating protection, and £380 for full paint correction with ceramic coating. Prices vary depending on the size and condition of your vehicle. Contact us for a personalised quote."
+    answer: "Our car detailing packages in Luton start from £100 for a maintenance clean, £150 for a deep clean, and £650 for full paint correction with ceramic coating. Prices vary depending on the size and condition of your vehicle. Contact us for a personalised quote."
   },
   {
     question: "Do you offer mobile car detailing in Luton and Bedfordshire?",
@@ -182,7 +173,7 @@ export const FAQ_DATA = [
   },
   {
     question: "How long does a car detail take?",
-    answer: "The duration depends on the package you choose. A maintenance clean takes 3–4 hours, a deep clean takes 5–6 hours, our ceramic coating protection package takes 6–7 hours, and the full enhance package with paint correction takes 1 to 1.5 days."
+    answer: "The duration depends on the package you choose. A maintenance clean takes 3–4 hours, a deep clean takes 5–6 hours, and the full enhance package with paint correction takes 1 to 1.5 days."
   },
   {
     question: "Is King of Detailing fully insured?",
@@ -202,6 +193,6 @@ export const FAQ_DATA = [
   },
   {
     question: "What's the difference between a deep clean and a maintenance clean?",
-    answer: "A deep clean is our comprehensive entry-level package — a full interior and exterior detail including the engine bay, restoring your car to a like-new finish. A maintenance clean is a lighter, regular service designed to preserve and extend the results of your initial deep clean, scheduled every 3–6 weeks. You need a deep clean before you can access our maintenance plan."
+    answer: "A deep clean is our comprehensive entry-level package — a full interior and exterior detail including the engine bay, restoring your car to a like-new finish. A maintenance clean is a lighter, regular service designed to preserve and extend the results of your initial package (Deep Clean or Enhance), scheduled every 3–6 weeks. You need an initial package before you can access our maintenance plan."
   },
 ];
