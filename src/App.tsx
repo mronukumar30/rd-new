@@ -332,7 +332,7 @@ const FeatureHighlights = () => {
     { id: 2, x: "40%", y: "63%", position: "up", title: "Engine Bay", desc: "Deep degreasing." },
     { id: 3, x: "57.5%", y: "35%", position: "up", title: "Glass Coating", desc: "Water repellency." },
     { id: 4, x: "81%", y: "42%", position: "up", title: "Interior Detailing", desc: "Deep cleaning." },
-    { id: 5, x: "70%", y: "52%", position: "down", title: "Ceramic Coating", desc: "12–24m protection." },
+    { id: 5, x: "70%", y: "52%", position: "down", title: "Ceramic Coating", desc: "12–36m protection." },
     { id: 6, x: "88%", y: "38%", position: "down", title: "Paint Correction", desc: "Eliminate swirl marks." },
   ];
 
@@ -350,7 +350,7 @@ const FeatureHighlights = () => {
               <p className="text-[10px] font-mono uppercase tracking-widest" style={{ color: GOLD }}>Satisfaction</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold" style={{ color: '#0A0A0A' }}>24mo+</p>
+              <p className="text-3xl font-bold" style={{ color: '#0A0A0A' }}>3 Years</p>
               <p className="text-[10px] font-mono uppercase tracking-widest" style={{ color: GOLD }}>Ceramic Life</p>
             </div>
           </div>

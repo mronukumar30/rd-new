@@ -12,7 +12,7 @@ export const SERVICES = [
     id: 'maintenance',
     title: 'Maintenance Clean',
     benefit: 'Keep your investment protected. Our maintenance clean is designed for clients who want to preserve and extend the results of their initial package — scheduled every 3 to 6 weeks to keep your car in showroom condition.',
-    description: 'Available after Deep Clean (up to 6 months) or Enhance (24 months). Regular scheduling keeps your protection performing at its best.',
+    description: 'Available after Deep Clean (up to 6 months) or Enhance (3 years). Regular scheduling keeps your protection performing at its best.',
     price: 'From £100',
     duration: '3–4 Hours',
     image: '/722406960_1513876637133998_1504754795098428094_n.jpg',
@@ -20,8 +20,8 @@ export const SERVICES = [
   {
     id: 'enhance',
     title: 'Enhance',
-    benefit: 'Precision machine polishing eliminates defects — swirl marks, light scratches, water etchings. Your exterior finish is restored to its absolute peak before a 24-month protective coating locks in that perfection.',
-    description: 'Paint correction via machine polishing + 24-month ceramic coating. Qualifies for 24 months of regular maintenance.',
+    benefit: 'Precision machine polishing eliminates defects — swirl marks, light scratches, water etchings. Your exterior finish is restored to its absolute peak before a 3-year protective coating locks in that perfection.',
+    description: 'Paint correction via machine polishing + 3-year ceramic coating. Qualifies for 3 years of regular maintenance.',
     price: 'From £650',
     duration: '1–1.5 Days',
     image: '/gallaryimg2.jpg',
@@ -59,7 +59,7 @@ export const COMPANY_DETAILS = {
   name: 'King of Detailing',
   tagline: 'Premium Car Care · Luton & Bedfordshire',
   address: 'Delivering Automotive Perfection Across Luton, Herts, Beds, Bucks & Nationwide',
-  travelRange: 'Happy to travel 1 hour driving distance',
+  travelRange: 'No boundaries — we travel nationwide',
   phone: '07749 311494',
   phoneRaw: '07749311494',
   hours: 'Mon – Sun  8:00 AM – 8:00 PM',
@@ -169,7 +169,7 @@ export const FAQ_DATA = [
   },
   {
     question: "Do you offer mobile car detailing in Luton and Bedfordshire?",
-    answer: "Yes! King of Detailing is a fully mobile car detailing service. We come directly to your home or office across Luton, Bedfordshire, Hertfordshire, and Buckinghamshire. We're happy to travel up to 1 hour driving distance from Luton, and we also take on nationwide projects."
+    answer: "Yes! King of Detailing is a fully mobile car detailing service. We come directly to your home or office across Luton, Bedfordshire, Hertfordshire, and Buckinghamshire. No distance is too far — we travel nationwide for premier detailing projects."
   },
   {
     question: "How long does a car detail take?",
@@ -181,7 +181,7 @@ export const FAQ_DATA = [
   },
   {
     question: "What areas do you cover for mobile car detailing?",
-    answer: "We're based in Luton and primarily cover Bedfordshire, Hertfordshire, and Buckinghamshire. Our standard service radius is approximately 1 hour's drive from Luton. We also travel nationwide for larger or specialist projects — just get in touch to discuss."
+    answer: "While we are based in Luton and cover Bedfordshire, Hertfordshire, and Buckinghamshire, we have no limits. We travel nationwide to deliver elite detailing services directly to your driveway — simply get in touch to discuss."
   },
   {
     question: "How do I book a car detail in Luton?",
@@ -189,7 +189,7 @@ export const FAQ_DATA = [
   },
   {
     question: "What is ceramic coating and is it worth it?",
-    answer: "Ceramic coating is a liquid polymer applied to your vehicle's exterior that chemically bonds with the paint to create a long-lasting layer of protection. It provides exceptional gloss, outstanding water repellency, and superior resistance to environmental contaminants like bird droppings, tree sap, and UV damage. Our coatings last 12–24 months and are absolutely worth it for maintaining your car's value and appearance."
+    answer: "Ceramic coating is a liquid polymer applied to your vehicle's exterior that chemically bonds with the paint to create a long-lasting layer of protection. It provides exceptional gloss, outstanding water repellency, and superior resistance to environmental contaminants like bird droppings, tree sap, and UV damage. Our coatings last 12–36 months and are absolutely worth it for maintaining your car's value and appearance."
   },
   {
     question: "What's the difference between a deep clean and a maintenance clean?",
