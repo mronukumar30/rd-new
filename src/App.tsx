@@ -151,7 +151,7 @@ const Hero = () => {
           initial={{ scale: 1.08, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2.2, ease: "easeOut" }}
-          src="/hero section/can_you_edit_this_image_202605151337.jpeg"
+          src="/new hero.jpg"
           alt="Premium mobile car detailing service in Luton, Bedfordshire — King of Detailing deep clean, ceramic coating and paint correction"
           className="w-full h-full object-cover object-center"
           width={1920}
