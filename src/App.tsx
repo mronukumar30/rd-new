@@ -871,7 +871,7 @@ const AboutSection = () => {
             {/* Eyebrow label */}
             <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-5 flex items-center gap-2" style={{ color: '#0A0A0A' }}>
               <div className="w-8 h-[1px]" style={{ background: '#0A0A0A' }} />
-              Garage Therapy Professional Centre
+              Garage Therapy Professional
             </h2>
 
             {/* Main heading */}
@@ -893,7 +893,7 @@ const AboutSection = () => {
               </p>
               <p className="text-base leading-relaxed font-light" style={{ color: '#5A5040' }}>
                 King of Detailing is now an officially accredited{' '}
-                <span className="font-semibold" style={{ color: '#0A0A0A' }}>Garage Therapy Professional Centre</span> — a certification
+                <span className="font-semibold" style={{ color: '#0A0A0A' }}>Garage Therapy Professional</span> — a certification
                 held by only a select number of detailers across the UK, awarded exclusively to those
                 who demonstrate a mastery of professional-grade product systems, application techniques,
                 and finish quality.
@@ -915,7 +915,7 @@ const AboutSection = () => {
               {[
                 {
                   title: 'GT Accredited',
-                  category: 'Official Professional Centre',
+                  category: 'Official GT Professional',
                   body: '1 of a select few UK detailers awarded master-tier accreditation for product application & finish quality.',
                 },
                 {
@@ -926,7 +926,7 @@ const AboutSection = () => {
                 {
                   title: "Luton's Only",
                   category: 'Exclusive GT Detailer',
-                  body: "The sole mobile detailer in the region holding GT Professional Centre status — studio-grade care at your door.",
+                  body: "The sole mobile detailer in the region holding GT Professional status — studio-grade care at your door.",
                 },
               ].map((item, i) => (
                 <div
@@ -991,7 +991,7 @@ const AboutSection = () => {
               {/* Main photo */}
               <img
                 src="/king.webp"
-                alt="Philip Hearn — King of Detailing, GT Professional Centre certified detailer in Luton"
+                alt="Philip Hearn — King of Detailing, GT Professional certified detailer in Luton"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{ objectPosition: 'center top' }}
               />
@@ -1012,14 +1012,14 @@ const AboutSection = () => {
               >
                 <img
                   src="/GT Vector Black Professional Centre.png"
-                  alt="GT Professional Centre"
+                  alt="GT Professional"
                   className="h-10 md:h-12 w-auto"
                   style={{ filter: 'invert(1)' }}
                 />
                 <div style={{ width: '1px', height: '36px', background: 'rgba(255,255,255,0.12)' }} />
                 <div className="flex flex-col gap-0.5">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.28em] leading-none" style={{ color: 'rgba(255,255,255,0.45)' }}>Accredited</p>
-                  <p className="text-[13px] font-black uppercase tracking-[0.12em] leading-none text-white">Professional Centre</p>
+                  <p className="text-[13px] font-black uppercase tracking-[0.12em] leading-none text-white">GT Professional</p>
                 </div>
               </div>
 
