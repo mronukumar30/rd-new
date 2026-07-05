@@ -151,7 +151,7 @@ const Hero = () => {
           initial={{ scale: 1.08, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2.2, ease: "easeOut" }}
-          src="/new hero 02.png"
+          src="/new hero 02.webp"
           alt="Premium mobile car detailing service in Luton, Bedfordshire — King of Detailing deep clean, ceramic coating and paint correction"
           className="w-full h-full object-cover object-center"
           width={1920}
@@ -847,6 +847,203 @@ const AboutSection = () => {
                 </div>
               </div>
             </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* ── GT Professional Section ── */}
+      <div className="px-6 md:px-12 pb-24 relative overflow-hidden" style={{ background: '#F5F0E8' }}>
+        {/* Gold divider line */}
+        <div className="max-w-7xl mx-auto mb-20">
+          <div className="h-[1px] w-full" style={{ background: `linear-gradient(to right, transparent, ${GOLD}60, ${GOLD}, ${GOLD}60, transparent)` }} />
+        </div>
+
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10">
+
+          {/* LEFT: Text Column */}
+          <motion.div
+            className="md:w-1/2 order-2 md:order-1"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            {/* Eyebrow label */}
+            <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-5 flex items-center gap-2" style={{ color: '#0A0A0A' }}>
+              <div className="w-8 h-[1px]" style={{ background: '#0A0A0A' }} />
+              Garage Therapy Professional Centre
+            </h2>
+
+            {/* Main heading */}
+            <h3 className="text-4xl md:text-5xl font-black tracking-tight uppercase italic leading-[1.05] mb-4" style={{ color: '#0A0A0A' }}>
+              The Standard<br />
+              <span style={{ color: GOLD }}>Others Train For.</span>
+            </h3>
+
+            {/* Sub-heading */}
+            <p className="text-sm font-light tracking-widest uppercase mb-8" style={{ color: '#8A8070' }}>
+              Officially certified · Rigorously trained · Uncompromisingly applied.
+            </p>
+
+            {/* Body copy */}
+            <div className="space-y-4 mb-10">
+              <p className="text-base leading-relaxed font-light" style={{ color: '#5A5040' }}>
+                Not every detailer bothers to verify what they know.{' '}
+                <span className="font-semibold" style={{ color: '#0A0A0A' }}>We chose to prove it.</span>
+              </p>
+              <p className="text-base leading-relaxed font-light" style={{ color: '#5A5040' }}>
+                King of Detailing is now an officially accredited{' '}
+                <span className="font-semibold" style={{ color: '#0A0A0A' }}>Garage Therapy Professional Centre</span> — a certification
+                held by only a select number of detailers across the UK, awarded exclusively to those
+                who demonstrate a mastery of professional-grade product systems, application techniques,
+                and finish quality.
+              </p>
+              <p className="text-base leading-relaxed font-light" style={{ color: '#5A5040' }}>
+                This means every product used on your vehicle meets the most rigorous professional
+                standard available. No guesswork. No shortcuts. Just the kind of precision your car deserves.
+              </p>
+            </div>
+
+            {/* Credentials — editorial bare-type layout */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="flex flex-col sm:flex-row gap-0"
+            >
+              {[
+                {
+                  title: 'GT Accredited',
+                  category: 'Official Professional Centre',
+                  body: '1 of a select few UK detailers awarded master-tier accreditation for product application & finish quality.',
+                },
+                {
+                  title: 'Academy Certified',
+                  category: 'UK Detailing Academy',
+                  body: 'Rigorously trained in advanced paint correction, machine polishing & professional-grade ceramic systems.',
+                },
+                {
+                  title: "Luton's Only",
+                  category: 'Exclusive GT Detailer',
+                  body: "The sole mobile detailer in the region holding GT Professional Centre status — studio-grade care at your door.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={item.title}
+                  className="flex-1 group cursor-default"
+                  style={{
+                    paddingRight: i < 2 ? '2rem' : '0',
+                    paddingLeft: i > 0 ? '2rem' : '0',
+                    borderLeft: i > 0 ? '1px solid rgba(10,10,10,0.1)' : 'none',
+                  }}
+                >
+                  {/* Gold rule — animates on hover */}
+                  <div className="relative h-[1.5px] mb-6 overflow-hidden">
+                    <div
+                      className="absolute inset-0"
+                      style={{ background: 'rgba(10,10,10,0.08)' }}
+                    />
+                    <div
+                      className="absolute inset-y-0 left-0 w-0 group-hover:w-full transition-all duration-500 ease-out"
+                      style={{ background: GOLD }}
+                    />
+                    {/* Default gold portion — always visible */}
+                    <div
+                      className="absolute inset-y-0 left-0"
+                      style={{ width: i === 0 ? '100%' : '40%', background: GOLD, opacity: i === 0 ? 1 : 0.45 }}
+                    />
+                  </div>
+
+                  {/* Category */}
+                  <p
+                    className="text-[9px] font-mono font-bold uppercase tracking-[0.28em] mb-3"
+                    style={{ color: GOLD }}
+                  >
+                    {item.category}
+                  </p>
+
+                  {/* Big title */}
+                  <h4
+                    className="text-[22px] font-black uppercase italic leading-none tracking-tight mb-4"
+                    style={{ color: '#0A0A0A' }}
+                  >
+                    {item.title}
+                  </h4>
+
+                  {/* Body */}
+                  <p
+                    className="text-[12px] leading-relaxed"
+                    style={{ color: '#7A6E5F' }}
+                  >
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* RIGHT: Photo with GT badge overlay */}
+          <motion.div
+            className="md:w-1/2 relative order-1 md:order-2"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <div className="relative rounded-[40px] overflow-hidden shadow-2xl group">
+              {/* Main photo */}
+              <img
+                src="/king.webp"
+                alt="Philip Hearn — King of Detailing, GT Professional Centre certified detailer in Luton"
+                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                style={{ objectPosition: 'center top' }}
+              />
+
+              {/* Dark gradient overlay at bottom */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+              {/* GT Logo badge — bottom left */}
+              <div
+                className="absolute bottom-5 left-5 flex items-center gap-4 shadow-2xl"
+                style={{
+                  background: 'rgba(8,8,8,0.92)',
+                  backdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(201,168,76,0.3)',
+                  borderRadius: '20px',
+                  padding: '14px 20px',
+                }}
+              >
+                <img
+                  src="/GT Vector Black Professional Centre.png"
+                  alt="GT Professional Centre"
+                  className="h-10 md:h-12 w-auto"
+                  style={{ filter: 'invert(1)' }}
+                />
+                <div style={{ width: '1px', height: '36px', background: 'rgba(255,255,255,0.12)' }} />
+                <div className="flex flex-col gap-0.5">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.28em] leading-none" style={{ color: 'rgba(255,255,255,0.45)' }}>Accredited</p>
+                  <p className="text-[13px] font-black uppercase tracking-[0.12em] leading-none text-white">Professional Centre</p>
+                </div>
+              </div>
+
+              {/* Top right: year badge */}
+              <div
+                className="absolute top-5 right-5 px-3 py-1.5 rounded-full"
+                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}
+              >
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-black">2026</span>
+              </div>
+            </div>
+
+            {/* Decorative gold dot grid */}
+            <div
+              className="absolute -bottom-6 -right-6 w-24 h-24 opacity-20 -z-10"
+              style={{
+                backgroundImage: `radial-gradient(circle, ${GOLD} 1.5px, transparent 1.5px)`,
+                backgroundSize: '12px 12px',
+              }}
+            />
           </motion.div>
         </div>
       </div>
