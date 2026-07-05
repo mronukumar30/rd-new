@@ -919,9 +919,9 @@ const AboutSection = () => {
                   body: '1 of a select few UK detailers awarded master-tier accreditation for product application & finish quality.',
                 },
                 {
-                  title: 'Academy Certified',
+                  title: 'Nationally Accredited',
                   category: 'UK Detailing Academy',
-                  body: 'Rigorously trained in advanced paint correction, machine polishing & professional-grade ceramic systems.',
+                  body: 'Our certification was earned at the UK Detailing Academy, the UK\'s premier training facility, covering the complete GT product range.',
                 },
                 {
                   title: "Luton's Only",
