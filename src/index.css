@@ -176,3 +176,39 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Credential cards — all flush left on mobile, spaced on desktop */
+.credential-item {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-left: none !important;
+}
+
+/* Add a top separator on mobile between stacked cards */
+.credential-item[data-index="1"],
+.credential-item[data-index="2"] {
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(10, 10, 10, 0.1);
+}
+
+@media (min-width: 640px) {
+  .credential-item[data-index="0"] {
+    padding-right: 2rem !important;
+  }
+  .credential-item[data-index="1"] {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    border-left: 1px solid rgba(10, 10, 10, 0.1) !important;
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+  }
+  .credential-item[data-index="2"] {
+    padding-left: 2rem !important;
+    border-left: 1px solid rgba(10, 10, 10, 0.1) !important;
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+  }
+}

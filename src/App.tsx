@@ -931,12 +931,8 @@ const AboutSection = () => {
               ].map((item, i) => (
                 <div
                   key={item.title}
-                  className="flex-1 group cursor-default"
-                  style={{
-                    paddingRight: i < 2 ? '2rem' : '0',
-                    paddingLeft: i > 0 ? '2rem' : '0',
-                    borderLeft: i > 0 ? '1px solid rgba(10,10,10,0.1)' : 'none',
-                  }}
+                  className="flex-1 group cursor-default credential-item"
+                  data-index={i}
                 >
                   {/* Gold rule — animates on hover */}
                   <div className="relative h-[1.5px] mb-6 overflow-hidden">
