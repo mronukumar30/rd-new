@@ -9,6 +9,65 @@
       "source": "/about-us",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/service-page/:path*",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
+      "source": "/blank-3",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/valeting",
+      "destination": "/#services",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!assets|.*\\..*|_next).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=86400"
+        }
+      ]
     }
   ]
 }
