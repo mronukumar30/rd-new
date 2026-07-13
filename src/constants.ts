@@ -2,8 +2,8 @@ export const SERVICES = [
   {
     id: 'deep-clean',
     title: 'Deep Clean',
-    benefit: 'Your vehicle, transformed inside and out. Our entry-level package is a comprehensive deep clean of both interior and exterior — every surface meticulously restored to a like-new, factory-fresh finish. Includes the engine bay.',
-    description: 'Full interior & exterior detail including engine bay. Qualifies you for 6 months of regular maintenance cleans every 3–8 weeks.',
+    benefit: 'Your vehicle, transformed inside and out. Our entry-level package is a comprehensive deep clean of both interior and exterior — every surface meticulously restored to a like-new, factory-fresh finish.',
+    description: 'Full interior & exterior detail. Qualifies you for 6 months of regular maintenance cleans every 3–8 weeks.',
     price: 'From £150',
     duration: '5–6 Hours',
     image: '/DEEP CLEAN 🚨We had this beautiful bmw 535d in for a deep cleanWe manage to reset the leather se.jpg',
@@ -193,6 +193,6 @@ export const FAQ_DATA = [
   },
   {
     question: "What's the difference between a deep clean and a maintenance clean?",
-    answer: "A deep clean is our comprehensive entry-level package — a full interior and exterior detail including the engine bay, restoring your car to a like-new finish. A maintenance clean is a lighter, regular service designed to preserve and extend the results of your initial package (Deep Clean or Enhance), scheduled every 3–6 weeks. You need an initial package before you can access our maintenance plan."
+    answer: "A deep clean is our comprehensive entry-level package — a full interior and exterior detail, restoring your car to a like-new finish. A maintenance clean is a lighter, regular service designed to preserve and extend the results of your initial package (Deep Clean or Enhance), scheduled every 3–6 weeks. You need an initial package before you can access our maintenance plan."
   },
 ];

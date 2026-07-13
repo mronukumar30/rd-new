@@ -329,7 +329,6 @@ const FeatureHighlights = () => {
   const scaleCar = useTransform(scrollYProgress, [0, 1], [1.1, 0.95]);
 
   const hotspots = [
-    { id: 2, x: "40%", y: "63%", position: "up", title: "Engine Bay", desc: "Deep degreasing." },
     { id: 3, x: "57.5%", y: "35%", position: "up", title: "Glass Coating", desc: "Water repellency." },
     { id: 4, x: "81%", y: "42%", position: "up", title: "Interior Detailing", desc: "Deep cleaning." },
     { id: 5, x: "70%", y: "52%", position: "down", title: "Ceramic Coating", desc: "12–36m protection." },
@@ -361,7 +360,7 @@ const FeatureHighlights = () => {
           <motion.img
             style={{ scale: scaleCar }}
             src="/722146985_1472920484875090_4630907555464459328_n.jpg"
-            alt="Professional car detailing treatment by King of Detailing in Luton — ceramic coating, paint correction and engine bay cleaning"
+            alt="Professional car detailing treatment by King of Detailing in Luton — ceramic coating, paint correction and deep cleaning"
             className="w-full h-auto rounded-3xl shadow-2xl opacity-90"
           />
 
