@@ -512,12 +512,17 @@ const Services = () => {
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-2xl font-bold" style={{ color: GOLD }}>{service.price}</span>
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300" style={{ background: 'rgba(201,168,76,0.1)' }}
+                    <a
+                      href={service.bookingUrl || COMPANY_DETAILS.bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                      style={{ background: 'rgba(201,168,76,0.1)' }}
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = GOLD; (e.currentTarget as HTMLElement).style.color = '#000'; }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(201,168,76,0.1)'; }}
                     >
                       <ArrowRight className="w-4 h-4" />
-                    </div>
+                    </a>
                   </div>
                   <h4 className="text-3xl font-bold mb-4 tracking-tight" style={{ color: '#0A0A0A' }}>{service.title}</h4>
                   <p className="text-base leading-relaxed mb-6 font-light" style={{ color: '#8A8070' }}>
@@ -536,7 +541,7 @@ const Services = () => {
                   </div>
                 </div>
                 <a
-                  href={COMPANY_DETAILS.bookingUrl}
+                  href={service.bookingUrl || COMPANY_DETAILS.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-sm font-bold group/link uppercase tracking-widest pb-2 w-fit transition-all duration-200"

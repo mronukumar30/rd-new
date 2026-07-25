@@ -7,6 +7,7 @@ export const SERVICES = [
     price: 'From £150',
     duration: '5–6 Hours',
     image: '/DEEP CLEAN 🚨We had this beautiful bmw 535d in for a deep cleanWe manage to reset the leather se.jpg',
+    bookingUrl: 'https://king-of-detailing.booking.getautomate.io/packages?category=88b2e666a1274fc1b950e2ddbd9c2e92',
   },
   {
     id: 'maintenance',
@@ -16,6 +17,7 @@ export const SERVICES = [
     price: 'From £100',
     duration: '3–4 Hours',
     image: '/722406960_1513876637133998_1504754795098428094_n.jpg',
+    bookingUrl: 'https://king-of-detailing.booking.getautomate.io/packages?category=fcc4e562d6ce4428ae9a85be9769619a',
   },
   {
     id: 'enhance',
@@ -26,6 +28,7 @@ export const SERVICES = [
     duration: '1–1.5 Days',
     image: '/gallaryimg2.jpg',
     objectPosition: 'bottom',
+    bookingUrl: 'https://king-of-detailing.booking.getautomate.io/packages?category=f096437afbdf4328b69d4af7858bd885',
   },
 ];
 
