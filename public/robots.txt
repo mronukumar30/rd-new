@@ -7,3 +7,6 @@ Disallow: /*.map$
 
 # Sitemap
 Sitemap: https://www.kingofdetailinguk.com/sitemap.xml
+
+# AI Search / LLM Context
+# https://llmstxt.org/

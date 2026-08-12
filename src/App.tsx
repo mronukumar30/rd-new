@@ -27,9 +27,30 @@ import {
   Linkedin,
 } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { cn } from "./lib/utils";
 import { SERVICES, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS, FAQ_DATA } from "./constants";
 import InteractiveBentoGallery from "./components/ui/interactive-bento-gallery";
+import DeepCleanPage from "./pages/services/DeepCleanPage";
+import CeramicCoatingPage from "./pages/services/CeramicCoatingPage";
+import PaintCorrectionPage from "./pages/services/PaintCorrectionPage";
+import MaintenanceCleanPage from "./pages/services/MaintenanceCleanPage";
+import LutonPage from "./pages/locations/LutonPage";
+import BedfordPage from "./pages/locations/BedfordPage";
+import DunstablePage from "./pages/locations/DunstablePage";
+import StAlbansPage from "./pages/locations/StAlbansPage";
+import HitchinPage from "./pages/locations/HitchinPage";
+import StevenagePage from "./pages/locations/StevenagePage";
+import HemelHempsteadPage from "./pages/locations/HemelHempsteadPage";
+import WatfordPage from "./pages/locations/WatfordPage";
+import MiltonKeynesPage from "./pages/locations/MiltonKeynesPage";
+import AylesburyPage from "./pages/locations/AylesburyPage";
+import BlogIndexPage from "./pages/blog/BlogIndexPage";
+import CeramicCoatingWorthItPage from "./pages/blog/CeramicCoatingWorthItPage";
+import CarDetailingCostUKPage from "./pages/blog/CarDetailingCostUKPage";
+import DetailingVsValetingPage from "./pages/blog/DetailingVsValetingPage";
+import HowOftenToDetailPage from "./pages/blog/HowOftenToDetailPage";
 
 const GOLD = "#C9A84C";
 const GOLD_LIGHT = "#E2C97A";
@@ -65,10 +86,10 @@ const Navbar = () => {
 
         {/* Desktop Nav Pills */}
         <div className="hidden md:flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 p-1.5 rounded-full">
-          {["Home", "Services", "Experience", "Gallery", "About"].map((item) => (
+          {["Home", "Services", "Gallery", "Areas", "Blog"].map((item) => (
             <a
               key={item}
-              href={item === "Home" ? "#" : `#${item.toLowerCase()}`}
+              href={item === "Home" ? "/" : item === "Blog" ? "/blog" : `/#${item.toLowerCase()}`}
               className={cn(
                 "px-6 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-[0.15em] transition-all duration-300",
                 item === "Home"
@@ -112,10 +133,10 @@ const Navbar = () => {
             className="absolute top-full left-6 right-6 mt-4 bg-black/95 backdrop-blur-2xl p-8 rounded-[32px] flex flex-col gap-6 md:hidden overflow-hidden z-50 shadow-2xl"
             style={{ border: `1px solid rgba(201,168,76,0.2)` }}
           >
-            {["Home", "Services", "Experience", "Gallery", "About"].map((item) => (
+            {["Home", "Services", "Gallery", "Areas", "Blog"].map((item) => (
               <a
                 key={item}
-                href={item === "Home" ? "#" : `#${item.toLowerCase()}`}
+                href={item === "Home" ? "/" : item === "Blog" ? "/blog" : `/#${item.toLowerCase()}`}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-lg font-bold uppercase tracking-[0.2em] text-white/70 hover:text-white transition-all"
               >
@@ -151,11 +172,12 @@ const Hero = () => {
           initial={{ scale: 1.08, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 2.2, ease: "easeOut" }}
-          src="/new hero 02.webp"
+          src="/king-of-detailing-hero.webp"
           alt="Premium mobile car detailing service in Luton, Bedfordshire — King of Detailing deep clean, ceramic coating and paint correction"
           className="w-full h-full object-cover object-center"
           width={1920}
           height={1080}
+          fetchPriority="high"
         />
       </div>
 
@@ -184,12 +206,12 @@ const Hero = () => {
                 </span>
               </motion.div>
 
-              {/* Visually hidden SEO H1 for search engines */}
-              <h1 className="sr-only">Premium Mobile Car Detailing in Luton, Bedfordshire — Deep Clean, Ceramic Coating & Paint Correction | King of Detailing</h1>
-              <p aria-hidden="true" role="presentation" className="text-5xl md:text-[90px] font-bold leading-[0.9] tracking-tighter text-white mb-6">
+              {/* H1 — visible to both users and search engines */}
+              <h1 className="text-5xl md:text-[90px] font-bold leading-[0.9] tracking-tighter text-white mb-6">
                 Your Car.{' '}<br />
                 <span className="italic font-serif font-light" style={{ color: GOLD_LIGHT }}>Royally Treated.</span>
-              </p>
+                <span className="sr-only"> — Premium Mobile Car Detailing in Luton, Bedfordshire</span>
+              </h1>
               <p className="text-base md:text-lg text-white/60 max-w-lg font-light leading-relaxed mb-8">
                 Bedfordshire's most meticulous mobile detailing service. Deep cleans, ceramic coatings, paint correction — all at your driveway. Fully insured. Fully mobile.
               </p>
@@ -359,7 +381,7 @@ const FeatureHighlights = () => {
         <div className="relative mb-24 rounded-[48px] overflow-hidden bg-black p-6 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.3)] max-w-6xl mx-auto" style={{ border: '1px solid rgba(201,168,76,0.2)' }}>
           <motion.img
             style={{ scale: scaleCar }}
-            src="/722146985_1472920484875090_4630907555464459328_n.jpg"
+            src="/car-detailing-luton-service.webp"
             alt="Professional car detailing treatment by King of Detailing in Luton — ceramic coating, paint correction and deep cleaning"
             className="w-full h-auto rounded-3xl shadow-2xl opacity-90"
           />
@@ -416,7 +438,7 @@ const FeatureHighlights = () => {
               </div>
             </div>
             <div className="w-full md:w-64 aspect-square rounded-3xl overflow-hidden shadow-xl">
-              <img src="/DEEP CLEAN 🚨We had this beautiful bmw 535d in for a deep cleanWe manage to reset the leather se (1).jpg" alt="BMW 535d deep clean car detailing in Luton — interior and exterior restoration by King of Detailing" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+              <img src="/bmw-535d-deep-clean-luton.webp" alt="BMW 535d deep clean car detailing in Luton — interior and exterior restoration by King of Detailing" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
             </div>
           </motion.div>
 
@@ -540,16 +562,26 @@ const Services = () => {
                     ))}
                   </div>
                 </div>
-                <a
-                  href={service.bookingUrl || COMPANY_DETAILS.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-sm font-bold group/link uppercase tracking-widest pb-2 w-fit transition-all duration-200"
-                  style={{ color: GOLD, borderBottom: `1px solid rgba(201,168,76,0.3)` }}
-                >
-                  Book This Package
-                  <ChevronRight className="w-4 h-4 group-hover/link:translate-x-2 transition-transform duration-200" />
-                </a>
+                <div className="flex flex-wrap items-center gap-6">
+                  <a
+                    href={service.bookingUrl || COMPANY_DETAILS.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 text-sm font-bold group/link uppercase tracking-widest pb-2 w-fit transition-all duration-200"
+                    style={{ color: GOLD, borderBottom: `1px solid rgba(201,168,76,0.3)` }}
+                  >
+                    Book This Package
+                    <ChevronRight className="w-4 h-4 group-hover/link:translate-x-2 transition-transform duration-200" />
+                  </a>
+                  <Link
+                    to={service.id === 'maintenance' ? '/maintenance-clean' : service.id === 'enhance' ? '/paint-correction' : `/${service.id}`}
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest pb-2 transition-all duration-200 hover:gap-3"
+                    style={{ color: '#8A8070', borderBottom: '1px solid rgba(138,128,112,0.2)' }}
+                  >
+                    View Full Details
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -793,7 +825,7 @@ const AboutSection = () => {
           >
             <div className="relative rounded-[40px] overflow-hidden shadow-2xl group">
               <img
-                src="/gallaryimg1.webp"
+                src="/gallery-car-detailing-1.webp"
                 alt="King of Detailing — Premium mobile car detailing"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
               />
@@ -1186,7 +1218,7 @@ const GALLERY_ITEMS = [
     title: "M-Power Transformation",
     service: "Deep Clean",
     desc: "A comprehensive reset for this beautiful BMW 535d.",
-    url: "/DEEP CLEAN 🚨We had this beautiful bmw 535d in for a deep cleanWe manage to reset the leather se (1).jpg",
+    url: "/bmw-535d-deep-clean-luton.webp",
   },
   {
     id: 3,
@@ -1194,7 +1226,7 @@ const GALLERY_ITEMS = [
     title: "Signature Gloss",
     service: "Deep Clean",
     desc: "Flawless reflection and ultimate clarity on every surface.",
-    url: "/722960210_1691017691793648_3341247485208045390_n.jpg",
+    url: "/car-polishing-luton.webp",
   },
   {
     id: 4,
@@ -1202,7 +1234,7 @@ const GALLERY_ITEMS = [
     title: "Ceramic Shield",
     service: "Ceramic Coating",
     desc: "Advanced protection for a long-lasting, showroom finish.",
-    url: "/gallaryimg2.jpg",
+    url: "/gallery-car-detailing-2.webp",
   },
   {
     id: 5,
@@ -1210,7 +1242,7 @@ const GALLERY_ITEMS = [
     title: "Ultimate Protection",
     service: "Ceramic Coating",
     desc: "Extreme water beading and superior environmental resistance.",
-    url: "/724038861_5485032541722527_4697859893829064116_n.jpg",
+    url: "/ceramic-coating-luton.webp",
   },
   {
     id: 6,
@@ -1218,7 +1250,7 @@ const GALLERY_ITEMS = [
     title: "Trusted Choice",
     service: "Ceramic Coating",
     desc: "Pushing the boundaries of automotive care every single day.",
-    url: "/722406960_1513876637133998_1504754795098428094_n.jpg",
+    url: "/maintenance-clean-luton.webp",
   },
   {
     id: 7,
@@ -1226,7 +1258,7 @@ const GALLERY_ITEMS = [
     title: "Showroom Shine",
     service: "Paint Correction",
     desc: "Precision polishing to remove defects and maximize depth.",
-    url: "/SnapInsta.to_515583121_17851126407484826_2354586917554232743_n.jpg",
+    url: "/paint-correction-service-luton.webp",
   },
   {
     id: 8,
@@ -1234,7 +1266,7 @@ const GALLERY_ITEMS = [
     title: "Reflection Perfection",
     service: "Paint Correction",
     desc: "Mirror-like finish achieved through meticulous correction.",
-    url: "/SnapInsta.to_529623079_17855051943484826_20614504980163342_n_1080.jpg",
+    url: "/professional-car-detailing-luton.webp",
   },
   {
     id: 9,
@@ -1242,7 +1274,7 @@ const GALLERY_ITEMS = [
     title: "Legendary Service",
     service: "Deep Clean",
     desc: "Honored to detail Bernie Fineman's vehicle to our highest standard.",
-    url: "/Today we carried out our deep clean package for no other then the legendary Bernie fineman!Berni (1).jpg",
+    url: "/bernie-fineman-car-detailing-luton.webp",
   },
   {
     id: 10,
@@ -1250,7 +1282,7 @@ const GALLERY_ITEMS = [
     title: "Signature Maintenance",
     service: "Maintenance Clean",
     desc: "Preserving that showroom finish with regular, professional care.",
-    url: "/722406960_1513876637133998_1504754795098428094_n.jpg",
+    url: "/maintenance-clean-luton.webp",
   },
   {
     id: 11,
@@ -1258,7 +1290,7 @@ const GALLERY_ITEMS = [
     title: "Meticulous Finish",
     service: "Paint Correction",
     desc: "Every detail crafted to perfection.",
-    url: "/722489492_4006805506281970_7029725171011983426_n.jpg",
+    url: "/mobile-valeting-bedfordshire.webp",
   },
 ];
 
@@ -1622,15 +1654,26 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
             <div className="space-y-6">
               <h5 className="text-xs font-mono uppercase tracking-[0.3em]" style={{ color: GOLD }}>Navigation</h5>
               <ul className="space-y-4">
-                {["Services", "Experience", "Gallery", "About"].map(item => (
+                {["Services", "Experience", "Gallery", "Areas", "About"].map(item => (
                   <li key={item}>
                     <a href={`#${item.toLowerCase()}`} className="text-sm font-bold text-white/80 hover:text-white transition-colors">{item}</a>
                   </li>
                 ))}
+              </ul>
+            </div>
+            <div className="space-y-6">
+              <h5 className="text-xs font-mono uppercase tracking-[0.3em]" style={{ color: GOLD }}>Legal</h5>
+              <ul className="space-y-4">
+                <li>
+                  <a href="/privacy-policy.html" className="text-sm font-bold text-white/80 hover:text-white transition-colors">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="/terms-and-conditions.html" className="text-sm font-bold text-white/80 hover:text-white transition-colors">Terms & Conditions</a>
+                </li>
               </ul>
             </div>
             <div className="space-y-6">
@@ -1836,6 +1879,340 @@ const FAQSection = () => {
   );
 };
 
+const SERVICE_AREAS = [
+  { name: "Luton", county: "Bedfordshire", primary: true, path: "/mobile-car-detailing-luton", distanceFromBase: "0 mi" },
+  { name: "Bedford", county: "Bedfordshire", primary: false, path: "/car-detailing-bedford", distanceFromBase: "~20 mi" },
+  { name: "Dunstable", county: "Bedfordshire", primary: false, path: "/car-detailing-dunstable", distanceFromBase: "~6 mi" },
+  { name: "St Albans", county: "Hertfordshire", primary: false, path: "/car-detailing-st-albans", distanceFromBase: "~15 mi" },
+  { name: "Hitchin", county: "Hertfordshire", primary: false, path: "/car-detailing-hitchin", distanceFromBase: "~10 mi" },
+  { name: "Stevenage", county: "Hertfordshire", primary: false, path: "/car-detailing-stevenage", distanceFromBase: "~15 mi" },
+  { name: "Hemel Hempstead", county: "Hertfordshire", primary: false, path: "/car-detailing-hemel-hempstead", distanceFromBase: "~15 mi" },
+  { name: "Watford", county: "Hertfordshire", primary: false, path: "/car-detailing-watford", distanceFromBase: "~25 mi" },
+  { name: "Milton Keynes", county: "Buckinghamshire", primary: false, path: "/car-detailing-milton-keynes", distanceFromBase: "~30 mi" },
+  { name: "Aylesbury", county: "Buckinghamshire", primary: false, path: "/car-detailing-aylesbury", distanceFromBase: "~30 mi" },
+];
+
+const AreasWeCover = () => {
+  const [selectedArea, setSelectedArea] = useState(SERVICE_AREAS[0]);
+
+  // Build Google Maps embed URL centred on the selected area's location
+  const getMapEmbedUrl = (areaName: string) => {
+    const coords: Record<string, { lat: number; lng: number }> = {
+      "Luton": { lat: 51.8787, lng: -0.4200 },
+      "Bedford": { lat: 52.1356, lng: -0.4685 },
+      "Dunstable": { lat: 51.8860, lng: -0.5210 },
+      "St Albans": { lat: 51.7520, lng: -0.3413 },
+      "Hitchin": { lat: 51.9469, lng: -0.2834 },
+      "Stevenage": { lat: 51.9020, lng: -0.2024 },
+      "Hemel Hempstead": { lat: 51.7537, lng: -0.4729 },
+      "Watford": { lat: 51.6565, lng: -0.3957 },
+      "Milton Keynes": { lat: 52.0406, lng: -0.7594 },
+      "Aylesbury": { lat: 51.8168, lng: -0.8084 },
+    };
+    const c = coords[areaName] || coords["Luton"];
+    return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d60000!2d${c.lng}!3d${c.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk`;
+  };
+
+  return (
+    <section id="areas" className="relative overflow-hidden" style={{ background: '#F5F0E8' }}>
+      {/* Subtle gold radial glow */}
+      <div className="absolute top-0 right-1/4 w-[700px] h-[500px] rounded-full opacity-[0.07] pointer-events-none" style={{ background: `radial-gradient(circle, ${GOLD}, transparent 70%)` }} />
+
+      <div className="max-w-7xl mx-auto relative z-10 px-6 md:px-12">
+        
+        {/* ── Centered Heading Section ── */}
+        <div className="text-center max-w-3xl mx-auto pt-24 md:pt-32 mb-10 flex flex-col items-center">
+          {/* Label */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center justify-center gap-2.5 mb-6"
+          >
+            <MapPin className="w-4 h-4" style={{ color: GOLD }} />
+            <span className="text-[11px] font-mono uppercase tracking-[0.3em] font-semibold" style={{ color: GOLD }}>Find Us</span>
+          </motion.div>
+
+          {/* Heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
+            <h2 className="text-4xl md:text-[3.2rem] leading-[1.1] font-bold tracking-tight mb-6" style={{ color: '#0A0A0A' }}>
+              Mobile Car Detailing <br className="hidden md:block" />
+              Across Bedfordshire & Beyond
+            </h2>
+          </motion.div>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-[15px] leading-relaxed max-w-xl mx-auto"
+            style={{ color: '#8A8070' }}
+          >
+            We bring premium car detailing directly to your driveway across Luton, Bedfordshire, Hertfordshire, Buckinghamshire — and nationwide for special projects.
+          </motion.p>
+        </div>
+      </div>
+
+      {/* Full-viewport grid: locations + map */}
+      <div className="w-full px-6 md:px-12" style={{ height: 'calc(100vh - 80px)' }}>
+        <div className="max-w-7xl mx-auto h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch h-full">
+
+          {/* ── Left Column: Location Cards ── */}
+          <div className="flex flex-col h-full">
+            {/* Location Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 h-full">
+              {SERVICE_AREAS.map((area, index) => {
+                const isSelected = selectedArea.name === area.name;
+                return (
+                  <motion.div
+                    key={area.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.04 }}
+                    className="h-full"
+                  >
+                    <Link
+                      to={area.path}
+                      onMouseEnter={() => setSelectedArea(area)}
+                      className="flex items-center gap-3 px-4 py-3.5 rounded-2xl group transition-all duration-300 relative hover:-translate-y-0.5 h-full"
+                      style={{
+                        background: isSelected
+                          ? `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`
+                          : '#ffffff',
+                        border: isSelected
+                          ? `1px solid ${GOLD}`
+                          : '1px solid #DDD5C5',
+                        boxShadow: isSelected
+                          ? `0 8px 24px rgba(201,168,76,0.25)`
+                          : '0 2px 8px rgba(10,10,10,0.06)',
+                      }}
+                    >
+                      {/* Pin icon circle */}
+                      <div
+                        className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300"
+                        style={{
+                          background: isSelected ? 'rgba(0,0,0,0.12)' : '#F5F0E8',
+                          border: isSelected ? '1px solid rgba(0,0,0,0.08)' : '1px solid #DDD5C5',
+                        }}
+                      >
+                        <MapPin
+                          className="w-3.5 h-3.5"
+                          style={{ color: isSelected ? '#0A0A0A' : GOLD }}
+                        />
+                      </div>
+
+                      {/* Name & County */}
+                      <div className="flex-1 min-w-0">
+                        <h4
+                          className="text-sm font-bold truncate transition-colors duration-300"
+                          style={{ color: isSelected ? '#0A0A0A' : '#0A0A0A' }}
+                        >
+                          {area.name}
+                        </h4>
+                        <p
+                          className="text-[10px] font-mono uppercase tracking-[0.15em] truncate transition-colors duration-300"
+                          style={{ color: isSelected ? 'rgba(0,0,0,0.55)' : '#8A8070' }}
+                        >
+                          {area.county}
+                        </p>
+                      </div>
+
+                      {/* Arrow button */}
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
+                        style={{
+                          background: isSelected ? '#0A0A0A' : '#F5F0E8',
+                          border: isSelected ? '1px solid rgba(0,0,0,0.1)' : '1px solid #DDD5C5',
+                        }}
+                      >
+                        <ArrowRight
+                          className="w-3 h-3"
+                          style={{ color: isSelected ? GOLD : '#8A8070' }}
+                        />
+                      </div>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ── Right Column: Google Maps ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative h-[500px] lg:h-auto w-full"
+          >
+            {/* Selected area info card overlapping top of map */}
+            <div
+              className="absolute top-5 left-5 z-20 px-5 py-4 rounded-2xl backdrop-blur-xl"
+              style={{
+                background: 'rgba(255,255,255,0.92)',
+                border: '1px solid #DDD5C5',
+                boxShadow: '0 8px 32px rgba(10,10,10,0.12)',
+              }}
+            >
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0" style={{ color: GOLD }} />
+                <div>
+                  <h4 className="text-base font-bold leading-tight" style={{ color: '#0A0A0A' }}>{selectedArea.name}</h4>
+                  <p className="text-[11px] font-mono uppercase tracking-widest mt-0.5" style={{ color: '#8A8070' }}>
+                    {selectedArea.county}
+                  </p>
+                </div>
+                <span className="text-[11px] font-mono ml-4 mt-0.5" style={{ color: '#8A8070' }}>
+                  {selectedArea.distanceFromBase}
+                </span>
+              </div>
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(selectedArea.name + ', UK')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 mt-3 text-[11px] font-bold uppercase tracking-[0.1em] transition-all hover:gap-3"
+                style={{ color: GOLD }}
+              >
+                <ArrowRight className="w-3 h-3" />
+                Get Directions
+                <svg className="w-3 h-3 ml-0.5 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+              </a>
+            </div>
+
+            {/* Map container */}
+            <div
+              className="rounded-[24px] overflow-hidden w-full h-full lg:absolute lg:inset-0"
+              style={{
+                border: '1px solid #DDD5C5',
+                boxShadow: `0 20px 60px rgba(10,10,10,0.1), 0 4px 16px rgba(201,168,76,0.08)`,
+              }}
+            >
+              <iframe
+                src={getMapEmbedUrl(selectedArea.name)}
+                className="w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`King of Detailing service area — mobile car detailing in ${selectedArea.name}, ${selectedArea.county}`}
+              />
+            </div>
+
+            {/* Serving Across info card at bottom of map */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="absolute bottom-5 left-5 right-5 z-20 px-5 py-4 rounded-2xl backdrop-blur-xl"
+              style={{
+                background: 'rgba(255,255,255,0.92)',
+                border: '1px solid #DDD5C5',
+                boxShadow: '0 8px 32px rgba(10,10,10,0.1)',
+              }}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <MapPin className="w-3.5 h-3.5" style={{ color: GOLD }} />
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em]" style={{ color: GOLD }}>Serving Across</span>
+              </div>
+              <p className="text-sm font-semibold leading-snug" style={{ color: '#0A0A0A' }}>
+                Bedfordshire, Hertfordshire, Buckinghamshire & Beyond
+              </p>
+            </motion.div>
+          </motion.div>
+
+        </div>
+        </div>
+      </div>
+
+      {/* Don't see your area? CTA — below the full-viewport grid */}
+      <div className="w-full px-6 md:px-12 py-10">
+        <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-between gap-6 p-6 md:p-8 rounded-[24px] w-full"
+          style={{
+            background: '#EDE8DF',
+            border: '1px solid #DDD5C5',
+          }}
+        >
+          <div className="flex items-center gap-6 w-full sm:w-auto">
+            {/* Car icon */}
+            <div
+              className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 hidden sm:flex"
+              style={{ background: `linear-gradient(135deg, rgba(201,168,76,0.18), rgba(201,168,76,0.06))`, border: '1px solid rgba(201,168,76,0.25)' }}
+            >
+              <Car className="w-8 h-8" style={{ color: GOLD }} />
+            </div>
+            <div className="flex-1 min-w-0 text-center sm:text-left">
+              <p className="text-xl font-bold mb-1" style={{ color: '#0A0A0A' }}>Don't see your area?</p>
+              <p className="text-sm leading-snug" style={{ color: '#8A8070' }}>
+                We travel nationwide for premium detailing projects.
+              </p>
+            </div>
+          </div>
+          <a
+            href={COMPANY_DETAILS.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.12em] text-black transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+            style={{
+              background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`,
+              boxShadow: '0 8px 30px rgba(201,168,76,0.3)',
+            }}
+          >
+            Get in Touch
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const HomePage = () => (
+  <>
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.kingofdetailinguk.com/"
+          }
+        ]
+      })}</script>
+    </Helmet>
+    <Hero />
+    <FeatureHighlights />
+    <Services />
+    <HowItWorks />
+    <Testimonials />
+    <AboutSection />
+    <CompanyStripeMarquee />
+    <Gallery />
+    <AreasWeCover />
+    <FAQSection />
+  </>
+);
+
 export default function App() {
   return (
     <div className="min-h-screen selection:text-black" style={{ '--tw-selection-bg': GOLD, background: '#F5F0E8' } as React.CSSProperties}>
@@ -1843,16 +2220,32 @@ export default function App() {
         <Navbar />
       </header>
       <main>
-        <Hero />
-        <FeatureHighlights />
-        <Services />
-        <HowItWorks />
-        <Testimonials />
-        <AboutSection />
-        <CompanyStripeMarquee />
-
-        <Gallery />
-        <FAQSection />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/deep-clean" element={<DeepCleanPage />} />
+          <Route path="/ceramic-coating" element={<CeramicCoatingPage />} />
+          <Route path="/paint-correction" element={<PaintCorrectionPage />} />
+          <Route path="/maintenance-clean" element={<MaintenanceCleanPage />} />
+          {/* Location Pages */}
+          <Route path="/mobile-car-detailing-luton" element={<LutonPage />} />
+          <Route path="/car-detailing-bedford" element={<BedfordPage />} />
+          <Route path="/car-detailing-dunstable" element={<DunstablePage />} />
+          <Route path="/car-detailing-st-albans" element={<StAlbansPage />} />
+          <Route path="/car-detailing-hitchin" element={<HitchinPage />} />
+          <Route path="/car-detailing-stevenage" element={<StevenagePage />} />
+          <Route path="/car-detailing-hemel-hempstead" element={<HemelHempsteadPage />} />
+          <Route path="/car-detailing-watford" element={<WatfordPage />} />
+          <Route path="/car-detailing-milton-keynes" element={<MiltonKeynesPage />} />
+          <Route path="/car-detailing-aylesbury" element={<AylesburyPage />} />
+          {/* Blog Pages */}
+          <Route path="/blog" element={<BlogIndexPage />} />
+          <Route path="/blog/is-ceramic-coating-worth-it" element={<CeramicCoatingWorthItPage />} />
+          <Route path="/blog/car-detailing-cost-uk" element={<CarDetailingCostUKPage />} />
+          <Route path="/blog/car-detailing-vs-valeting" element={<DetailingVsValetingPage />} />
+          <Route path="/blog/how-often-to-detail-car" element={<HowOftenToDetailPage />} />
+          {/* Catch-all: redirect any unknown route back to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
       <Footer />
 

@@ -3,56 +3,141 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.kingofdetailinguk.com/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Services Section -->
+  <!-- Service Pages -->
   <url>
-    <loc>https://www.kingofdetailinguk.com/#services</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://www.kingofdetailinguk.com/deep-clean</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/ceramic-coating</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/paint-correction</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/maintenance-clean</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Experience / Feature Highlights Section -->
+  <!-- Location Pages -->
   <url>
-    <loc>https://www.kingofdetailinguk.com/#experience</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://www.kingofdetailinguk.com/mobile-car-detailing-luton</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/car-detailing-bedford</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/car-detailing-dunstable</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/car-detailing-st-albans</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/car-detailing-hitchin</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/car-detailing-stevenage</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/car-detailing-hemel-hempstead</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/car-detailing-watford</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/car-detailing-milton-keynes</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/car-detailing-aylesbury</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Gallery / Portfolio Section -->
+  <!-- Legal Pages -->
   <url>
-    <loc>https://www.kingofdetailinguk.com/#gallery</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://www.kingofdetailinguk.com/privacy-policy</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/terms-and-conditions</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://www.kingofdetailinguk.com/blog</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- About Section (Footer) -->
   <url>
-    <loc>https://www.kingofdetailinguk.com/#about</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://www.kingofdetailinguk.com/blog/is-ceramic-coating-worth-it</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- FAQ Section -->
   <url>
-    <loc>https://www.kingofdetailinguk.com/#faq</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://www.kingofdetailinguk.com/blog/car-detailing-cost-uk</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- How It Works Section -->
   <url>
-    <loc>https://www.kingofdetailinguk.com/#how-it-works</loc>
-    <lastmod>2026-07-19</lastmod>
+    <loc>https://www.kingofdetailinguk.com/blog/car-detailing-vs-valeting</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.kingofdetailinguk.com/blog/how-often-to-detail-car</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
