@@ -6,7 +6,7 @@ export const SERVICES = [
     description: 'Full interior & exterior detail. Qualifies you for 6 months of regular maintenance cleans every 3–8 weeks.',
     price: 'From £150',
     duration: '5–6 Hours',
-    image: '/premium-car-detailing-luton.webp',
+    image: '/bmw-535d-interior-detailing-luton.webp',
     bookingUrl: 'https://king-of-detailing.booking.getautomate.io/packages?category=88b2e666a1274fc1b950e2ddbd9c2e92',
   },
   {
@@ -26,7 +26,8 @@ export const SERVICES = [
     description: 'Multi-stage machine polishing to erase paint defects and restore depth. Qualifies for long-term maintenance.',
     price: 'From £650',
     duration: '1–1.5 Days',
-    image: '/paint-correction-service-luton.webp',
+    image: '/gallery-car-detailing-2.webp',
+    objectPosition: 'center bottom',
     bookingUrl: 'https://king-of-detailing.booking.getautomate.io/packages?category=f096437afbdf4328b69d4af7858bd885',
   },
   {

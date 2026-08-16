@@ -42,6 +42,7 @@ interface ServicePageProps {
   duration: string;
   heroImage: string;
   heroImageAlt: string;
+  heroImagePosition?: string;
   // Body
   whatIsTitle: string;
   whatIsContent: string[];
@@ -128,12 +129,12 @@ export default function ServicePageTemplate(props: ServicePageProps) {
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+          <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0) 100%)' }} />
           <img
             src={props.heroImage}
             alt={props.heroImageAlt}
             className="w-full h-full object-cover"
+            style={{ objectPosition: props.heroImagePosition || 'center' }}
             width={1920}
             height={1080}
           />

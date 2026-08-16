@@ -19,7 +19,8 @@ export default function PaintCorrectionPage() {
       heroDescription="Swirl marks, light scratches, water etching, and oxidation — our machine polishing process eliminates paintwork defects that hand polishing can't touch. Combined with our 3-year ceramic coating for lasting protection."
       price="From £650"
       duration="1–1.5 Days"
-      heroImage="/paint-correction-service-luton.webp"
+      heroImage="/gallery-car-detailing-2.webp"
+      heroImagePosition="center bottom"
       heroImageAlt="Professional paint correction and machine polishing in Luton — swirl mark removal and mirror-finish results by King of Detailing"
       whatIsTitle="Paint Correction"
       whatIsContent={[
@@ -40,7 +41,7 @@ export default function PaintCorrectionPage() {
         "Professional ceramic coating application (3-year protection)",
         "Full interior deep clean and conditioning",
         "Wheel, arch, and tyre detail",
-        "Engine bay degrease and dress",
+
         "Glass polish and treatment",
         "Aftercare guide and 3-year maintenance plan enrolment"
       ]}
@@ -69,7 +70,7 @@ export default function PaintCorrectionPage() {
         { title: "Machine Polishing", desc: "Single or multi-stage machine polishing using dual-action and rotary polishers with professional compounds and pads. Every panel corrected individually." },
         { title: "Defect Inspection", desc: "Each panel re-inspected under LED lighting after correction to verify complete defect removal. Additional passes applied where needed." },
         { title: "Ceramic Coating", desc: "Once paintwork is perfected, ceramic coating is applied panel by panel to seal and protect the corrected finish for up to 3 years." },
-        { title: "Full Detail & Handover", desc: "Interior deep clean, wheels, engine bay, and final exterior dressing. Vehicle handed over with aftercare guide and maintenance plan." }
+        { title: "Full Detail & Handover", desc: "Interior deep clean, wheels, and final exterior dressing. Vehicle handed over with aftercare guide and maintenance plan." }
       ]}
       faqs={[
         {

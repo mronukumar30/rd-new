@@ -39,7 +39,6 @@ export default function CeramicCoatingPage() {
         "Full interior deep clean and conditioning",
         "Wheel and arch deep clean",
         "Tyre dressing and trim restoration",
-        "Engine bay degrease and dress",
         "Glass polish and treatment",
         "24-hour curing period monitoring",
         "Aftercare guide and maintenance plan enrolment"

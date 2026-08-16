@@ -34,10 +34,10 @@ const SERVICES_OFFERED = [
     path: "/deep-clean",
     price: "From £150",
     duration: "5–6 Hours",
-    description: "Full interior & exterior detail including engine bay. Your car reset to factory-fresh condition.",
+    description: "Full interior & exterior detail. Your car reset to factory-fresh condition.",
     image: "/premium-car-detailing-luton.webp",
     tag: "Flagship Reset",
-    highlights: ["Full Extraction Clean", "Engine Bay Detailed", "Chemical Decontamination", "Ceramic Sealant Finish"],
+    highlights: ["Full Extraction Clean", "Chemical Decontamination", "Ceramic Sealant Finish"],
   },
   {
     name: "Maintenance Clean",

@@ -12,11 +12,11 @@ export default function DeepCleanPage() {
   return (
     <ServicePageTemplate
       title="Deep Clean Car Detailing in Luton | Full Interior & Exterior | King of Detailing"
-      metaDescription="Professional deep clean car detailing in Luton, Bedfordshire. Full interior & exterior detail including engine bay from £150. Fully mobile, fully insured. Book today."
+      metaDescription="Professional deep clean car detailing in Luton, Bedfordshire. Full interior & exterior detail from £150. Fully mobile, fully insured. Book today."
       canonicalPath="/deep-clean"
       serviceName="Deep Clean"
       heroTagline="A Complete Reset for Your Vehicle"
-      heroDescription="Our flagship deep clean is a comprehensive interior and exterior detail that restores your vehicle to a factory-fresh finish. Every surface, every crevice, every detail — meticulously cleaned and restored. Includes engine bay detailing."
+      heroDescription="Our flagship deep clean is a comprehensive interior and exterior detail that restores your vehicle to a factory-fresh finish. Every surface, every crevice, every detail — meticulously cleaned and restored."
       price="From £150"
       duration="5–6 Hours"
       heroImage="/bmw-535d-interior-detailing-luton.webp"
@@ -25,7 +25,7 @@ export default function DeepCleanPage() {
       whatIsContent={[
         "Our deep clean is far more than a car wash. It's a comprehensive, multi-stage detailing process that transforms your vehicle from the inside out. We treat every surface with professional-grade products from Garage Therapy — the same system used in the UK's top detailing studios.",
         "Starting with a full exterior decontamination and snow foam pre-wash, we work through every panel with precision. The interior receives equal attention: seats are deep-cleaned and conditioned, carpets are extracted, plastics are restored, and every air vent, door pocket, and crevice is meticulously detailed.",
-        "The engine bay is included as standard — professionally degreased and dressed to showroom condition. This is the entry point to the King of Detailing experience, and it sets the standard for everything we do.",
+        "This is the entry point to the King of Detailing experience, and it sets the standard for everything we do.",
         "After your deep clean, you qualify for our exclusive maintenance plan — regular scheduled cleans every 3 to 6 weeks that keep your vehicle in perpetual showroom condition for up to 6 months."
       ]}
       whatsIncluded={[
@@ -39,7 +39,7 @@ export default function DeepCleanPage() {
         "Dashboard, console, and trim restoration",
         "Door cards, sills, and boot detail",
         "Glass polish — interior and exterior",
-        "Engine bay degrease and dress",
+
         "Air freshener application",
         "Final wax or sealant protection"
       ]}
@@ -47,7 +47,7 @@ export default function DeepCleanPage() {
         "Restores your car to a like-new, factory-fresh condition inside and out",
         "Removes months or years of built-up grime, stains, and odours",
         "Professional-grade Garage Therapy products — not off-the-shelf car wash soap",
-        "Includes engine bay cleaning — most competitors charge extra for this",
+
         "Qualifies you for our maintenance plan (up to 6 months of scheduled care)",
         "Fully mobile — we come to your driveway in Luton, Bedfordshire, and beyond",
         "Fully insured for complete peace of mind",
@@ -67,7 +67,7 @@ export default function DeepCleanPage() {
         { title: "Decontamination", desc: "Clay bar, tar remover, and iron fallout treatment to remove bonded contaminants that washing alone can't shift." },
         { title: "Hand Wash & Wheels", desc: "Two-bucket method hand wash with pH-neutral shampoo. Wheels, arches, and tyres detailed separately." },
         { title: "Interior Deep Clean", desc: "Full extraction clean of carpets and seats. Leather conditioning. Dashboard, console, door cards, and boot meticulously detailed." },
-        { title: "Engine Bay", desc: "Professional degrease and dress — your engine bay looking factory-fresh." },
+
         { title: "Protection & Finish", desc: "Wax or sealant applied. Glass polished. Tyres dressed. Final inspection to ensure the King standard." }
       ]}
       faqs={[
@@ -85,7 +85,7 @@ export default function DeepCleanPage() {
         },
         {
           question: "What's the difference between a deep clean and a regular car wash?",
-          answer: "A car wash cleans the surface. A deep clean restores every surface inside and out — decontamination, extraction cleaning, leather conditioning, engine bay, and professional protection. It's a completely different level of care."
+          answer: "A car wash cleans the surface. A deep clean restores every surface inside and out — decontamination, extraction cleaning, leather conditioning, and professional protection. It's a completely different level of care."
         },
         {
           question: "Can you remove dog hair and pet odours?",
@@ -96,7 +96,7 @@ export default function DeepCleanPage() {
           answer: "After your deep clean, you qualify for our exclusive maintenance plan. This means regular scheduled cleans every 3 to 6 weeks for up to 6 months, keeping your vehicle in showroom condition without needing another full deep clean."
         }
       ]}
-      schemaDescription="Professional deep clean car detailing service in Luton, Bedfordshire. Full interior and exterior detail including engine bay. Fully mobile, fully insured."
+      schemaDescription="Professional deep clean car detailing service in Luton, Bedfordshire. Full interior and exterior detail. Fully mobile, fully insured."
       schemaMinPrice="150"
       relatedServices={[
         { name: "Maintenance Clean", path: "/maintenance-clean", price: "From £100" },
