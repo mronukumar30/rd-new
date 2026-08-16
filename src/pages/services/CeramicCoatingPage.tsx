@@ -11,22 +11,23 @@ export default function CeramicCoatingPage() {
 
   return (
     <ServicePageTemplate
-      title="Ceramic Coating in Luton, Bedfordshire | 3-Year Protection | King of Detailing"
-      metaDescription="Professional ceramic coating in Luton from £650. 3-year paint protection with machine polishing. Superior water beading, UV resistance & gloss. Fully mobile, fully insured."
+      title="Ceramic Coating in Luton, Bedfordshire | 5-Year Protection | King of Detailing"
+      metaDescription="Professional ceramic coating in Luton from £650. 5-year paint protection with machine polishing. Superior water beading, UV resistance & gloss. Fully mobile, fully insured."
       canonicalPath="/ceramic-coating"
       serviceName="Ceramic Coating"
-      heroTagline="3-Year Protection. Unrivalled Gloss."
-      heroDescription="Our ceramic coating package combines precision machine polishing with advanced ceramic technology to give your vehicle the ultimate protection. Superior water beading, UV resistance, and an unmatched depth of gloss — all backed by up to 3 years of maintenance plan eligibility."
+      heroTagline="5-Year Protection. Unrivalled Gloss."
+      heroDescription="Our ceramic coating package combines precision machine polishing with advanced ceramic technology to give your vehicle the ultimate protection. Superior water beading, UV resistance, and an unmatched depth of gloss — all backed by up to 5 years of maintenance plan eligibility."
       price="From £650"
       duration="1–1.5 Days"
-      heroImage="/gallery-car-detailing-2.webp"
-      heroImageAlt="Professional ceramic coating application in Luton — extreme water beading and mirror-finish protection by King of Detailing"
+      heroImage="/Maintenance is key to keeping your car in the best shape possible month after month!Drop us a me (2).jpg"
+      heroImagePosition="top"
+      heroImageAlt="Porsche 911 GTS ceramic coating in Luton — King of Detailing"
       whatIsTitle="Ceramic Protection"
       whatIsContent={[
         "Ceramic coating is a liquid polymer that chemically bonds with your vehicle's factory paintwork to create a semi-permanent layer of protection. Unlike traditional waxes that wash off after a few weeks, a ceramic coating forms a molecular bond that lasts for years.",
         "Our ceramic coating package isn't just the coating itself — it starts with comprehensive paint preparation. We perform a full machine polish (single or multi-stage depending on the condition of your paintwork) to remove swirl marks, light scratches, water etching, and oxidation. Only then do we apply the ceramic coating to a perfectly prepared surface.",
         "The result is a vehicle with a depth of gloss and reflection that exceeds showroom standards. Water beads and sheets off the surface effortlessly. Environmental contaminants like bird droppings, tree sap, and industrial fallout can't bond to the coated surface, making maintenance dramatically easier.",
-        "Once coated, you qualify for our maintenance plan for up to 3 years — regular scheduled washes that preserve the coating's performance and keep your vehicle looking exceptional between professional details."
+        "Once coated, you qualify for our maintenance plan for up to 5 years — regular scheduled washes that preserve the coating's performance and keep your vehicle looking exceptional between professional details."
       ]}
       whatsIncluded={[
         "Full exterior pre-wash, snow foam, and decontamination",
@@ -44,14 +45,14 @@ export default function CeramicCoatingPage() {
         "Aftercare guide and maintenance plan enrolment"
       ]}
       benefits={[
-        "3-year protective coating that chemically bonds with your paint — no peeling or flaking",
+        "5-year protective coating that chemically bonds with your paint — no peeling or flaking",
         "Extreme water beading — water rolls right off, taking dirt and grime with it",
         "Superior UV protection to prevent colour fading and oxidation",
         "Resistance against bird droppings, tree sap, and industrial fallout",
         "Enhanced depth of colour and mirror-like gloss that exceeds showroom standards",
         "Dramatically easier maintenance — less effort to keep your car clean",
         "Includes full machine polish (paint correction) to remove existing defects",
-        "3 years of maintenance plan eligibility to preserve coating performance",
+        "5 years of maintenance plan eligibility to preserve coating performance",
         "Fully mobile — we come to your driveway in Luton, Bedfordshire, and beyond"
       ]}
       idealFor={[
@@ -77,7 +78,7 @@ export default function CeramicCoatingPage() {
         },
         {
           question: "How long does ceramic coating last?",
-          answer: "Our ceramic coatings provide protection for 12 to 36 months depending on maintenance, exposure, and care. Following our recommended maintenance plan dramatically extends the coating's lifespan and performance."
+          answer: "Our ceramic coatings provide protection for up to 60 months depending on maintenance, exposure, and care. Following our recommended maintenance plan dramatically extends the coating's lifespan and performance."
         },
         {
           question: "Is ceramic coating worth it?",
@@ -96,7 +97,7 @@ export default function CeramicCoatingPage() {
           answer: "After your coating is applied, we enrol you in our maintenance plan — regular scheduled washes every 3 to 6 weeks using pH-neutral, ceramic-safe products. This preserves the coating's hydrophobic properties and gloss for the full lifespan."
         }
       ]}
-      schemaDescription="Professional ceramic coating service in Luton, Bedfordshire. Machine polishing and 3-year ceramic paint protection. Fully mobile, fully insured."
+      schemaDescription="Professional ceramic coating service in Luton, Bedfordshire. Machine polishing and 5-year ceramic paint protection. Fully mobile, fully insured."
       schemaMinPrice="650"
       relatedServices={[
         { name: "Deep Clean", path: "/deep-clean", price: "From £150" },
