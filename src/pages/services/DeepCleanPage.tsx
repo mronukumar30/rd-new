@@ -17,7 +17,7 @@ export default function DeepCleanPage() {
       serviceName="Deep Clean"
       heroTagline="A Complete Reset for Your Vehicle"
       heroDescription="Our flagship deep clean is a comprehensive interior and exterior detail that restores your vehicle to a factory-fresh finish. Every surface, every crevice, every detail — meticulously cleaned and restored."
-      price="£100"
+      price="From £100"
       duration="3–4 Hours"
       heroImage="/724453567_1741795673842657_7212829807354336478_n.jpg"
       heroImageAlt="Professional deep clean car valeting service in Swindon — interior and exterior restoration by RD Valeting"
@@ -81,8 +81,8 @@ export default function DeepCleanPage() {
       schemaDescription="Professional deep clean car valeting service in Swindon, Wiltshire. Full interior and exterior detail. Fully mobile, fully insured."
       schemaMinPrice="100"
       relatedServices={[
-        { name: "Maintenance Wash", path: "/maintenance-clean", price: "£50" },
-        { name: "Mini Valet", path: "/#services", price: "£30" },
+        { name: "Maintenance Wash", path: "/maintenance-clean", price: "From £50" },
+        { name: "Mini Valet", path: "/#services", price: "From £30" },
         { name: "Full Valet & Detailing", path: "/paint-correction", price: "From £150" },
       ]}
     />

@@ -114,26 +114,7 @@
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   }
 
-  /* Seamless hero → body fade to warm cream */
-  .hero-fade-bottom {
-    position: relative;
-  }
-  .hero-fade-bottom::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 70px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(245, 240, 232, 0.4) 60%,
-      #F5F0E8 100%
-    );
-    pointer-events: none;
-    z-index: 20;
-  }
+
 
   /* Red shimmer border effect */
   .gold-border, .red-border {

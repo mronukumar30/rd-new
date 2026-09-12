@@ -259,7 +259,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-black hero-fade-bottom">
+    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-black">
       {/* Background Image Container with rich gradient overlay */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <motion.img
@@ -283,9 +283,6 @@ const Hero = () => {
 
         {/* Top Vignette for navbar readability */}
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 via-black/30 to-transparent z-10 pointer-events-none" />
-
-        {/* Bottom Vignette for section transition */}
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black via-black/50 to-transparent z-10 pointer-events-none" />
       </div>
 
       {/* Main Hero Container */}
@@ -324,7 +321,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-lg mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
           >
-            Professional car valeting at your doorstep. Cleaner cars, brighter days.
+            Bedfordshire's most meticulous mobile detailing service. Deep cleans, ceramic coatings, paint correction — all at your driveway. Fully insured. Fully mobile.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -352,60 +349,7 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* 4 Feature Badges Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
-            className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-6 sm:gap-8 lg:gap-10 mb-8 sm:mb-10"
-          >
-            {/* Feature 1: Showroom Finish */}
-            <div className="flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-white/85 flex-shrink-0" />
-              <div className="flex flex-col leading-tight">
-                <span className="text-xs sm:text-[13px] font-semibold text-white/95">Showroom</span>
-                <span className="text-xs sm:text-[13px] font-semibold text-white/95">Finish</span>
-              </div>
-            </div>
 
-            {/* Feature 2: At Your Doorstep */}
-            <div className="flex items-center gap-3">
-              <HomeIcon className="w-5 h-5 text-white/85 flex-shrink-0" />
-              <div className="flex flex-col leading-tight">
-                <span className="text-xs sm:text-[13px] font-semibold text-white/95">At Your</span>
-                <span className="text-xs sm:text-[13px] font-semibold text-white/95">Doorstep</span>
-              </div>
-            </div>
-
-            {/* Feature 3: Premium Products */}
-            <div className="flex items-center gap-3">
-              <svg
-                className="w-5 h-5 text-white/85 flex-shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="9" />
-                <path d="m4.93 4.93 14.14 14.14" />
-              </svg>
-              <div className="flex flex-col leading-tight">
-                <span className="text-xs sm:text-[13px] font-semibold text-white/95">Premium</span>
-                <span className="text-xs sm:text-[13px] font-semibold text-white/95">Products</span>
-              </div>
-            </div>
-
-            {/* Feature 4: Trusted & Reliable */}
-            <div className="flex items-center gap-3">
-              <ShieldCheck className="w-5 h-5 text-white/85 flex-shrink-0" />
-              <div className="flex flex-col leading-tight">
-                <span className="text-xs sm:text-[13px] font-semibold text-white/95">Trusted</span>
-                <span className="text-xs sm:text-[13px] font-semibold text-white/95">&amp; Reliable</span>
-              </div>
-            </div>
-          </motion.div>
         </div>
 
         {/* Bottom Bar: Reviews Avatar Stack (Left) & Location Tag (Right) */}
@@ -472,6 +416,87 @@ const Hero = () => {
     </section>
   );
 };
+
+const OverviewTabsSection = () => {
+  return (
+    <section className="py-16 md:py-24 px-6 md:px-12" style={{ background: '#F5F0E8' }}>
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* Left Column: Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-5 relative group"
+          >
+            <div className="relative rounded-[32px] md:rounded-[40px] overflow-hidden border border-black/10 shadow-[0_20px_50px_rgba(0,0,0,0.12)]">
+              <img
+                src="/719797548_2247556616014681_7158635886210539952_n.jpg"
+                alt="RD Valeting Detailing Care"
+                className="w-full h-[380px] sm:h-[460px] lg:h-[520px] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-black/40 backdrop-blur-md border border-white/20 text-white">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-[#DC2626] animate-pulse" />
+                  <span className="text-xs sm:text-sm font-bold tracking-wide uppercase font-mono">
+                    Uncompromised Quality
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Title, Description & Feature Highlights (instead of button) */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="lg:col-span-7 flex flex-col justify-center"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-[38px] lg:text-[42px] font-bold text-[#0A0A0A] leading-[1.22] tracking-tight">
+              To deliver flawless finishes, exceptional customer satisfaction, and complete peace of mind with every valet.
+            </h2>
+            
+            <p className="mt-6 text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed font-normal">
+              Every car is treated with master care. Using multi-stage safe wash methods, pH-neutral chemicals, and ultra-soft microfibres, we ensure your vehicle looks immaculate without any swirl marks or compromise.
+            </p>
+
+            {/* In place of button: Feature Highlights / Pillars Grid */}
+            <div className="mt-8 pt-8 border-t border-gray-300/80 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="p-4 rounded-2xl bg-white/70 border border-gray-200/80 shadow-sm flex flex-col gap-2 hover:bg-white hover:shadow-md transition-all duration-300">
+                <div className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center text-[#DC2626]">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <h4 className="font-bold text-[#0A0A0A] text-sm">Safe Wash Method</h4>
+                <p className="text-xs text-gray-600 leading-snug">pH-neutral chemicals &amp; swirl-free microfibre care</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/70 border border-gray-200/80 shadow-sm flex flex-col gap-2 hover:bg-white hover:shadow-md transition-all duration-300">
+                <div className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center text-[#DC2626]">
+                  <HomeIcon className="w-5 h-5" />
+                </div>
+                <h4 className="font-bold text-[#0A0A0A] text-sm">At Your Doorstep</h4>
+                <p className="text-xs text-gray-600 leading-snug">Self-contained unit with onboard power &amp; water</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/70 border border-gray-200/80 shadow-sm flex flex-col gap-2 hover:bg-white hover:shadow-md transition-all duration-300">
+                <div className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center text-[#DC2626]">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <h4 className="font-bold text-[#0A0A0A] text-sm">Guaranteed Shine</h4>
+                <p className="text-xs text-gray-600 leading-snug">Showroom quality finish with uncompromised standard</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 
 
 const Services = () => {
@@ -2255,6 +2280,7 @@ const HomePage = () => (
       })}</script>
     </Helmet>
     <Hero />
+    <OverviewTabsSection />
     <Services />
     <HowItWorks />
     <Testimonials />

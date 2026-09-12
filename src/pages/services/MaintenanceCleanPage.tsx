@@ -17,7 +17,7 @@ export default function MaintenanceCleanPage() {
       serviceName="Maintenance Wash"
       heroTagline="Showroom Condition. Every Time."
       heroDescription="A quick and effective clean to keep your car fresh, shiny and well-maintained. Perfect for regular upkeep on prestige and daily vehicles across Swindon and Wiltshire."
-      price="£50"
+      price="From £50"
       duration="1.5–2 Hours"
       heroImage="/719890908_2222286848526617_3057517277440017740_n.jpg"
       heroImageAlt="Professional mobile maintenance wash in Swindon — regular scheduled detailing service by RD Valeting to maintain showroom condition"
@@ -79,8 +79,8 @@ export default function MaintenanceCleanPage() {
       schemaDescription="Regular maintenance car wash service in Swindon, Wiltshire. Scheduled professional care to maintain showroom condition. Fully mobile, fully insured."
       schemaMinPrice="50"
       relatedServices={[
-        { name: "Deep Clean", path: "/deep-clean", price: "£100" },
-        { name: "Mini Valet", path: "/#services", price: "£30" },
+        { name: "Deep Clean", path: "/deep-clean", price: "From £100" },
+        { name: "Mini Valet", path: "/#services", price: "From £30" },
         { name: "Full Valet & Detailing", path: "/paint-correction", price: "From £150" },
       ]}
     />

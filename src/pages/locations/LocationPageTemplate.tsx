@@ -32,7 +32,7 @@ const SERVICES_OFFERED = [
   {
     name: "Maintenance Wash",
     path: "/maintenance-clean",
-    price: "£50",
+    price: "From £50",
     duration: "1.5–2 Hours",
     description: "Regular upkeep to keep your car fresh, shiny and decontaminated.",
     image: "/719890908_2222286848526617_3057517277440017740_n.jpg",
@@ -42,7 +42,7 @@ const SERVICES_OFFERED = [
   {
     name: "Deep Clean",
     path: "/deep-clean",
-    price: "£100",
+    price: "From £100",
     duration: "3–4 Hours",
     description: "Full interior & exterior detail. Your car reset to factory-fresh condition.",
     image: "/724453567_1741795673842657_7212829807354336478_n.jpg",
@@ -52,7 +52,7 @@ const SERVICES_OFFERED = [
   {
     name: "Mini Valet",
     path: "/#services",
-    price: "£30",
+    price: "From £30",
     duration: "1 Hour",
     description: "Our essential freshen-up package for safe, swirl-free regular cleaning.",
     image: "/723830628_27152605947682802_3120737853125552335_n.jpg",
@@ -65,7 +65,7 @@ const SERVICES_OFFERED = [
     price: "From £150",
     duration: "5–6 Hours",
     description: "The ultimate automotive care experience with decontamination and durable protection.",
-    image: "/722908490_1513785427083168_6885942169468714202_n.jpg",
+    image: "/724893959_1438592524987609_4973891884401838852_n.jpg",
     tag: "Ultimate Care",
     highlights: ["Multi-Stage Decontamination", "Deep Fabric Extraction", "Leather Conditioning", "Durable Sealant Gloss"],
   },
