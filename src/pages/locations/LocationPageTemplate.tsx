@@ -78,12 +78,12 @@ interface LocationPageTemplateProps {
 export default function LocationPageTemplate({ location }: LocationPageTemplateProps) {
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": "AutoRepair",
+    "@type": "AutoWash",
     "name": `RD Valeting — ${location.locationName}`,
     "description": `Premium mobile car valeting service in ${location.locationName}, ${location.county}. Maintenance washes, deep cleans, and full valets delivered directly to your driveway.`,
-    "url": `https://www.rdvaleting.co.uk/${location.slug}`,
+    "url": `https://rdvaleting.co.uk/${location.slug}`,
     "telephone": "+447393682365",
-    "image": "https://www.rdvaleting.co.uk/logo.webp",
+    "image": "https://rdvaleting.co.uk/logo.webp",
     "priceRange": "£30–£150+",
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -110,6 +110,56 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
       "latitude": location.coordinates.lat,
       "longitude": location.coordinates.lng
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "57",
+      "reviewCount": "57"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Mobile Valeting & Detailing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mini Valet",
+            "description": "Essential exterior wash and interior tidy."
+          },
+          "priceSpecification": { "@type": "PriceSpecification", "price": "30", "priceCurrency": "GBP" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Maintenance Wash",
+            "description": "Safe exterior wash, wheels & tyres cleaned, windows cleaned inside & out."
+          },
+          "priceSpecification": { "@type": "PriceSpecification", "price": "50", "priceCurrency": "GBP" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Deep Clean",
+            "description": "Full interior and exterior detail with seats & carpets extracted."
+          },
+          "priceSpecification": { "@type": "PriceSpecification", "price": "100", "priceCurrency": "GBP" }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Full Valet & Detailing",
+            "description": "Comprehensive transformation with multi-stage decontamination and durable paint protection."
+          },
+          "priceSpecification": { "@type": "PriceSpecification", "price": "150", "priceCurrency": "GBP" }
+        }
+      ]
+    },
     "sameAs": [
       COMPANY_DETAILS.instagram,
       COMPANY_DETAILS.facebook
@@ -124,19 +174,19 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.rdvaleting.co.uk/"
+        "item": "https://rdvaleting.co.uk/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Areas",
-        "item": "https://www.rdvaleting.co.uk/#areas"
+        "item": "https://rdvaleting.co.uk/#areas"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": location.locationName,
-        "item": `https://www.rdvaleting.co.uk/${location.slug}`
+        "item": `https://rdvaleting.co.uk/${location.slug}`
       }
     ]
   };
@@ -146,12 +196,12 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
       <Helmet>
         <title>{location.title}</title>
         <meta name="description" content={location.metaDescription} />
-        <link rel="canonical" href={`https://www.rdvaleting.co.uk/${location.slug}`} />
+        <link rel="canonical" href={`https://rdvaleting.co.uk/${location.slug}`} />
         <meta property="og:title" content={location.title} />
         <meta property="og:description" content={location.metaDescription} />
-        <meta property="og:url" content={`https://www.rdvaleting.co.uk/${location.slug}`} />
+        <meta property="og:url" content={`https://rdvaleting.co.uk/${location.slug}`} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.rdvaleting.co.uk/og-image.png" />
+        <meta property="og:image" content="https://rdvaleting.co.uk/logo.webp" />
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
@@ -211,7 +261,7 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
                 <Shield className="w-4 h-4" style={{ color: GOLD }} /> Fully Insured
               </span>
               <span className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white/80" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)' }}>
-                <Clock className="w-4 h-4" style={{ color: GOLD }} /> Mon–Sun 8am–8pm
+                <Clock className="w-4 h-4" style={{ color: GOLD }} /> Mon–Sun 8am–7pm
               </span>
             </div>
 

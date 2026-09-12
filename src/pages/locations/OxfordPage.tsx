@@ -1,15 +1,15 @@
 /**
- * St Albans Location Page
- * Target keywords: "car detailing st albans", "mobile car cleaning st albans"
+ * Oxford Location Page
+ * Target keywords: "car detailing oxford", "mobile car valeting oxford"
  */
 
 import { useEffect } from "react";
 import LocationPageTemplate from "./LocationPageTemplate";
 import { LOCATIONS } from "../../constants/locations";
 
-const locationData = LOCATIONS.find(l => l.slug === "car-detailing-chippenham" || l.slug === "car-detailing-st-albans")!;
+const locationData = LOCATIONS.find(l => l.slug === "car-detailing-oxford")!;
 
-export default function StAlbansPage() {
+export default function OxfordPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return <LocationPageTemplate location={locationData} />;
 }

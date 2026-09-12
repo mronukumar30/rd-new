@@ -590,7 +590,7 @@ export const LOCATIONS: LocationData[] = [
     slug: "car-detailing-london",
     title: "Mobile Car Valeting in London | RD Valeting",
     metaDescription: "Bespoke mobile car detailing & deep cleans for London and M4 corridor clients. Luxury vehicle care directly on your private driveway. Fully insured. Book with Rhys.",
-    heroImage: "/gallery-car-detailing-1.webp",
+    heroImage: "/719890908_2222286848526617_3057517277440017740_n.jpg",
     heroImagePosition: "object-center",
     heroOverlayOpacity: "bg-black/[0.45]",
     locationName: "London",

@@ -1,15 +1,15 @@
 /**
- * Milton Keynes Location Page
- * Target keywords: "car detailing milton keynes", "mobile detailing mk"
+ * Newbury Location Page
+ * Target keywords: "car detailing newbury", "mobile car valeting newbury berkshire"
  */
 
 import { useEffect } from "react";
 import LocationPageTemplate from "./LocationPageTemplate";
 import { LOCATIONS } from "../../constants/locations";
 
-const locationData = LOCATIONS.find(l => l.slug === "car-detailing-reading" || l.slug === "car-detailing-milton-keynes")!;
+const locationData = LOCATIONS.find(l => l.slug === "car-detailing-newbury")!;
 
-export default function MiltonKeynesPage() {
+export default function NewburyPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return <LocationPageTemplate location={locationData} />;
 }

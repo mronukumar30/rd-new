@@ -34,6 +34,56 @@
       "source": "/valeting",
       "destination": "/#services",
       "permanent": true
+    },
+    {
+      "source": "/mobile-car-detailing-luton",
+      "destination": "/mobile-car-detailing-swindon",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-bedford",
+      "destination": "/car-detailing-marlborough",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-dunstable",
+      "destination": "/car-detailing-cirencester",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-st-albans",
+      "destination": "/car-detailing-chippenham",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-hitchin",
+      "destination": "/car-detailing-royal-wootton-bassett",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-stevenage",
+      "destination": "/car-detailing-bath",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-hemel-hempstead",
+      "destination": "/car-detailing-newbury",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-watford",
+      "destination": "/car-detailing-oxford",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-milton-keynes",
+      "destination": "/car-detailing-reading",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-aylesbury",
+      "destination": "/car-detailing-london",
+      "permanent": true
     }
   ],
   "rewrites": [

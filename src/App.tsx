@@ -42,16 +42,16 @@ import DeepCleanPage from "./pages/services/DeepCleanPage";
 import CeramicCoatingPage from "./pages/services/CeramicCoatingPage";
 import PaintCorrectionPage from "./pages/services/PaintCorrectionPage";
 import MaintenanceCleanPage from "./pages/services/MaintenanceCleanPage";
-import LutonPage from "./pages/locations/LutonPage";
-import BedfordPage from "./pages/locations/BedfordPage";
-import DunstablePage from "./pages/locations/DunstablePage";
-import StAlbansPage from "./pages/locations/StAlbansPage";
-import HitchinPage from "./pages/locations/HitchinPage";
-import StevenagePage from "./pages/locations/StevenagePage";
-import HemelHempsteadPage from "./pages/locations/HemelHempsteadPage";
-import WatfordPage from "./pages/locations/WatfordPage";
-import MiltonKeynesPage from "./pages/locations/MiltonKeynesPage";
-import AylesburyPage from "./pages/locations/AylesburyPage";
+import SwindonPage from "./pages/locations/SwindonPage";
+import MarlboroughPage from "./pages/locations/MarlboroughPage";
+import CirencesterPage from "./pages/locations/CirencesterPage";
+import ChippenhamPage from "./pages/locations/ChippenhamPage";
+import RoyalWoottonBassettPage from "./pages/locations/RoyalWoottonBassettPage";
+import BathPage from "./pages/locations/BathPage";
+import NewburyPage from "./pages/locations/NewburyPage";
+import OxfordPage from "./pages/locations/OxfordPage";
+import ReadingPage from "./pages/locations/ReadingPage";
+import LondonPage from "./pages/locations/LondonPage";
 import BlogIndexPage from "./pages/blog/BlogIndexPage";
 import CeramicCoatingWorthItPage from "./pages/blog/CeramicCoatingWorthItPage";
 import CarDetailingCostUKPage from "./pages/blog/CarDetailingCostUKPage";
@@ -153,7 +153,7 @@ const Navbar = () => {
               <span className="text-white">VALETING</span>
             </div>
             <span className="text-[8px] md:text-[9px] tracking-[0.22em] text-white/60 font-semibold uppercase mt-1 group-hover:text-white/80 transition-colors">
-              CARS DESERVE BETTER
+              Premium Car Care · Swindon
             </span>
           </div>
         </a>
@@ -297,7 +297,7 @@ const Hero = () => {
             className="flex items-center gap-2 mb-4 sm:mb-5"
           >
             <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
-              MOBILE CAR VALETING <span className="text-white/40 mx-2">|</span> BUCKINGHAMSHIRE &amp; SURROUNDING AREAS
+              PREMIUM MOBILE DETAILING <span className="text-white/40 mx-2">·</span> SWINDON &amp; SURROUNDING AREAS
             </span>
           </motion.div>
 
@@ -321,7 +321,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="text-base sm:text-lg text-white/80 font-normal leading-relaxed max-w-lg mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
           >
-            Bedfordshire's most meticulous mobile detailing service. Deep cleans, ceramic coatings, paint correction — all at your driveway. Fully insured. Fully mobile.
+            Wiltshire's most meticulous mobile detailing service. Maintenance washes, deep cleans, full valets — all at your driveway. Fully insured. Fully mobile.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -391,7 +391,7 @@ const Hero = () => {
                 ))}
               </div>
               <p className="text-xs sm:text-[13px] font-bold text-white leading-tight">
-                Trusted by local car owners
+                Trusted by Swindon car owners
               </p>
               <p className="text-[11px] text-white/60">
                 Real results. Real people.
@@ -404,7 +404,7 @@ const Hero = () => {
             <MapPin className="w-4 h-4 text-white/60 flex-shrink-0" />
             <div className="flex flex-col text-left">
               <span className="text-[10px] tracking-wider uppercase font-semibold text-white/70 leading-tight">
-                BUCKINGHAMSHIRE
+                SWINDON
               </span>
               <span className="text-[10px] tracking-wider uppercase font-semibold text-white/70 leading-tight">
                 &amp; SURROUNDING AREAS
@@ -1863,7 +1863,7 @@ const FAQSection = () => {
             Everything You Need<br className="hidden md:block" /> to Know
           </h3>
           <p className="mt-6 text-base max-w-lg mx-auto leading-relaxed" style={{ color: '#8A8070' }}>
-            Got questions about our mobile car detailing services in Luton and Bedfordshire? Find your answers below.
+            Got questions about our mobile car detailing services in Swindon and Wiltshire? Find your answers below.
           </p>
         </div>
 
@@ -1960,15 +1960,19 @@ const FAQSection = () => {
 
 const SERVICE_AREAS = [
   { name: "Swindon", county: "Wiltshire", primary: true, path: "/mobile-car-detailing-swindon", distanceFromBase: "0 mi (Base)" },
-  { name: "Marlborough", county: "Wiltshire", primary: false, path: "/car-detailing-marlborough", distanceFromBase: "~12 mi" },
-  { name: "Cirencester", county: "Gloucestershire", primary: false, path: "/car-detailing-cirencester", distanceFromBase: "~15 mi" },
-  { name: "Chippenham", county: "Wiltshire", primary: false, path: "/car-detailing-chippenham", distanceFromBase: "~18 mi" },
+  { name: "Wroughton", county: "Wiltshire", primary: false, path: "/car-detailing-wroughton", distanceFromBase: "~3 mi" },
+  { name: "Wichelstowe", county: "Wiltshire", primary: false, path: "/car-detailing-wichelstowe", distanceFromBase: "~2 mi" },
+  { name: "Blunsdon", county: "Wiltshire", primary: false, path: "/car-detailing-blunsdon", distanceFromBase: "~4 mi" },
+  { name: "Highworth", county: "Wiltshire", primary: false, path: "/car-detailing-highworth", distanceFromBase: "~6 mi" },
   { name: "Royal Wootton Bassett", county: "Wiltshire", primary: false, path: "/car-detailing-royal-wootton-bassett", distanceFromBase: "~6 mi" },
-  { name: "Bath", county: "Somerset", primary: false, path: "/car-detailing-bath", distanceFromBase: "~30 mi" },
-  { name: "Newbury", county: "Berkshire", primary: false, path: "/car-detailing-newbury", distanceFromBase: "~25 mi" },
-  { name: "Oxford", county: "Oxfordshire", primary: false, path: "/car-detailing-oxford", distanceFromBase: "~30 mi" },
-  { name: "Reading", county: "Berkshire", primary: false, path: "/car-detailing-reading", distanceFromBase: "~40 mi" },
-  { name: "London", county: "Greater London", primary: false, path: "/car-detailing-london", distanceFromBase: "~75 mi" },
+  { name: "Purton", county: "Wiltshire", primary: false, path: "/car-detailing-purton", distanceFromBase: "~5 mi" },
+  { name: "Wanborough", county: "Wiltshire", primary: false, path: "/car-detailing-wanborough", distanceFromBase: "~5 mi" },
+  { name: "Cricklade", county: "Wiltshire", primary: false, path: "/car-detailing-cricklade", distanceFromBase: "~9 mi" },
+  { name: "Shrivenham", county: "Oxfordshire", primary: false, path: "/car-detailing-shrivenham", distanceFromBase: "~7 mi" },
+  { name: "Minety", county: "Wiltshire", primary: false, path: "/car-detailing-minety", distanceFromBase: "~9 mi" },
+  { name: "Malmesbury", county: "Wiltshire", primary: false, path: "/car-detailing-malmesbury", distanceFromBase: "~13 mi" },
+  { name: "Chippenham", county: "Wiltshire", primary: false, path: "/car-detailing-chippenham", distanceFromBase: "~18 mi" },
+  { name: "Marlborough", county: "Wiltshire", primary: false, path: "/car-detailing-marlborough", distanceFromBase: "~12 mi" },
 ];
 
 const AreasWeCover = () => {
@@ -1978,15 +1982,19 @@ const AreasWeCover = () => {
   const getMapEmbedUrl = (areaName: string) => {
     const coords: Record<string, { lat: number; lng: number }> = {
       "Swindon": { lat: 51.5558, lng: -1.7797 },
-      "Marlborough": { lat: 51.4210, lng: -1.7300 },
-      "Cirencester": { lat: 51.7176, lng: -1.9680 },
-      "Chippenham": { lat: 51.4585, lng: -2.1158 },
+      "Wroughton": { lat: 51.5245, lng: -1.7916 },
+      "Wichelstowe": { lat: 51.5308, lng: -1.8050 },
+      "Blunsdon": { lat: 51.5904, lng: -1.7835 },
+      "Highworth": { lat: 51.6228, lng: -1.7136 },
       "Royal Wootton Bassett": { lat: 51.5414, lng: -1.9056 },
-      "Bath": { lat: 51.3811, lng: -2.3590 },
-      "Newbury": { lat: 51.4014, lng: -1.3231 },
-      "Oxford": { lat: 51.7520, lng: -1.2577 },
-      "Reading": { lat: 51.4543, lng: -0.9781 },
-      "London": { lat: 51.5074, lng: -0.1278 },
+      "Purton": { lat: 51.6013, lng: -1.8601 },
+      "Wanborough": { lat: 51.5370, lng: -1.7145 },
+      "Cricklade": { lat: 51.6445, lng: -1.8569 },
+      "Shrivenham": { lat: 51.5975, lng: -1.6581 },
+      "Minety": { lat: 51.6268, lng: -1.9436 },
+      "Malmesbury": { lat: 51.5866, lng: -2.0968 },
+      "Chippenham": { lat: 51.4585, lng: -2.1158 },
+      "Marlborough": { lat: 51.4210, lng: -1.7300 },
     };
     const c = coords[areaName] || coords["Swindon"];
     return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d60000!2d${c.lng}!3d${c.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk`;
@@ -2306,26 +2314,28 @@ export default function App() {
           <Route path="/paint-correction" element={<PaintCorrectionPage />} />
           <Route path="/maintenance-clean" element={<MaintenanceCleanPage />} />
 
-          {/* Location Pages (Swindon & Surrounding Wiltshire/Cotswolds Towns) */}
-          <Route path="/mobile-car-detailing-swindon" element={<LutonPage />} />
+          {/* Location Pages (Swindon & Surrounding Wiltshire/Cotswolds/Berkshire Towns) */}
+          <Route path="/mobile-car-detailing-swindon" element={<SwindonPage />} />
+          <Route path="/car-detailing-marlborough" element={<MarlboroughPage />} />
+          <Route path="/car-detailing-cirencester" element={<CirencesterPage />} />
+          <Route path="/car-detailing-chippenham" element={<ChippenhamPage />} />
+          <Route path="/car-detailing-royal-wootton-bassett" element={<RoyalWoottonBassettPage />} />
+          <Route path="/car-detailing-bath" element={<BathPage />} />
+          <Route path="/car-detailing-newbury" element={<NewburyPage />} />
+          <Route path="/car-detailing-oxford" element={<OxfordPage />} />
+          <Route path="/car-detailing-reading" element={<ReadingPage />} />
+          <Route path="/car-detailing-london" element={<LondonPage />} />
+
+          {/* Legacy redirects from old Luton-area routes */}
           <Route path="/mobile-car-detailing-luton" element={<Navigate to="/mobile-car-detailing-swindon" replace />} />
-          <Route path="/car-detailing-marlborough" element={<BedfordPage />} />
           <Route path="/car-detailing-bedford" element={<Navigate to="/car-detailing-marlborough" replace />} />
-          <Route path="/car-detailing-cirencester" element={<DunstablePage />} />
           <Route path="/car-detailing-dunstable" element={<Navigate to="/car-detailing-cirencester" replace />} />
-          <Route path="/car-detailing-chippenham" element={<StAlbansPage />} />
           <Route path="/car-detailing-st-albans" element={<Navigate to="/car-detailing-chippenham" replace />} />
-          <Route path="/car-detailing-royal-wootton-bassett" element={<HitchinPage />} />
           <Route path="/car-detailing-hitchin" element={<Navigate to="/car-detailing-royal-wootton-bassett" replace />} />
-          <Route path="/car-detailing-bath" element={<StevenagePage />} />
           <Route path="/car-detailing-stevenage" element={<Navigate to="/car-detailing-bath" replace />} />
-          <Route path="/car-detailing-newbury" element={<HemelHempsteadPage />} />
           <Route path="/car-detailing-hemel-hempstead" element={<Navigate to="/car-detailing-newbury" replace />} />
-          <Route path="/car-detailing-oxford" element={<WatfordPage />} />
           <Route path="/car-detailing-watford" element={<Navigate to="/car-detailing-oxford" replace />} />
-          <Route path="/car-detailing-reading" element={<MiltonKeynesPage />} />
           <Route path="/car-detailing-milton-keynes" element={<Navigate to="/car-detailing-reading" replace />} />
-          <Route path="/car-detailing-london" element={<AylesburyPage />} />
           <Route path="/car-detailing-aylesbury" element={<Navigate to="/car-detailing-london" replace />} />
 
           {/* Blog Pages */}

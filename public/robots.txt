@@ -1,0 +1,31 @@
+# RD Valeting — robots.txt
+# https://rdvaleting.co.uk
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /src/
+
+# XML Sitemap
+Sitemap: https://rdvaleting.co.uk/sitemap.xml
+
+# AI Crawlers — Allow browsing bots for local discoverability
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Block training-only bots (optional — keeps content for search but not model training)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
