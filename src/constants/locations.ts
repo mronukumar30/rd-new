@@ -1,6 +1,6 @@
 /**
- * Location data for 10 location landing pages.
- * Each location has unique content to ensure 60%+ uniqueness per page.
+ * Location data for 10 core service areas across Swindon, Wiltshire & surrounding regions.
+ * Each location has unique content tailored to local driving conditions and RD Valeting services.
  */
 
 export interface LocationFAQ {
@@ -42,632 +42,606 @@ export interface LocationData {
 }
 
 export const LOCATIONS: LocationData[] = [
+  // 1. Swindon (Home Base)
   {
-    slug: "mobile-car-detailing-luton",
-    title: "Mobile Car Detailing in Luton | Premium Car Care | King of Detailing",
-    metaDescription: "Professional mobile car detailing in Luton, Bedfordshire. Deep cleans from £150, ceramic coatings from £650. We come to your driveway. Fully insured. Book today.",
-    heroImage: "/gallery-car-detailing-1.webp",
-    locationName: "Luton",
-    county: "Bedfordshire",
-    region: "Bedfordshire",
-    coordinates: { lat: 51.8787, lng: -0.4200 },
-    travelTime: "We're based right here in Luton — no travel charge",
+    slug: "mobile-car-detailing-swindon",
+    title: "Mobile Car Valeting in Swindon | RD Valeting",
+    metaDescription: "Swindon's trusted mobile car valeting & detailing service. Mini valets from £30, maintenance washes £50, deep cleans £100. We come to your driveway. Fully insured. Book today.",
+    heroImage: "/723456333_1027111233340868_6744532048742945277_n.jpg",
+    locationName: "Swindon",
+    county: "Wiltshire",
+    region: "Wiltshire",
+    coordinates: { lat: 51.5558, lng: -1.7797 },
+    travelTime: "Based right here in Swindon — zero travel charge",
     distanceFromBase: "0 miles — our home base",
-    heroTagline: "Premium Mobile Car Detailing in Luton",
-    heroSubtitle: "We're proud to call Luton home. As Bedfordshire's leading mobile detailing specialists, we deliver studio-grade car care directly to your driveway — no travel charges, no fuss, just flawless results every time.",
-    introTitle: "Luton's Premier Mobile Car Detailing Service",
+    heroTagline: "Swindon's Premier Mobile Car Valeting & Detailing",
+    heroSubtitle: "We're proud to call Swindon our home. RD Valeting delivers high-standard, meticulous car care directly to your driveway across Old Town, North Swindon, Wroughton, and beyond — zero travel charges, no hassle, just immaculate showroom results.",
+    introTitle: "Swindon's Trusted Choice for Mobile Valeting",
     introParagraphs: [
-      "King of Detailing was born in Luton, and it's where we've built our reputation as Bedfordshire's most trusted mobile car detailing service. From the residential streets around Luton Hoo Estate to the busy roads near London Luton Airport, we know this town inside out — and we know exactly what Luton's roads and weather do to your vehicle's finish.",
-      "Living near the M1 corridor means your car faces a constant battle against motorway grime, brake dust, and the relentless British weather. Our professional detailing packages are designed specifically to combat these challenges, restoring and protecting your vehicle's paintwork against everything Luton's roads throw at it.",
-      "Whether you're based in Stopsley, Leagrave, Bramingham, Limbury, or anywhere across Luton town centre, we bring our full mobile detailing studio directly to your driveway. No dropping your car off, no waiting around — we come to you with everything we need to transform your vehicle.",
-      "As our home base, Luton clients benefit from zero travel charges and priority booking availability. We're proud to be the local choice for hundreds of Luton residents who demand nothing less than showroom perfection for their vehicles."
+      "RD Valeting is based in Swindon and built around a simple promise: exceptional standards, honest pricing, and genuine reliability. From residential driveways in Old Town and Lawn to the newer estates of Priory Vale, Shaw, and Redhouse, we know Swindon inside out.",
+      "Daily commutes along the M4, the A419, and Great Western Way expose your car to heavy road film, brake fallout, and harsh seasonal grime. Our tailored valeting packages are engineered to eliminate bonded dirt, restore high-gloss reflections, and keep your vehicle decontaminated all year round.",
+      "You never need to drop your car off at a hand car wash or wait around in industrial estates. Rhys arrives on time with a fully self-contained mobile valeting unit, complete with professional-grade chemicals, ultra-soft microfibres, and high-pressure detailing gear.",
+      "As our home base, all Swindon postcodes (SN1 through SN26) receive our fastest booking availability and zero travel supplements. Choose from our £30 Mini Valet, £50 Maintenance Wash, £100 Deep Clean, or comprehensive Full Valet & Detailing."
     ],
     localHighlights: [
-      "Based right here in Luton — zero travel charges for all Luton postcodes",
-      "Trusted by residents across Stopsley, Leagrave, Bramingham & Limbury",
-      "Combating M1 corridor grime, airport fallout & Bedfordshire weather",
-      "Priority booking for Luton LU1–LU7 postcodes",
-      "Regular clients near Luton Hoo, Stockwood Park & Wardown Park areas"
+      "Based in Swindon — zero travel charges across all Swindon postcodes",
+      "Covering Old Town, Lawn, Wroughton, Haydon Wick, Shaw, Peatmoor & Redhouse",
+      "Combating M4 corridor road grit, industrial fallout & Wiltshire winter grime",
+      "Priority same-week booking for SN1 through SN26 postcodes",
+      "5-star rated across Swindon with 100% verified customer satisfaction"
     ],
     whyChooseUs: [
-      "Luton is our home — we understand local road conditions and what your car needs",
-      "Zero travel charge for all Luton postcodes (LU1–LU7)",
-      "Priority booking availability as our base location",
-      "Trusted by hundreds of Luton residents — check our 5-star Google reviews",
-      "Professional Garage Therapy products — not supermarket car wash soap",
-      "Fully insured for your complete peace of mind"
+      "Swindon is our home base — fast, friendly, punctual mobile service",
+      "Zero travel fees anywhere in Swindon and immediate surrounds",
+      "Direct personal service from Rhys — owner operated, no inexperienced sub-contractors",
+      "Full public liability insurance for total peace of mind on your driveway",
+      "Safe, swirl-free two-bucket wash methods and pH-balanced chemicals",
+      "Transparent, fixed package pricing with no hidden add-on costs"
     ],
     faqs: [
       {
-        question: "How much does car detailing cost in Luton?",
-        answer: "Our car detailing packages in Luton start from £100 for a maintenance clean, £150 for a comprehensive deep clean, and £650 for our full enhance package including paint correction and ceramic coating. As we're based in Luton, there are no travel charges. Contact us for a personalised quote based on your vehicle's size and condition."
+        question: "How much does mobile car valeting cost in Swindon?",
+        answer: "Our valeting packages in Swindon start at just £30 for our Mini Valet freshen-up, £50 for our popular Maintenance Wash, £100 for a thorough interior & exterior Deep Clean, and from £150 for our Full Valet & Detailing package. As Swindon is our home base, there is zero travel fee."
       },
       {
-        question: "Do you travel to all areas of Luton?",
-        answer: "Absolutely! We cover every area of Luton including Stopsley, Leagrave, Bramingham, Limbury, Farley Hill, Biscot, Bury Park, and Luton town centre. As our home base, Luton postcodes (LU1–LU7) receive zero travel charges and priority booking."
+        question: "Which areas of Swindon do you cover?",
+        answer: "We cover all areas of Swindon without exception, including Old Town, Wroughton, Coate, Lawn, Shaw, Sparcells, Peatmoor, Haydon Wick, Priory Vale, Abbey Meads, Stratton St Margaret, and Covingham (SN1 through SN26)."
       },
       {
-        question: "How do I book a car detail in Luton?",
-        answer: "Booking is simple — message us on WhatsApp, call us on 07749 311494, or use our online booking system. We're open 7 days a week from 8am to 8pm. We'll confirm your appointment and arrive at your chosen location with everything we need."
+        question: "Do I need to supply water or electricity?",
+        answer: "Our mobile van is equipped to work efficiently on your driveway. An outdoor domestic tap or standard socket is appreciated if easily accessible, but we can accommodate arrangements based on your property layout. Let us know when booking!"
       },
       {
-        question: "Is there a mobile car detailing service near Luton Airport?",
-        answer: "Yes! We regularly detail vehicles for clients near London Luton Airport, including the Airport Way and Percival Way areas. Whether you need your car detailed before a trip or refreshed when you return, we've got you covered."
+        question: "How do I book an appointment with Rhys in Swindon?",
+        answer: "Booking takes under 60 seconds — use our 3-step online booking wizard on this website, send Rhys a direct WhatsApp message at 07393 682 365, or give us a call. We operate 7 days a week, 8:00 AM to 7:00 PM."
       }
     ],
     nearbyAreas: [
-      { name: "Dunstable", path: "/car-detailing-dunstable" },
-      { name: "Hitchin", path: "/car-detailing-hitchin" },
-      { name: "St Albans", path: "/car-detailing-st-albans" },
-      { name: "Bedford", path: "/car-detailing-bedford" }
+      { name: "Royal Wootton Bassett", path: "/car-detailing-royal-wootton-bassett" },
+      { name: "Marlborough", path: "/car-detailing-marlborough" },
+      { name: "Cirencester", path: "/car-detailing-cirencester" },
+      { name: "Chippenham", path: "/car-detailing-chippenham" }
     ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39283.63623519999!2d-0.45304130000000003!3d51.87870000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48763a5f6d5f6d31%3A0x4c0aa3f1d7f6b0a0!2sLuton!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39760!2d-1.7797!3d51.5558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871444f6f70e8cb%3A0x6a1a729e2c668ef0!2sSwindon!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
   },
+
+  // 2. Marlborough
   {
-    slug: "car-detailing-bedford",
-    title: "Car Detailing in Bedford | Mobile Car Care | King of Detailing",
-    metaDescription: "Professional mobile car detailing in Bedford, Bedfordshire. Deep cleans, ceramic coatings & paint correction. We come to you. Fully insured. Book today.",
-    heroImage: "/bernie-fineman-car-detailing-luton.webp",
+    slug: "car-detailing-marlborough",
+    title: "Mobile Car Valeting in Marlborough | RD Valeting",
+    metaDescription: "Professional mobile car valeting & detailing in Marlborough, Wiltshire. Mini valets from £30, maintenance washes £50, deep cleans £100. We come to your home. Book today.",
+    heroImage: "/719890908_2222286848526617_3057517277440017740_n.jpg",
     heroImagePosition: "object-top",
     heroOverlayOpacity: "bg-black/[0.45]",
-    locationName: "Bedford",
-    county: "Bedfordshire",
-    region: "Bedfordshire",
-    coordinates: { lat: 52.1356, lng: -0.4685 },
-    travelTime: "Approximately 20 minutes from our Luton base",
-    distanceFromBase: "~20 miles north of Luton",
-    heroTagline: "Professional Car Detailing in Bedford",
-    heroSubtitle: "Premium mobile car detailing delivered to your driveway in Bedford. From the leafy streets of Clapham to the riverside residences of the Embankment, we bring showroom-quality results directly to you.",
-    introTitle: "Bedford's Trusted Mobile Car Detailing Specialists",
+    locationName: "Marlborough",
+    county: "Wiltshire",
+    region: "Wiltshire",
+    coordinates: { lat: 51.4210, lng: -1.7300 },
+    travelTime: "~20 minutes south from our Swindon base via A346",
+    distanceFromBase: "~12 miles south of Swindon",
+    heroTagline: "Marlborough's Trusted Mobile Car Valeting Specialist",
+    heroSubtitle: "Bringing showroom gloss and meticulous interior rejuvenation directly to your home in Marlborough. From Savernake Forest estates to the historic High Street, RD Valeting delivers premier care to your doorstep.",
+    introTitle: "Marlborough's High-Standard Mobile Detailing",
     introParagraphs: [
-      "Bedford is one of our most popular service areas, and it's easy to see why. With its beautiful riverside setting along the Great Ouse, tree-lined residential streets, and thriving town centre, Bedford is home to car owners who take genuine pride in their vehicles — and who expect the highest standard of care.",
-      "The county town of Bedfordshire presents unique challenges for vehicle owners. Seasonal flooding near the river, rural road dust from the surrounding farmland, and the constant traffic through Bedford's busy town centre all take their toll on your car's finish. Our professional detailing packages are designed to tackle every one of these issues.",
-      "We regularly serve clients across Bedford's most desirable areas — from the period homes around Priory Country Park and De Parys Avenue to the newer developments in Wixams and Great Denham. Whether you drive a family SUV or a premium sports car, our mobile detailing service delivers the same meticulous, studio-grade results.",
-      "At just 20 minutes from our Luton base, Bedford is well within our core service radius. We arrive fully equipped with our own water supply, power, and professional-grade Garage Therapy products — everything needed to transform your vehicle without you lifting a finger."
+      "Marlborough is famed for its wide Georgian High Street, renowned College, and historic charm. Residents in Marlborough take genuine pride in their vehicles, and RD Valeting provides the dependable, high-touch mobile service to keep them spotless.",
+      "Rural Wiltshire country lanes, agricultural debris, and heavy tree pollen from surrounding ancient woodlands like Savernake Forest present constant paintwork challenges. Standard washes often leave stubborn road film or light scratches; our safe contact methods ensure a swirl-free, radiant finish.",
+      "Just 20 minutes down the A346 from our Swindon base, we travel regularly to private residences throughout Marlborough, Manton, Mildenhall, and Ogbourne St George.",
+      "From regular maintenance washes to deep interior shampooing and paint protection, Rhys takes personal care of every detail so your car looks and smells showroom fresh."
     ],
     localHighlights: [
-      "Serving all Bedford postcodes including MK40, MK41, MK42, MK43, MK44, MK45",
-      "Popular areas: De Parys, Priory Park, Great Denham, Wixams, Clapham",
-      "Just 20 minutes from our Luton base — quick response times",
-      "Tackling river-area moisture, rural dust & Bedford town centre grime",
-      "Regular clients across Bedford Borough including Kempston & Elstow"
+      "Serving all Marlborough SN8 postcodes, Manton, Mildenhall & the Ogbournes",
+      "Combating rural lane mud, Savernake tree sap & road salt",
+      "Specialising in prestige SUVs, family estates, and luxury sports cars",
+      "Easy, stress-free appointment times 7 days a week",
+      "Fully self-contained mobile valeting setup"
     ],
     whyChooseUs: [
-      "Just 20 minutes from base — fast, reliable service across Bedford",
-      "Experienced with Bedford's unique conditions — river moisture, rural dust, town grime",
-      "5-star rated across Google with clients throughout Bedford Borough",
-      "We bring everything — water, power, professional products — to your driveway",
-      "Fully insured and fully mobile — no need to drop your car anywhere",
-      "Same meticulous standard whether it's a family car or a high-end vehicle"
+      "Just 20 minutes from our Swindon base for prompt, reliable arrivals",
+      "Safe, swirl-free wash techniques tailored for delicate clear coats",
+      "Full interior sanitisation, steam cleaning, and fabric extraction",
+      "Owner-operated care with Rhys personally attending every booking",
+      "Fully insured with comprehensive public liability coverage"
     ],
     faqs: [
       {
-        question: "How much does car detailing cost in Bedford?",
-        answer: "Our car detailing packages for Bedford clients start from £100 for a maintenance clean, £150 for a deep clean, and £650 for our full enhance package with paint correction and ceramic coating. A small travel supplement may apply. Contact us for an exact quote for your vehicle."
+        question: "Do you travel out to Marlborough and surrounding villages?",
+        answer: "Yes, we visit Marlborough weekly! We cover Marlborough town centre, Manton, Mildenhall, Ramsbury, and all surrounding SN8 villages with quick response times."
       },
       {
-        question: "Do you cover all areas of Bedford?",
-        answer: "Yes! We cover the entire Bedford Borough including Bedford town centre, Kempston, Clapham, Great Denham, Wixams, Elstow, Bromham, and all surrounding villages. We're just 20 minutes from our Luton base, so we can be with you quickly."
+        question: "How much is a car detail in Marlborough?",
+        answer: "Our prices start from £30 for a Mini Valet, £50 for our Maintenance Wash, and £100 for an intensive Deep Clean. We provide transparent, honest pricing with no surprises."
       },
       {
-        question: "Can you detail my car at my workplace in Bedford?",
-        answer: "Absolutely. We regularly detail vehicles at offices and workplaces across Bedford, including the business parks near Priory Marina and Bedford town centre. Just provide us with a suitable parking space and we'll take care of the rest while you work."
-      },
-      {
-        question: "How often should I have my car detailed in Bedford?",
-        answer: "We recommend a deep clean every 6-12 months, with maintenance cleans every 3-6 weeks to keep your vehicle in peak condition. Bedford's mix of rural and urban driving can be particularly harsh on paintwork, so regular maintenance is key to protecting your investment."
+        question: "Can you detail my car while I'm at work or home?",
+        answer: "Yes! The beauty of our mobile service is total convenience. We come directly to your driveway or workplace so you can carry on with your day while we transform your vehicle."
       }
     ],
     nearbyAreas: [
-      { name: "Luton", path: "/mobile-car-detailing-luton" },
-      { name: "Milton Keynes", path: "/car-detailing-milton-keynes" },
-      { name: "Hitchin", path: "/car-detailing-hitchin" },
-      { name: "St Albans", path: "/car-detailing-st-albans" }
+      { name: "Swindon", path: "/mobile-car-detailing-swindon" },
+      { name: "Royal Wootton Bassett", path: "/car-detailing-royal-wootton-bassett" },
+      { name: "Newbury", path: "/car-detailing-newbury" },
+      { name: "Chippenham", path: "/car-detailing-chippenham" }
     ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39121.38!2d-0.5085!3d52.1356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877b7e8e6d6c913%3A0x75a3428d3a6baab0!2sBedford!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39800!2d-1.7300!3d51.4210!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48714cf5f16298ef%3A0xd64f1bc667104b28!2sMarlborough!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
   },
+
+  // 3. Cirencester
   {
-    slug: "car-detailing-dunstable",
-    title: "Car Detailing in Dunstable | Mobile Car Care | King of Detailing",
-    metaDescription: "Professional mobile car detailing in Dunstable, Bedfordshire. Deep cleans, paint correction & ceramic coatings. Just 15 mins from our base. Fully insured. Book now.",
-    heroImage: "/bernie-fineman-car-detailing-luton.webp",
+    slug: "car-detailing-cirencester",
+    title: "Mobile Car Valeting in Cirencester | RD Valeting",
+    metaDescription: "Capital of the Cotswolds mobile car valeting & detailing. Mini valets from £30, maintenance washes £50, deep cleans £100. We come to your home in Cirencester. Book today.",
+    heroImage: "/724453567_1741795673842657_7212829807354336478_n.jpg",
     heroImagePosition: "object-top",
     heroOverlayOpacity: "bg-black/[0.50]",
-    locationName: "Dunstable",
-    county: "Bedfordshire",
-    region: "Bedfordshire",
-    coordinates: { lat: 51.8860, lng: -0.5210 },
-    travelTime: "Just 15 minutes from our Luton base",
-    distanceFromBase: "~6 miles west of Luton",
-    heroTagline: "Expert Car Detailing in Dunstable",
-    heroSubtitle: "Premium mobile car detailing for Dunstable residents. Nestled at the foot of the Chiltern Hills, your car deserves the same natural beauty as the Dunstable Downs. We bring showroom results to your door.",
-    introTitle: "Dunstable's Go-To Mobile Car Detailing Service",
+    locationName: "Cirencester",
+    county: "Gloucestershire",
+    region: "Cotswolds",
+    coordinates: { lat: 51.7176, lng: -1.9680 },
+    travelTime: "~25 minutes north from our Swindon base via A419",
+    distanceFromBase: "~15 miles north of Swindon",
+    heroTagline: "Cotswolds Mobile Car Valeting & Detailing",
+    heroSubtitle: "Serving the historic Capital of the Cotswolds with studio-grade mobile valeting. Protecting your vehicle from rural limestone dust and country road grime, right on your driveway in Cirencester.",
+    introTitle: "Cirencester's Go-To Mobile Car Care",
     introParagraphs: [
-      "Dunstable sits in one of the most picturesque corners of Bedfordshire, right at the foot of the stunning Dunstable Downs and the Chiltern Hills. It's a town where people take pride in their surroundings — and that extends to the vehicles parked on their driveways. That's where King of Detailing comes in.",
-      "The chalk downland terrain and rural roads surrounding Dunstable create unique challenges for vehicle owners. Fine chalk dust, country lane mud, and the seasonal pollen from the surrounding countryside can leave even the best-maintained car looking tired. Our professional detailing treatments are specifically formulated to tackle these local conditions.",
-      "We're one of Dunstable's closest detailing specialists — just 15 minutes from our Luton base along the A505. We regularly serve clients across Dunstable's residential areas including Houghton Regis, the streets around Priory House, and the newer developments along the Dunstable bypass.",
-      "From quick maintenance cleans to comprehensive paint correction and ceramic coating, every service we offer is available at your Dunstable doorstep. We arrive fully self-sufficient with all the equipment, water, and professional-grade products needed to deliver stunning results."
+      "Nestled in the heart of the Gloucestershire Cotswolds, Cirencester is renowned for its historic architecture, vibrant community, and stunning rural borders. Maintaining a pristine vehicle in the Cotswolds requires specialist care due to fine limestone dust and muddy country lanes.",
+      "RD Valeting travels up the dual carriageway A419 from Swindon in under 25 minutes, providing Cirencester drivers with an elite mobile valeting service that eliminates the hassle of automated or roadside car washes.",
+      "Whether you reside near Cirencester Park, Stratton, Chesterton, or nearby villages such as South Cerney and Siddington, our fully equipped van delivers pH-neutral snow foams, thorough wheel decontamination, and deep interior extraction directly to your door.",
+      "We treat every vehicle — from practical 4x4s and daily commuters to classic and performance marques — with uncompromising attention to detail."
     ],
     localHighlights: [
-      "Just 15 minutes from our Luton base — one of our closest service areas",
-      "Covering Dunstable, Houghton Regis & Toddington areas",
-      "Combating chalk dust, rural road grime & Chiltern Hills conditions",
-      "Quick access via A505 — reliable, on-time arrival guaranteed",
-      "Serving residents near Dunstable Downs, Priory House & town centre"
+      "Covering Cirencester (GL7), Stratton, Chesterton, Watermoor & South Cerney",
+      "Combating Cotswold stone dust, mud spatter, and agricultural grime",
+      "Fast 25-minute journey straight up the A419",
+      "Specialist interior decontamination for countryside and pet owners",
+      "100% 5-star feedback from local Gloucestershire clients"
     ],
     whyChooseUs: [
-      "Just 15 minutes away — we're practically neighbours",
-      "Deep understanding of Dunstable's chalk dust and rural road challenges",
-      "Fully self-sufficient — we bring our own water, power, and products",
-      "5-star rated mobile detailing across Bedfordshire",
-      "From maintenance cleans to full ceramic protection — all at your door",
-      "Fully insured for your complete peace of mind"
+      "Convenient home or workplace visits across Cirencester",
+      "Safe multi-stage wash process prevents clear coat marring",
+      "Thorough decontamination that removes iron fallout and tar",
+      "Clear, honest pricing: £30 Mini Valet, £50 Maintenance, £100 Deep Clean",
+      "Fully insured with owner Rhys personally handling your vehicle"
     ],
     faqs: [
       {
-        question: "Do you offer car detailing in Dunstable and Houghton Regis?",
-        answer: "Yes! We cover all of Dunstable and Houghton Regis, including the newer housing developments. At just 15 minutes from our Luton base, Dunstable is one of our core service areas with quick response times and competitive pricing."
+        question: "Do you service Cirencester and surrounding Cotswold villages?",
+        answer: "Yes! We regularly travel up the A419 to Cirencester, South Cerney, Siddington, Kemble, and neighbouring villages throughout the GL7 postcode area."
       },
       {
-        question: "How much does mobile car valeting cost in Dunstable?",
-        answer: "Our packages for Dunstable start from £100 for maintenance cleans, £150 for a deep clean, and £650 for our full enhance package with paint correction and ceramic coating. Dunstable's proximity to our base means minimal travel supplements."
+        question: "Can you remove stubborn rural mud and pet hair?",
+        answer: "Absolutely. Our Deep Clean package (£100) includes high-suction vacuuming, deep carpet shampooing, steam extraction, and complete interior restoration designed specifically to tackle Cotswold mud and pet hair."
       },
       {
-        question: "Can you remove chalk dust and country road grime?",
-        answer: "Absolutely — it's one of our specialities! Dunstable's location near the Downs means chalk dust and rural road grime are constant issues. Our decontamination process includes clay bar treatment, tar removal, and iron fallout removal that eliminates bonded contaminants a normal wash can't touch."
-      },
-      {
-        question: "Do I need to provide anything for the detailing session?",
-        answer: "Ideally, access to an outdoor tap and power socket is helpful, but we carry our own water supply and can work without mains power if needed. Just let us know your setup when you book and we'll prepare accordingly."
+        question: "How long does a deep clean take?",
+        answer: "A standard Deep Clean takes approximately 3 to 4 hours depending on the size and initial condition of your vehicle. We never rush, ensuring showroom-level results."
       }
     ],
     nearbyAreas: [
-      { name: "Luton", path: "/mobile-car-detailing-luton" },
-      { name: "Aylesbury", path: "/car-detailing-aylesbury" },
-      { name: "Hemel Hempstead", path: "/car-detailing-hemel-hempstead" },
-      { name: "St Albans", path: "/car-detailing-st-albans" }
+      { name: "Swindon", path: "/mobile-car-detailing-swindon" },
+      { name: "Royal Wootton Bassett", path: "/car-detailing-royal-wootton-bassett" },
+      { name: "Chippenham", path: "/car-detailing-chippenham" },
+      { name: "Oxford", path: "/car-detailing-oxford" }
     ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19646.7!2d-0.5410!3d51.886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766c5cc3b4a413%3A0x8b1f2ec8a9c0b0a0!2sDunstable!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39680!2d-1.9680!3d51.7176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48713f0c3a812891%3A0xc48083a2d216503c!2sCirencester!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
   },
+
+  // 4. Chippenham
   {
-    slug: "car-detailing-st-albans",
-    title: "Car Detailing in St Albans | Mobile Detailing | King of Detailing",
-    metaDescription: "Premium mobile car detailing in St Albans, Hertfordshire. Professional deep cleans, paint correction & ceramic coatings. We come to you. Fully insured. Book today.",
-    heroImage: "/bernie-fineman-car-detailing-luton.webp",
+    slug: "car-detailing-chippenham",
+    title: "Mobile Car Valeting in Chippenham | RD Valeting",
+    metaDescription: "Professional mobile car valeting & detailing in Chippenham, Wiltshire. Mini valets from £30, maintenance washes £50, deep cleans £100. We come to you. Book today.",
+    heroImage: "/723830628_27152605947682802_3120737853125552335_n.jpg",
     heroImagePosition: "object-top",
     heroOverlayOpacity: "bg-black/[0.50]",
-    locationName: "St Albans",
-    county: "Hertfordshire",
-    region: "Hertfordshire",
-    coordinates: { lat: 51.7520, lng: -0.3413 },
-    travelTime: "Approximately 25 minutes from our Luton base",
-    distanceFromBase: "~15 miles south of Luton",
-    heroTagline: "Premium Car Detailing in St Albans",
-    heroSubtitle: "St Albans deserves nothing less than premium. From the historic streets near the Cathedral to the leafy avenues of Marshalswick, we deliver meticulous mobile car detailing to one of Hertfordshire's most prestigious towns.",
-    introTitle: "St Albans' Premium Mobile Car Detailing Service",
+    locationName: "Chippenham",
+    county: "Wiltshire",
+    region: "Wiltshire",
+    coordinates: { lat: 51.4585, lng: -2.1158 },
+    travelTime: "~25–30 minutes west via M4 / A420",
+    distanceFromBase: "~18 miles west of Swindon",
+    heroTagline: "Expert Mobile Car Valeting in Chippenham",
+    heroSubtitle: "Convenient, high-standard mobile car detailing for Chippenham residents. We bring the studio to your driveway in Cepen Park, Pewsham, Monkton Park, and surrounding Wiltshire villages.",
+    introTitle: "Chippenham's Trusted Mobile Valeting Service",
     introParagraphs: [
-      "St Albans is one of Hertfordshire's most prestigious addresses — a cathedral city with a rich history dating back to Roman times, where tree-lined streets, period properties, and a thriving high street create a community that values quality in everything. The cars on St Albans' driveways reflect that standard, and King of Detailing is here to maintain it.",
-      "The city's mix of urban streets and surrounding countryside creates specific challenges for vehicle paintwork. Tree sap from the mature canopies along Verulamium Park, road salt from winter gritting on the A1(M) approach, and the general wear from commuter traffic through the city centre all demand professional-grade care that goes far beyond a standard car wash.",
-      "We regularly detail vehicles for clients across St Albans' most sought-after areas — from the Victorian homes near the Cathedral and the modern developments at Highfield Park to the family residences of Marshalswick and Sandridge. Whatever you drive, wherever you are in St Albans, we bring the same obsessive attention to detail.",
-      "At approximately 25 minutes from our Luton base, St Albans is firmly within our core service radius. We've built a loyal client base here — premium car owners who recognise that King of Detailing offers a level of care that matches the prestige of their city."
+      "Chippenham is one of Wiltshire's most vibrant and rapidly expanding market towns. Situated along the River Avon with rapid links to the M4 corridor, local motorists face heavy motorway grime and stop-and-start commuter wear.",
+      "RD Valeting makes caring for your vehicle simple. You don't have to sacrifice your weekend queuing at a car wash or settle for harsh chemical washes that strip waxes and cause paint swirl marks.",
+      "Rhys travels directly to your driveway across Chippenham, Cepen Park North & South, Pewsham, and nearby areas like Corsham and Lacock. We arrive fully equipped with premium detailing solutions that protect your paintwork and restore deep interior freshness.",
+      "Enjoy transparent pricing and dependable punctuality. Book your £30 Mini Valet, £50 Maintenance Wash, or £100 Deep Clean online in under a minute."
     ],
     localHighlights: [
-      "Serving all St Albans postcodes including AL1, AL2, AL3, AL4",
-      "Popular areas: Cathedral Quarter, Marshalswick, Sandridge, Highfield Park",
-      "Tackling tree sap, A1(M) road salt & urban commuter grime",
-      "25 minutes from our Luton base — reliable and on-time, every time",
-      "Trusted by premium car owners across Hertfordshire's cathedral city"
+      "Covering all Chippenham SN14 & SN15 postcodes, Pewsham, Cepen Park & Monkton Park",
+      "Quick access along the M4 corridor from Swindon",
+      "Protection against motorway spray, industrial fallout, and winter road salts",
+      "Weekend and evening appointment availability 7 days a week",
+      "Full interior wet-vac extraction and leather conditioning"
     ],
     whyChooseUs: [
-      "Premium service for a premium city — detailing that matches St Albans' standards",
-      "Experienced with local challenges — tree sap, road salt, commuter wear",
-      "Growing client base of 5-star reviewed customers across the AL postcode area",
-      "Fully mobile — we come to your driveway, office, or anywhere in St Albans",
-      "Professional Garage Therapy products for superior results",
-      "Fully insured and fully equipped — we bring everything we need"
+      "Reliable arrival with real-time updates directly from Rhys",
+      "Safe, swirl-free two-bucket hand washing",
+      "Complete interior rejuvenation: seats, carpets, vents, and plastics",
+      "Fully insured with £2M+ liability coverage",
+      "No hidden fees or unexpected extras"
     ],
     faqs: [
       {
-        question: "Do you offer mobile car detailing in St Albans?",
-        answer: "Yes! We provide fully mobile car detailing across the entire St Albans area. We come to your home or workplace with all the equipment and products we need. St Albans is approximately 25 minutes from our Luton base, making it one of our core service areas."
+        question: "Do you cover all of Chippenham?",
+        answer: "Yes, we cover Chippenham town centre, Pewsham, Cepen Park, Monkton Park, Hardenhuish, and out towards Corsham and Calne."
       },
       {
-        question: "How much does car detailing cost in St Albans?",
-        answer: "Our packages for St Albans clients start from £100 for maintenance cleans, £150 for a comprehensive deep clean, and £650 for our enhance package including paint correction and ceramic coating. A small travel supplement applies for the St Albans area. Contact us for a personalised quote."
+        question: "What is included in the £50 Maintenance Wash?",
+        answer: "Our £50 Maintenance Wash includes a pre-wash snow foam, safe hand wash, wheel & tyre deep clean, spray sealant, interior vacuum, wipe down of dash and console, and crystal-clear glass inside and out."
       },
       {
-        question: "Can you remove tree sap from my car in St Albans?",
-        answer: "Absolutely! Tree sap is one of the most common issues we tackle for St Albans clients, especially those parked near Verulamium Park and the tree-lined residential streets. Our decontamination process safely removes tree sap, bird droppings, and other organic contaminants without damaging your paintwork."
-      },
-      {
-        question: "Do you detail luxury and prestige vehicles in St Albans?",
-        answer: "Yes — a significant portion of our St Albans bookings are for premium and luxury vehicles. We're experienced with all marques including BMW, Mercedes, Audi, Porsche, Range Rover, and more. Our professional-grade products and techniques are safe for all paint types and finishes."
+        question: "Can I book on the weekend in Chippenham?",
+        answer: "Yes, RD Valeting operates 7 days a week, from 8:00 AM to 7:00 PM, including Saturdays and Sundays."
       }
     ],
     nearbyAreas: [
-      { name: "Luton", path: "/mobile-car-detailing-luton" },
-      { name: "Watford", path: "/car-detailing-watford" },
-      { name: "Hemel Hempstead", path: "/car-detailing-hemel-hempstead" },
-      { name: "Hitchin", path: "/car-detailing-hitchin" }
+      { name: "Swindon", path: "/mobile-car-detailing-swindon" },
+      { name: "Royal Wootton Bassett", path: "/car-detailing-royal-wootton-bassett" },
+      { name: "Bath", path: "/car-detailing-bath" },
+      { name: "Marlborough", path: "/car-detailing-marlborough" }
     ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39371.89!2d-0.3813!3d51.752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876414e5abf2481%3A0x267d28018a513c44!2sSt%20Albans!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39780!2d-2.1158!3d51.4585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871790408ea69cb%3A0x67396658933b91a!2sChippenham!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
   },
+
+  // 5. Royal Wootton Bassett
   {
-    slug: "car-detailing-hitchin",
-    title: "Car Detailing in Hitchin | Mobile Car Care | King of Detailing",
-    metaDescription: "Professional mobile car detailing in Hitchin, Hertfordshire. Deep cleans, ceramic coatings & paint correction. We come to your door. Fully insured. Book now.",
-    heroImage: "/bernie-fineman-car-detailing-luton.webp",
+    slug: "car-detailing-royal-wootton-bassett",
+    title: "Mobile Car Valeting in Royal Wootton Bassett | RD Valeting",
+    metaDescription: "Premium mobile car valeting in Royal Wootton Bassett. Mini valets from £30, maintenance washes £50, deep cleans £100. Right on Swindon's doorstep with zero travel fees. Book now.",
+    heroImage: "/718919623_896324679727402_6846985472856402868_n.jpg",
+    heroImagePosition: "object-top",
+    heroOverlayOpacity: "bg-black/[0.45]",
+    locationName: "Royal Wootton Bassett",
+    county: "Wiltshire",
+    region: "Wiltshire",
+    coordinates: { lat: 51.5414, lng: -1.9056 },
+    travelTime: "Just 10–12 minutes west from our Swindon base",
+    distanceFromBase: "~6 miles west of Swindon",
+    heroTagline: "Royal Wootton Bassett's Local Mobile Valeter",
+    heroSubtitle: "Located right next door to our home base, Royal Wootton Bassett residents enjoy rapid booking times and zero travel charges. We bring showroom valeting straight to your driveway.",
+    introTitle: "Royal Wootton Bassett's Premier Mobile Car Care",
+    introParagraphs: [
+      "Royal Wootton Bassett is one of our most frequent and cherished stops. Situated just 6 miles west of central Swindon along the A3102, we are practically around the corner.",
+      "Whether you reside near the historic High Street, Woodshaw, Noremarsh, or Hook, you benefit from priority booking and prompt arrival with no travel charges whatsoever.",
+      "Road salt from winter gritting along the M4 junction and country lane dust can quickly degrade your vehicle's gloss and leave clear coats feeling gritty. Our decontamination and safe wash processes gently lift bonded contaminants to leave paintwork slick and protected.",
+      "Rhys takes personal pride in serving local Wootton Bassett families and business professionals, ensuring your vehicle receives the same thorough attention to detail as our own."
+    ],
+    localHighlights: [
+      "Only 10 minutes from our base — fastest response time in Wiltshire",
+      "Covering all SN4 postcodes: Woodshaw, Noremarsh, Hook & High Street",
+      "Zero travel surcharge for all Royal Wootton Bassett bookings",
+      "Regular scheduled maintenance cleans available every 2 to 4 weeks",
+      "Full decontamination including iron fallout and tar removal"
+    ],
+    whyChooseUs: [
+      "Practically neighbours — rapid availability and punctual service",
+      "Personal care from business owner Rhys",
+      "High-grade detailing products that protect your vehicle's resale value",
+      "Full public liability insurance for complete driveway protection",
+      "Transparent pricing: £30 Mini Valet, £50 Maintenance, £100 Deep Clean"
+    ],
+    faqs: [
+      {
+        question: "How quickly can you get to Royal Wootton Bassett?",
+        answer: "As we are based right next door in Swindon, Royal Wootton Bassett is one of our primary locations. Same-week and often next-day appointments are readily available."
+      },
+      {
+        question: "Is there any travel charge for Royal Wootton Bassett?",
+        answer: "None at all! Royal Wootton Bassett falls within our immediate home territory (SN4), meaning zero travel charges on every package."
+      },
+      {
+        question: "How do I book for my driveway in Wootton Bassett?",
+        answer: "You can book directly via WhatsApp with Rhys at 07393 682 365 or select your date and service using our online 3-step booking wizard on this page."
+      }
+    ],
+    nearbyAreas: [
+      { name: "Swindon", path: "/mobile-car-detailing-swindon" },
+      { name: "Cirencester", path: "/car-detailing-cirencester" },
+      { name: "Chippenham", path: "/car-detailing-chippenham" },
+      { name: "Marlborough", path: "/car-detailing-marlborough" }
+    ],
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39770!2d-1.9056!3d51.5414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487140e7df6ef5bf%3A0x6b4430e32b704c7b!2sRoyal%20Wootton%20Bassett!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+  },
+
+  // 6. Bath
+  {
+    slug: "car-detailing-bath",
+    title: "Mobile Car Valeting in Bath | RD Valeting",
+    metaDescription: "Prestige mobile car valeting & detailing in Bath, Somerset. Deep cleans, maintenance washes & paint protection. We travel to your driveway. Book with Rhys today.",
+    heroImage: "/gallery-car-detailing-1.webp",
+    heroImagePosition: "object-center",
+    heroOverlayOpacity: "bg-black/[0.45]",
+    locationName: "Bath",
+    county: "Somerset",
+    region: "Somerset",
+    coordinates: { lat: 51.3811, lng: -2.3590 },
+    travelTime: "~45 minutes southwest from Swindon via M4 & A46",
+    distanceFromBase: "~30 miles southwest of Swindon",
+    heroTagline: "Prestige Mobile Car Detailing in Bath",
+    heroSubtitle: "Meticulous vehicle detailing delivered to your Georgian driveway in Bath. From Lansdown and Widcombe to Bathwick and Combe Down, RD Valeting provides unmatched care for discerning vehicle owners.",
+    introTitle: "Bath's Premier Mobile Detailing Experience",
+    introParagraphs: [
+      "The UNESCO World Heritage City of Bath is world-famous for its Georgian architecture, prestigious residential quarters, and discerning car owners. At RD Valeting, we provide the caliber of mobile car care that matches this exceptional setting.",
+      "Bath's hilly topography, limestone masonry dust, and heavy city traffic demand safe, gentle, yet deeply effective cleaning techniques. We employ pH-balanced cleansers, soft lamb's wool wash mitts, and warm-air drying to protect clear coats from unsightly swirl marks and scratches.",
+      "We travel straight down the M4 and A46 to private homes across Lansdown, Widcombe, Bathwick, Bathampton, and Combe Down. We arrive fully equipped to detail your vehicle on your driveway while you relax at home.",
+      "From intensive £100 Deep Cleans that reset leather and carpets to showroom condition, to full valets and detailing from £150, Rhys delivers bespoke craftsmanship on every booking."
+    ],
+    localHighlights: [
+      "Serving Bath BA1 & BA2: Lansdown, Widcombe, Bathwick, Combe Down & Bathampton",
+      "Specialising in prestige marques: Porsche, Range Rover, BMW, Mercedes, Audi",
+      "Tackling Bath stone dust, road film, and interior leather conditioning",
+      "Convenient at-home appointments without disrupting your schedule",
+      "Fully insured with £2M liability coverage"
+    ],
+    whyChooseUs: [
+      "Elite mobile detailing brought directly to your home in Bath",
+      "Personal service from Rhys with obsessive attention to detail",
+      "Safe contact methods to keep delicate luxury clear coats swirl-free",
+      "Comprehensive interior steam sanitisation and leather care",
+      "Transparent package rates with clear communication throughout"
+    ],
+    faqs: [
+      {
+        question: "Do you travel to Bath for detailing appointments?",
+        answer: "Yes! Bath is a regular service destination for RD Valeting. We travel via the M4/A46 for Deep Clean and Full Valet bookings throughout Bath and surrounding Somerset villages."
+      },
+      {
+        question: "How do you care for fine leather interiors?",
+        answer: "We use dedicated pH-neutral leather cleaners and horsehair brushes to gently lift grime from the grain, followed by a premium matte leather conditioner that prevents drying and cracking without leaving an oily residue."
+      },
+      {
+        question: "How do I schedule a visit to Bath?",
+        answer: "Simply book through our online booking wizard on this page or WhatsApp Rhys on 07393 682 365 with your Bath postcode and preferred date."
+      }
+    ],
+    nearbyAreas: [
+      { name: "Chippenham", path: "/car-detailing-chippenham" },
+      { name: "Swindon", path: "/mobile-car-detailing-swindon" },
+      { name: "Royal Wootton Bassett", path: "/car-detailing-royal-wootton-bassett" },
+      { name: "Marlborough", path: "/car-detailing-marlborough" }
+    ],
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39830!2d-2.3590!3d51.3811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871811a7a01289b%3A0xd64f1bc667104b28!2sBath!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+  },
+
+  // 7. Newbury
+  {
+    slug: "car-detailing-newbury",
+    title: "Mobile Car Valeting in Newbury | RD Valeting",
+    metaDescription: "Professional mobile car valeting & detailing in Newbury, Berkshire. Deep cleans, maintenance washes & interior sanitisation on your driveway. Fully insured. Book today.",
+    heroImage: "/723456333_1027111233340868_6744532048742945277_n.jpg",
+    heroImagePosition: "object-top",
+    heroOverlayOpacity: "bg-black/[0.45]",
+    locationName: "Newbury",
+    county: "Berkshire",
+    region: "Berkshire",
+    coordinates: { lat: 51.4014, lng: -1.3231 },
+    travelTime: "~30–35 minutes east via M4 / A34",
+    distanceFromBase: "~25 miles east of Swindon",
+    heroTagline: "Premier Mobile Car Detailing in Newbury",
+    heroSubtitle: "Top-tier mobile valeting delivered straight to your home or office in Newbury. Serving Donnington, Greenham, Wash Common, and Thatcham with reliable, showroom-grade care.",
+    introTitle: "Newbury's Trusted Mobile Valeting Specialist",
+    introParagraphs: [
+      "Newbury combines historic Berkshire charm with a thriving corporate community along the M4 innovation corridor. Drivers in Newbury demand high vehicle standards, whether preparing for executive commutes or weekend drives through the North Wessex Downs.",
+      "RD Valeting connects directly via the M4 to deliver full mobile detailing across Newbury, Donnington, Speen, Wash Common, Greenham, and Thatcham.",
+      "Country lane mud, agricultural runoff, and heavy motorway road spray take a heavy toll on Berkshire vehicles. Our multi-stage exterior decontamination strips away stubborn grit, while our interior detailing restores a clean, fresh, factory atmosphere.",
+      "With Rhys attending every booking personally, you receive honest advice, unmatched punctuality, and a finish you will be proud to show off."
+    ],
+    localHighlights: [
+      "Serving Newbury (RG14), Greenham, Wash Common, Donnington & Thatcham",
+      "Direct 30-minute access via the M4 corridor",
+      "Tackling Berkshire Downs mud, road salt, and tree sap",
+      "Convenient driveway service for busy professionals and families",
+      "High-power hot-water extraction and steam decontamination"
+    ],
+    whyChooseUs: [
+      "Prompt, courteous mobile service directly to your location",
+      "Expertise with all vehicle types from daily drivers to luxury performance cars",
+      "Full public liability insurance for total protection",
+      "Safe, scratch-free hand washing methods",
+      "Clear, upfront prices: £30 Mini Valet, £50 Maintenance, £100 Deep Clean"
+    ],
+    faqs: [
+      {
+        question: "Do you travel to Newbury and Thatcham?",
+        answer: "Yes, we regularly take bookings across Newbury, Thatcham, Greenham, and surrounding Berkshire villages."
+      },
+      {
+        question: "What is included in the Deep Clean (£100) in Newbury?",
+        answer: "The £100 Deep Clean is our complete reset: snow foam, thorough hand wash, wheel & arch decontamination, gloss sealant, full interior vacuum, wet-vac shampoo on upholstery and carpets, dash & trim conditioning, and streak-free windows."
+      },
+      {
+        question: "How do I book an appointment for my Newbury home?",
+        answer: "You can book in under a minute using our online appointment form or message Rhys directly on WhatsApp at 07393 682 365."
+      }
+    ],
+    nearbyAreas: [
+      { name: "Marlborough", path: "/car-detailing-marlborough" },
+      { name: "Swindon", path: "/mobile-car-detailing-swindon" },
+      { name: "Reading", path: "/car-detailing-reading" },
+      { name: "Oxford", path: "/car-detailing-oxford" }
+    ],
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39810!2d-1.3231!3d51.4014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876a3e14fb1e687%3A0xc48083a2d216503c!2sNewbury!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+  },
+
+  // 8. Oxford
+  {
+    slug: "car-detailing-oxford",
+    title: "Mobile Car Valeting in Oxford | RD Valeting",
+    metaDescription: "Professional mobile car valeting & detailing across Oxford, Oxfordshire. Mini valets from £30, maintenance washes £50, deep cleans £100. We come to you. Book today.",
+    heroImage: "/719890908_2222286848526617_3057517277440017740_n.jpg",
     heroImagePosition: "object-top",
     heroOverlayOpacity: "bg-black/[0.50]",
-    locationName: "Hitchin",
-    county: "Hertfordshire",
-    region: "Hertfordshire",
-    coordinates: { lat: 51.9469, lng: -0.2834 },
-    travelTime: "Approximately 20 minutes from our Luton base",
-    distanceFromBase: "~10 miles east of Luton",
-    heroTagline: "Mobile Car Detailing in Hitchin",
-    heroSubtitle: "From the charming market square to the lavender fields beyond, Hitchin is a town that appreciates quality. We bring that same commitment to excellence directly to your driveway with our premium mobile car detailing service.",
-    introTitle: "Hitchin's Trusted Mobile Car Detailing Service",
+    locationName: "Oxford",
+    county: "Oxfordshire",
+    region: "Oxfordshire",
+    coordinates: { lat: 51.7520, lng: -1.2577 },
+    travelTime: "~35–40 minutes northeast from Swindon via A420",
+    distanceFromBase: "~30 miles northeast of Swindon",
+    heroTagline: "Oxford's Premier Mobile Car Valeting Service",
+    heroSubtitle: "Bringing showroom detailing to your driveway in the City of Dreaming Spires. Serving Summertown, Headington, Cumnor, and Botley with pristine, hassle-free valeting.",
+    introTitle: "Oxford's Dependable Mobile Car Care",
     introParagraphs: [
-      "Hitchin is one of north Hertfordshire's hidden gems — a beautiful market town with a rich history, stunning architecture, and a community that genuinely cares about quality. From the independent shops along Bancroft to the period homes lining the River Hiz, Hitchin is a place where attention to detail matters. That's exactly what King of Detailing delivers.",
-      "The town's semi-rural setting brings specific challenges for car owners. Country lane mud from the surrounding farmland, seasonal pollen from the famous Hitchin Lavender fields, and agricultural dust all settle on your vehicle's paintwork. Add in the daily commuter run along the A505 or A1(M), and your car is fighting a constant battle.",
-      "We've built a growing client base across Hitchin's residential areas — from the character properties near the town centre and Windmill Hill to the family homes in Walsworth, Purwell, and Ickleford. Our fully mobile service means we come to you, wherever you are in the Hitchin area.",
-      "At just 20 minutes from our Luton base, Hitchin is a quick and easy drive for our team. We bring absolutely everything we need — professional-grade Garage Therapy products, our own water supply, and years of expertise — to deliver the kind of results that Hitchin residents expect."
+      "Oxford is a city of historic elegance, world-class academia, and thriving technology parks. Navigating narrow city roads and busy arterial routes like the A420 and A34 exposes vehicles to heavy brake fallout, urban grime, and tree sap.",
+      "RD Valeting travels straight up the A420 from Swindon in under 40 minutes, bringing our self-contained mobile studio directly to residential driveways across Headington, Summertown, Cumnor, Botley, and North Oxford.",
+      "We eliminate the need to leave your car in public car parks or settle for rushed automated washes that leave swirl marks on delicate paint. We treat every vehicle with high-grade snow foam, safe two-bucket washing, and deep interior extraction.",
+      "Whether you need regular maintenance for your daily commute or a deep clean reset before an event, Rhys delivers flawless results with complete punctuality."
     ],
     localHighlights: [
-      "Approximately 20 minutes from our Luton base along the A505",
-      "Covering Hitchin town, Walsworth, Purwell, Ickleford & surrounding villages",
-      "Combating country lane mud, lavender pollen & A1(M) commuter grime",
-      "Growing reputation amongst Hitchin's quality-focused car owners",
-      "Easy access via A505 — reliable, on-time mobile detailing service"
+      "Serving Oxford OX1, OX2, OX3 & OX4: Summertown, Headington, Cumnor & Botley",
+      "Direct, fast route via A420 from Swindon",
+      "Combating urban pollution, tree sap, and A34 commuter road film",
+      "Safe on all luxury paint finishes and ceramic coatings",
+      "Convenient home or workplace visits 7 days a week"
     ],
     whyChooseUs: [
-      "Just 20 minutes away — reliable, on-time service for all Hitchin postcodes",
-      "Understanding of Hitchin's rural and semi-urban driving conditions",
-      "Professional decontamination to tackle pollen, sap, and agricultural residue",
-      "5-star Google reviews from clients across north Hertfordshire",
-      "Fully mobile — we bring everything we need to your door",
-      "All packages available: deep clean, maintenance, paint correction, ceramic coating"
+      "We travel straight to your driveway — zero travel hassle for you",
+      "Personalised care from owner Rhys with guaranteed high standards",
+      "Full interior deep cleaning: stain removal, steam sanitisation, and leather care",
+      "Fully insured with comprehensive public liability cover",
+      "Honest, fixed rates: £30 Mini Valet, £50 Maintenance, £100 Deep Clean"
     ],
     faqs: [
       {
-        question: "Is there a mobile car detailing service in Hitchin?",
-        answer: "Yes! King of Detailing provides fully mobile car detailing across Hitchin and the surrounding villages. We're based in Luton, just 20 minutes away, and we come to your home or workplace with all the professional equipment and products we need."
+        question: "Do you travel to Oxford and surrounding Oxfordshire villages?",
+        answer: "Yes! We travel up the A420 regularly to service clients in Oxford, Cumnor, Botley, Headington, Summertown, and surrounding areas."
       },
       {
-        question: "How much does car valeting cost in Hitchin?",
-        answer: "Our professional detailing packages for Hitchin start from £100 for a maintenance clean, £150 for a comprehensive deep clean, and £650 for our full enhance package including paint correction and ceramic coating. Contact us for a quote tailored to your vehicle."
+        question: "Can you detail my car at my office in Oxford?",
+        answer: "Yes, as long as there is an authorised parking space or driveway where we can position our van safely, we can detail your vehicle while you work."
       },
       {
-        question: "Can you detail cars in the Hitchin countryside and villages?",
-        answer: "Absolutely! We regularly visit clients in Ickleford, Pirton, Great Offley, and other villages around Hitchin. As long as we have a suitable driveway or parking space, we can deliver our full range of services anywhere in the area."
-      },
-      {
-        question: "How do you handle pollen and agricultural dust on cars?",
-        answer: "Our decontamination stage includes clay bar treatment, which is specifically designed to remove bonded contaminants like pollen, sap, and agricultural residue that a normal wash can't shift. We then apply a protective sealant or coating to help prevent future build-up."
+        question: "How do I secure an Oxford appointment?",
+        answer: "Use our online 3-step appointment booking wizard on this page, or send a quick WhatsApp message to Rhys at 07393 682 365."
       }
     ],
     nearbyAreas: [
-      { name: "Luton", path: "/mobile-car-detailing-luton" },
-      { name: "Stevenage", path: "/car-detailing-stevenage" },
-      { name: "Bedford", path: "/car-detailing-bedford" },
-      { name: "St Albans", path: "/car-detailing-st-albans" }
+      { name: "Swindon", path: "/mobile-car-detailing-swindon" },
+      { name: "Cirencester", path: "/car-detailing-cirencester" },
+      { name: "Newbury", path: "/car-detailing-newbury" },
+      { name: "Reading", path: "/car-detailing-reading" }
     ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19596.8!2d-0.3034!3d51.9469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876331c8c820f01%3A0x5a4b4fb809d68c7!2sHitchin!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39670!2d-1.2577!3d51.7520!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876c6a9ef8c485b%3A0xd64f1bc667104b28!2sOxford!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
   },
+
+  // 9. Reading
   {
-    slug: "car-detailing-stevenage",
-    title: "Car Detailing in Stevenage | Mobile Detailing | King of Detailing",
-    metaDescription: "Professional mobile car detailing in Stevenage, Hertfordshire. Deep cleans, paint correction & ceramic coatings delivered to your door. Fully insured. Book today.",
-    heroImage: "/bernie-fineman-car-detailing-luton.webp",
+    slug: "car-detailing-reading",
+    title: "Mobile Car Valeting in Reading | RD Valeting",
+    metaDescription: "Professional mobile car valeting & detailing across Reading, Berkshire. Deep cleans, maintenance washes & paint protection. We travel to your driveway. Book today.",
+    heroImage: "/724453567_1741795673842657_7212829807354336478_n.jpg",
     heroImagePosition: "object-top",
-    heroOverlayOpacity: "bg-black/[0.50]",
-    locationName: "Stevenage",
-    county: "Hertfordshire",
-    region: "Hertfordshire",
-    coordinates: { lat: 51.9020, lng: -0.2024 },
-    travelTime: "Approximately 25 minutes from our Luton base",
-    distanceFromBase: "~15 miles east of Luton",
-    heroTagline: "Professional Car Detailing in Stevenage",
-    heroSubtitle: "Britain's first New Town deserves new-car freshness. From the modern developments of Great Ashby to the charming Old Town high street, we deliver premium mobile car detailing across Stevenage.",
-    introTitle: "Stevenage's Professional Mobile Car Detailing",
+    heroOverlayOpacity: "bg-black/[0.45]",
+    locationName: "Reading",
+    county: "Berkshire",
+    region: "Berkshire",
+    coordinates: { lat: 51.4543, lng: -0.9781 },
+    travelTime: "~45–50 minutes east via M4",
+    distanceFromBase: "~40 miles east of Swindon",
+    heroTagline: "Reading's High-Quality Mobile Car Valeting",
+    heroSubtitle: "Serving the Thames Valley with premier mobile valeting. Bringing showroom-grade cleans and interior decontamination straight to your driveway in Caversham, Earley, and Tilehurst.",
+    introTitle: "Reading's Professional Mobile Detailing Service",
     introParagraphs: [
-      "Stevenage holds a unique place in British history as the UK's first designated New Town — a pioneering community built around modern living. Today, it's a thriving Hertfordshire town with a diverse mix of residential areas, from the original New Town neighbourhoods to the award-winning Great Ashby development and the historic charm of Stevenage Old Town.",
-      "The town's extensive road network, including the A1(M) running through its heart, means vehicles here face significant road spray, motorway grime, and brake dust. The mix of urban driving through the town centre and surrounding countryside excursions adds tree sap, pollen, and rural road dust to the challenge.",
-      "We've been building a presence in Stevenage with clients who appreciate the difference between a standard car wash and professional detailing. Whether you're in Pin Green, Shephall, Broadwater, the Old Town, or any Stevenage neighbourhood, we bring our full mobile studio to your driveway.",
-      "Located approximately 25 minutes from our Luton base via the A602, Stevenage is well within our regular service area. We carry everything we need — professional Garage Therapy products, equipment, and our own water supply — for a completely self-contained service."
+      "Reading is the bustling commercial powerhouse of the Thames Valley. With high commuter traffic along the M4 corridor, vehicles in Reading face constant exposure to road spray, diesel particulate fallout, and harsh winter gritting.",
+      "RD Valeting offers a premium alternative to local automated car washes. We travel directly to your home across Caversham, Earley, Calcot, Tilehurst, and Woodley, equipped with everything needed to restore your vehicle to immaculate showroom condition.",
+      "Our safe washing protocols protect your clear coat from the swirl marks and fine scratches created by mechanical car washes. Inside, our wet-vac extraction and steam sanitisation remove ground-in dirt, pet hair, and stale odours.",
+      "Experience the ultimate convenience of top-tier mobile detailing without lifting a finger. Book online or contact Rhys directly on WhatsApp."
     ],
     localHighlights: [
-      "Covering all Stevenage areas: Old Town, Pin Green, Shephall, Great Ashby, Broadwater",
-      "25 minutes from Luton via the A602 — reliable service times",
-      "Tackling A1(M) motorway grime, brake dust & urban road spray",
-      "Serving Stevenage's SG1 and SG2 postcodes comprehensively",
-      "Growing client base in Hertfordshire's largest town"
+      "Covering Reading RG1, RG2, RG4, RG6, Caversham, Earley, Tilehurst & Calcot",
+      "Direct 45-minute route straight down the M4 corridor",
+      "Protection against heavy Thames Valley commuter grime and industrial fallout",
+      "Comprehensive interior shampooing, stain removal, and trim restoration",
+      "Full public liability coverage for complete driveway safety"
     ],
     whyChooseUs: [
-      "25-minute drive from base — efficient and reliable arrival times",
-      "Deep understanding of Stevenage's A1(M) motorway grime challenges",
-      "Professional decontamination for brake dust, road film, and tar",
-      "Every package available at your Stevenage driveway — from maintenance to ceramic",
-      "Fully insured, fully mobile — no need to drop off or collect your car",
-      "Obsessive attention to detail backed by 5-star reviews"
+      "Prompt and reliable mobile appointments across Reading",
+      "Personal care from owner Rhys with guaranteed quality",
+      "Safe two-bucket wash technique that preserves your vehicle's gloss",
+      "Transparent package rates: £30 Mini Valet, £50 Maintenance, £100 Deep Clean",
+      "5-star rated service with hundreds of satisfied clients"
     ],
     faqs: [
       {
-        question: "Do you offer car detailing in Stevenage?",
-        answer: "Yes! We provide fully mobile car detailing across the entire Stevenage area. We're approximately 25 minutes from our Luton base, and we come to your home or workplace with everything we need — no dropping off required."
+        question: "Do you travel to Reading for mobile valeting?",
+        answer: "Yes, Reading is a regular destination on our M4 service route. We take Deep Clean, Full Valet, and multi-vehicle bookings throughout Reading and the Thames Valley."
       },
       {
-        question: "What car detailing packages are available in Stevenage?",
-        answer: "We offer all our packages in Stevenage: Maintenance Clean (from £100), Deep Clean (from £150), and our full Enhance package with paint correction and ceramic coating (from £650). Each package is delivered at your doorstep with the same professional standard."
+        question: "Can you detail multiple cars on the same driveway?",
+        answer: "Absolutely! We frequently detail 2 or more household vehicles in a single visit, saving you time and keeping your entire driveway looking pristine."
       },
       {
-        question: "Can you remove motorway contamination from my car?",
-        answer: "Absolutely! Stevenage's proximity to the A1(M) means motorway contamination is common — brake dust, tar spots, and road film. Our decontamination process includes iron fallout removal, tar treatment, and clay bar to strip away every contaminant before we detail and protect your paintwork."
-      },
-      {
-        question: "Do you work in Stevenage Old Town and the newer areas?",
-        answer: "Yes, we cover all of Stevenage including the Old Town, New Town areas, Pin Green, Shephall, Great Ashby, Broadwater, and surrounding neighbourhoods. Wherever you are in the SG1 or SG2 postcode area, we'll come to you."
+        question: "How do I book for my Reading address?",
+        answer: "Select your preferred package and date via our online booking wizard, or message Rhys directly on WhatsApp at 07393 682 365."
       }
     ],
     nearbyAreas: [
-      { name: "Hitchin", path: "/car-detailing-hitchin" },
-      { name: "Luton", path: "/mobile-car-detailing-luton" },
-      { name: "Watford", path: "/car-detailing-watford" },
-      { name: "St Albans", path: "/car-detailing-st-albans" }
+      { name: "Newbury", path: "/car-detailing-newbury" },
+      { name: "Oxford", path: "/car-detailing-oxford" },
+      { name: "Swindon", path: "/mobile-car-detailing-swindon" },
+      { name: "London", path: "/car-detailing-london" }
     ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39229.0!2d-0.2424!3d51.902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487631e3e31b7587%3A0x5ea96c13dae64e4e!2sStevenage!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39750!2d-0.9781!3d51.4543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48769b1897c8ff79%3A0xc48083a2d216503c!2sReading!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
   },
+
+  // 10. London
   {
-    slug: "car-detailing-hemel-hempstead",
-    title: "Car Detailing in Hemel Hempstead | Mobile Service | King of Detailing",
-    metaDescription: "Professional mobile car detailing in Hemel Hempstead, Hertfordshire. Deep cleans, ceramic coatings & paint correction. We come to you. Fully insured. Book now.",
-    heroImage: "/bernie-fineman-car-detailing-luton.webp",
-    heroImagePosition: "object-top",
-    heroOverlayOpacity: "bg-black/[0.50]",
-    locationName: "Hemel Hempstead",
-    county: "Hertfordshire",
-    region: "Hertfordshire",
-    coordinates: { lat: 51.7537, lng: -0.4729 },
-    travelTime: "Approximately 30 minutes from our Luton base",
-    distanceFromBase: "~15 miles south-west of Luton",
-    heroTagline: "Mobile Car Detailing in Hemel Hempstead",
-    heroSubtitle: "From the Gade Valley to the Maylands business district, Hemel Hempstead is a town that moves fast. Let us keep your vehicle looking its absolute best with our premium mobile detailing service, delivered right to your doorstep.",
-    introTitle: "Hemel Hempstead's Mobile Car Detailing Specialists",
+    slug: "car-detailing-london",
+    title: "Mobile Car Valeting in London | RD Valeting",
+    metaDescription: "Bespoke mobile car detailing & deep cleans for London and M4 corridor clients. Luxury vehicle care directly on your private driveway. Fully insured. Book with Rhys.",
+    heroImage: "/gallery-car-detailing-1.webp",
+    heroImagePosition: "object-center",
+    heroOverlayOpacity: "bg-black/[0.45]",
+    locationName: "London",
+    county: "Greater London",
+    region: "London",
+    coordinates: { lat: 51.5074, lng: -0.1278 },
+    travelTime: "~75–90 minutes direct via M4",
+    distanceFromBase: "~75 miles east of Swindon",
+    heroTagline: "Bespoke Mobile Car Detailing for London",
+    heroSubtitle: "Delivering studio-grade vehicle care and deep interior decontamination to private residences across West and Central London. Professional, discreet, and uncompromising quality.",
+    introTitle: "London's High-End Mobile Valeting Solution",
     introParagraphs: [
-      "Hemel Hempstead is one of Hertfordshire's most dynamic towns — a bustling community nestled in the Gade Valley with a perfect blend of New Town energy and countryside charm. With quick access to the M1 and M25, Hemel is a commuter's dream — but all those motorway miles take a serious toll on your vehicle's finish.",
-      "The Gade Valley setting means moisture, morning dew, and occasional flooding are part of life here. Combine that with the constant M1 traffic spray, the industrial fallout from the Maylands business park area, and the usual urban grime, and your car's paintwork is under constant assault. Our professional detailing treatments are designed to restore and protect against every one of these challenges.",
-      "We serve clients right across Hemel Hempstead — from the town centre and Marlowes shopping area to the residential neighbourhoods of Adeyfield, Bennetts End, Leverstock Green, and the popular Gadebridge area. Whether you need a quick maintenance clean or a full paint correction, we come to you.",
-      "At roughly 30 minutes from our Luton base via the M1, Hemel Hempstead is comfortably within our regular service zone. We've seen growing demand from Hemel residents who want something far beyond a standard valeting service — and that's exactly what King of Detailing provides."
+      "London motorists face some of the highest concentrations of brake dust, diesel particulate fallout, and road contamination anywhere in the UK. Keeping a luxury or daily vehicle pristine in the capital requires meticulous, dedicated care.",
+      "RD Valeting provides high-end mobile detailing for clients across West London and the Western M4 approach, including Chiswick, Richmond, Kensington, Chelsea, and surrounding boroughs.",
+      "We bring our fully self-contained setup directly to your private driveway or residential mews. Rhys personally carries out every service, ensuring delicate clear coats receive safe hand washing, deep decontamination, and premium protective sealants.",
+      "From comprehensive £100 Deep Cleans to full multi-stage valeting and detailing packages from £150, we deliver flawless results with complete discretion and professionalism."
     ],
     localHighlights: [
-      "Serving all Hemel Hempstead postcodes: HP1, HP2, HP3",
-      "Covering Adeyfield, Bennetts End, Leverstock Green, Gadebridge & more",
-      "Approximately 30 minutes from base via the M1 — reliable arrival times",
-      "Tackling M1/M25 commuter grime, Gade Valley moisture & industrial fallout",
-      "Growing demand from quality-focused car owners in the HP postcode area"
+      "Covering West & Central London, Richmond, Chiswick, Kensington, Chelsea & M4 borders",
+      "Specialising in prestige, sports, and executive vehicles",
+      "Intensive fallout decontamination combating heavy urban emissions",
+      "Discreet, professional driveway appointments arranged at your convenience",
+      "Comprehensive £2M+ public liability insurance"
     ],
     whyChooseUs: [
-      "30-minute drive via the M1 — regular and reliable service for Hemel residents",
-      "Experienced with M1 motorway contamination, valley moisture, and urban grime",
-      "Full range of packages available at your driveway — from £100 maintenance to £650 ceramic",
-      "Professional Garage Therapy products for results that outlast any car wash",
-      "Fully insured and fully self-sufficient — we bring everything we need",
-      "5-star rated with a growing Hemel Hempstead client base"
+      "Dedicated personal service from business owner Rhys",
+      "Studio-grade results delivered right to your private driveway",
+      "Gentle, swirl-free wash techniques for flawless luxury paintwork",
+      "Deep fabric extraction, leather rejuvenation, and steam sanitisation",
+      "Transparent, upfront communication with zero hidden charges"
     ],
     faqs: [
       {
-        question: "Is there a mobile car detailing service in Hemel Hempstead?",
-        answer: "Yes! King of Detailing provides fully mobile car detailing across Hemel Hempstead and surrounding areas. We come to your home or workplace with all professional equipment and products — approximately 30 minutes from our Luton base via the M1."
+        question: "Do you travel to London for detailing?",
+        answer: "Yes! We regularly travel direct along the M4 corridor for Deep Clean, Full Valet, and multi-vehicle bookings across West and Central London."
       },
       {
-        question: "How much does car detailing cost in Hemel Hempstead?",
-        answer: "Our packages start from £100 for maintenance cleans, £150 for comprehensive deep cleans, and £650 for our full enhance package with paint correction and ceramic coating. A travel supplement applies for the Hemel Hempstead area. Contact us for an exact quote."
+        question: "Do I need a private driveway in London?",
+        answer: "Yes, for London bookings a private off-street driveway, mews space, or dedicated parking bay is required so our mobile unit can operate safely."
       },
       {
-        question: "Can you detail my car at my office in Maylands?",
-        answer: "Absolutely! We regularly visit business parks and offices across Hemel Hempstead, including the Maylands area. Provide us with a suitable parking space and we'll detail your car while you work — it's the most convenient way to maintain your vehicle."
-      },
-      {
-        question: "Do you cover Berkhamsted and Tring as well?",
-        answer: "Yes — we cover the wider Dacorum area including Berkhamsted, Tring, Kings Langley, and Bovingdon. If you're within reasonable distance, we'll come to you. Just get in touch to confirm availability for your specific area."
+        question: "How do I schedule a London appointment with Rhys?",
+        answer: "Please contact Rhys directly via WhatsApp at 07393 682 365 or use our online booking wizard to discuss your vehicle and preferred date."
       }
     ],
     nearbyAreas: [
-      { name: "Dunstable", path: "/car-detailing-dunstable" },
-      { name: "St Albans", path: "/car-detailing-st-albans" },
-      { name: "Watford", path: "/car-detailing-watford" },
-      { name: "Aylesbury", path: "/car-detailing-aylesbury" }
+      { name: "Reading", path: "/car-detailing-reading" },
+      { name: "Newbury", path: "/car-detailing-newbury" },
+      { name: "Oxford", path: "/car-detailing-oxford" },
+      { name: "Swindon", path: "/mobile-car-detailing-swindon" }
     ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39370.8!2d-0.5129!3d51.7537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876417a6f6aaddd%3A0x3e2827bcb7f28b0e!2sHemel%20Hempstead!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
-  },
-  {
-    slug: "car-detailing-watford",
-    title: "Car Detailing in Watford | Mobile Detailing Service | King of Detailing",
-    metaDescription: "Premium mobile car detailing in Watford, Hertfordshire. Professional deep cleans, paint correction & ceramic coatings. We come to you. Fully insured. Book today.",
-    heroImage: "/bernie-fineman-car-detailing-luton.webp",
-    heroImagePosition: "object-top",
-    heroOverlayOpacity: "bg-black/[0.50]",
-    locationName: "Watford",
-    county: "Hertfordshire",
-    region: "Hertfordshire",
-    coordinates: { lat: 51.6565, lng: -0.3957 },
-    travelTime: "Approximately 35 minutes from our Luton base",
-    distanceFromBase: "~25 miles south of Luton",
-    heroTagline: "Premium Car Detailing in Watford",
-    heroSubtitle: "Where Hertfordshire meets London, vehicles deserve premium care. From the leafy avenues of Cassiobury to the busy streets near the Intu centre, we deliver showroom-quality mobile detailing across Watford.",
-    introTitle: "Watford's Premium Mobile Car Detailing Service",
-    introParagraphs: [
-      "Watford sits at the gateway between Hertfordshire and London — a vibrant, metropolitan town where the pace of life is fast, the roads are busy, and vehicles work hard. From the commuter traffic on the M1 and M25 junction to the stop-start driving through the town centre, Watford's cars endure some of the toughest conditions in the Home Counties.",
-      "The town's proximity to London means higher concentrations of traffic pollution, brake dust, and road film than quieter rural areas. Add in the tree-lined residential streets of Cassiobury Park — stunning to look at but notorious for dropping sap, pollen, and leaves onto parked cars — and you have a vehicle maintenance challenge that demands professional-grade solutions.",
-      "We detail vehicles for clients across Watford's diverse neighbourhoods — from the prestigious homes near Cassiobury Park and the Grove to the family properties in Garston, Oxhey, Leavesden, and North Watford. We also visit offices in the Clarendon Road business corridor and the Warner Bros. Studios area regularly.",
-      "At approximately 35 minutes from our Luton base, Watford is at the edge of our core radius — but the demand from quality-conscious Watford residents keeps us coming back. These are car owners who know the difference between a machine wash and professional detailing, and they won't settle for anything less than King standard."
-    ],
-    localHighlights: [
-      "Covering all Watford postcodes: WD17, WD18, WD19, WD24, WD25",
-      "Popular areas: Cassiobury, Oxhey, Garston, Leavesden, North Watford",
-      "Approximately 35 minutes from base — reliable service across south Herts",
-      "Tackling M1/M25 junction grime, London pollution & Cassiobury tree sap",
-      "Office detailing available — Clarendon Road, Leavesden & business parks"
-    ],
-    whyChooseUs: [
-      "Quality-focused service for Watford's discerning car owners",
-      "Expert at tackling London-proximity pollution, motorway grime, and tree sap",
-      "Fully mobile — driveway, office, or anywhere with suitable space in Watford",
-      "Professional Garage Therapy products for results that outperform any car wash",
-      "Fully insured and equipped — we bring everything needed for a perfect result",
-      "5-star reviewed across Hertfordshire and Bedfordshire"
-    ],
-    faqs: [
-      {
-        question: "Do you provide mobile car detailing in Watford?",
-        answer: "Yes! We offer fully mobile car detailing across the entire Watford area. We come to your home or workplace with all professional equipment, products, and our own water supply. Watford is approximately 35 minutes from our Luton base."
-      },
-      {
-        question: "How much does professional car detailing cost in Watford?",
-        answer: "Our packages for Watford clients start from £100 for maintenance cleans, £150 for a deep clean, and £650 for our full enhance package with paint correction and ceramic coating. A travel supplement applies for the Watford area. Get in touch for a personalised quote."
-      },
-      {
-        question: "Can you protect my car from London pollution and road grime?",
-        answer: "Absolutely. Watford's proximity to London means vehicles here are exposed to higher levels of pollution, brake dust, and road film. Our ceramic coating packages provide long-lasting protection — up to 3 years — creating a barrier against environmental contaminants and making future cleaning much easier."
-      },
-      {
-        question: "Do you detail cars near Watford Junction and the town centre?",
-        answer: "Yes, we cover every area of Watford including the town centre, Watford Junction, and all residential areas. If you have a suitable driveway, garage, or parking space, we can deliver our full range of detailing services at your location."
-      }
-    ],
-    nearbyAreas: [
-      { name: "St Albans", path: "/car-detailing-st-albans" },
-      { name: "Hemel Hempstead", path: "/car-detailing-hemel-hempstead" },
-      { name: "Luton", path: "/mobile-car-detailing-luton" },
-      { name: "Aylesbury", path: "/car-detailing-aylesbury" }
-    ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39418.9!2d-0.4357!3d51.6565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487636941e8e3c07%3A0x95dc5283d5e0b0c0!2sWatford!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
-  },
-  {
-    slug: "car-detailing-milton-keynes",
-    title: "Car Detailing in Milton Keynes | Mobile Service | King of Detailing",
-    metaDescription: "Professional mobile car detailing in Milton Keynes. Deep cleans, paint correction & ceramic coatings. We come to your driveway. Fully insured. Book today.",
-    heroImage: "/bernie-fineman-car-detailing-luton.webp",
-    heroImagePosition: "object-top",
-    heroOverlayOpacity: "bg-black/[0.50]",
-    locationName: "Milton Keynes",
-    county: "Buckinghamshire",
-    region: "Buckinghamshire",
-    coordinates: { lat: 52.0406, lng: -0.7594 },
-    travelTime: "Approximately 35 minutes from our Luton base",
-    distanceFromBase: "~30 miles north-west of Luton",
-    heroTagline: "Mobile Car Detailing in Milton Keynes",
-    heroSubtitle: "Britain's most modern city deserves modern car care. From centre:mk to the grid road network, we deliver precision mobile detailing that keeps your vehicle in showroom condition — right at your MK doorstep.",
-    introTitle: "Milton Keynes' Expert Mobile Car Detailing Service",
-    introParagraphs: [
-      "Milton Keynes is unlike anywhere else in the UK — a purpose-built city defined by its iconic grid road system, landmark roundabouts, and miles of dual carriageway. It's a city designed around the car, and MK residents take their vehicles seriously. Whether you're cruising the grid roads in a new BMW or navigating the Redways in a family SUV, your car deserves professional care.",
-      "The city's extensive road network and high-speed grid roads mean vehicles here accumulate road film, brake dust, and tyre residue faster than in most towns. Milton Keynes' many trees — the city is famously green — add seasonal challenges of sap, pollen, and fallen leaves. And the numerous construction sites across this ever-expanding city create persistent dust that settles on everything.",
-      "We detail vehicles for clients across Milton Keynes' grid squares — from the premium addresses of Campbell Park and the Kingston area near the centre:mk to the family-friendly estates of Emerson Valley, Bletchley, and Wolverton. MK's generous driveways and parking make it ideal for mobile detailing.",
-      "At approximately 35 minutes from our Luton base via the M1, Milton Keynes is at the edge of our standard radius — but we've built strong demand here. MK residents appreciate our no-compromises approach: fully mobile, fully insured, fully professional."
-    ],
-    localHighlights: [
-      "Covering all MK postcodes: MK1–MK19 and surrounding areas",
-      "Popular areas: Campbell Park, centre:mk, Emerson Valley, Bletchley, Wolverton",
-      "35 minutes from base via the M1 — efficient motorway access",
-      "Tackling grid road grime, construction dust & abundant tree sap",
-      "MK's spacious driveways are perfect for our mobile detailing setup"
-    ],
-    whyChooseUs: [
-      "Efficient M1 access — 35 minutes door-to-door from our Luton base",
-      "Understanding of MK's unique grid road conditions and construction dust",
-      "MK's spacious driveways are ideal for our comprehensive mobile service",
-      "Full range of packages — from £100 maintenance to £650 ceramic coating",
-      "Fully insured and self-sufficient — we bring water, power, and products",
-      "Growing 5-star reputation across Milton Keynes and Buckinghamshire"
-    ],
-    faqs: [
-      {
-        question: "Do you offer car detailing in Milton Keynes?",
-        answer: "Yes! We provide fully mobile car detailing across Milton Keynes. We travel from our Luton base (approximately 35 minutes via the M1) and come to your driveway with all the professional equipment and products we need. MK's spacious driveways make it perfect for our mobile service."
-      },
-      {
-        question: "How much does mobile car detailing cost in Milton Keynes?",
-        answer: "Our packages for Milton Keynes start from £100 for maintenance cleans, £150 for deep cleans, and £650 for our enhance package with paint correction and ceramic coating. A travel supplement applies. Contact us for a quote tailored to your vehicle's size and condition."
-      },
-      {
-        question: "Which areas of Milton Keynes do you cover?",
-        answer: "We cover the entire Milton Keynes area including Campbell Park, central Milton Keynes, Bletchley, Wolverton, Stony Stratford, Newport Pagnell, Emerson Valley, and all grid squares in between. If you're in an MK postcode, we'll come to you."
-      },
-      {
-        question: "Can you handle construction dust and grid road contamination?",
-        answer: "Absolutely. Milton Keynes' ongoing construction and high-speed grid roads create specific challenges. Our decontamination process includes iron fallout removal (critical for brake dust), clay bar treatment for bonded particles, and tar removal — stripping away everything a normal wash leaves behind."
-      }
-    ],
-    nearbyAreas: [
-      { name: "Bedford", path: "/car-detailing-bedford" },
-      { name: "Aylesbury", path: "/car-detailing-aylesbury" },
-      { name: "Luton", path: "/mobile-car-detailing-luton" },
-      { name: "Dunstable", path: "/car-detailing-dunstable" }
-    ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39167.7!2d-0.7994!3d52.0406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877a1cf58f50605%3A0xb6a8e0551ab2ddb4!2sMilton%20Keynes!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
-  },
-  {
-    slug: "car-detailing-aylesbury",
-    title: "Car Detailing in Aylesbury | Mobile Car Care | King of Detailing",
-    metaDescription: "Professional mobile car detailing in Aylesbury, Buckinghamshire. Deep cleans, ceramic coatings & paint correction. We come to your door. Fully insured. Book now.",
-    heroImage: "/bernie-fineman-car-detailing-luton.webp",
-    heroImagePosition: "object-top",
-    heroOverlayOpacity: "bg-black/[0.50]",
-    locationName: "Aylesbury",
-    county: "Buckinghamshire",
-    region: "Buckinghamshire",
-    coordinates: { lat: 51.8154, lng: -0.8084 },
-    travelTime: "Approximately 30 minutes from our Luton base",
-    distanceFromBase: "~25 miles west of Luton",
-    heroTagline: "Expert Car Detailing in Aylesbury",
-    heroSubtitle: "The county town of Buckinghamshire deserves county-town-quality car care. From the Vale of Aylesbury's rolling landscapes to the bustling town centre, we bring premium mobile detailing to your Aylesbury doorstep.",
-    introTitle: "Aylesbury's Reliable Mobile Car Detailing Service",
-    introParagraphs: [
-      "Aylesbury is the proud county town of Buckinghamshire — a thriving market town surrounded by the beautiful Vale of Aylesbury, one of England's most picturesque landscapes. With its blend of historic architecture, modern developments, and quintessentially English countryside, Aylesbury is home to car owners who appreciate quality craftsmanship — and that includes how their vehicles are cared for.",
-      "The Vale's agricultural landscape creates specific challenges for vehicle owners. Country lane mud, crop dust, and the seasonal pollen from the surrounding farmland settle onto paintwork and become bonded if left untreated. Combined with the commuter traffic along the A41 corridor to London, your car faces a double assault of rural and urban contamination.",
-      "We serve clients across Aylesbury's residential areas — from the established neighbourhoods of Stoke Mandeville and Wendover Road to the newer developments at Berryfields, Aylesbury Vale Parkway, and Fairford Leys. Our fully mobile service means we come equipped with everything needed for a complete transformation.",
-      "At approximately 30 minutes from our Luton base, Aylesbury sits at the western edge of our core service area. We've seen increasing demand from Aylesbury's quality-conscious residents who want more than a standard car wash — they want the King of Detailing standard."
-    ],
-    localHighlights: [
-      "Covering all Aylesbury postcodes: HP19, HP20, HP21, HP22",
-      "Serving Stoke Mandeville, Berryfields, Fairford Leys & surrounding areas",
-      "Approximately 30 minutes from our Luton base — reliable service",
-      "Tackling Vale countryside grime, agricultural dust & A41 commuter residue",
-      "Growing client base across Buckinghamshire's county town"
-    ],
-    whyChooseUs: [
-      "30 minutes from base — efficient, reliable service for Aylesbury residents",
-      "Experienced with Vale of Aylesbury's rural and commuter driving conditions",
-      "Professional decontamination to tackle agricultural dust, sap, and road grime",
-      "Full range of packages from maintenance cleans to ceramic coating",
-      "Fully insured and self-sufficient — we bring water, power, and everything we need",
-      "5-star rated across Bedfordshire, Hertfordshire, and Buckinghamshire"
-    ],
-    faqs: [
-      {
-        question: "Is there a mobile car detailing service in Aylesbury?",
-        answer: "Yes! King of Detailing provides fully mobile car detailing across Aylesbury and the surrounding Buckinghamshire area. We travel from our Luton base (approximately 30 minutes) and come to your home or workplace with all professional equipment and products."
-      },
-      {
-        question: "How much does car detailing cost in Aylesbury?",
-        answer: "Our packages for Aylesbury clients start from £100 for a maintenance clean, £150 for a comprehensive deep clean, and £650 for our full enhance package with paint correction and ceramic coating. A travel supplement applies. Get in touch for a personalised quote."
-      },
-      {
-        question: "Do you cover Wendover, Stoke Mandeville, and surrounding villages?",
-        answer: "Yes — we cover the wider Aylesbury Vale area including Wendover, Stoke Mandeville, Haddenham, Stone, Princes Risborough, and surrounding villages. As long as we have access to a suitable driveway or parking area, we can deliver our full service."
-      },
-      {
-        question: "Can you protect my car from countryside contamination?",
-        answer: "Absolutely. Living in the Vale of Aylesbury means dealing with crop dust, mud, pollen, and other rural contaminants. Our professional detailing includes thorough decontamination with clay bar treatment, and we offer ceramic coating protection that lasts up to 3 years — creating a barrier against future build-up."
-      }
-    ],
-    nearbyAreas: [
-      { name: "Dunstable", path: "/car-detailing-dunstable" },
-      { name: "Milton Keynes", path: "/car-detailing-milton-keynes" },
-      { name: "Hemel Hempstead", path: "/car-detailing-hemel-hempstead" },
-      { name: "Luton", path: "/mobile-car-detailing-luton" }
-    ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39332.4!2d-0.8484!3d51.8154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876e0d5c26c13d1%3A0x80f2b16bdc4e8f0!2sAylesbury!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
+    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858!2d-0.1278!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
   }
 ];

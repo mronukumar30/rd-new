@@ -1,5 +1,5 @@
 /**
- * King of Detailing — Premium Car Care · Luton & Surrounding Areas
+ * RD Valeting — Mobile Valeting You Can Trust · Swindon & Surrounding Areas
  */
 
 import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
@@ -8,6 +8,10 @@ import {
   Shield,
   Sparkles,
   ArrowRight,
+  ArrowUpRight,
+  ArrowDown,
+  ShieldCheck,
+  Home as HomeIcon,
   Menu,
   X,
   Instagram,
@@ -51,16 +55,20 @@ import CeramicCoatingWorthItPage from "./pages/blog/CeramicCoatingWorthItPage";
 import CarDetailingCostUKPage from "./pages/blog/CarDetailingCostUKPage";
 import DetailingVsValetingPage from "./pages/blog/DetailingVsValetingPage";
 import HowOftenToDetailPage from "./pages/blog/HowOftenToDetailPage";
+import AppointmentBookingWizard from "./components/AppointmentBookingWizard";
 
-const GOLD = "#C9A84C";
-const GOLD_LIGHT = "#E2C97A";
+const RED = "#DC2626";
+const RED_LIGHT = "#EF4444";
+const RED_DARK = "#991B1B";
+const GOLD = RED;
+const GOLD_LIGHT = RED_LIGHT;
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -68,89 +76,101 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 md:px-12",
-        isScrolled ? "py-4 bg-black/80 backdrop-blur-2xl border-b border-white/5" : "py-8"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6 md:px-12 lg:px-16",
+        isScrolled
+          ? "py-4 bg-black/85 backdrop-blur-2xl border-b border-white/10 shadow-2xl"
+          : "py-6 md:py-8 bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-4">
-          <div className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center bg-black overflow-hidden border border-white/10" style={{ boxShadow: `0 0 20px ${GOLD}40` }}>
-            <img src="/logo.png" alt="King of Detailing Logo" className="w-full h-full object-contain p-0.5" />
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="font-bold text-base md:text-lg tracking-[0.1em] uppercase text-white">King of Detailing</span>
-            <span className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-medium" style={{ color: GOLD }}>Premium Car Care · Luton</span>
-          </div>
-        </div>
+        {/* Brand Logo matching mockup */}
+        <a href="/" className="flex items-center gap-3 group">
+          <img
+            src="/hero_logo_2x.png"
+            alt="RD Valeting - Cleaner Drives Happier Lives"
+            className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+          <span className="sr-only">RD Valeting — Mobile Valeting Swindon</span>
+        </a>
 
-        {/* Desktop Nav Pills */}
-        <div className="hidden md:flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 p-1.5 rounded-full">
-          {["Home", "Services", "Gallery", "Areas", "Blog"].map((item) => (
+        {/* Center Nav Links with active dot indicator */}
+        <div className="hidden md:flex items-center gap-8 lg:gap-10">
+          {[
+            { label: "Home", href: "/", active: true },
+            { label: "Services", href: "/#services" },
+            { label: "Gallery", href: "/#gallery" },
+            { label: "About", href: "/#about" },
+            { label: "Contact", href: "/#contact" },
+          ].map((item) => (
             <a
-              key={item}
-              href={item === "Home" ? "/" : item === "Blog" ? "/blog" : `/#${item.toLowerCase()}`}
+              key={item.label}
+              href={item.href}
               className={cn(
-                "px-6 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-[0.15em] transition-all duration-300",
-                item === "Home"
-                  ? "text-black shadow-lg"
-                  : "text-white/70 hover:text-white hover:bg-white/10"
+                "relative text-sm font-medium transition-colors duration-200 py-1 flex flex-col items-center group",
+                item.active ? "text-white font-semibold" : "text-white/75 hover:text-white"
               )}
-              style={item === "Home" ? { background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` } : {}}
             >
-              {item}
+              <span>{item.label}</span>
+              {item.active && (
+                <span className="w-1.5 h-1.5 rounded-full bg-[#EF2B2D] mt-1 shadow-[0_0_8px_#EF2B2D]" />
+              )}
             </a>
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* Right CTA Button: Book Now ↗ */}
         <div className="hidden md:block">
           <a
-            href={COMPANY_DETAILS.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3.5 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-all duration-500 text-black"
-            style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 10px 30px rgba(201,168,76,0.3)` }}
+            href="/#appointment"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium text-white bg-black/60 hover:bg-black/80 backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg group"
           >
-            Book Now
+            <span>Book Now</span>
+            <ArrowUpRight className="w-4 h-4 text-white/80 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
 
+        {/* Mobile Menu Toggle Button */}
         <button
-          className="md:hidden text-white p-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
+          className="md:hidden text-white p-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle Navigation Menu"
         >
-          {isMobileMenuOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
+      {/* Mobile Menu Modal / Dropdown */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-6 right-6 mt-4 bg-black/95 backdrop-blur-2xl p-8 rounded-[32px] flex flex-col gap-6 md:hidden overflow-hidden z-50 shadow-2xl"
-            style={{ border: `1px solid rgba(201,168,76,0.2)` }}
+            initial={{ opacity: 0, y: -20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.98 }}
+            className="absolute top-full left-6 right-6 mt-3 bg-black/95 backdrop-blur-2xl p-6 rounded-[28px] flex flex-col gap-4 md:hidden overflow-hidden z-50 shadow-2xl border border-white/15"
           >
-            {["Home", "Services", "Gallery", "Areas", "Blog"].map((item) => (
+            {[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/#services" },
+              { label: "Gallery", href: "/#gallery" },
+              { label: "About", href: "/#about" },
+              { label: "Contact", href: "/#contact" },
+            ].map((item) => (
               <a
-                key={item}
-                href={item === "Home" ? "/" : item === "Blog" ? "/blog" : `/#${item.toLowerCase()}`}
+                key={item.label}
+                href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-bold uppercase tracking-[0.2em] text-white/70 hover:text-white transition-all"
+                className="text-base font-semibold uppercase tracking-wider text-white/80 hover:text-white py-2 border-b border-white/5 transition-all"
               >
-                {item}
+                {item.label}
               </a>
             ))}
             <a
-              href={COMPANY_DETAILS.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 w-full py-5 rounded-full text-center font-bold uppercase tracking-widest text-black"
-              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}
+              href="/#appointment"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-2 w-full py-4 rounded-full text-center font-bold uppercase tracking-wider text-white bg-[#EF2B2D] hover:bg-[#d92224] shadow-[0_10px_25px_rgba(239,43,45,0.4)] flex items-center justify-center gap-2"
             >
-              Book Now
+              <span>Book Now</span>
+              <ArrowUpRight className="w-4 h-4" />
             </a>
           </motion.div>
         )}
@@ -161,178 +181,251 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black hero-fade-bottom">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/55 to-black/25 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/50 z-10" />
-        {/* Subtle gold tint layer */}
-        <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(135deg, rgba(201,168,76,0.08) 0%, transparent 60%)' }} />
+    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-black hero-fade-bottom">
+      {/* Background Image Container with lighting gradients */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+        {/* Warm sunset radial backlight */}
+        <div
+          className="absolute inset-0 z-10 opacity-40 pointer-events-none"
+          style={{ background: "radial-gradient(ellipse at 80% 15%, rgba(255,140,50,0.2) 0%, transparent 60%)" }}
+        />
+        
         <motion.img
-          initial={{ scale: 1.08, opacity: 0 }}
+          initial={{ scale: 1.05, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 2.2, ease: "easeOut" }}
-          src="/king-of-detailing-hero.webp"
-          alt="Premium mobile car detailing service in Luton, Bedfordshire — King of Detailing deep clean, ceramic coating and paint correction"
-          className="w-full h-full object-cover object-center"
-          width={1920}
-          height={1080}
+          transition={{ duration: 1.8, ease: "easeOut" }}
+          src="/hero.png"
+          alt="Professional mobile car valeting and detailing across Swindon and Wiltshire — RD Valeting"
+          className="w-full h-full object-cover object-[78%_center] md:object-center"
           fetchPriority="high"
         />
       </div>
 
-      <div className="relative z-30 w-full h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-between pt-32 pb-40 md:pb-48">
-        <div className="hidden md:block h-12" />
+      {/* Top-Right Angled Watermark Slogan: CLEANER DRIVES HAPPIER LIVES */}
+      <div className="absolute top-28 sm:top-32 right-6 md:right-16 z-20 select-none pointer-events-none text-right opacity-30 rotate-6 md:rotate-12 hidden sm:block">
+        <div className="text-[10px] sm:text-xs font-black tracking-[0.25em] text-white/90 uppercase leading-tight space-y-0.5">
+          <div>CLEANER</div>
+          <div>DRIVES</div>
+          <div>HAPPIER</div>
+          <div>LIVES</div>
+        </div>
+      </div>
 
-        {/* Main Content */}
-        <div className="flex flex-col items-start gap-8 md:gap-12">
-          <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-            >
-              {/* Crown Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-                style={{ background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.3)' }}
-              >
-                <Crown className="w-3.5 h-3.5" style={{ color: GOLD }} />
-                <span className="text-[10px] font-bold uppercase tracking-[0.25em]" style={{ color: GOLD_LIGHT }}>
-                  Premium Mobile Detailing · Luton & Surrounding Areas
-                </span>
-              </motion.div>
-
-              {/* H1 — visible to both users and search engines */}
-              <h1 className="text-5xl md:text-[90px] font-bold leading-[0.9] tracking-tighter text-white mb-6">
-                Your Car.{' '}<br />
-                <span className="italic font-serif font-light" style={{ color: GOLD_LIGHT }}>Royally Treated.</span>
-                <span className="sr-only"> — Premium Mobile Car Detailing in Luton, Bedfordshire</span>
-              </h1>
-              <p className="text-base md:text-lg text-white/60 max-w-lg font-light leading-relaxed mb-8">
-                Bedfordshire's most meticulous mobile detailing service. Deep cleans, ceramic coatings, paint correction — all at your driveway. Fully insured. Fully mobile.
-              </p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.6 }}
-                className="flex flex-col sm:flex-row items-center gap-6"
-              >
-                <a
-                  href={COMPANY_DETAILS.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative px-8 py-4 rounded-full font-bold flex items-center gap-4 hover:scale-105 transition-all duration-500 w-fit text-black"
-                  style={{
-                    background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`,
-                    boxShadow: `0 20px 50px rgba(201,168,76,0.3)`
-                  }}
-                >
-                  Contact me via WhatsApp
-                  <div className="w-6 h-6 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all">
-                    <ArrowRight className="w-3 h-3" />
-                  </div>
-                </a>
-                <a href={`tel:${COMPANY_DETAILS.phoneRaw}`} className="flex items-center gap-3 text-white/50 hover:text-white transition-all group">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:border-white/60 transition-all" style={{ border: '1px solid rgba(201,168,76,0.3)' }}>
-                    <Phone className="w-4 h-4" style={{ color: GOLD }} />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[9px] uppercase tracking-[0.2em]">Call Direct</span>
-                    <span className="text-sm font-bold tracking-widest text-white">{COMPANY_DETAILS.phone}</span>
-                  </div>
-                </a>
-              </motion.div>
-            </motion.div>
-          </div>
-
-          {/* Trust Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            className="w-full max-w-[320px]"
+      {/* Floating Cursive Script: "Attention to Every Detail" */}
+      <div className="absolute top-[20%] sm:top-[22%] md:top-[19%] right-[18%] sm:right-[26%] md:right-[32%] lg:right-[35%] z-20 select-none pointer-events-none -rotate-6 md:-rotate-12 hidden md:block">
+        <div className="flex flex-col items-center">
+          <span className="font-satisfy text-2xl sm:text-3xl lg:text-4xl text-[#F5F0E8] tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+            Attention to Every Detail
+          </span>
+          <svg
+            className="w-36 sm:w-44 lg:w-52 h-4 text-[#F5F0E8]/80 -mt-1 drop-shadow-md"
+            viewBox="0 0 200 16"
+            fill="none"
           >
-            <div className="p-5 rounded-[24px] shadow-2xl group hover:bg-white/10 transition-all duration-500" style={{ background: 'rgba(10,10,10,0.4)', backdropFilter: 'blur(24px)', border: '1px solid rgba(201,168,76,0.2)' }}>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'rgba(201,168,76,0.15)' }}>
-                  <Shield className="w-5 h-5" style={{ color: GOLD }} />
-                </div>
-                <div>
-                  <h4 className="text-white text-sm font-bold">Fully Insured & Mobile</h4>
-                  <div className="flex gap-0.5">
-                    {[1, 2, 3, 4, 5].map((s) => <Star key={s} className="w-2.5 h-2.5 fill-yellow-500 text-yellow-500" />)}
-                  </div>
-                </div>
-              </div>
-              <p className="text-white/60 text-xs leading-relaxed mb-3">
-                We come to you across Bedfordshire and beyond. Mon–Sun, 8am–8pm.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-[9px] font-bold uppercase tracking-widest text-white/60">5★ Rated Service</span>
-                <ArrowRight className="w-3 h-3 text-white/60 group-hover:text-white transition-colors" />
-              </div>
+            <path
+              d="M5 8C50 14, 120 12, 195 5"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+            <path
+              d="M20 13C65 17, 130 15, 180 10"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+      </div>
+
+      {/* Floating Badge (Bottom Right near detailer) */}
+      <div className="absolute bottom-28 md:bottom-24 right-6 md:right-16 z-30 hidden sm:block">
+        <div className="bg-black/80 hover:bg-black/90 backdrop-blur-xl border border-white/15 px-4 py-2.5 rounded-2xl flex items-center gap-3 shadow-2xl transition-all duration-300 hover:scale-105">
+          <div className="w-8 h-8 rounded-full bg-red-600/20 border border-red-500/30 flex items-center justify-center text-[#EF2B2D]">
+            <MapPin className="w-4 h-4 fill-[#EF2B2D]" />
+          </div>
+          <div className="flex flex-col leading-tight">
+            <span className="text-[9px] uppercase tracking-wider text-white/60 font-semibold">Proudly Serving</span>
+            <span className="text-xs font-bold text-white tracking-wide">Your Local Area</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Hero Container */}
+      <div className="relative z-30 w-full max-w-7xl mx-auto px-6 md:px-12 pt-28 sm:pt-32 lg:pt-32 pb-4 flex flex-col justify-between flex-1">
+        {/* Left Column Content */}
+        <div className="max-w-2xl flex flex-col items-start pt-2 md:pt-4">
+          {/* Eyebrow / Category Tag */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex items-center gap-2 mb-3 md:mb-4"
+          >
+            <span className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.25em] text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              MOBILE CAR VALETING <span className="text-white/50 mx-1.5">•</span> PREMIUM RESULTS
+            </span>
+          </motion.div>
+
+          {/* Main Headline: "More Than a Clean Car" with swoosh */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.1 }}
+            className="mb-4 md:mb-5"
+          >
+            <h1 className="font-outfit font-black tracking-tight text-white text-5xl sm:text-6xl md:text-7xl lg:text-[76px] leading-[0.95] select-none drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+              More Than <br />
+              <span className="relative inline-block text-[#EF2B2D] mt-1 drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
+                a Clean Car
+                {/* Dynamic curved red swoosh underline */}
+                <svg
+                  className="w-full h-3 sm:h-4.5 md:h-5 text-[#EF2B2D] -mt-1 sm:-mt-2 overflow-visible"
+                  viewBox="0 0 380 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M 5 9 C 75 18, 220 18, 375 7 C 265 14, 130 14, 5 9 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </h1>
+          </motion.div>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-sm sm:text-base md:text-lg text-white/90 font-normal leading-relaxed max-w-lg mb-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
+          >
+            Professional mobile valeting and detailing, bringing showroom standards to your doorstep. Because a cleaner car just feels better.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-wrap items-center gap-4 mb-6"
+          >
+            <a
+              href="/#appointment"
+              className="px-7 py-3 rounded-full font-semibold text-sm sm:text-base text-white bg-[#EF2B2D] hover:bg-[#d92224] transition-all duration-300 shadow-[0_10px_25px_rgba(239,43,45,0.4)] hover:shadow-[0_15px_30px_rgba(239,43,45,0.6)] hover:scale-105 active:scale-95 flex items-center gap-2 group"
+            >
+              <span>Book Your Valet</span>
+              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+
+            <a
+              href="/#services"
+              className="px-7 py-3 rounded-full font-medium text-sm sm:text-base text-white bg-black/50 hover:bg-black/70 backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg"
+            >
+              Our Services
+            </a>
+          </motion.div>
+
+          {/* Value Props Row (3 Features with icons) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex flex-wrap items-center gap-6 sm:gap-8 pt-1"
+          >
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-white/80" />
+              <span className="text-xs sm:text-[13px] font-medium text-white/85">Premium Products</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <HomeIcon className="w-4 h-4 text-white/80" />
+              <span className="text-xs sm:text-[13px] font-medium text-white/85">We Come to You</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-white/80" />
+              <span className="text-xs sm:text-[13px] font-medium text-white/85">Satisfaction Guaranteed</span>
             </div>
           </motion.div>
         </div>
 
-        {/* Bottom Navigation Bar */}
-        <div className="w-full">
-          <div className="hidden md:flex justify-end mb-6">
-            <div className="flex flex-wrap justify-end gap-2">
-              {["Deep Clean", "Ceramic Coating", "Paint Correction", "Fully Mobile"].map((tag, i) => (
-                <motion.span
-                  key={tag}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 1.2 + (i * 0.1) }}
-                  className="px-5 py-2.5 rounded-full text-[9px] font-bold uppercase tracking-widest text-white/80 hover:bg-white/20 cursor-default transition-all"
-                  style={{ background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(12px)', border: '1px solid rgba(201,168,76,0.15)' }}
-                >
-                  {tag}
-                </motion.span>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="order-3 md:order-1">
-              <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-white/80">
-                Your Car · Our Crown
+        {/* Bottom Social Proof Bar (Before/After Dual Card & Stats) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.7 }}
+          className="mt-6 sm:mt-8 flex flex-wrap items-center gap-6 sm:gap-10 pb-4 border-b border-white/10"
+        >
+          {/* Before & After Dual Thumbnail Card */}
+          <div className="bg-black/60 backdrop-blur-xl border border-white/15 p-1.5 rounded-2xl flex items-center gap-1.5 shadow-2xl">
+            {/* Before thumbnail */}
+            <div className="relative w-24 sm:w-28 h-16 sm:h-20 rounded-xl overflow-hidden group">
+              <img
+                src="/hero_before.jpg"
+                alt="Car before detailing - covered in snow foam"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <span className="absolute bottom-1.5 left-1.5 bg-black/75 backdrop-blur-sm border border-white/10 px-2 py-0.5 rounded text-[10px] font-semibold text-white/90">
+                Before
               </span>
             </div>
-            <div className="order-1 md:order-2 flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-white">Luton, Surrounding</span>
-                <span className="text-white/40">&</span>
-                <span className="text-xs font-bold text-white/60">Nationwide</span>
-              </div>
-            </div>
-            <div className="order-2 md:order-3">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.8 }}
-                className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/30 flex items-center gap-3"
-              >
-                <div className="w-10 h-[1px]" style={{ background: 'rgba(201,168,76,0.3)' }} />
-                Scroll for More
-              </motion.div>
+
+            {/* After thumbnail */}
+            <div className="relative w-24 sm:w-28 h-16 sm:h-20 rounded-xl overflow-hidden group">
+              <img
+                src="/hero_after.jpg"
+                alt="Car after detailing - showroom gloss"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <span className="absolute bottom-1.5 left-1.5 bg-black/75 backdrop-blur-sm border border-white/10 px-2 py-0.5 rounded text-[10px] font-semibold text-white/90">
+                After
+              </span>
             </div>
           </div>
 
-          <div className="mt-6 w-full h-[1px] bg-white/10 relative overflow-hidden">
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: "0%" }}
-              transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
-              className="absolute inset-0 w-1/4 h-full"
-              style={{ background: `linear-gradient(90deg, transparent, ${GOLD}, transparent)` }}
-            />
+          {/* Stats Metrics */}
+          <div className="flex items-center gap-6 sm:gap-8">
+            <div className="flex flex-col">
+              <span className="font-outfit font-extrabold text-2xl sm:text-3xl text-white tracking-tight">100+</span>
+              <span className="text-[11px] text-white/60 font-medium">Happy Clients</span>
+            </div>
+
+            <div className="w-px h-8 bg-white/15" />
+
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1 font-outfit font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                <span>5</span>
+                <span className="text-white text-xl">★</span>
+              </div>
+              <span className="text-[11px] text-white/60 font-medium">Rated Service</span>
+            </div>
+
+            <div className="w-px h-8 bg-white/15" />
+
+            <div className="flex flex-col">
+              <span className="font-outfit font-extrabold text-2xl sm:text-3xl text-white tracking-tight">Local</span>
+              <span className="text-[11px] text-white/60 font-medium">& Mobile</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Bottom Explorer & Tagline Bar */}
+        <div className="pt-4 flex items-center justify-between text-white/60">
+          <a
+            href="/#services"
+            className="flex items-center gap-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold hover:text-white transition-colors group"
+          >
+            <div className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center text-white/80 group-hover:border-white/50 group-hover:text-white transition-colors">
+              <ArrowDown className="w-3 h-3 group-hover:translate-y-0.5 transition-transform" />
+            </div>
+            <span>SCROLL TO EXPLORE</span>
+          </a>
+
+          <div className="hidden sm:flex items-center gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-medium text-white/40">
+            <span>DETAILING A BRIGHTER TOMORROW</span>
+            <div className="w-8 h-px bg-white/20" />
           </div>
         </div>
       </div>
@@ -362,7 +455,7 @@ const FeatureHighlights = () => {
       <div className="max-w-7xl mx-auto">
         <motion.div style={{ y: yText }} className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8 relative z-10">
           <div className="max-w-2xl">
-            <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: GOLD }}>The King Standard</h2>
+            <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: GOLD }}>The RD Standard</h2>
             <h3 className="text-4xl md:text-6xl font-bold tracking-tight" style={{ color: '#0A0A0A' }}>Built For Those<br />Who Notice Everything</h3>
           </div>
           <div className="flex gap-12">
@@ -378,11 +471,11 @@ const FeatureHighlights = () => {
         </motion.div>
 
         {/* Interactive Car Image */}
-        <div className="relative mb-24 rounded-[48px] overflow-hidden bg-black p-6 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.3)] max-w-6xl mx-auto" style={{ border: '1px solid rgba(201,168,76,0.2)' }}>
+        <div className="relative mb-24 rounded-[48px] overflow-hidden bg-black p-6 md:p-12 shadow-[0_30px_100px_rgba(0,0,0,0.3)] max-w-6xl mx-auto" style={{ border: '1px solid rgba(220,38,38,0.2)' }}>
           <motion.img
             style={{ scale: scaleCar }}
             src="/car-detailing-luton-service.webp"
-            alt="Professional car detailing treatment by King of Detailing in Luton — ceramic coating, paint correction and deep cleaning"
+            alt="Professional car detailing treatment by RD Valeting in Luton — ceramic coating, paint correction and deep cleaning"
             className="w-full h-auto rounded-3xl shadow-2xl opacity-90"
           />
 
@@ -429,16 +522,16 @@ const FeatureHighlights = () => {
               </div>
               <h4 className="text-2xl font-bold mb-4" style={{ color: '#0A0A0A' }}>Trusted With Your Pride & Joy</h4>
               <p className="leading-relaxed mb-8" style={{ color: '#8A8070' }}>
-                Every visit is fully insured for complete peace of mind. We're accredited detailers based in Luton — Bedfordshire's premium choice for mobile car care. From deep cleans to ceramic coatings, every job is treated with the same obsessive attention to detail.
+                Every visit is fully insured for complete peace of mind. We are professional mobile valeters based in Swindon — Wiltshire's trusted choice for quality car care. From maintenance washes to deep cleans, every vehicle is treated with obsessive attention to detail.
               </p>
               <div className="flex gap-4 items-center flex-wrap">
-                <span className="px-5 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.2em] shadow-md text-black" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>Fully Insured</span>
+                <span className="px-5 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.2em] shadow-md text-white" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>Fully Insured</span>
                 <span className="px-5 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.2em] shadow-md" style={{ background: '#0A0A0A', color: GOLD_LIGHT }}>Fully Mobile</span>
-                <span className="px-5 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.2em] shadow-md" style={{ background: 'transparent', border: `1px solid ${GOLD}40`, color: '#8A8070' }}>Luton Based</span>
+                <span className="px-5 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.2em] shadow-md" style={{ background: 'transparent', border: `1px solid ${GOLD}40`, color: '#8A8070' }}>Swindon Based</span>
               </div>
             </div>
             <div className="w-full md:w-64 aspect-square rounded-3xl overflow-hidden shadow-xl">
-              <img src="/bmw-535d-deep-clean-luton.webp" alt="BMW 535d deep clean car detailing in Luton — interior and exterior restoration by King of Detailing" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+              <img src="/bmw-535d-deep-clean-luton.webp" alt="BMW 535d deep clean car detailing in Luton — interior and exterior restoration by RD Valeting" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
             </div>
           </motion.div>
 
@@ -450,13 +543,13 @@ const FeatureHighlights = () => {
             className="bento-card-dark flex flex-col justify-between group"
           >
             <div>
-              <Crown className="w-8 h-8 mb-6 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12 group-hover:drop-shadow-[0_0_15px_rgba(201,168,76,0.6)]" style={{ color: GOLD }} />
-              <h4 className="text-2xl font-bold mb-4 text-white">The King<br />Guarantee</h4>
+              <Crown className="w-8 h-8 mb-6 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12 group-hover:drop-shadow-[0_0_15px_rgba(220,38,38,0.6)]" style={{ color: GOLD }} />
+              <h4 className="text-2xl font-bold mb-4 text-white">The RD<br />Guarantee</h4>
               <p className="text-white/80 text-sm leading-relaxed">
-                If you aren't completely blown away by the results, we'll keep working until you are. No questions asked. No invoice until you're smiling. That's the King standard.
+                If you aren't completely blown away by the results, we'll keep working until you are. No questions asked. No shortcuts, no compromise. That's the RD Valeting standard.
               </p>
             </div>
-            <div className="mt-8 pt-8 flex items-center justify-between" style={{ borderTop: '1px solid rgba(201,168,76,0.2)' }}>
+            <div className="mt-8 pt-8 flex items-center justify-between" style={{ borderTop: '1px solid rgba(220,38,38,0.2)' }}>
               <span className="text-[10px] font-mono uppercase tracking-widest text-white/80">5★ Every Time</span>
               <CheckCircle2 className="w-5 h-5" style={{ color: GOLD }} />
             </div>
@@ -487,7 +580,7 @@ const Services = () => {
           <h3 className="text-4xl md:text-6xl font-bold tracking-tight" style={{ color: '#0A0A0A' }}>
             <motion.div style={{ opacity, x: xLeft }} className="inline-block">Tailored Packages.</motion.div>
             <br className="hidden md:block" />{' '}
-            <motion.div style={{ opacity, x: xRight }} className="inline-block mt-2 md:mt-0">Royal Results.</motion.div>
+            <motion.div style={{ opacity, x: xRight }} className="inline-block mt-2 md:mt-0">Spotless Results.</motion.div>
           </h3>
           <motion.p style={{ opacity, y: yUp, color: '#8A8070' }} className="mt-6 text-base max-w-lg mx-auto leading-relaxed">
             Every vehicle is different. Every package is comprehensive. Choose your level of care — we handle the rest, at your driveway.
@@ -509,8 +602,8 @@ const Services = () => {
                 boxShadow: '0 10px 30px rgba(0,0,0,0.04)'
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = '0 30px 70px rgba(201,168,76,0.15)';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(201,168,76,0.4)';
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 30px 70px rgba(220,38,38,0.15)';
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(220,38,38,0.4)';
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.boxShadow = '0 10px 30px rgba(0,0,0,0.04)';
@@ -521,7 +614,7 @@ const Services = () => {
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300 z-10" />
                 <img
                   src={service.image}
-                  alt={`${service.title} car detailing package in Luton, Bedfordshire — King of Detailing`}
+                  alt={`${service.title} mobile valeting package in Swindon, Wiltshire — RD Valeting`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   style={{ objectPosition: (service as any).objectPosition || 'center' }}
                 />
@@ -539,9 +632,9 @@ const Services = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
-                      style={{ background: 'rgba(201,168,76,0.1)' }}
+                      style={{ background: 'rgba(220,38,38,0.1)' }}
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = GOLD; (e.currentTarget as HTMLElement).style.color = '#000'; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(201,168,76,0.1)'; }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(220,38,38,0.1)'; }}
                     >
                       <ArrowRight className="w-4 h-4" />
                     </a>
@@ -568,7 +661,7 @@ const Services = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 text-sm font-bold group/link uppercase tracking-widest pb-2 w-fit transition-all duration-200"
-                    style={{ color: GOLD, borderBottom: `1px solid rgba(201,168,76,0.3)` }}
+                    style={{ color: GOLD, borderBottom: `1px solid rgba(220,38,38,0.3)` }}
                   >
                     Book This Package
                     <ChevronRight className="w-4 h-4 group-hover/link:translate-x-2 transition-transform duration-200" />
@@ -593,7 +686,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mt-16 p-8 rounded-[32px] text-center"
-          style={{ background: '#0A0A0A', border: `1px solid rgba(201,168,76,0.2)` }}
+          style={{ background: '#0A0A0A', border: `1px solid rgba(220,38,38,0.2)` }}
         >
           <MapPin className="w-6 h-6 mx-auto mb-3" style={{ color: GOLD }} />
           <h4 className="font-bold text-white mb-2">We Come to You</h4>
@@ -614,13 +707,13 @@ const HowItWorks = () => {
   });
 
   const steps = [
-    { num: "01", title: "COMMISSION YOUR DETAIL", desc: "Choose your level of perfection online or request a bespoke consultation. We adapt seamlessly to your demanding schedule." },
-    { num: "02", title: "THE ROYAL DISPATCH", desc: "Our state-of-the-art mobile studio arrives at your estate or office. We bring unparalleled automotive luxury directly to your door." },
-    { num: "03", title: "RECLAIM YOUR CROWN", desc: "Step back into a breathtaking, meticulously restored vehicle. Flawless gloss, supreme protection, and a finish fit for royalty." },
+    { num: "01", title: "1. CHOOSE YOUR SERVICE", desc: "Select a package that suits your vehicle and book online or get in touch with Rhys directly on WhatsApp." },
+    { num: "02", title: "2. WE COME TO YOU", desc: "Our fully-equipped mobile van arrives at your home or workplace on time with all professional detailing equipment." },
+    { num: "03", title: "3. WE CLEAN & RESTORE", desc: "We carry out the valeting service with meticulous attention to detail, leaving your car spotless, fresh, and showroom-ready." },
   ];
 
   return (
-    <section id="how-it-works" ref={sectionRef} className="pt-24 pb-8 px-6 md:px-12 relative overflow-hidden" style={{ background: '#0A0A0A', borderTop: '1px solid rgba(201,168,76,0.15)' }}>
+    <section id="how-it-works" ref={sectionRef} className="pt-24 pb-8 px-6 md:px-12 relative overflow-hidden" style={{ background: '#0A0A0A', borderTop: '1px solid rgba(220,38,38,0.15)' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <motion.h2
@@ -634,7 +727,7 @@ const HowItWorks = () => {
               hidden: {}
             }}
           >
-            {"The Royal Blueprint".split("").map((char, i) => (
+            {"Simple & Reliable".split("").map((char, i) => (
               <motion.span
                 key={i}
                 variants={{
@@ -656,7 +749,7 @@ const HowItWorks = () => {
               hidden: {}
             }}
           >
-            {"The King Experience".split("").map((char, i) => (
+            {"How It Works".split("").map((char, i) => (
               <motion.span
                 key={i}
                 variants={{
@@ -676,7 +769,7 @@ const HowItWorks = () => {
             <motion.div
               className="h-full origin-left rounded-full"
               style={{
-                background: `linear-gradient(90deg, #997A2E, ${GOLD}, ${GOLD_LIGHT})`,
+                background: `linear-gradient(90deg, #991B1B, ${GOLD}, ${GOLD_LIGHT})`,
                 scaleX: scrollYProgress,
                 boxShadow: `0 0 15px ${GOLD}60`
               }}
@@ -736,10 +829,10 @@ const HowItWorks = () => {
                       style={{
                         lineHeight: 1,
                         opacity: premiumOpacity,
-                        backgroundImage: `linear-gradient(135deg, #FFFFFF 0%, #F5F0E8 20%, ${GOLD_LIGHT} 50%, ${GOLD} 80%, #997A2E 100%)`,
+                        backgroundImage: `linear-gradient(135deg, #FFFFFF 0%, #FFF5F5 20%, ${GOLD_LIGHT} 50%, ${GOLD} 80%, #991B1B 100%)`,
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
-                        filter: `drop-shadow(0 0 25px rgba(201,168,76,0.3))`
+                        filter: `drop-shadow(0 0 25px rgba(220,38,38,0.3))`
                       }}
                     >
                       {step.num}
@@ -791,7 +884,7 @@ const AboutSection = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
           <div className="shrink-0 relative z-20 md:w-1/2">
             <h3 className="text-xl md:text-2xl font-black italic tracking-wider text-white uppercase leading-tight">
-              Luton's Trusted Choice For Quality Car Care.
+              Swindon's Trusted Choice For Quality Mobile Valeting.
             </h3>
           </div>
           <div className="md:w-1/2 flex justify-center md:justify-end">
@@ -826,14 +919,14 @@ const AboutSection = () => {
             <div className="relative rounded-[40px] overflow-hidden shadow-2xl group">
               <img
                 src="/gallery-car-detailing-1.webp"
-                alt="King of Detailing — Premium mobile car detailing"
+                alt="RD Valeting — Premium mobile car detailing"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full" style={{ background: 'rgba(201,168,76,0.9)' }}>
-                  <CheckCircle2 className="w-4 h-4 text-black" />
-                  <span className="text-xs font-bold text-black uppercase tracking-widest">Flawless Finish Guaranteed</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full" style={{ background: 'rgba(220,38,38,0.9)' }}>
+                  <CheckCircle2 className="w-4 h-4 text-white" />
+                  <span className="text-xs font-bold text-white uppercase tracking-widest">Flawless Finish Guaranteed</span>
                 </div>
               </div>
             </div>
@@ -852,22 +945,22 @@ const AboutSection = () => {
               ABOUT US
             </h2>
             <h3 className="text-4xl md:text-5xl font-black tracking-tight uppercase italic leading-[1.1] mb-8" style={{ color: '#0A0A0A' }}>
-              Bedfordshire's<br />
-              <span style={{ color: GOLD }}>Elite</span> Mobile<br />
-              Detailing.
+              Swindon & Wiltshire's<br />
+              <span style={{ color: RED }}>Trusted</span> Mobile<br />
+              Valeting.
             </h3>
             <p className="text-base leading-relaxed mb-8 font-light" style={{ color: '#5A5040' }}>
-              Uncompromising standards. Unmatched convenience. From deep corrective cleans to glass-like ceramic coatings, King of Detailing delivers an obsessive level of meticulous care directly to your driveway. Fully insured. Fully mobile.
+              Uncompromising standards. Unmatched convenience. From quick maintenance washes to comprehensive deep cleans, RD Valeting delivers an obsessive level of meticulous care directly to your driveway. Fully insured. Fully mobile.
             </p>
             <div className="flex items-center gap-6 flex-wrap">
               <a
                 href={COMPANY_DETAILS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 text-black"
-                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 10px 30px rgba(201,168,76,0.3)` }}
+                className="px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 text-white"
+                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 10px 30px rgba(220,38,38,0.3)` }}
               >
-                <div className="mr-3 italic font-black opacity-60">//</div> EXPLORE OUR CRAFT
+                <div className="mr-3 italic font-black opacity-60">//</div> VIEW ALL SERVICES
               </a>
               <div className="flex items-center gap-4 border-l border-[#0A0A0A]/10 pl-6">
                 <div className="flex -space-x-3">
@@ -907,36 +1000,33 @@ const AboutSection = () => {
             {/* Eyebrow label */}
             <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-5 flex items-center gap-2" style={{ color: '#0A0A0A' }}>
               <div className="w-8 h-[1px]" style={{ background: '#0A0A0A' }} />
-              Garage Therapy Professional
+              5+ Years Proven Experience
             </h2>
 
             {/* Main heading */}
             <h3 className="text-4xl md:text-5xl font-black tracking-tight uppercase italic leading-[1.05] mb-4" style={{ color: '#0A0A0A' }}>
-              The Standard<br />
-              <span style={{ color: GOLD }}>Others Train For.</span>
+              The Care & Precision<br />
+              <span style={{ color: RED }}>Your Car Deserves.</span>
             </h3>
 
             {/* Sub-heading */}
             <p className="text-sm font-light tracking-widest uppercase mb-8" style={{ color: '#8A8070' }}>
-              Officially certified · Rigorously trained · Uncompromisingly applied.
+              Passionate craftsmanship · Rigorous standards · 100% satisfaction guaranteed.
             </p>
 
             {/* Body copy */}
             <div className="space-y-4 mb-10">
               <p className="text-base leading-relaxed font-light" style={{ color: '#5A5040' }}>
-                Not every detailer bothers to verify what they know.{' '}
-                <span className="font-semibold" style={{ color: '#0A0A0A' }}>We chose to prove it.</span>
+                Not every valeter takes genuine pride in every single vehicle.{' '}
+                <span className="font-semibold" style={{ color: '#0A0A0A' }}>We treat every car like our own.</span>
               </p>
               <p className="text-base leading-relaxed font-light" style={{ color: '#5A5040' }}>
-                King of Detailing is now an officially accredited{' '}
-                <span className="font-semibold" style={{ color: '#0A0A0A' }}>Garage Therapy Professional</span> — a certification
-                held by only a select number of detailers across the UK, awarded exclusively to those
-                who demonstrate a mastery of professional-grade product systems, application techniques,
-                and finish quality.
+                RD Valeting brings over{' '}
+                <span className="font-semibold" style={{ color: '#0A0A0A' }}>5+ Years Proven Experience</span>{' '}
+                in professional mobile car valeting, vehicle decontamination, and paint care across Swindon, Wiltshire, and surrounding regions.
               </p>
               <p className="text-base leading-relaxed font-light" style={{ color: '#5A5040' }}>
-                This means every product used on your vehicle meets the most rigorous professional
-                standard available. No guesswork. No shortcuts. Just the kind of precision your car deserves.
+                Every chemical, brush, microfibre towel, and machine used on your vehicle meets rigorous professional standards. No guesswork. No shortcuts. Just the honest, meticulous care your car deserves.
               </p>
             </div>
 
@@ -950,19 +1040,19 @@ const AboutSection = () => {
             >
               {[
                 {
-                  title: 'GT Accredited',
-                  category: 'Official GT Professional',
-                  body: '1 of a select few UK detailers awarded master-tier accreditation for product application & finish quality.',
+                  title: '5+ Years Experience',
+                  category: 'Garage Heritage',
+                  body: 'Solid foundation refined over 5 years of professional car valeting, vehicle decontamination, and paint care.',
                 },
                 {
-                  title: 'Nationally Accredited',
-                  category: 'UK Detailing Academy',
-                  body: 'Our certification was earned at the UK Detailing Academy, the UK\'s premier training facility, covering the complete GT product range.',
+                  title: 'Fully Insured',
+                  category: 'Complete Peace of Mind',
+                  body: 'Full liability protection ensuring your cherished vehicle is in completely safe hands from start to finish.',
                 },
                 {
-                  title: "Luton's Only",
-                  category: 'Exclusive GT Detailer',
-                  body: "The sole mobile detailer in the region holding GT Professional status — studio-grade care at your door.",
+                  title: "100% Mobile Studio",
+                  category: 'We Come To You',
+                  body: "Fully self-contained mobile valeting unit arriving directly at your driveway across Swindon and beyond.",
                 },
               ].map((item, i) => (
                 <div
@@ -1026,8 +1116,8 @@ const AboutSection = () => {
             <div className="relative rounded-[40px] overflow-hidden shadow-2xl group">
               {/* Main photo */}
               <img
-                src="/king.webp"
-                alt="Philip Hearn — King of Detailing, GT Professional certified detailer in Luton"
+                src="/723456333_1027111233340868_6744532048742945277_n.jpg"
+                alt="Rhys — RD Valeting owner and mobile valeting specialist in Swindon"
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 style={{ objectPosition: 'center top' }}
               />
@@ -1041,21 +1131,21 @@ const AboutSection = () => {
                 style={{
                   background: 'rgba(8,8,8,0.92)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(201,168,76,0.3)',
+                  border: '1px solid rgba(220,38,38,0.3)',
                   borderRadius: '20px',
                   padding: '14px 20px',
                 }}
               >
                 <img
-                  src="/GT Vector Black Professional Centre.png"
+                  src="/logo.webp"
                   alt="GT Professional"
                   className="h-10 md:h-12 w-auto"
                   style={{ filter: 'invert(1)' }}
                 />
                 <div style={{ width: '1px', height: '36px', background: 'rgba(255,255,255,0.12)' }} />
                 <div className="flex flex-col gap-0.5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.28em] leading-none" style={{ color: 'rgba(255,255,255,0.45)' }}>Accredited</p>
-                  <p className="text-[13px] font-black uppercase tracking-[0.12em] leading-none text-white">GT Professional</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.28em] leading-none" style={{ color: 'rgba(255,255,255,0.45)' }}>Rhys · Owner</p>
+                  <p className="text-[13px] font-black uppercase tracking-[0.12em] leading-none text-white">RD Valeting</p>
                 </div>
               </div>
 
@@ -1064,7 +1154,7 @@ const AboutSection = () => {
                 className="absolute top-5 right-5 px-3 py-1.5 rounded-full"
                 style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}
               >
-                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-black">2026</span>
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-white">2026</span>
               </div>
             </div>
 
@@ -1084,7 +1174,7 @@ const AboutSection = () => {
 };
 
 const CompanyStripeMarquee = () => {
-  const marqueeText = [...Array(10)].fill("KING OF DETAILING");
+  const marqueeText = [...Array(10)].fill("RD VALETING");
 
   return (
     <div className="w-full bg-[#B91C1C] overflow-hidden py-3 relative">
@@ -1124,9 +1214,25 @@ const Testimonials = () => {
   return (
     <section className="py-8 md:py-10 px-6 md:px-12 overflow-hidden" style={{ background: '#F5F0E8' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-6">
-          <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-2" style={{ color: GOLD }}>Testimonials</h2>
-          <h3 className="text-2xl md:text-4xl font-bold tracking-tight" style={{ color: '#0A0A0A' }}>Real Cars. Real Owners.<br className="hidden md:block" /> Real Results.</h3>
+        <div className="text-center mb-8">
+          <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-2" style={{ color: RED }}>Testimonials</h2>
+          <h3 className="text-2xl md:text-4xl font-bold tracking-tight mb-4" style={{ color: '#0A0A0A' }}>Real Cars. Real Owners.<br className="hidden md:block" /> Spotless Results.</h3>
+          <div className="inline-flex flex-wrap items-center justify-center gap-3 px-5 py-2.5 rounded-full shadow-sm" style={{ background: '#EDE8DF', border: '1px solid #DDD5C5' }}>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#0A0A0A]">Rated 4.9 / 5</span>
+            <div className="flex gap-0.5">
+              {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3 h-3 fill-yellow-500 text-yellow-500" />)}
+            </div>
+            <span className="text-[11px] font-mono text-[#8A8070]">Based on 57+ Google Reviews</span>
+            <a
+              href={COMPANY_DETAILS.googleReview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] font-bold uppercase tracking-wider transition-colors hover:underline flex items-center gap-1"
+              style={{ color: RED }}
+            >
+              Write Review →
+            </a>
+          </div>
         </div>
 
         {/* Row 1: Right to Left */}
@@ -1147,8 +1253,8 @@ const Testimonials = () => {
                   <p className="text-sm font-medium leading-relaxed mb-4 italic" style={{ color: '#2A2018' }}>"{t.text}"</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs text-black" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>
-                    {t.name[0]}
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs text-white" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>
+                    <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="font-bold text-[11px]" style={{ color: '#0A0A0A' }}>{t.name}</p>
@@ -1178,8 +1284,8 @@ const Testimonials = () => {
                   <p className="text-sm font-medium leading-relaxed mb-4 italic" style={{ color: '#2A2018' }}>"{t.text}"</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs text-black" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>
-                    {t.name[0]}
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs text-white" style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})` }}>
+                    <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="font-bold text-[11px]" style={{ color: '#0A0A0A' }}>{t.name}</p>
@@ -1206,91 +1312,91 @@ const GALLERY_SERVICES = [
 const GALLERY_ITEMS = [
   {
     id: 1,
-    type: "video" as const,
-    title: "Showcase in Motion",
+    type: "image" as const,
+    title: "Porsche 911 Front Detail",
     service: "All Work",
-    desc: "Experience the King of Detailing standard in every frame.",
-    url: "/gallaryvideo1.mp4",
+    desc: "Spotless front bumper, badges, and paint clarity after full valet.",
+    url: "/719890908_2222286848526617_3057517277440017740_n.jpg",
   },
   {
     id: 2,
     type: "image" as const,
-    title: "M-Power Transformation",
+    title: "Porsche Interior Precision",
     service: "Deep Clean",
-    desc: "A comprehensive reset for this beautiful BMW 535d.",
-    url: "/bmw-535d-deep-clean-luton.webp",
+    desc: "Leather steering wheel, instrument cluster and cockpit detailed.",
+    url: "/720736240_1740150606990218_6668730905296473434_n.jpg",
   },
   {
     id: 3,
     type: "image" as const,
-    title: "Signature Gloss",
-    service: "Deep Clean",
-    desc: "Flawless reflection and ultimate clarity on every surface.",
-    url: "/car-polishing-luton.webp",
+    title: "Porsche 911 Rear Finish",
+    service: "Maintenance Clean",
+    desc: "Exhaust tips polished and rear decklid restored to factory gloss.",
+    url: "/721462704_1244763094247967_6897281892449763271_n.jpg",
   },
   {
     id: 4,
     type: "image" as const,
-    title: "Ceramic Shield",
-    service: "Ceramic Coating",
-    desc: "Advanced protection for a long-lasting, showroom finish.",
-    url: "/gallery-car-detailing-2.webp",
+    title: "Leather Seat Deep Clean",
+    service: "Deep Clean",
+    desc: "Deep extraction, dirt removal, and premium leather conditioning.",
+    url: "/721348016_3050409318485692_5175913260259492992_n.jpg",
   },
   {
     id: 5,
     type: "image" as const,
-    title: "Ultimate Protection",
-    service: "Ceramic Coating",
-    desc: "Extreme water beading and superior environmental resistance.",
-    url: "/ceramic-coating-luton.webp",
+    title: "BMW M-Sport Deep Gloss",
+    service: "Paint Correction",
+    desc: "High-reflection deep black finish on BMW saloon.",
+    url: "/722908490_1513785427083168_6885942169468714202_n.jpg",
   },
   {
     id: 6,
     type: "image" as const,
-    title: "Trusted Choice",
-    service: "Ceramic Coating",
-    desc: "Pushing the boundaries of automotive care every single day.",
-    url: "/maintenance-clean-luton.webp",
+    title: "Alloy Wheel Detail",
+    service: "Maintenance Clean",
+    desc: "Non-acidic wheel cleaner removing stubborn brake dust safely.",
+    url: "/722468637_1408418911098456_1142949210350927502_n.jpg",
   },
   {
     id: 7,
     type: "image" as const,
-    title: "Showroom Shine",
-    service: "Paint Correction",
-    desc: "Precision polishing to remove defects and maximize depth.",
-    url: "/paint-correction-service-luton.webp",
+    title: "Mirror Bonnet Reflection",
+    service: "Ceramic Coating",
+    desc: "Stunning paint depth and gloss after multi-stage protection.",
+    url: "/722131074_3250354271804383_1989022274874112064_n.jpg",
   },
   {
     id: 8,
     type: "image" as const,
-    title: "Reflection Perfection",
+    title: "Machine Polish Restoration",
     service: "Paint Correction",
-    desc: "Mirror-like finish achieved through meticulous correction.",
-    url: "/professional-car-detailing-luton.webp",
+    desc: "Eliminating swirls and light imperfections for crystal-clear paint.",
+    url: "/721103952_1251129603598647_5349731047514588078_n.jpg",
   },
   {
     id: 9,
     type: "image" as const,
-    title: "Legendary Service",
-    service: "Deep Clean",
-    desc: "Honored to detail Bernie Fineman's vehicle to our highest standard.",
-    url: "/bernie-fineman-car-detailing-luton.webp",
+    title: "Snow Foam Pre-Wash",
+    service: "Maintenance Clean",
+    desc: "Thick snow foam lifting surface dirt to prevent swirl marks.",
+    url: "/723830628_27152605947682802_3120737853125552335_n.jpg",
   },
   {
     id: 10,
     type: "image" as const,
-    title: "Signature Maintenance",
-    service: "Maintenance Clean",
-    desc: "Preserving that showroom finish with regular, professional care.",
-    url: "/maintenance-clean-luton.webp",
+    title: "RD Valeting Mobile Van",
+    service: "All Work",
+    desc: "Self-contained mobile valeting unit serving Swindon & Wiltshire.",
+    url: "/723456333_1027111233340868_6744532048742945277_n.jpg",
   },
   {
     id: 11,
     type: "image" as const,
-    title: "Meticulous Finish",
-    service: "Paint Correction",
-    desc: "Every detail crafted to perfection.",
-    url: "/mobile-valeting-bedfordshire.webp",
+    title: "Porsche Interior Protection",
+    service: "Deep Clean",
+    desc: "Spotless mats, pedals, seats and conditioned dash surfaces.",
+    url: "/724453567_1741795673842657_7212829807354336478_n.jpg",
   },
 ];
 
@@ -1415,7 +1521,7 @@ const Gallery = () => {
                     background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`,
                     color: '#0A0A0A',
                     border: `1px solid ${GOLD}`,
-                    boxShadow: `0 6px 25px rgba(201,168,76,0.35)`,
+                    boxShadow: `0 6px 25px rgba(220,38,38,0.35)`,
                   }
                   : {
                     background: 'rgba(255,255,255,0.05)',
@@ -1494,7 +1600,7 @@ const Gallery = () => {
                 {isCenter && (
                   <div
                     className="absolute inset-0 rounded-[2rem] pointer-events-none"
-                    style={{ border: `2px solid rgba(201,168,76,0.6)`, boxShadow: `inset 0 0 40px rgba(201,168,76,0.08)` }}
+                    style={{ border: `2px solid rgba(220,38,38,0.6)`, boxShadow: `inset 0 0 40px rgba(220,38,38,0.08)` }}
                   />
                 )}
 
@@ -1502,7 +1608,7 @@ const Gallery = () => {
                 <div className="absolute top-5 left-5">
                   <span
                     className="px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest"
-                    style={{ background: 'rgba(0,0,0,0.65)', color: GOLD_LIGHT, backdropFilter: 'blur(12px)', border: `1px solid rgba(201,168,76,0.3)` }}
+                    style={{ background: 'rgba(0,0,0,0.65)', color: GOLD_LIGHT, backdropFilter: 'blur(12px)', border: `1px solid rgba(220,38,38,0.3)` }}
                   >
                     {item.service}
                   </span>
@@ -1594,7 +1700,7 @@ const Gallery = () => {
             style={{ color: GOLD_LIGHT }}
           >
             <Instagram className="w-4 h-4" />
-            @king.ofdetailing
+            @rd_valeting_
           </a>
           <a
             href={COMPANY_DETAILS.facebook}
@@ -1615,22 +1721,22 @@ const Gallery = () => {
 
 const Footer = () => {
   return (
-    <footer id="about" className="py-24 px-6 md:px-12" style={{ background: '#0A0A0A', borderTop: `1px solid rgba(201,168,76,0.15)` }}>
+    <footer id="about" className="py-24 px-6 md:px-12" style={{ background: '#0A0A0A', borderTop: `1px solid rgba(220,38,38,0.15)` }}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-24">
           <div>
             {/* Brand */}
             <div className="flex items-center gap-5 mb-10">
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center bg-black overflow-hidden border-2 border-white/10" style={{ boxShadow: `0 0 30px ${GOLD}50` }}>
-                <img src="/logo.png" alt="King of Detailing Logo" className="w-full h-full object-contain p-0.5" />
+                <img src="/logo.webp" alt="RD Valeting Logo" className="w-full h-full object-contain p-0.5" />
               </div>
               <div>
-                <span className="font-black text-4xl md:text-5xl tracking-tighter text-white block uppercase leading-none mb-2">KING Detailing</span>
-                <span className="text-xs md:text-sm uppercase tracking-[0.4em] font-bold" style={{ color: GOLD }}>Premium Car Care · Luton, Beds & Nationwide</span>
+                <span className="font-black text-4xl md:text-5xl tracking-tighter text-white block uppercase leading-none mb-2">RD Valeting</span>
+                <span className="text-xs md:text-sm uppercase tracking-[0.4em] font-bold" style={{ color: GOLD }}>Mobile Valeting You Can Trust · Swindon, Beds & Nationwide</span>
               </div>
             </div>
             <p className="text-lg leading-relaxed mb-8 max-w-md font-light italic" style={{ color: 'rgba(255,255,255,0.95)' }}>
-              "Beyond cleaning — automotive restoration. We are Bedfordshire's elite mobile detailing specialists, delivering fully insured, studio-grade perfection directly to your driveway across Luton, Herts, Beds, Bucks, and nationwide."
+              "Professional mobile valeting with a personal touch. High standards, honest prices, and reliable service — we come directly to your driveway across Swindon, Wiltshire, and surrounding areas."
             </p>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
@@ -1728,11 +1834,11 @@ const Footer = () => {
 
         <div className="pt-16 pb-8 border-t border-white/5 flex flex-col items-center justify-center">
           <h2 className="text-[12vw] md:text-[8vw] font-black tracking-tighter text-white/5 leading-none select-none">
-            KING DETAILING
+            RD VALETING
           </h2>
           <div className="mt-[-4vw] md:mt-[-3vw] text-center mb-16">
             <span className="text-sm md:text-base font-bold tracking-[0.5em] text-white uppercase opacity-100">
-              KING DETAILING
+              RD VALETING
             </span>
           </div>
 
@@ -1799,8 +1905,8 @@ const FAQSection = () => {
               className="rounded-[24px] overflow-hidden transition-all duration-300"
               style={{
                 background: openIndex === index ? '#F5F0E8' : '#F5F0E8',
-                border: openIndex === index ? `1px solid rgba(201,168,76,0.4)` : '1px solid #DDD5C5',
-                boxShadow: openIndex === index ? '0 10px 40px rgba(201,168,76,0.1)' : 'none'
+                border: openIndex === index ? `1px solid rgba(220,38,38,0.4)` : '1px solid #DDD5C5',
+                boxShadow: openIndex === index ? '0 10px 40px rgba(220,38,38,0.1)' : 'none'
               }}
             >
               <button
@@ -1813,7 +1919,7 @@ const FAQSection = () => {
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
                   style={{
-                    background: openIndex === index ? GOLD : 'rgba(201,168,76,0.15)',
+                    background: openIndex === index ? GOLD : 'rgba(220,38,38,0.15)',
                     transform: openIndex === index ? 'rotate(180deg)' : 'rotate(0deg)'
                   }}
                 >
@@ -1833,7 +1939,7 @@ const FAQSection = () => {
                     className="overflow-hidden"
                   >
                     <div className="px-6 md:px-8 pb-6 md:pb-8">
-                      <div className="w-full h-[1px] mb-5" style={{ background: 'rgba(201,168,76,0.2)' }} />
+                      <div className="w-full h-[1px] mb-5" style={{ background: 'rgba(220,38,38,0.2)' }} />
                       <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A5040' }}>
                         {faq.answer}
                       </p>
@@ -1858,8 +1964,8 @@ const FAQSection = () => {
               href={COMPANY_DETAILS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 text-black inline-flex items-center gap-3"
-              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 10px 30px rgba(201,168,76,0.3)` }}
+              className="px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 text-white inline-flex items-center gap-3"
+              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 10px 30px rgba(220,38,38,0.3)` }}
             >
               <MessageCircle className="w-4 h-4" />
               Ask on WhatsApp
@@ -1867,7 +1973,7 @@ const FAQSection = () => {
             <a
               href={`tel:${COMPANY_DETAILS.phoneRaw}`}
               className="px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 inline-flex items-center gap-3"
-              style={{ border: `2px solid rgba(201,168,76,0.3)`, color: '#0A0A0A' }}
+              style={{ border: `2px solid rgba(220,38,38,0.3)`, color: '#0A0A0A' }}
             >
               <Phone className="w-4 h-4" />
               Call {COMPANY_DETAILS.phone}
@@ -1880,16 +1986,16 @@ const FAQSection = () => {
 };
 
 const SERVICE_AREAS = [
-  { name: "Luton", county: "Bedfordshire", primary: true, path: "/mobile-car-detailing-luton", distanceFromBase: "0 mi" },
-  { name: "Bedford", county: "Bedfordshire", primary: false, path: "/car-detailing-bedford", distanceFromBase: "~20 mi" },
-  { name: "Dunstable", county: "Bedfordshire", primary: false, path: "/car-detailing-dunstable", distanceFromBase: "~6 mi" },
-  { name: "St Albans", county: "Hertfordshire", primary: false, path: "/car-detailing-st-albans", distanceFromBase: "~15 mi" },
-  { name: "Hitchin", county: "Hertfordshire", primary: false, path: "/car-detailing-hitchin", distanceFromBase: "~10 mi" },
-  { name: "Stevenage", county: "Hertfordshire", primary: false, path: "/car-detailing-stevenage", distanceFromBase: "~15 mi" },
-  { name: "Hemel Hempstead", county: "Hertfordshire", primary: false, path: "/car-detailing-hemel-hempstead", distanceFromBase: "~15 mi" },
-  { name: "Watford", county: "Hertfordshire", primary: false, path: "/car-detailing-watford", distanceFromBase: "~25 mi" },
-  { name: "Milton Keynes", county: "Buckinghamshire", primary: false, path: "/car-detailing-milton-keynes", distanceFromBase: "~30 mi" },
-  { name: "Aylesbury", county: "Buckinghamshire", primary: false, path: "/car-detailing-aylesbury", distanceFromBase: "~30 mi" },
+  { name: "Swindon", county: "Wiltshire", primary: true, path: "/mobile-car-detailing-swindon", distanceFromBase: "0 mi (Base)" },
+  { name: "Marlborough", county: "Wiltshire", primary: false, path: "/car-detailing-marlborough", distanceFromBase: "~12 mi" },
+  { name: "Cirencester", county: "Gloucestershire", primary: false, path: "/car-detailing-cirencester", distanceFromBase: "~15 mi" },
+  { name: "Chippenham", county: "Wiltshire", primary: false, path: "/car-detailing-chippenham", distanceFromBase: "~18 mi" },
+  { name: "Royal Wootton Bassett", county: "Wiltshire", primary: false, path: "/car-detailing-royal-wootton-bassett", distanceFromBase: "~6 mi" },
+  { name: "Bath", county: "Somerset", primary: false, path: "/car-detailing-bath", distanceFromBase: "~30 mi" },
+  { name: "Newbury", county: "Berkshire", primary: false, path: "/car-detailing-newbury", distanceFromBase: "~25 mi" },
+  { name: "Oxford", county: "Oxfordshire", primary: false, path: "/car-detailing-oxford", distanceFromBase: "~30 mi" },
+  { name: "Reading", county: "Berkshire", primary: false, path: "/car-detailing-reading", distanceFromBase: "~40 mi" },
+  { name: "London", county: "Greater London", primary: false, path: "/car-detailing-london", distanceFromBase: "~75 mi" },
 ];
 
 const AreasWeCover = () => {
@@ -1898,18 +2004,18 @@ const AreasWeCover = () => {
   // Build Google Maps embed URL centred on the selected area's location
   const getMapEmbedUrl = (areaName: string) => {
     const coords: Record<string, { lat: number; lng: number }> = {
-      "Luton": { lat: 51.8787, lng: -0.4200 },
-      "Bedford": { lat: 52.1356, lng: -0.4685 },
-      "Dunstable": { lat: 51.8860, lng: -0.5210 },
-      "St Albans": { lat: 51.7520, lng: -0.3413 },
-      "Hitchin": { lat: 51.9469, lng: -0.2834 },
-      "Stevenage": { lat: 51.9020, lng: -0.2024 },
-      "Hemel Hempstead": { lat: 51.7537, lng: -0.4729 },
-      "Watford": { lat: 51.6565, lng: -0.3957 },
-      "Milton Keynes": { lat: 52.0406, lng: -0.7594 },
-      "Aylesbury": { lat: 51.8168, lng: -0.8084 },
+      "Swindon": { lat: 51.5558, lng: -1.7797 },
+      "Marlborough": { lat: 51.4210, lng: -1.7300 },
+      "Cirencester": { lat: 51.7176, lng: -1.9680 },
+      "Chippenham": { lat: 51.4585, lng: -2.1158 },
+      "Royal Wootton Bassett": { lat: 51.5414, lng: -1.9056 },
+      "Bath": { lat: 51.3811, lng: -2.3590 },
+      "Newbury": { lat: 51.4014, lng: -1.3231 },
+      "Oxford": { lat: 51.7520, lng: -1.2577 },
+      "Reading": { lat: 51.4543, lng: -0.9781 },
+      "London": { lat: 51.5074, lng: -0.1278 },
     };
-    const c = coords[areaName] || coords["Luton"];
+    const c = coords[areaName] || coords["Swindon"];
     return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d60000!2d${c.lng}!3d${c.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk`;
   };
 
@@ -1942,8 +2048,8 @@ const AreasWeCover = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <h2 className="text-4xl md:text-[3.2rem] leading-[1.1] font-bold tracking-tight mb-6" style={{ color: '#0A0A0A' }}>
-              Mobile Car Detailing <br className="hidden md:block" />
-              Across Bedfordshire & Beyond
+              Mobile Car Valeting <br className="hidden md:block" />
+              Across Swindon, Wiltshire & Beyond
             </h2>
           </motion.div>
 
@@ -1956,7 +2062,7 @@ const AreasWeCover = () => {
             className="text-[15px] leading-relaxed max-w-xl mx-auto"
             style={{ color: '#8A8070' }}
           >
-            We bring premium car detailing directly to your driveway across Luton, Bedfordshire, Hertfordshire, Buckinghamshire — and nationwide for special projects.
+            We bring professional car valeting directly to your driveway across Swindon, Wiltshire, London & surrounding areas — we come to you.
           </motion.p>
         </div>
       </div>
@@ -1993,7 +2099,7 @@ const AreasWeCover = () => {
                           ? `1px solid ${GOLD}`
                           : '1px solid #DDD5C5',
                         boxShadow: isSelected
-                          ? `0 8px 24px rgba(201,168,76,0.25)`
+                          ? `0 8px 24px rgba(220,38,38,0.25)`
                           : '0 2px 8px rgba(10,10,10,0.06)',
                       }}
                     >
@@ -2094,7 +2200,7 @@ const AreasWeCover = () => {
               className="rounded-[24px] overflow-hidden w-full h-full lg:absolute lg:inset-0"
               style={{
                 border: '1px solid #DDD5C5',
-                boxShadow: `0 20px 60px rgba(10,10,10,0.1), 0 4px 16px rgba(201,168,76,0.08)`,
+                boxShadow: `0 20px 60px rgba(10,10,10,0.1), 0 4px 16px rgba(220,38,38,0.08)`,
               }}
             >
               <iframe
@@ -2104,7 +2210,7 @@ const AreasWeCover = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title={`King of Detailing service area — mobile car detailing in ${selectedArea.name}, ${selectedArea.county}`}
+                title={`RD Valeting service area — mobile car detailing in ${selectedArea.name}, ${selectedArea.county}`}
               />
             </div>
 
@@ -2126,7 +2232,7 @@ const AreasWeCover = () => {
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em]" style={{ color: GOLD }}>Serving Across</span>
               </div>
               <p className="text-sm font-semibold leading-snug" style={{ color: '#0A0A0A' }}>
-                Bedfordshire, Hertfordshire, Buckinghamshire & Beyond
+                Swindon, Wiltshire, London & Surrounding Areas
               </p>
             </motion.div>
           </motion.div>
@@ -2153,7 +2259,7 @@ const AreasWeCover = () => {
             {/* Car icon */}
             <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 hidden sm:flex"
-              style={{ background: `linear-gradient(135deg, rgba(201,168,76,0.18), rgba(201,168,76,0.06))`, border: '1px solid rgba(201,168,76,0.25)' }}
+              style={{ background: `linear-gradient(135deg, rgba(220,38,38,0.18), rgba(220,38,38,0.06))`, border: '1px solid rgba(220,38,38,0.25)' }}
             >
               <Car className="w-8 h-8" style={{ color: GOLD }} />
             </div>
@@ -2168,10 +2274,10 @@ const AreasWeCover = () => {
             href={COMPANY_DETAILS.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.12em] text-black transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+            className="shrink-0 inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto"
             style={{
               background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`,
-              boxShadow: '0 8px 30px rgba(201,168,76,0.3)',
+              boxShadow: '0 8px 30px rgba(220,38,38,0.3)',
             }}
           >
             Get in Touch
@@ -2195,7 +2301,7 @@ const HomePage = () => (
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://www.kingofdetailinguk.com/"
+            "item": "https://www.rdvaleting.co.uk/"
           }
         ]
       })}</script>
@@ -2207,6 +2313,7 @@ const HomePage = () => (
     <Testimonials />
     <AboutSection />
     <CompanyStripeMarquee />
+    <AppointmentBookingWizard />
     <Gallery />
     <AreasWeCover />
     <FAQSection />
@@ -2215,7 +2322,7 @@ const HomePage = () => (
 
 export default function App() {
   return (
-    <div className="min-h-screen selection:text-black" style={{ '--tw-selection-bg': GOLD, background: '#F5F0E8' } as React.CSSProperties}>
+    <div className="min-h-screen selection:text-white" style={{ '--tw-selection-bg': GOLD, background: '#F5F0E8' } as React.CSSProperties}>
       <header>
         <Navbar />
       </header>
@@ -2226,23 +2333,36 @@ export default function App() {
           <Route path="/ceramic-coating" element={<CeramicCoatingPage />} />
           <Route path="/paint-correction" element={<PaintCorrectionPage />} />
           <Route path="/maintenance-clean" element={<MaintenanceCleanPage />} />
-          {/* Location Pages */}
-          <Route path="/mobile-car-detailing-luton" element={<LutonPage />} />
-          <Route path="/car-detailing-bedford" element={<BedfordPage />} />
-          <Route path="/car-detailing-dunstable" element={<DunstablePage />} />
-          <Route path="/car-detailing-st-albans" element={<StAlbansPage />} />
-          <Route path="/car-detailing-hitchin" element={<HitchinPage />} />
-          <Route path="/car-detailing-stevenage" element={<StevenagePage />} />
-          <Route path="/car-detailing-hemel-hempstead" element={<HemelHempsteadPage />} />
-          <Route path="/car-detailing-watford" element={<WatfordPage />} />
-          <Route path="/car-detailing-milton-keynes" element={<MiltonKeynesPage />} />
-          <Route path="/car-detailing-aylesbury" element={<AylesburyPage />} />
+
+          {/* Location Pages (Swindon & Surrounding Wiltshire/Cotswolds Towns) */}
+          <Route path="/mobile-car-detailing-swindon" element={<LutonPage />} />
+          <Route path="/mobile-car-detailing-luton" element={<Navigate to="/mobile-car-detailing-swindon" replace />} />
+          <Route path="/car-detailing-marlborough" element={<BedfordPage />} />
+          <Route path="/car-detailing-bedford" element={<Navigate to="/car-detailing-marlborough" replace />} />
+          <Route path="/car-detailing-cirencester" element={<DunstablePage />} />
+          <Route path="/car-detailing-dunstable" element={<Navigate to="/car-detailing-cirencester" replace />} />
+          <Route path="/car-detailing-chippenham" element={<StAlbansPage />} />
+          <Route path="/car-detailing-st-albans" element={<Navigate to="/car-detailing-chippenham" replace />} />
+          <Route path="/car-detailing-royal-wootton-bassett" element={<HitchinPage />} />
+          <Route path="/car-detailing-hitchin" element={<Navigate to="/car-detailing-royal-wootton-bassett" replace />} />
+          <Route path="/car-detailing-bath" element={<StevenagePage />} />
+          <Route path="/car-detailing-stevenage" element={<Navigate to="/car-detailing-bath" replace />} />
+          <Route path="/car-detailing-newbury" element={<HemelHempsteadPage />} />
+          <Route path="/car-detailing-hemel-hempstead" element={<Navigate to="/car-detailing-newbury" replace />} />
+          <Route path="/car-detailing-oxford" element={<WatfordPage />} />
+          <Route path="/car-detailing-watford" element={<Navigate to="/car-detailing-oxford" replace />} />
+          <Route path="/car-detailing-reading" element={<MiltonKeynesPage />} />
+          <Route path="/car-detailing-milton-keynes" element={<Navigate to="/car-detailing-reading" replace />} />
+          <Route path="/car-detailing-london" element={<AylesburyPage />} />
+          <Route path="/car-detailing-aylesbury" element={<Navigate to="/car-detailing-london" replace />} />
+
           {/* Blog Pages */}
           <Route path="/blog" element={<BlogIndexPage />} />
           <Route path="/blog/is-ceramic-coating-worth-it" element={<CeramicCoatingWorthItPage />} />
           <Route path="/blog/car-detailing-cost-uk" element={<CarDetailingCostUKPage />} />
           <Route path="/blog/car-detailing-vs-valeting" element={<DetailingVsValetingPage />} />
           <Route path="/blog/how-often-to-detail-car" element={<HowOftenToDetailPage />} />
+
           {/* Catch-all: redirect any unknown route back to home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
@@ -2254,11 +2374,11 @@ export default function App() {
         href={COMPANY_DETAILS.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Message King of Detailing on WhatsApp"
+        aria-label="Message RD Valeting on WhatsApp"
         className="fixed bottom-8 right-8 z-50 w-16 h-16 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all group bg-green-500 hover:bg-green-600"
       >
         <MessageCircle className="w-8 h-8" />
-        <span className="absolute right-full mr-4 px-4 py-2 bg-white text-black text-xs font-bold rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap" style={{ border: '1px solid #DDD5C5' }}>
+        <span className="absolute right-full mr-4 px-4 py-2 bg-neutral-900 text-white text-xs font-bold rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap border border-red-500/30">
           Message us on WhatsApp
         </span>
       </a>
@@ -2269,25 +2389,25 @@ export default function App() {
           href={COMPANY_DETAILS.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Follow King of Detailing on Instagram"
+          aria-label="Follow RD Valeting on Instagram"
           className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-all group"
           style={{ background: 'linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)' }}
         >
           <Instagram className="w-5 h-5" />
-          <span className="absolute right-full mr-3 px-3 py-1.5 bg-white text-black text-xs font-bold rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap" style={{ border: '1px solid #DDD5C5' }}>
-            @king.ofdetailing
+          <span className="absolute right-full mr-3 px-3 py-1.5 bg-neutral-900 text-white text-xs font-bold rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap border border-red-500/30">
+            @rd_valeting_
           </span>
         </a>
         <a
           href={COMPANY_DETAILS.facebook}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Follow King of Detailing on Facebook"
+          aria-label="Follow RD Valeting on Facebook"
           className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-all group bg-blue-600 hover:bg-blue-700"
         >
           <Facebook className="w-5 h-5" />
-          <span className="absolute right-full mr-3 px-3 py-1.5 bg-white text-black text-xs font-bold rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap" style={{ border: '1px solid #DDD5C5' }}>
-            King of Detailing
+          <span className="absolute right-full mr-3 px-3 py-1.5 bg-neutral-900 text-white text-xs font-bold rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap border border-red-500/30">
+            RD Valeting
           </span>
         </a>
       </div>

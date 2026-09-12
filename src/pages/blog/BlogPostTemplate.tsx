@@ -5,8 +5,8 @@ import { motion } from "motion/react";
 import { ArrowRight, Calendar, Clock, Crown, MessageCircle, Phone } from "lucide-react";
 import { COMPANY_DETAILS } from "../../constants";
 
-const GOLD = "#C9A84C";
-const GOLD_LIGHT = "#E2C97A";
+const GOLD = "#DC2626";
+const GOLD_LIGHT = "#EF4444";
 
 interface BlogPostProps {
   title: string;
@@ -27,29 +27,29 @@ export default function BlogPostTemplate(props: BlogPostProps) {
   return (
     <>
       <Helmet>
-        <title>{props.title} | King of Detailing</title>
+        <title>{props.title} | RD Valeting</title>
         <meta name="description" content={props.metaDescription} />
-        <link rel="canonical" href={`https://www.kingofdetailinguk.com${props.canonicalPath}`} />
+        <link rel="canonical" href={`https://www.rdvaleting.co.uk${props.canonicalPath}`} />
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={props.metaDescription} />
-        <meta property="og:url" content={`https://www.kingofdetailinguk.com${props.canonicalPath}`} />
+        <meta property="og:url" content={`https://www.rdvaleting.co.uk${props.canonicalPath}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content={`https://www.kingofdetailinguk.com${props.heroImage}`} />
+        <meta property="og:image" content={`https://www.rdvaleting.co.uk${props.heroImage}`} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Article",
           "headline": props.title,
-          "image": `https://www.kingofdetailinguk.com${props.heroImage}`,
+          "image": `https://www.rdvaleting.co.uk${props.heroImage}`,
           "author": {
             "@type": "Person",
             "name": author
           },
           "publisher": {
             "@type": "Organization",
-            "name": "King of Detailing",
+            "name": "RD Valeting",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://www.kingofdetailinguk.com/logo.png"
+              "url": "https://www.rdvaleting.co.uk/logo.png"
             }
           },
           "datePublished": "2026-08-08"
@@ -58,9 +58,9 @@ export default function BlogPostTemplate(props: BlogPostProps) {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kingofdetailinguk.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.kingofdetailinguk.com/blog" },
-            { "@type": "ListItem", "position": 3, "name": props.title, "item": `https://www.kingofdetailinguk.com${props.canonicalPath}` }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rdvaleting.co.uk/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rdvaleting.co.uk/blog" },
+            { "@type": "ListItem", "position": 3, "name": props.title, "item": `https://www.rdvaleting.co.uk${props.canonicalPath}` }
           ]
         })}</script>
       </Helmet>
@@ -101,7 +101,7 @@ export default function BlogPostTemplate(props: BlogPostProps) {
 
       {/* Article Content */}
       <section className="py-16 px-6 md:px-12" style={{ background: '#F5F0E8' }}>
-        <article className="max-w-3xl mx-auto prose prose-lg prose-headings:font-bold prose-headings:text-[#0A0A0A] prose-p:text-[#5A5040] prose-a:text-[#C9A84C] prose-a:no-underline hover:prose-a:underline prose-li:text-[#5A5040] prose-strong:text-[#2A2018]">
+        <article className="max-w-3xl mx-auto prose prose-lg prose-headings:font-bold prose-headings:text-[#0A0A0A] prose-p:text-[#5A5040] prose-a:text-[#DC2626] prose-a:no-underline hover:prose-a:underline prose-li:text-[#5A5040] prose-strong:text-[#2A2018]">
           {props.children}
         </article>
 
@@ -128,7 +128,7 @@ export default function BlogPostTemplate(props: BlogPostProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all inline-flex items-center gap-3 text-white w-full sm:w-auto justify-center"
-                style={{ border: `1px solid rgba(201,168,76,0.5)` }}
+                style={{ border: `1px solid rgba(220,38,38,0.5)` }}
               >
                 Book Online <ArrowRight className="w-4 h-4" />
               </a>

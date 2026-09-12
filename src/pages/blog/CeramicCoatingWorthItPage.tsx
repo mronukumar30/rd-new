@@ -7,7 +7,7 @@ export default function CeramicCoatingWorthItPage() {
       title="Is Ceramic Coating Worth It? A Detailer's Honest Guide"
       metaDescription="Wondering if ceramic coating is worth the investment? Read our honest guide on the pros, cons, costs, and longevity of ceramic coatings in the UK."
       canonicalPath="/blog/is-ceramic-coating-worth-it"
-      heroImage="/king-of-detailing-hero.webp"
+      heroImage="/rd-valeting-hero.webp"
       date="Aug 8, 2026"
       readTime="8 min read"
     >
@@ -27,7 +27,7 @@ export default function CeramicCoatingWorthItPage() {
       </p>
 
       <p>
-        At King of Detailing, we use premium <Link to="/ceramic-coating">ceramic coating products</Link> that offer 
+        At RD Valeting, we use premium <Link to="/ceramic-coating">ceramic coating products</Link> that offer 
         exceptional durability, gloss, and hydrophobic properties (which means water beads up and rolls off effortlessly).
       </p>
 

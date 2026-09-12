@@ -12,7 +12,7 @@ export default function CarDetailingCostUKPage() {
       readTime="6 min read"
     >
       <p>
-        "How much does car detailing cost?" is one of the most common questions we get at King of Detailing. 
+        "How much does car detailing cost?" is one of the most common questions we get at RD Valeting. 
         If you search around the UK, you might find prices ranging from £50 to over £1,500. This massive disparity 
         often leaves car owners confused. 
       </p>
@@ -41,7 +41,7 @@ export default function CarDetailingCostUKPage() {
       <p>
         This is the entry point to true detailing. It involves a safe multi-stage wash, chemical decontamination (removing iron fallout and tar), 
         a thorough interior deep clean (including extraction of seats and carpets), and a short-term wax or sealant. 
-        At King of Detailing, our <Link to="/deep-clean">Deep Clean package</Link> starts at £150.
+        At RD Valeting, our <Link to="/deep-clean">Deep Clean package</Link> starts at £150.
       </p>
 
       <h3>2. Paint Correction (Machine Polishing): £350 - £800+</h3>

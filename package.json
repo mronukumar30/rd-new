@@ -1,5 +1,6 @@
 {
-  "name": "react-example",
+  "name": "rd-valeting",
+  "description": "RD Valeting - Premium Mobile Valeting & Detailing Website",
   "private": true,
   "version": "0.0.0",
   "type": "module",

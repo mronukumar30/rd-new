@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import LocationPageTemplate from "./LocationPageTemplate";
 import { LOCATIONS } from "../../constants/locations";
 
-const locationData = LOCATIONS.find(l => l.slug === "mobile-car-detailing-luton")!;
+const locationData = LOCATIONS.find(l => l.slug === "mobile-car-detailing-swindon" || l.slug === "mobile-car-detailing-luton")!;
 
 export default function LutonPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);

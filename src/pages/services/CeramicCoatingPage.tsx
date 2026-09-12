@@ -11,7 +11,7 @@ export default function CeramicCoatingPage() {
 
   return (
     <ServicePageTemplate
-      title="Ceramic Coating in Luton, Bedfordshire | 5-Year Protection | King of Detailing"
+      title="Ceramic Coating in Luton, Bedfordshire | 5-Year Protection | RD Valeting"
       metaDescription="Professional ceramic coating in Luton from £650. 5-year paint protection with machine polishing. Superior water beading, UV resistance & gloss. Fully mobile, fully insured."
       canonicalPath="/ceramic-coating"
       serviceName="Ceramic Coating"
@@ -21,7 +21,7 @@ export default function CeramicCoatingPage() {
       duration="1–1.5 Days"
       heroImage="/Maintenance is key to keeping your car in the best shape possible month after month!Drop us a me (2).jpg"
       heroImagePosition="top"
-      heroImageAlt="Porsche 911 GTS ceramic coating in Luton — King of Detailing"
+      heroImageAlt="Porsche 911 GTS ceramic coating in Luton — RD Valeting"
       whatIsTitle="Ceramic Protection"
       whatIsContent={[
         "Ceramic coating is a liquid polymer that chemically bonds with your vehicle's factory paintwork to create a semi-permanent layer of protection. Unlike traditional waxes that wash off after a few weeks, a ceramic coating forms a molecular bond that lasts for years.",

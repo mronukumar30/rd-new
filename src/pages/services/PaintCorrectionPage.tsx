@@ -11,7 +11,7 @@ export default function PaintCorrectionPage() {
 
   return (
     <ServicePageTemplate
-      title="Paint Correction in Luton | Swirl Mark & Scratch Removal | King of Detailing"
+      title="Paint Correction in Luton | Swirl Mark & Scratch Removal | RD Valeting"
       metaDescription="Professional paint correction in Luton, Bedfordshire. Machine polishing to remove swirl marks, scratches & water etching. 3-year ceramic coating included. From £650."
       canonicalPath="/paint-correction"
       serviceName="Paint Correction"
@@ -21,7 +21,7 @@ export default function PaintCorrectionPage() {
       duration="1–1.5 Days"
       heroImage="/gallery-car-detailing-2.webp"
       heroImagePosition="center bottom"
-      heroImageAlt="Professional paint correction and machine polishing in Luton — swirl mark removal and mirror-finish results by King of Detailing"
+      heroImageAlt="Professional paint correction and machine polishing in Luton — swirl mark removal and mirror-finish results by RD Valeting"
       whatIsTitle="Paint Correction"
       whatIsContent={[
         "Paint correction is the art and science of removing imperfections from your vehicle's clear coat using machine polishing techniques. Unlike hand polishing or buffing, machine correction uses calibrated tools, specialist pads, and professional compounds to precisely level the clear coat — removing defects without compromising paint thickness.",

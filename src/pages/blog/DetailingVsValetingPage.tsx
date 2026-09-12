@@ -83,9 +83,9 @@ export default function DetailingVsValetingPage() {
         <strong>Choose Detailing if:</strong> You have just bought a new car and want to protect it, you are selling a car and want to maximize its value, your paint looks dull and scratched, or your interior is heavily soiled and needs a "reset".
       </p>
 
-      <h2>The King of Detailing Approach</h2>
+      <h2>The RD Valeting Approach</h2>
       <p>
-        At King of Detailing, we do not offer basic valets. Our <Link to="/deep-clean">Deep Clean package</Link> is an entry-level detail 
+        At RD Valeting, we do not offer basic valets. Our <Link to="/deep-clean">Deep Clean package</Link> is an entry-level detail 
         designed to reset your vehicle to a factory standard. Once that standard is achieved, we offer our clients a Maintenance Clean plan 
         to keep it looking perfect year-round.
       </p>

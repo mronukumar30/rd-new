@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { ArrowRight, BookOpen, Crown } from "lucide-react";
 
-const GOLD = "#C9A84C";
-const GOLD_LIGHT = "#E2C97A";
+const GOLD = "#DC2626";
+const GOLD_LIGHT = "#EF4444";
 
 const BLOG_POSTS = [
   {
     id: "is-ceramic-coating-worth-it",
     title: "Is Ceramic Coating Worth It? A Detailer's Honest Guide",
     excerpt: "Everything you need to know about ceramic coating your car. We break down the costs, benefits, longevity, and whether it's the right choice for your vehicle.",
-    image: "/king-of-detailing-hero.webp",
+    image: "/rd-valeting-hero.webp",
     date: "Aug 8, 2026",
     readTime: "8 min read"
   },
@@ -48,15 +48,15 @@ export default function BlogIndexPage() {
   return (
     <>
       <Helmet>
-        <title>Car Detailing Blog | Tips, Guides & Advice | King of Detailing</title>
-        <meta name="description" content="Expert car detailing tips, guides, and advice from King of Detailing. Learn about ceramic coatings, paint correction, maintenance, and more." />
-        <link rel="canonical" href="https://www.kingofdetailinguk.com/blog" />
+        <title>Car Detailing Blog | Tips, Guides & Advice | RD Valeting</title>
+        <meta name="description" content="Expert car detailing tips, guides, and advice from RD Valeting. Learn about ceramic coatings, paint correction, maintenance, and more." />
+        <link rel="canonical" href="https://www.rdvaleting.co.uk/blog" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kingofdetailinguk.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.kingofdetailinguk.com/blog" }
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.rdvaleting.co.uk/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.rdvaleting.co.uk/blog" }
           ]
         })}</script>
       </Helmet>
@@ -65,7 +65,7 @@ export default function BlogIndexPage() {
       <section className="relative min-h-[50vh] flex items-end overflow-hidden bg-black pt-40 pb-24">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-black z-10" />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 50%)', zIndex: 11 }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(220,38,38,0.05) 0%, transparent 50%)', zIndex: 11 }} />
         </div>
         
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full">
@@ -82,7 +82,7 @@ export default function BlogIndexPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.3)' }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(220,38,38,0.15)', border: '1px solid rgba(220,38,38,0.3)' }}>
               <Crown className="w-3.5 h-3.5" style={{ color: GOLD }} />
               <span className="text-[10px] font-bold uppercase tracking-[0.25em]" style={{ color: GOLD_LIGHT }}>
                 Knowledge & Expertise
@@ -127,7 +127,7 @@ export default function BlogIndexPage() {
                     <span className="flex items-center gap-1"><BookOpen className="w-3 h-3" /> {post.readTime}</span>
                   </div>
                   <Link to={`/blog/${post.id}`}>
-                    <h2 className="text-2xl font-bold mb-4 tracking-tight transition-colors group-hover:text-[#C9A84C]" style={{ color: '#0A0A0A' }}>
+                    <h2 className="text-2xl font-bold mb-4 tracking-tight transition-colors group-hover:text-[#DC2626]" style={{ color: '#0A0A0A' }}>
                       {post.title}
                     </h2>
                   </Link>
@@ -137,7 +137,7 @@ export default function BlogIndexPage() {
                   <Link 
                     to={`/blog/${post.id}`}
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest pb-2 transition-all duration-200 hover:gap-3 w-fit"
-                    style={{ color: GOLD, borderBottom: `1px solid rgba(201,168,76,0.3)` }}
+                    style={{ color: GOLD, borderBottom: `1px solid rgba(220,38,38,0.3)` }}
                   >
                     Read Article <ArrowRight className="w-4 h-4" />
                   </Link>

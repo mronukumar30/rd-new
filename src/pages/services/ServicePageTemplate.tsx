@@ -21,8 +21,8 @@ import {
 } from "lucide-react";
 import { COMPANY_DETAILS } from "../../constants";
 
-const GOLD = "#C9A84C";
-const GOLD_LIGHT = "#E2C97A";
+const GOLD = "#DC2626";
+const GOLD_LIGHT = "#EF4444";
 
 interface ServiceFAQ {
   question: string;
@@ -65,12 +65,12 @@ export default function ServicePageTemplate(props: ServicePageProps) {
       <Helmet>
         <title>{props.title}</title>
         <meta name="description" content={props.metaDescription} />
-        <link rel="canonical" href={`https://www.kingofdetailinguk.com${props.canonicalPath}`} />
+        <link rel="canonical" href={`https://www.rdvaleting.co.uk${props.canonicalPath}`} />
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={props.metaDescription} />
-        <meta property="og:url" content={`https://www.kingofdetailinguk.com${props.canonicalPath}`} />
+        <meta property="og:url" content={`https://www.rdvaleting.co.uk${props.canonicalPath}`} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.kingofdetailinguk.com/og-image.png" />
+        <meta property="og:image" content="https://www.rdvaleting.co.uk/og-image.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
@@ -78,10 +78,10 @@ export default function ServicePageTemplate(props: ServicePageProps) {
           "description": props.schemaDescription,
           "provider": {
             "@type": "AutoRepair",
-            "name": "King of Detailing",
-            "url": "https://www.kingofdetailinguk.com/",
-            "telephone": "+447749311494",
-            "areaServed": ["Luton", "Bedfordshire", "Hertfordshire", "Buckinghamshire"]
+            "name": "RD Valeting",
+            "url": "https://www.rdvaleting.co.uk/",
+            "telephone": "+447393682365",
+            "areaServed": ["Swindon", "Wiltshire", "Gloucestershire", "Somerset", "Berkshire", "London"]
           },
           "offers": {
             "@type": "Offer",
@@ -94,10 +94,10 @@ export default function ServicePageTemplate(props: ServicePageProps) {
             }
           },
           "areaServed": [
-            { "@type": "City", "name": "Luton" },
-            { "@type": "AdministrativeArea", "name": "Bedfordshire" },
-            { "@type": "AdministrativeArea", "name": "Hertfordshire" },
-            { "@type": "AdministrativeArea", "name": "Buckinghamshire" }
+            { "@type": "City", "name": "Swindon" },
+            { "@type": "AdministrativeArea", "name": "Wiltshire" },
+            { "@type": "AdministrativeArea", "name": "Gloucestershire" },
+            { "@type": "AdministrativeArea", "name": "London" }
           ]
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -108,19 +108,19 @@ export default function ServicePageTemplate(props: ServicePageProps) {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://www.kingofdetailinguk.com/"
+              "item": "https://www.rdvaleting.co.uk/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Services",
-              "item": "https://www.kingofdetailinguk.com/#services"
+              "item": "https://www.rdvaleting.co.uk/#services"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": props.serviceName,
-              "item": `https://www.kingofdetailinguk.com${props.canonicalPath}`
+              "item": `https://www.rdvaleting.co.uk${props.canonicalPath}`
             }
           ]
         })}</script>
@@ -156,10 +156,10 @@ export default function ServicePageTemplate(props: ServicePageProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.3)' }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: 'rgba(220,38,38,0.15)', border: '1px solid rgba(220,38,38,0.3)' }}>
               <Crown className="w-3.5 h-3.5" style={{ color: GOLD }} />
               <span className="text-[10px] font-bold uppercase tracking-[0.25em]" style={{ color: GOLD_LIGHT }}>
-                King of Detailing · {props.serviceName}
+                RD Valeting · {props.serviceName}
               </span>
             </div>
             <h1 className="text-4xl md:text-7xl font-bold tracking-tight text-white mb-6 max-w-3xl leading-[1.05]">
@@ -185,14 +185,14 @@ export default function ServicePageTemplate(props: ServicePageProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-all text-black"
-                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 15px 40px rgba(201,168,76,0.3)` }}
+                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 15px 40px rgba(220,38,38,0.3)` }}
               >
                 <MessageCircle className="w-5 h-5" /> Book via WhatsApp
               </a>
               <a
                 href={`tel:${COMPANY_DETAILS.phoneRaw}`}
                 className="px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-all text-white"
-                style={{ border: '1px solid rgba(201,168,76,0.4)' }}
+                style={{ border: '1px solid rgba(220,38,38,0.4)' }}
               >
                 <Phone className="w-5 h-5" style={{ color: GOLD }} /> {COMPANY_DETAILS.phone}
               </a>
@@ -252,7 +252,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[0.3em] mb-4" style={{ color: GOLD }}>Why Choose This Package</h2>
             <h3 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: '#0A0A0A' }}>
-              The King of Detailing Difference
+              The RD Valeting Difference
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -266,7 +266,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
                 className="p-6 rounded-[24px] group hover:-translate-y-1 transition-all"
                 style={{ background: '#F5F0E8', border: '1px solid #DDD5C5' }}
               >
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: 'rgba(201,168,76,0.15)' }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: 'rgba(220,38,38,0.15)' }}>
                   <Star className="w-5 h-5" style={{ color: GOLD }} />
                 </div>
                 <p className="text-sm font-medium leading-relaxed" style={{ color: '#2A2018' }}>{benefit}</p>
@@ -294,7 +294,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
                 className="p-8 rounded-[24px] relative"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(201,168,76,0.15)' }}
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(220,38,38,0.15)' }}
               >
                 <span className="text-6xl font-black italic text-white/5 absolute top-4 right-6">{String(i + 1).padStart(2, '0')}</span>
                 <h4 className="text-lg font-bold text-white mb-3">{step.title}</h4>
@@ -340,7 +340,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
                   <ChevronRight className="w-5 h-5 shrink-0 transition-transform group-open:rotate-90" style={{ color: GOLD }} />
                 </summary>
                 <div className="px-6 md:px-8 pb-6 md:pb-8">
-                  <div className="w-full h-[1px] mb-5" style={{ background: 'rgba(201,168,76,0.2)' }} />
+                  <div className="w-full h-[1px] mb-5" style={{ background: 'rgba(220,38,38,0.2)' }} />
                   <p className="text-sm md:text-base leading-relaxed" style={{ color: '#5A5040' }}>{faq.answer}</p>
                 </div>
               </details>
@@ -364,7 +364,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
                 key={svc.path}
                 to={svc.path}
                 className="p-8 rounded-[24px] group hover:-translate-y-2 transition-all duration-300 block"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(201,168,76,0.15)' }}
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(220,38,38,0.15)' }}
               >
                 <h4 className="text-xl font-bold text-white mb-2">{svc.name}</h4>
                 <p className="text-lg font-bold mb-4" style={{ color: GOLD }}>{svc.price}</p>
@@ -385,15 +385,15 @@ export default function ServicePageTemplate(props: ServicePageProps) {
             Ready to Book Your {props.serviceName}?
           </h2>
           <p className="text-base mb-10 max-w-lg mx-auto leading-relaxed" style={{ color: '#8A8070' }}>
-            We come to you — anywhere in Luton, Bedfordshire, and beyond. Fully insured. Fully mobile. Book today.
+            We come to you — anywhere in Swindon, Wiltshire, and surrounding areas. Fully insured. Fully mobile. Book today.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href={COMPANY_DETAILS.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all text-black inline-flex items-center gap-3"
-              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 15px 40px rgba(201,168,76,0.3)` }}
+              className="px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all text-white inline-flex items-center gap-3"
+              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD_LIGHT})`, boxShadow: `0 15px 40px rgba(220,38,38,0.3)` }}
             >
               <MessageCircle className="w-5 h-5" /> Book on WhatsApp
             </a>
@@ -402,7 +402,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all inline-flex items-center gap-3"
-              style={{ border: `2px solid rgba(201,168,76,0.3)`, color: '#0A0A0A' }}
+              style={{ border: `2px solid rgba(220,38,38,0.3)`, color: '#0A0A0A' }}
             >
               Book Online <ArrowRight className="w-4 h-4" />
             </a>
@@ -410,11 +410,11 @@ export default function ServicePageTemplate(props: ServicePageProps) {
           <div className="flex items-center justify-center gap-6 mt-8">
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" style={{ color: GOLD }} />
-              <span className="text-xs font-bold text-black/60">Luton & Nationwide</span>
+              <span className="text-xs font-bold text-black/60">Swindon, Wiltshire & Beyond</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4" style={{ color: GOLD }} />
-              <span className="text-xs font-bold text-black/60">Mon–Sun 8am–8pm</span>
+              <span className="text-xs font-bold text-black/60">Mon–Sun 8am–7pm</span>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import LocationPageTemplate from "./LocationPageTemplate";
 import { LOCATIONS } from "../../constants/locations";
 
-const locationData = LOCATIONS.find(l => l.slug === "car-detailing-hemel-hempstead")!;
+const locationData = LOCATIONS.find(l => l.slug === "car-detailing-newbury" || l.slug === "car-detailing-hemel-hempstead")!;
 
 export default function HemelHempsteadPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
