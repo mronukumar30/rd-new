@@ -201,7 +201,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-between overflow-hidden bg-black">
+    <section className="relative min-h-[100svh] flex flex-col overflow-hidden bg-black">
       {/* Background Image Container with rich gradient overlay */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <motion.img
@@ -228,7 +228,7 @@ const Hero = () => {
       </div>
 
       {/* Main Hero Container */}
-      <div className="relative z-30 w-full max-w-7xl mx-auto px-6 md:px-12 pt-32 sm:pt-36 lg:pt-40 pb-8 sm:pb-12 flex flex-col justify-between flex-1">
+      <div className="relative z-30 w-full max-w-7xl mx-auto px-6 md:px-12 pt-28 sm:pt-36 lg:pt-40 pb-6 sm:pb-12 flex flex-col justify-between flex-1">
         {/* Left Content Column */}
         <div className="max-w-2xl flex flex-col items-start pt-2 md:pt-4">
           {/* Eyebrow / Tagline */}
@@ -271,7 +271,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="flex flex-wrap items-center gap-4 mb-10 sm:mb-12"
+            className="flex flex-wrap items-center gap-3 sm:gap-4 mb-5 sm:mb-12"
           >
             <a
               href={COMPANY_DETAILS.bookingUrl}
@@ -301,7 +301,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.6 }}
-          className="w-full flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 pt-4"
+          className="w-full flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 sm:gap-6 pt-2 sm:pt-4"
         >
           {/* Avatar stack + 5 stars + review text */}
           <div className="flex items-center gap-3.5">
