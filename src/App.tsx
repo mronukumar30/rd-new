@@ -66,7 +66,6 @@ const GOLD_LIGHT = RED_LIGHT;
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("Home");
 
   const navItems = [
@@ -183,76 +182,19 @@ const Navbar = () => {
           })}
         </div>
 
-        {/* Right CTA + Hamburger Circle */}
-        <div className="flex items-center gap-2.5 md:gap-3">
-          {/* Red Book Now Pill Button matching mockup */}
+        {/* Right CTA Button */}
+        <div className="flex items-center">
           <a
             href={COMPANY_DETAILS.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 md:px-6 py-2.5 rounded-full text-xs md:text-sm font-semibold text-white bg-gradient-to-r from-[#DC2626] to-[#EF4444] hover:from-[#b91c1c] hover:to-[#DC2626] shadow-[0_4px_20px_rgba(220,38,38,0.4)] hover:shadow-[0_6px_25px_rgba(220,38,38,0.65)] transition-all duration-300 transform active:scale-95 group"
+            className="inline-flex items-center gap-2.5 px-7 md:px-9 py-3.5 md:py-4 rounded-full text-sm md:text-base font-bold text-white bg-gradient-to-r from-[#DC2626] to-[#EF4444] hover:from-[#b91c1c] hover:to-[#DC2626] shadow-[0_4px_25px_rgba(220,38,38,0.5)] hover:shadow-[0_6px_30px_rgba(220,38,38,0.75)] hover:scale-[1.03] transition-all duration-300 transform active:scale-95 group"
           >
-            <span>Book Now</span>
-            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+            <span>Book a Valet</span>
+            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white group-hover:translate-x-1 transition-transform" />
           </a>
-
-          {/* Circular Menu Toggle Button with Liquid Glass */}
-          <button
-            className="liquid-glass-btn w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center text-white transition-all duration-300 cursor-pointer active:scale-95"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Navigation Menu"
-          >
-            {isMobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
-          </button>
         </div>
       </div>
-
-      {/* Mobile / Full Dropdown Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.98 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="absolute top-full left-4 right-4 md:left-8 md:right-8 mt-3 liquid-glass-pill bg-black/60 p-6 rounded-[28px] flex flex-col gap-4 overflow-hidden z-50 shadow-2xl border border-white/20"
-          >
-            <div className="flex flex-col divide-y divide-white/10">
-              {navItems.map((item) => {
-                const isActive = activeSection === item.label;
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={(e) => {
-                      handleNavClick(e, item.href, item.label);
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className={cn(
-                      "text-base font-semibold uppercase tracking-wider py-3 flex items-center justify-between transition-all",
-                      isActive ? "text-[#DC2626]" : "text-white/80 hover:text-white"
-                    )}
-                  >
-                    <span>{item.label}</span>
-                    {isActive && <span className="w-2 h-2 rounded-full bg-[#DC2626] shadow-[0_0_8px_#DC2626]" />}
-                  </a>
-                );
-              })}
-            </div>
-
-            <a
-              href={COMPANY_DETAILS.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-2 w-full py-3.5 rounded-full text-center font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#DC2626] to-[#EF4444] shadow-[0_10px_25px_rgba(220,38,38,0.4)] flex items-center justify-center gap-2"
-            >
-              <span>Book Now</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
 };
@@ -337,15 +279,17 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="px-7 sm:px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base text-white bg-[#DC2626] hover:bg-[#b91c1c] transition-all duration-300 shadow-[0_4px_25px_rgba(220,38,38,0.45)] hover:shadow-[0_6px_30px_rgba(220,38,38,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2.5 group"
             >
-              <span>Book a Valet</span>
+              <MessageCircle className="w-5 h-5 text-white" />
+              <span>Contact me via WhatsApp</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
 
             <a
-              href="/#services"
-              className="px-7 sm:px-8 py-3.5 rounded-full font-medium text-sm sm:text-base text-white bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/25 hover:border-white/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg"
+              href={`tel:${COMPANY_DETAILS.phoneRaw}`}
+              className="px-7 sm:px-8 py-3.5 rounded-full font-medium text-sm sm:text-base text-white bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/25 hover:border-white/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center gap-2.5 group"
             >
-              Our Services
+              <Phone className="w-4 h-4 text-white/80 group-hover:text-white transition-colors" />
+              <span>Call {COMPANY_DETAILS.phone}</span>
             </a>
           </motion.div>
 
