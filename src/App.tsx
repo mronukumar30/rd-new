@@ -208,10 +208,12 @@ const Hero = () => {
           initial={{ scale: 1.04, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.6, ease: "easeOut" }}
-          src="/hero (2).png"
+          src="/hero-bg.webp"
           alt="RD Valeting - Professional mobile car valeting at your doorstep"
           className="w-full h-full object-cover object-[78%_center] lg:object-center"
           fetchPriority="high"
+          loading="eager"
+          decoding="async"
         />
 
         {/* Deep dark gradient on left side for text readability */}
