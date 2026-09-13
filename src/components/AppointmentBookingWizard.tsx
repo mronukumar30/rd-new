@@ -90,10 +90,9 @@ const CAR_TYPES = [
 ];
 
 const PACKAGES = [
-  { name: "Mini Valet — From £30", val: "Mini Valet (From £30)", desc: "Quick swirl-free wash & interior freshen up (1 hr)" },
-  { name: "Maintenance Wash — From £50", val: "Maintenance Wash (From £50)", desc: "Safe exterior wash, wheels, glass & interior tidy (1.5–2 hrs)" },
-  { name: "Deep Clean — From £100", val: "Deep Clean (From £100)", desc: "Full interior extraction & exterior rejuvenation (3–4 hrs)" },
-  { name: "Full Valet & Detailing — From £150", val: "Full Valet & Detailing (From £150)", desc: "Showroom reset, machine gloss & protective sealant (5–6 hrs)" },
+  { name: "Maintenance Plan — From £50", val: "Maintenance Plan (From £50)", desc: "Regular upkeep every 2–4 weeks · Snow foam, safe 2-bucket wash, sealant, tyre dressing & air freshener (1.5–2 hrs)" },
+  { name: "Full Valet Package — From £70", val: "Full Valet Package (From £70)", desc: "Comprehensive reset · 3-bucket safe wash, shampoo carpets, steam/leather seats, tar removal & 4-month sealant (3–4 hrs)" },
+  { name: "Deep Clean Package — From £120", val: "Deep Clean Package (From £120)", desc: "Full restoration · Wet vac extraction, pet hair & stains removed, steam interior, decontamination & air blast (4–5 hrs)" },
 ];
 
 const TIME_SLOTS = [

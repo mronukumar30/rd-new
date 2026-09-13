@@ -30,48 +30,37 @@ const GOLD_LIGHT = "#EF4444";
 
 const SERVICES_OFFERED = [
   {
-    name: "Maintenance Wash",
+    name: "Maintenance Plan",
     path: "/maintenance-clean",
     price: "From £50",
     duration: "1.5–2 Hours",
-    description: "Regular upkeep to keep your car fresh, shiny and decontaminated.",
+    description: "Scheduled every 2–4 weeks to preserve your protection layer and keep your car consistently sharp.",
     image: "/719890908_2222286848526617_3057517277440017740_n.jpg",
     tag: "Regular Upkeep",
-    highlights: ["Safe Exterior Hand Wash", "Wheels & Tyres Cleaned", "Windows Cleaned Inside & Out", "Quick Cabin Tidy"],
-    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Maintenance%20Wash%20car%20model%20%3A%20",
+    highlights: ["Snow Foam Pre-Soak", "Safe Two-Bucket Wash", "Wheels & Tyres Cleaned", "Sealant Applied (3 Months)"],
+    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Maintenance%20Plan%20car%20model%20%3A%20",
   },
   {
-    name: "Deep Clean",
-    path: "/deep-clean",
-    price: "From £100",
-    duration: "3–4 Hours",
-    description: "Full interior & exterior detail. Your car reset to factory-fresh condition.",
-    image: "/724453567_1741795673842657_7212829807354336478_n.jpg",
-    tag: "Flagship Reset",
-    highlights: ["Seats & Carpets Deep Cleaned", "Arch & Wheel Treatment", "Dashboard Rejuvenation", "Glass Polished Inside & Out"],
-    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Deep%20Clean%20car%20model%20%3A%20",
-  },
-  {
-    name: "Mini Valet",
+    name: "Full Valet Package",
     path: "/#services",
-    price: "From £30",
-    duration: "1 Hour",
-    description: "Our essential freshen-up package for safe, swirl-free regular cleaning.",
-    image: "/723830628_27152605947682802_3120737853125552335_n.jpg",
-    tag: "Budget Upkeep",
-    highlights: ["pH-Neutral Hand Wash", "Wheel Faces Cleaned", "Interior Vacuum", "Dash Wipe Down"],
-    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Mini%20Valet%20car%20model%20%3A%20",
+    price: "From £70",
+    duration: "3–4 Hours",
+    description: "A comprehensive reset that takes a vehicle in everyday condition and returns it showroom-ready.",
+    image: "/724893959_1438592524987609_4973891884401838852_n.jpg",
+    tag: "Comprehensive Reset",
+    highlights: ["Three-Bucket Safe Wash", "Carpets Shampooed", "Tar Removed", "Sealant Applied (4 Months)"],
+    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Full%20Valet%20Package%20car%20model%20%3A%20",
   },
   {
-    name: "Full Valet & Detailing",
-    path: "/paint-correction",
-    price: "From £150",
-    duration: "5–6 Hours",
-    description: "The ultimate automotive care experience with decontamination and durable protection.",
-    image: "/724893959_1438592524987609_4973891884401838852_n.jpg",
-    tag: "Ultimate Care",
-    highlights: ["Multi-Stage Decontamination", "Deep Fabric Extraction", "Leather Conditioning", "Durable Sealant Gloss"],
-    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Full%20Valet%20%26%20Detailing%20car%20model%20%3A%20",
+    name: "Deep Clean Package",
+    path: "/deep-clean",
+    price: "From £120",
+    duration: "4–5 Hours",
+    description: "Full restoration for the car that needs rescuing — not just washing. Pet hair, stains, tar, and grime eliminated.",
+    image: "/724453567_1741795673842657_7212829807354336478_n.jpg",
+    tag: "Full Restoration",
+    highlights: ["Wet Vac Seat & Carpet Extraction", "Pet Hair & Stains Removed", "Interior Steam Cleaned", "Exterior Decontamination"],
+    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Deep%20Clean%20Package%20car%20model%20%3A%20",
   },
 ];
 
@@ -139,8 +128,8 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Maintenance Wash",
-            "description": "Safe exterior wash, wheels & tyres cleaned, windows cleaned inside & out."
+            "name": "Maintenance Plan",
+            "description": "Scheduled every 2–4 weeks. Snow foam, safe two-bucket wash, wheels & tyres cleaned, sealant applied (3 months), tyre dressing & air freshener."
           },
           "priceSpecification": { "@type": "PriceSpecification", "price": "50", "priceCurrency": "GBP" }
         },
@@ -148,19 +137,19 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Deep Clean",
-            "description": "Full interior and exterior detail with seats & carpets extracted."
+            "name": "Full Valet Package",
+            "description": "Comprehensive reset with three-bucket safe wash, carpets shampooed, tar removed and 4-month sealant protection."
           },
-          "priceSpecification": { "@type": "PriceSpecification", "price": "100", "priceCurrency": "GBP" }
+          "priceSpecification": { "@type": "PriceSpecification", "price": "70", "priceCurrency": "GBP" }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Full Valet & Detailing",
-            "description": "Comprehensive transformation with multi-stage decontamination and durable paint protection."
+            "name": "Deep Clean Package",
+            "description": "Full interior and exterior restoration: wet vac seat & carpet extraction, pet hair & stains removed, interior steam cleaned, exterior decontamination."
           },
-          "priceSpecification": { "@type": "PriceSpecification", "price": "150", "priceCurrency": "GBP" }
+          "priceSpecification": { "@type": "PriceSpecification", "price": "120", "priceCurrency": "GBP" }
         }
       ]
     },

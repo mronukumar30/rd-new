@@ -101,9 +101,9 @@ export default function PaintCorrectionPage() {
       schemaDescription="Professional paint correction and machine polishing service in Luton, Bedfordshire. Swirl mark removal, scratch repair, and 3-year ceramic coating. Fully mobile, fully insured."
       schemaMinPrice="650"
       relatedServices={[
-        { name: "Deep Clean", path: "/deep-clean", price: "From £150" },
+        { name: "Deep Clean", path: "/deep-clean", price: "From £120" },
         { name: "Ceramic Coating", path: "/ceramic-coating", price: "From £650" },
-        { name: "Maintenance Clean", path: "/maintenance-clean", price: "From £100" },
+        { name: "Maintenance Clean", path: "/maintenance-clean", price: "From £50" },
       ]}
     />
   );

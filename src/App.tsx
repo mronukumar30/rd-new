@@ -511,7 +511,10 @@ const Services = () => {
               <div className="p-12 flex flex-col justify-between flex-1">
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-2xl font-bold" style={{ color: GOLD }}>{service.price}</span>
+                    <div>
+                      <span className="text-2xl font-bold" style={{ color: GOLD }}>{service.price}</span>
+                      <p className="text-[10px] font-mono uppercase tracking-[0.22em] mt-1" style={{ color: '#B0A898' }}>{(service as any).subtitle || service.duration}</p>
+                    </div>
                     <a
                       href={service.bookingUrl || COMPANY_DETAILS.bookingUrl}
                       target="_blank"
@@ -524,20 +527,20 @@ const Services = () => {
                       <ArrowRight className="w-4 h-4" />
                     </a>
                   </div>
-                  <h4 className="text-3xl font-bold mb-4 tracking-tight" style={{ color: '#0A0A0A' }}>{service.title}</h4>
-                  <p className="text-base leading-relaxed mb-6 font-light" style={{ color: '#8A8070' }}>
+                  <h4 className="text-3xl font-bold mb-3 tracking-tight" style={{ color: '#0A0A0A' }}>{service.title}</h4>
+                  <p className="text-sm leading-relaxed mb-6 font-light" style={{ color: '#8A8070' }}>
                     {service.benefit}
                   </p>
-                  <p className="text-xs leading-relaxed mb-8 px-4 py-3 rounded-2xl" style={{ color: '#6A6058', background: '#EDE8DF', border: '1px solid #DDD5C5' }}>
-                    {service.description}
-                  </p>
-                  <div className="grid grid-cols-2 gap-4 mb-10">
-                    {["Premium Products", "Expert Application", "Fully Insured", "Mobile Service"].map(item => (
-                      <div key={item} className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest" style={{ color: '#8A8070' }}>
-                        <div className="w-1.5 h-1.5 rounded-full" style={{ background: GOLD }} />
-                        {item}
-                      </div>
-                    ))}
+                  {/* Checklist grid */}
+                  <div className="mb-8 px-4 py-4 rounded-2xl" style={{ background: '#EDE8DF', border: '1px solid #DDD5C5' }}>
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+                      {(Array.isArray(service.description) ? service.description : (service.description as string).split(' · ')).map((item: string) => (
+                        <div key={item} className="flex items-start gap-2">
+                          <div className="w-1 h-1 rounded-full mt-[6px] shrink-0" style={{ background: GOLD }} />
+                          <span className="text-[11px] leading-snug font-medium" style={{ color: '#5A5040' }}>{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center gap-6">
@@ -919,7 +922,7 @@ const AboutSection = () => {
                 RD Valeting is Swindon's premier mobile car valeting and detailing service — trusted by hundreds of vehicle owners across Swindon, Chippenham, Royal Wootton Bassett, Marlborough, Devizes, and throughout Wiltshire. We arrive at your driveway or workplace fully equipped, fully insured, and ready to deliver a showroom-grade finish.
               </p>
               <p className="text-base leading-relaxed font-light" style={{ color: '#5A5040' }}>
-                From a £30 Mini Valet to a multi-stage Full Detail on prestige vehicles, every job is treated with the same relentless standard. No rushed appointments. No corners cut. Just professional mobile car care you can rely on — backed by five-star reviews from real customers across Wiltshire.
+                From a £50 Maintenance Plan to a showroom-grade Deep Clean on prestige vehicles, every job is treated with the same relentless standard. No rushed appointments. No corners cut. Just professional mobile car care you can rely on — backed by five-star reviews from real customers across Wiltshire.
               </p>
             </div>
 

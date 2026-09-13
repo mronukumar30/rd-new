@@ -1,6 +1,6 @@
 /**
  * Maintenance Clean Service Page
- * Target keywords: "car maintenance clean luton", "regular car clean luton", "car detailing subscription"
+ * Target keywords: "car maintenance clean swindon", "regular car clean wiltshire", "maintenance wash swindon"
  */
 
 import { useEffect } from "react";
@@ -11,77 +11,79 @@ export default function MaintenanceCleanPage() {
 
   return (
     <ServicePageTemplate
-      title="Maintenance Wash in Swindon | Regular Mobile Valeting £50 | RD Valeting"
-      metaDescription="Regular mobile maintenance wash in Swindon, Wiltshire from £50. Keep your vehicle in showroom condition with scheduled professional care. Fully mobile."
+      title="Maintenance Plan in Swindon | Regular Mobile Valeting £50 | RD Valeting"
+      metaDescription="Regular mobile maintenance plan in Swindon, Wiltshire — £50. Keep your vehicle in showroom condition with scheduled professional care every 2–4 weeks. Fully mobile, 100% pure water."
       canonicalPath="/maintenance-clean"
-      serviceName="Maintenance Wash"
+      serviceName="Maintenance Plan"
       heroTagline="Showroom Condition. Every Time."
-      heroDescription="A quick and effective clean to keep your car fresh, shiny and well-maintained. Perfect for regular upkeep on prestige and daily vehicles across Swindon and Wiltshire."
+      heroDescription="A professional, contact-safe wash cycle that preserves your protection layer and keeps your car in a condition that turns heads — scheduled every 2 to 4 weeks across Swindon and Wiltshire."
       price="From £50"
       duration="1.5–2 Hours"
       heroImage="/719890908_2222286848526617_3057517277440017740_n.jpg"
-      heroImageAlt="Professional mobile maintenance wash in Swindon — regular scheduled detailing service by RD Valeting to maintain showroom condition"
+      heroImageAlt="Professional mobile maintenance plan in Swindon — regular scheduled detailing service by RD Valeting to maintain showroom condition"
       whatIsTitle="Maintenance Programme"
       whatIsContent={[
-        "The Maintenance Wash is our core upkeep package at RD Valeting. It's a thorough, safe service designed to preserve your vehicle's paintwork, decontamination, and interior cleanliness between full details.",
-        "Unlike a harsh roadside car wash that uses acidic chemicals and abrasive sponges, our maintenance wash uses pH-neutral, swirl-free wash techniques. Wheels and tyres are thoroughly cleaned, windows are polished inside and out, and the interior receives a full vacuum and tidy.",
-        "Regular maintenance prevents brake dust from burning into alloys, removes bird lime and traffic film before it etches paint, and keeps your vehicle feeling fresh every day.",
-        "Book as a standalone refresh or set up regular monthly visits to ensure your pride and joy never loses its shine."
+        "Your paintwork is an investment. Every week without proper care, road fallout bonds deeper, brake dust etches further, and contaminants shorten the life of your finish.",
+        "The Maintenance Plan is the intelligent choice — a professional, contact-safe wash cycle carried out using our own 100% purified spotless water and safe two-bucket method. No swirls. No water marks. Just a clean that holds.",
+        "Regular scheduled visits prevent brake dust from permanently etching alloys, remove bird lime and traffic film before they bond to paint, and keep your protection layer in peak condition.",
+        "Book it once and it runs like clockwork. We work around you — evenings and weekends included."
       ]}
       whatsIncluded={[
-        "Exterior pre-wash and snow foam to safely lift surface dirt",
-        "Gentle two-bucket hand wash with pH-neutral shampoo",
-        "Wheel faces and tyres cleaned and dressed",
-        "Full interior cabin vacuum and tidy",
-        "Dashboard, console, and steering wheel wipe-down",
-        "Door sills and frames wiped",
-        "Windows cleaned inside & out for streak-free visibility",
-        "Air freshener scent application"
+        "Pre-wash rinse & snow foam pre-soak",
+        "Wheel arch deep clean",
+        "Wheels & tyres hand cleaned",
+        "Safe two-bucket wash method",
+        "Interior vacuum",
+        "Interior & exterior glass cleaned streak-free",
+        "Interior seats wiped down",
+        "Spray sealant applied (3 months protection)",
+        "Tyre dressing",
+        "Air freshener"
       ]}
       benefits={[
         "Keeps your vehicle in perpetual showroom condition — prevents grime buildup",
-        "100% swirl-free hand wash techniques preserving your clear coat",
-        "Affordable, transparent pricing at just £50",
-        "Consistent results every visit by Rhys personally",
-        "Fully mobile — we come directly to your home or office in Swindon & Wiltshire",
-        "Your vehicle always looks its best for work, events, or everyday pride"
+        "100% pure spotless water — zero mineral deposits, zero water marks",
+        "Swirl-free two-bucket hand wash preserving your clear coat",
+        "Fixed, transparent pricing from £50 — no surprises",
+        "Scheduled every 2–4 weeks around your life",
+        "Fully mobile — we come to your home or workplace across Swindon & Wiltshire"
       ]}
       idealFor={[
-        "Regular drivers wanting to keep their car in top condition",
+        "Regular drivers who want their car always looking sharp",
         "Prestige, sports, and daily vehicles",
-        "Busy professionals who want convenience without dropping off their vehicle",
-        "Anyone who appreciates spotless, swirl-free automotive care"
+        "Ceramic-coated vehicles needing safe maintenance washes",
+        "Busy professionals who want convenience without drop-offs"
       ]}
       processSteps={[
-        { title: "Snow Foam Pre-Wash", desc: "High-density snow foam lifting road film safely without touching the paint." },
-        { title: "Wheels & Tyres", desc: "pH-safe wheel cleaner and soft brushes cleaning brake dust and applying tyre dressing." },
-        { title: "Safe Hand Wash", desc: "Two-bucket method with microfibre mitts and warm shampoo for a spotless, scratch-free finish." },
-        { title: "Interior Tidy & Glass", desc: "Complete vacuum, dashboard wipe, and crystal-clear streak-free glass inside and out." }
+        { title: "Pre-Wash & Snow Foam", desc: "High-density snow foam applied after a rinse, safely lifting road film and fallout without touching the paint." },
+        { title: "Wheel Arches & Wheels", desc: "Deep arch clean followed by pH-safe wheel cleaner and soft brushes removing brake dust." },
+        { title: "Safe Two-Bucket Wash", desc: "Microfibre mitts and warm shampoo in a strict two-bucket method — no grit re-introduced to the paint." },
+        { title: "Interior, Glass & Sealant", desc: "Full vacuum, seat wipe, streak-free glass inside and out, sealant applied, tyres dressed, air freshener finished." }
       ]}
       faqs={[
         {
-          question: "How much does a maintenance wash cost in Swindon?",
-          answer: "Our Maintenance Wash is £50 for standard vehicles. Fast, efficient, and thorough."
+          question: "How much does the Maintenance Plan cost in Swindon?",
+          answer: "The Maintenance Plan is from £50 for standard vehicles — scheduled every 2–4 weeks to keep your protection layer topped up and your car consistently sharp."
         },
         {
-          question: "How often should I get a maintenance wash?",
-          answer: "We recommend every 2 to 4 weeks depending on your mileage and parking conditions to keep your car looking sharp year-round."
+          question: "How often should I book?",
+          answer: "We recommend every 2 to 4 weeks depending on mileage and parking conditions. The more consistently you maintain it, the better the finish holds."
         },
         {
           question: "Do you come directly to my driveway?",
-          answer: "Yes! We are 100% mobile across Swindon, Marlborough, Cirencester, Chippenham, and surrounding Wiltshire areas."
+          answer: "Yes — we are 100% mobile across Swindon, Marlborough, Cirencester, Chippenham, Royal Wootton Bassett, and surrounding Wiltshire areas."
         },
         {
-          question: "How do I book?",
-          answer: "Simply book online through our booking wizard, or message Rhys directly on WhatsApp at 07393 682 365."
+          question: "Do I need to supply water?",
+          answer: "No. We carry our own 100% pure spotless water. We do need access to a standard 13A plug socket — we bring an extension lead."
         }
       ]}
-      schemaDescription="Regular maintenance car wash service in Swindon, Wiltshire. Scheduled professional care to maintain showroom condition. Fully mobile, fully insured."
+      schemaDescription="Regular mobile maintenance plan in Swindon, Wiltshire. Scheduled professional care every 2–4 weeks to maintain showroom condition. Fully mobile, fully insured."
       schemaMinPrice="50"
       relatedServices={[
-        { name: "Deep Clean", path: "/deep-clean", price: "From £100" },
-        { name: "Mini Valet", path: "/#services", price: "From £30" },
-        { name: "Full Valet & Detailing", path: "/paint-correction", price: "From £150" },
+        { name: "Full Valet Package", path: "/#services", price: "From £70" },
+        { name: "Deep Clean Package", path: "/deep-clean", price: "From £120" },
+        { name: "Ceramic Coating", path: "/ceramic-coating", price: "From £100" },
       ]}
     />
   );

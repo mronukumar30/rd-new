@@ -17,7 +17,7 @@ export default function DeepCleanPage() {
       serviceName="Deep Clean"
       heroTagline="A Complete Reset for Your Vehicle"
       heroDescription="Our flagship deep clean is a comprehensive interior and exterior detail that restores your vehicle to a factory-fresh finish. Every surface, every crevice, every detail — meticulously cleaned and restored."
-      price="From £100"
+      price="From £120"
       duration="3–4 Hours"
       heroImage="/724453567_1741795673842657_7212829807354336478_n.jpg"
       heroImageAlt="Professional deep clean car valeting service in Swindon — interior and exterior restoration by RD Valeting"
@@ -63,7 +63,7 @@ export default function DeepCleanPage() {
       faqs={[
         {
           question: "How much does a deep clean cost in Swindon?",
-          answer: "Our Deep Clean is £100 for standard vehicles. We provide upfront, transparent pricing with zero hidden fees."
+          answer: "Our Deep Clean Package is £120 for standard vehicles — a full interior and exterior restoration with no hidden fees and no corners cut."
         },
         {
           question: "How long does a deep clean take?",
@@ -81,9 +81,9 @@ export default function DeepCleanPage() {
       schemaDescription="Professional deep clean car valeting service in Swindon, Wiltshire. Full interior and exterior detail. Fully mobile, fully insured."
       schemaMinPrice="100"
       relatedServices={[
-        { name: "Maintenance Wash", path: "/maintenance-clean", price: "From £50" },
-        { name: "Mini Valet", path: "/#services", price: "From £30" },
-        { name: "Full Valet & Detailing", path: "/paint-correction", price: "From £150" },
+        { name: "Maintenance Plan", path: "/maintenance-clean", price: "From £50" },
+        { name: "Full Valet Package", path: "/#services", price: "From £70" },
+        { name: "Ceramic Coating", path: "/ceramic-coating", price: "From £100" },
       ]}
     />
   );

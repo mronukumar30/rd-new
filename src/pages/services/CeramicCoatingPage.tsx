@@ -100,9 +100,9 @@ export default function CeramicCoatingPage() {
       schemaDescription="Professional ceramic coating service in Luton, Bedfordshire. Machine polishing and 5-year ceramic paint protection. Fully mobile, fully insured."
       schemaMinPrice="650"
       relatedServices={[
-        { name: "Deep Clean", path: "/deep-clean", price: "From £150" },
+        { name: "Deep Clean", path: "/deep-clean", price: "From £120" },
         { name: "Paint Correction", path: "/paint-correction", price: "From £650" },
-        { name: "Maintenance Clean", path: "/maintenance-clean", price: "From £100" },
+        { name: "Maintenance Clean", path: "/maintenance-clean", price: "From £50" },
       ]}
     />
   );
