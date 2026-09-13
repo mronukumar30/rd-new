@@ -7,7 +7,7 @@ export const SERVICES = [
     price: 'From £50',
     duration: '1.5–2 Hours',
     image: '/719890908_2222286848526617_3057517277440017740_n.jpg',
-    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Maintenance%20Wash%20(%C2%A350)',
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Maintenance%20Wash%20car%20model%20%3A%20',
   },
   {
     id: 'deep-clean',
@@ -17,7 +17,7 @@ export const SERVICES = [
     price: 'From £100',
     duration: '3–4 Hours',
     image: '/724453567_1741795673842657_7212829807354336478_n.jpg',
-    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Deep%20Clean%20(%C2%A3100)',
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Deep%20Clean%20car%20model%20%3A%20',
   },
   {
     id: 'mini-valet',
@@ -27,7 +27,7 @@ export const SERVICES = [
     price: 'From £30',
     duration: '1 Hour',
     image: '/723830628_27152605947682802_3120737853125552335_n.jpg',
-    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Mini%20Valet%20(%C2%A330)',
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Mini%20Valet%20car%20model%20%3A%20',
   },
   {
     id: 'full-valet',
@@ -38,7 +38,7 @@ export const SERVICES = [
     duration: '5–6 Hours',
     image: '/724893959_1438592524987609_4973891884401838852_n.jpg',
     objectPosition: 'center bottom',
-    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Full%20Valet%20%26%20Detailing',
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Full%20Valet%20%26%20Detailing%20car%20model%20%3A%20',
   },
 ];
 
