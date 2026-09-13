@@ -38,6 +38,7 @@ const SERVICES_OFFERED = [
     image: "/719890908_2222286848526617_3057517277440017740_n.jpg",
     tag: "Regular Upkeep",
     highlights: ["Safe Exterior Hand Wash", "Wheels & Tyres Cleaned", "Windows Cleaned Inside & Out", "Quick Cabin Tidy"],
+    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Maintenance%20Wash%20car%20model%20%3A%20",
   },
   {
     name: "Deep Clean",
@@ -48,6 +49,7 @@ const SERVICES_OFFERED = [
     image: "/724453567_1741795673842657_7212829807354336478_n.jpg",
     tag: "Flagship Reset",
     highlights: ["Seats & Carpets Deep Cleaned", "Arch & Wheel Treatment", "Dashboard Rejuvenation", "Glass Polished Inside & Out"],
+    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Deep%20Clean%20car%20model%20%3A%20",
   },
   {
     name: "Mini Valet",
@@ -58,6 +60,7 @@ const SERVICES_OFFERED = [
     image: "/723830628_27152605947682802_3120737853125552335_n.jpg",
     tag: "Budget Upkeep",
     highlights: ["pH-Neutral Hand Wash", "Wheel Faces Cleaned", "Interior Vacuum", "Dash Wipe Down"],
+    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Mini%20Valet%20car%20model%20%3A%20",
   },
   {
     name: "Full Valet & Detailing",
@@ -68,6 +71,7 @@ const SERVICES_OFFERED = [
     image: "/724893959_1438592524987609_4973891884401838852_n.jpg",
     tag: "Ultimate Care",
     highlights: ["Multi-Stage Decontamination", "Deep Fabric Extraction", "Leather Conditioning", "Durable Sealant Gloss"],
+    bookingUrl: "https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Full%20Valet%20%26%20Detailing%20car%20model%20%3A%20",
   },
 ];
 
@@ -470,7 +474,7 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
                     </Link>
 
                     <a
-                      href={COMPANY_DETAILS.whatsapp}
+                      href={service.bookingUrl || COMPANY_DETAILS.whatsapp}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:scale-105"

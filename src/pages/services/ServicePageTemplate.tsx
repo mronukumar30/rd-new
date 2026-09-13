@@ -181,7 +181,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={COMPANY_DETAILS.whatsapp}
+                href={`https://wa.me/447393682365?text=${encodeURIComponent(`Hi Rhys, I would like to book a ${props.serviceName} car model : `)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-all text-black"
@@ -389,7 +389,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={COMPANY_DETAILS.whatsapp}
+              href={`https://wa.me/447393682365?text=${encodeURIComponent(`Hi Rhys, I would like to book a ${props.serviceName} car model : `)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all text-white inline-flex items-center gap-3"
