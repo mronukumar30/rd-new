@@ -123,6 +123,42 @@ export const ADDON_PACKAGES = [
   },
 ];
 
+export const ADDON_EXTRAS = [
+  {
+    id: 'glass-ceramic-coating',
+    category: 'RAIN GUARD',
+    categoryColor: '#38BDF8',
+    title: '1 Year Glass Ceramic Coating',
+    description: 'An ultra-slick hydrophobic seal on the glass that throws rainwater off the windows at speed — clearer vision in bad weather, and far less wiper work.',
+    price: 'From £40',
+    priceColor: '#38BDF8',
+    image: '/719890908_2222286848526617_3057517277440017740_n.jpg',
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20add%20the%201%20Year%20Glass%20Ceramic%20Coating%20%28From%20%C2%A340%29%20to%20my%20valet.%20Vehicle%20model%3A%20',
+  },
+  {
+    id: 'convertible-roof-clean',
+    category: 'FABRIC CARE',
+    categoryColor: '#EF4444',
+    title: 'Convertible Roof Deep Clean',
+    description: 'A fabric roof holds dirt and green growth in a way paint never does. The weave is cleaned right through, lifted of staining, and left able to shed water again instead of soaking it up.',
+    price: '£40',
+    priceColor: '#EF4444',
+    image: '/721462704_1244763094247967_6897281892449763271_n.jpg',
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20add%20the%20Convertible%20Roof%20Deep%20Clean%20%28%C2%A340%29%20to%20my%20valet.%20Vehicle%20model%3A%20',
+  },
+  {
+    id: 'engine-bay-clean',
+    category: 'UNDER THE BONNET',
+    categoryColor: '#38BDF8',
+    title: 'Engine Bay Cleaned & Dressed',
+    description: 'Years of road dust and oil film taken off the bay, then every plastic and hose dressed back to a clean satin finish. The detail nobody expects and every buyer notices when the bonnet goes up.',
+    price: '£50',
+    priceColor: '#FFFFFF',
+    image: '/724072740_1947948122577232_3374260106430394124_n.jpg',
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20add%20the%20Engine%20Bay%20Cleaned%20%26%20Dressed%20%28%C2%A350%29%20to%20my%20valet.%20Vehicle%20model%3A%20',
+  },
+];
+
 export const TESTIMONIALS = [
   {
     name: 'James R.',

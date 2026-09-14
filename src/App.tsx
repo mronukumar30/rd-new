@@ -36,7 +36,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { cn } from "./lib/utils";
-import { SERVICES, ADDON_PACKAGES, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS, FAQ_DATA } from "./constants";
+import { SERVICES, ADDON_PACKAGES, ADDON_EXTRAS, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS, FAQ_DATA } from "./constants";
 import InteractiveBentoGallery from "./components/ui/interactive-bento-gallery";
 import DeepCleanPage from "./pages/services/DeepCleanPage";
 import CeramicCoatingPage from "./pages/services/CeramicCoatingPage";
@@ -726,6 +726,96 @@ const Services = () => {
                     Book {pkg.title.replace(' Package', '')} ({pkg.price})
                     <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-200" />
                   </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Optional Extras / Add-Ons & Upgrades (Compact Cards) */}
+        <div className="mt-20 pt-16 border-t border-[#DDD5C5]">
+          <div className="text-center mb-12">
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-xs font-mono font-bold uppercase tracking-[0.25em] mb-3 text-[#DC2626]"
+            >
+              Optional Extras
+            </motion.p>
+            <motion.h3
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0A]"
+            >
+              Add-Ons & Upgrades
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="mt-4 text-xs md:text-sm text-[#8A8070] max-w-2xl mx-auto leading-relaxed font-light"
+            >
+              Bolt any of these onto a package. The glass coating goes on after the glass has been properly prepared, which is why it is an upgrade to a valet rather than a service on its own — the roof and engine bay are extra work on the day.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {ADDON_EXTRAS.map((extra, idx) => (
+              <motion.div
+                key={extra.id}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="bg-[#0D0D0D] rounded-[28px] overflow-hidden p-4 border border-white/5 flex flex-col sm:flex-row gap-4 sm:gap-5 transition-all duration-300 hover:border-[#DC2626]/40 hover:-translate-y-1 shadow-xl"
+              >
+                {/* Left Thumbnail Image */}
+                <div className="w-full sm:w-[150px] md:w-[175px] h-44 sm:h-auto rounded-[20px] overflow-hidden shrink-0 relative bg-black/50">
+                  <img
+                    src={extra.image}
+                    alt={`${extra.title} - RD Valeting`}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+
+                {/* Right Content */}
+                <div className="flex-1 flex flex-col justify-between py-1">
+                  <div>
+                    <span
+                      className="text-[11px] font-mono font-bold tracking-wider uppercase block mb-1"
+                      style={{ color: extra.categoryColor }}
+                    >
+                      {extra.category}
+                    </span>
+                    <h4 className="text-lg md:text-xl font-bold text-white tracking-tight leading-snug">
+                      {extra.title}
+                    </h4>
+                    <p className="text-xs text-white/70 leading-relaxed font-light mt-2">
+                      {extra.description}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/10">
+                    <span
+                      className="text-sm md:text-base font-bold"
+                      style={{ color: extra.priceColor }}
+                    >
+                      {extra.price}
+                    </span>
+                    <a
+                      href={extra.bookingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-bold text-white/80 hover:text-white uppercase tracking-wider transition-colors group/link"
+                    >
+                      Add To A Package
+                      <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             ))}
