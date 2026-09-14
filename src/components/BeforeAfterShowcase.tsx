@@ -36,12 +36,12 @@ interface TransformationCard {
 
 const TRANSFORMATIONS: TransformationCard[] = [
   {
-    id: "paint-correction",
-    category: "Paint Correction",
+    id: "ceramic-coating-showcase",
+    category: "Ceramic Coating",
     tag: "Most Popular",
     title: "Swirl Mark & Scratch Elimination",
     vehicle: "Mercedes-Benz E-Class AMG Line",
-    service: "Stage 2 Paint Correction + Ceramic Shield",
+    service: "Ceramic Protection Package",
     location: "Swindon, Wiltshire",
     duration: "8 Hours",
     description: "Severe circular swirl marks, spiderweb scratches, and oxidised clear coat completely eradicated under professional LED detailing lights leaving a crystal-clear, deep liquid-mirror reflection that exceeds showroom standards.",
@@ -58,7 +58,7 @@ const TRANSFORMATIONS: TransformationCard[] = [
       { label: "Gloss Boost", value: "+40", unit: "%" },
       { label: "Protection", value: "3", unit: "Yrs" },
     ],
-    seoKeywords: ["paint correction Swindon", "swirl mark removal Wiltshire", "ceramic coating Swindon"],
+    seoKeywords: ["ceramic coating Swindon", "swirl mark removal Wiltshire", "ceramic coating Swindon"],
   },
   {
     id: "alloy-wheels",
@@ -98,7 +98,7 @@ const TRANSFORMATIONS: TransformationCard[] = [
     beforeImg: "/transformations/interior_before.jpg",
     afterImg: "/transformations/interior_after.jpg",
     highlights: [
-      "OEM Matte Leather Restored — Zero Greasy Shine",
+      "OEM Matte Leather Restored ï¿½ Zero Greasy Shine",
       "Crevice Steam Extraction & Deep Vacuum",
       "Antibacterial Disinfection & Conditioning",
       "Odour Elimination Treatment",
@@ -119,7 +119,7 @@ const TRANSFORMATIONS: TransformationCard[] = [
     service: "Full Mobile Deep Clean Valet",
     location: "Wootton Bassett, Wiltshire",
     duration: "4 Hours",
-    description: "Caked-on country road mud, grit, and winter salt stripped using pre-wash snow foam, multi-bucket contact wash, and high-gloss protective sealant — a complete exterior decontamination with zero paint marring.",
+    description: "Caked-on country road mud, grit, and winter salt stripped using pre-wash snow foam, multi-bucket contact wash, and high-gloss protective sealant ï¿½ a complete exterior decontamination with zero paint marring.",
     beforeImg: "/transformations/exterior_before.jpg",
     afterImg: "/transformations/exterior_after.jpg",
     highlights: [
@@ -174,9 +174,9 @@ function BeforeAfterSlider({ item }: { item: TransformationCard }) {
       className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden cursor-ew-resize select-none touch-none group bg-neutral-900"
       aria-label={`Before and after comparison for ${item.title}`}
     >
-      <img src={item.afterImg} alt={`After ${item.service} — ${item.vehicle} | RD Valeting Swindon`} className="absolute inset-0 w-full h-full object-cover pointer-events-none" draggable={false} loading="lazy" />
+      <img src={item.afterImg} alt={`After ${item.service} ï¿½ ${item.vehicle} | RD Valeting Swindon`} className="absolute inset-0 w-full h-full object-cover pointer-events-none" draggable={false} loading="lazy" />
       <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}>
-        <img src={item.beforeImg} alt={`Before ${item.service} — ${item.vehicle} | RD Valeting Swindon`} className="absolute inset-0 w-full h-full object-cover pointer-events-none max-w-none" draggable={false} loading="lazy" />
+        <img src={item.beforeImg} alt={`Before ${item.service} ï¿½ ${item.vehicle} | RD Valeting Swindon`} className="absolute inset-0 w-full h-full object-cover pointer-events-none max-w-none" draggable={false} loading="lazy" />
       </div>
       <div className={cn("absolute top-3 left-3 z-20 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-white flex items-center gap-1.5 pointer-events-none transition-opacity", sliderPos < 12 ? "opacity-20" : "opacity-100")}>
         <span className="w-2 h-2 rounded-full bg-red-500" />
@@ -250,10 +250,10 @@ function TransformCard({ item, index }: { item: TransformationCard; index: numbe
 function TestimonialStrip() {
   const [active, setActive] = useState(0);
   const reviews = [
-    { name: "James R.", car: "Porsche 911 Owner", text: "Absolutely fantastic full valet by Rhys. The car looks better than when I bought it — spotless inside and out with amazing attention to detail. Friendly, professional service. Would highly recommend RD Valeting to anyone.", stars: 5 },
+    { name: "James R.", car: "Porsche 911 Owner", text: "Absolutely fantastic full valet by Rhys. The car looks better than when I bought it ï¿½ spotless inside and out with amazing attention to detail. Friendly, professional service. Would highly recommend RD Valeting to anyone.", stars: 5 },
     { name: "Amanda S.", car: "Audi A4 Owner", text: "Excellent valet done on my car by Rhys. Looks brand new and smells amazing! A highly thorough and professional job. Definitely recommend to anyone who values their vehicle.", stars: 5 },
-    { name: "Margaret & John", car: "Mercedes E-Class Owners", text: "Rhys was great — very careful and left our pride and joy looking like new. Prompt arrival, polite demeanor and an astonishing standard of work. Superb mobile valeting service.", stars: 5 },
-    { name: "Paul B.", car: "Porsche Boxster S Owner", text: "Did a brilliant job on my treasured Boxster S. I would have no hesitation in recommending him. Great job, great price, great service — looking forward to the next valet!", stars: 5 },
+    { name: "Margaret & John", car: "Mercedes E-Class Owners", text: "Rhys was great ï¿½ very careful and left our pride and joy looking like new. Prompt arrival, polite demeanor and an astonishing standard of work. Superb mobile valeting service.", stars: 5 },
+    { name: "Paul B.", car: "Porsche Boxster S Owner", text: "Did a brilliant job on my treasured Boxster S. I would have no hesitation in recommending him. Great job, great price, great service ï¿½ looking forward to the next valet!", stars: 5 },
   ];
   return (
     <div className="relative bg-gray-950 rounded-3xl overflow-hidden p-6 sm:p-8 h-full flex flex-col justify-between">
@@ -295,7 +295,7 @@ function TestimonialStrip() {
 function AuthorityBar() {
   const badges = [
     { icon: BadgeCheck, title: "Fully Insured & Professional", sub: "Comprehensive public liability insurance on every job" },
-    { icon: Shield, title: "100% Satisfaction Guarantee", sub: "Not happy? We return and fix it — free of charge" },
+    { icon: Shield, title: "100% Satisfaction Guarantee", sub: "Not happy? We return and fix it ï¿½ free of charge" },
     { icon: ThumbsUp, title: "5-Star Rated on Google", sub: "150+ verified reviews from real local clients" },
     { icon: Zap, title: "Premium-Grade Products Only", sub: "Gtechniq, Koch Chemie & Meguiar's professional range" },
   ];
@@ -344,7 +344,7 @@ export default function BeforeAfterShowcase() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-xs font-bold uppercase tracking-[0.22em] text-[#EF2B2D] mb-3">
-            Real Results · Zero Filters · Zero Compromise
+            Real Results ï¿½ Zero Filters ï¿½ Zero Compromise
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.08 }} className="text-3xl sm:text-5xl font-extrabold tracking-tight text-gray-900 mb-4 leading-tight" itemProp="name">
             The Proof Is In The{" "}
@@ -354,7 +354,7 @@ export default function BeforeAfterShowcase() {
             </span>
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.16 }} className="text-base sm:text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto" itemProp="description">
-            Swindon & Wiltshire's most trusted mobile car detailing service. Drag each slider to see the exact transformation — real vehicles, real results, no retouching.
+            Swindon & Wiltshire's most trusted mobile car detailing service. Drag each slider to see the exact transformation ï¿½ real vehicles, real results, no retouching.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.24 }} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6">
             {TRUST_STATS.map((s, i) => (
@@ -386,12 +386,12 @@ export default function BeforeAfterShowcase() {
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1.5 mb-4">
                 <Zap className="w-3.5 h-3.5 text-white" />
-                <span className="text-xs font-bold text-white uppercase tracking-wider">Free Quote · No Obligation</span>
+                <span className="text-xs font-bold text-white uppercase tracking-wider">Free Quote ï¿½ No Obligation</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight mb-3">Ready to See This Result on Your Car?</h3>
               <p className="text-sm text-white/80 leading-relaxed mb-6">We come straight to your driveway across Swindon, Wiltshire & surrounding areas. Get a personalised quote in under 60 seconds.</p>
               <div className="space-y-2.5 mb-6">
-                {["Message us on WhatsApp — instant reply", "We confirm your date, time & location", "We arrive & deliver showroom results"].map((step, i) => (
+                {["Message us on WhatsApp ï¿½ instant reply", "We confirm your date, time & location", "We arrive & deliver showroom results"].map((step, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="w-5 h-5 rounded-full bg-white/20 text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
                     <span className="text-xs text-white/90 font-medium">{step}</span>
@@ -417,7 +417,7 @@ export default function BeforeAfterShowcase() {
           Swindon, Wiltshire, Cirencester, Marlborough, Royal Wootton Bassett, Chippenham, Devizes, Trowbridge
         </div>
         <div className="hidden" aria-hidden="true" itemProp="hasOfferCatalog">
-          Mobile car detailing, paint correction Swindon, ceramic coating Wiltshire, alloy wheel cleaning, interior deep clean, full valet Swindon
+          Mobile car detailing, ceramic coating Swindon, ceramic coating Wiltshire, alloy wheel cleaning, interior deep clean, full valet Swindon
         </div>
       </div>
     </section>

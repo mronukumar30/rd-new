@@ -44,20 +44,24 @@ export default function CarDetailingCostUKPage() {
         At RD Valeting, our <Link to="/deep-clean">Deep Clean package</Link> starts at £150.
       </p>
 
-      <h3>2. Paint Correction (Machine Polishing): £350 - £800+</h3>
+      <h3>2. Ceramic Protection & Machine Polish: £350 - £800+</h3>
       <p>
-        If your car looks dull in the sun and is covered in spider-web-like scratches (swirl marks), it needs paint correction. 
+        If your car looks dull in the sun and is covered in spider-web-like scratches (swirl marks), it needs machine polishing & ceramic protection. 
         A single-stage machine polish (removing 60-70% of defects) typically starts around £350. A multi-stage correction 
-        (chasing 90-95% perfection) can easily exceed £800. This process takes 1 to 3 days of intense, highly skilled labor.
-        Learn more about our <Link to="/paint-correction">Paint Correction services</Link>.
+        can restore high gloss and defect clarity. 
+        Learn more about our <Link to="/ceramic-coating">Ceramic Coating services</Link>.
       </p>
 
       <h3>3. Ceramic Coating Application: £450 - £1,200+</h3>
       <p>
-        Applying a professional-grade ceramic coating requires meticulous preparation. The paint must be flawless before the coating is applied. 
+        Applying a professional-grade ceramic coating requires meticulous preparation. The paint surface must be clean before the coating is applied. 
         The cost heavily depends on the durability of the coating (1 year vs 3 years vs 5 years) and the size of the vehicle. 
         Expect to pay upwards of £650 for a quality coating that includes the necessary preparation stages. 
         Read our guide on <Link to="/blog/is-ceramic-coating-worth-it">whether ceramic coating is worth it</Link>.
+      </p>
+
+      <p className="mt-4 text-xs italic text-red-500">
+        If someone offers you a full detail and ceramic coating for £200, run.
       </p>
 
       <h2>Why Does Premium Detailing Cost So Much?</h2>
@@ -73,7 +77,7 @@ export default function CarDetailingCostUKPage() {
 
       <h2>Beware of the "Too Good to be True" Quote</h2>
       <p>
-        If someone offers you a full paint correction and ceramic coating for £200, run. 
+        If someone offers you a full detail and ceramic coating for £200, run. 
         It is physically impossible to properly prepare paint and apply a legitimate coating in the time that £200 affords a business. 
         They are likely using a spray-on wax masquerading as a ceramic coating, and skipping crucial decontamination steps.
       </p>

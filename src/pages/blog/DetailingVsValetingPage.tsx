@@ -50,7 +50,7 @@ export default function DetailingVsValetingPage() {
       <ul>
         <li><strong>Chemical Decontamination:</strong> Removing iron fallout, tar, and tree sap that washing cannot remove.</li>
         <li><strong>Mechanical Decontamination:</strong> Using a clay bar to pull microscopic contaminants out of the clear coat.</li>
-        <li><strong>Machine Polishing / Paint Correction:</strong> Removing microscopic layers of clear coat to permanently eliminate scratches, swirl marks, and oxidation.</li>
+        <li><strong>Machine Polishing / Surface Prep:</strong> Removing microscopic layers of clear coat to permanently eliminate scratches, swirl marks, and oxidation.</li>
         <li><strong>Ceramic Coatings:</strong> Applying semi-permanent protection that lasts years, rather than weeks.</li>
         <li><strong>Deep Extraction:</strong> Removing years of dirt, sweat, and odours deep within the seats and carpets.</li>
       </ul>
@@ -64,7 +64,7 @@ export default function DetailingVsValetingPage() {
 
       <h3>2. Time and Cost</h3>
       <p>
-        A standard valet takes 1 to 2 hours. A full detail, especially one involving <Link to="/paint-correction">paint correction</Link>, 
+        A standard valet takes 1 to 2 hours. A full detail, especially one involving <Link to="/ceramic-coating">ceramic coating prep</Link>, 
         takes anywhere from 5 hours to multiple days. Consequently, detailing requires a much higher investment. 
         (Read our guide on <Link to="/blog/car-detailing-cost-uk">Car Detailing Costs in the UK</Link>).
       </p>

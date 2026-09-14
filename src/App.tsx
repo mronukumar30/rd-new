@@ -40,7 +40,6 @@ import { SERVICES, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS, FAQ_DATA } from
 import InteractiveBentoGallery from "./components/ui/interactive-bento-gallery";
 import DeepCleanPage from "./pages/services/DeepCleanPage";
 import CeramicCoatingPage from "./pages/services/CeramicCoatingPage";
-import PaintCorrectionPage from "./pages/services/PaintCorrectionPage";
 import MaintenanceCleanPage from "./pages/services/MaintenanceCleanPage";
 import SwindonPage from "./pages/locations/SwindonPage";
 import MarlboroughPage from "./pages/locations/MarlboroughPage";
@@ -555,7 +554,7 @@ const Services = () => {
                     <ChevronRight className="w-4 h-4 group-hover/link:translate-x-2 transition-transform duration-200" />
                   </a>
                   <Link
-                    to={service.id === 'maintenance' ? '/maintenance-clean' : service.id === 'enhance' ? '/paint-correction' : `/${service.id}`}
+                    to={service.id === 'maintenance' ? '/maintenance-clean' : service.id === 'enhance' ? '/ceramic-coating' : `/${service.id}`}
                     className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest pb-2 transition-all duration-200 hover:gap-3"
                     style={{ color: '#8A8070', borderBottom: '1px solid rgba(138,128,112,0.2)' }}
                   >
@@ -1219,7 +1218,6 @@ const GALLERY_SERVICES = [
   "Deep Clean",
   "Ceramic Coating",
   "Maintenance Clean",
-  "Paint Correction",
 ];
 
 const GALLERY_ITEMS: { id: number; type: "image" | "video"; title: string; service: string; desc: string; url: string; }[] = [
@@ -1267,7 +1265,7 @@ const GALLERY_ITEMS: { id: number; type: "image" | "video"; title: string; servi
     id: 6,
     type: "image" as const,
     title: "BMW M-Sport Deep Gloss",
-    service: "Paint Correction",
+    service: "Ceramic Coating",
     desc: "High-reflection deep black finish on BMW saloon.",
     url: "/722908490_1513785427083168_6885942169468714202_n.jpg",
   },
@@ -1291,8 +1289,8 @@ const GALLERY_ITEMS: { id: number; type: "image" | "video"; title: string; servi
     id: 9,
     type: "image" as const,
     title: "Machine Polish Restoration",
-    service: "Paint Correction",
-    desc: "Eliminating swirls and light imperfections for crystal-clear paint.",
+    service: "Ceramic Coating",
+    desc: "Eliminating light imperfections for crystal-clear paint.",
     url: "/721103952_1251129603598647_5349731047514588078_n.jpg",
   },
   {
@@ -2258,7 +2256,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/deep-clean" element={<DeepCleanPage />} />
           <Route path="/ceramic-coating" element={<CeramicCoatingPage />} />
-          <Route path="/paint-correction" element={<PaintCorrectionPage />} />
+          <Route path="/paint-correction" element={<Navigate to="/ceramic-coating" replace />} />
           <Route path="/maintenance-clean" element={<MaintenanceCleanPage />} />
 
           {/* Location Pages (Swindon & Surrounding Wiltshire/Cotswolds/Berkshire Towns) */}

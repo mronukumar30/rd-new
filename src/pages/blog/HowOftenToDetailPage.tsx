@@ -77,7 +77,7 @@ export default function HowOftenToDetailPage() {
 
       <h2>Ready to Get on a Schedule?</h2>
       <p>
-        At RD Valeting, we make this easy. We start every new client with a Deep Clean or Paint Correction to reset the vehicle. 
+        At RD Valeting, we make this easy. We start every new client with a Deep Clean or Ceramic Coating to reset the vehicle. 
         After that, you qualify for our recurring Maintenance Plan, where we come to you every 3, 4, or 6 weeks to keep it perfect.
       </p>
     </BlogPostTemplate>

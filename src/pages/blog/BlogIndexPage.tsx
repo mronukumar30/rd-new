@@ -49,7 +49,7 @@ export default function BlogIndexPage() {
     <>
       <Helmet>
         <title>Car Detailing Blog | Tips, Guides & Advice | RD Valeting</title>
-        <meta name="description" content="Expert car detailing tips, guides, and advice from RD Valeting. Learn about ceramic coatings, paint correction, maintenance, and more." />
+        <meta name="description" content="Expert car detailing tips, guides, and advice from RD Valeting. Learn about ceramic coatings, maintenance, and more." />
         <link rel="canonical" href="https://www.rdvaleting.co.uk/blog" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

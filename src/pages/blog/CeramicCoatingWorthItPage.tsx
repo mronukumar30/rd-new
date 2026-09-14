@@ -68,10 +68,10 @@ export default function CeramicCoatingWorthItPage() {
         <li><strong>It will not eliminate the need to wash your car.</strong> Your car will stay cleaner for longer, and it will be much easier to wash, but you still need to maintain it.</li>
       </ul>
 
-      <h2>The Importance of Paint Correction</h2>
+      <h2>The Importance of Paint Preparation</h2>
       <p>
         Before a ceramic coating is applied, the paint <em>must</em> be perfect. If you apply a coating over swirl marks and scratches, 
-        you are permanently sealing those defects in. This is why professional <Link to="/paint-correction">paint correction</Link> 
+        you are permanently sealing those defects in. This is why professional <Link to="/ceramic-coating">paint prep</Link> 
         is a mandatory step before any coating application. The preparation is where 80% of the work—and cost—comes from.
       </p>
 

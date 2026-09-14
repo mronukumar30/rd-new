@@ -33,8 +33,8 @@ export default function CeramicCoatingPage() {
         "Full exterior pre-wash, snow foam, and decontamination",
         "Clay bar treatment to remove bonded contaminants",
         "Tar and iron fallout chemical removal",
-        "Single or multi-stage machine polishing (paint correction)",
-        "Swirl mark, light scratch, and water etching removal",
+        "Machine polish prep & paint decontamination",
+        "Swirl mark reduction and paint enhancement",
         "Panel-by-panel paint inspection under specialist lighting",
         "Professional ceramic coating application",
         "Full interior deep clean and conditioning",
@@ -51,7 +51,7 @@ export default function CeramicCoatingPage() {
         "Resistance against bird droppings, tree sap, and industrial fallout",
         "Enhanced depth of colour and mirror-like gloss that exceeds showroom standards",
         "Dramatically easier maintenance — less effort to keep your car clean",
-        "Includes full machine polish (paint correction) to remove existing defects",
+        "Includes full surface preparation & machine polish for pristine bonding",
         "5 years of maintenance plan eligibility to preserve coating performance",
         "Fully mobile — we come to your driveway in Luton, Bedfordshire, and beyond"
       ]}
@@ -66,7 +66,7 @@ export default function CeramicCoatingPage() {
       processSteps={[
         { title: "Assessment & Pre-Wash", desc: "Full vehicle assessment under specialist lighting. Snow foam pre-wash and thorough decontamination to create a pristine surface." },
         { title: "Paint Decontamination", desc: "Clay bar, tar remover, and iron fallout treatment to remove every bonded contaminant from the paintwork surface." },
-        { title: "Machine Polishing", desc: "Single or multi-stage machine polishing to remove swirl marks, light scratches, and water etching. The paintwork is perfected panel by panel." },
+        { title: "Machine Polishing", desc: "Surface enhancement machine polishing to refine clear coat gloss. The paintwork is prepped panel by panel." },
         { title: "Paint Inspection", desc: "Every panel is inspected under specialist LED lighting to ensure defect removal meets our standards before coating." },
         { title: "Ceramic Coating Application", desc: "The ceramic coating is applied by hand, panel by panel, ensuring complete and even coverage across the entire vehicle." },
         { title: "Curing & Final Inspection", desc: "The coating requires a 24-hour curing period. Final inspection ensures perfect finish. You receive an aftercare guide and maintenance plan enrolment." }
@@ -74,7 +74,7 @@ export default function CeramicCoatingPage() {
       faqs={[
         {
           question: "How much does ceramic coating cost in Luton?",
-          answer: "Our ceramic coating package starts from £650. This includes full machine polishing (paint correction), the ceramic coating application, and a complete interior and exterior detail. Pricing depends on vehicle size and paintwork condition."
+          answer: "Our ceramic coating package starts from £650. This includes full machine prep, the ceramic coating application, and a complete interior and exterior detail. Pricing depends on vehicle size and paintwork condition."
         },
         {
           question: "How long does ceramic coating last?",
@@ -86,7 +86,7 @@ export default function CeramicCoatingPage() {
         },
         {
           question: "Can ceramic coating be applied to any car?",
-          answer: "Yes — we apply ceramic coating to vehicles of all makes, models, ages, and colours. For older vehicles or those with significant paint damage, we recommend a multi-stage polish first to ensure the best possible results."
+          answer: "Yes — we apply ceramic coating to vehicles of all makes, models, ages, and colours."
         },
         {
           question: "Does ceramic coating prevent scratches?",
@@ -101,7 +101,6 @@ export default function CeramicCoatingPage() {
       schemaMinPrice="650"
       relatedServices={[
         { name: "Deep Clean", path: "/deep-clean", price: "From £120" },
-        { name: "Paint Correction", path: "/paint-correction", price: "From £650" },
         { name: "Maintenance Clean", path: "/maintenance-clean", price: "From £50" },
       ]}
     />
