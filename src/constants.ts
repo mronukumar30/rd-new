@@ -77,6 +77,52 @@ export const SERVICES = [
   },
 ];
 
+export const ADDON_PACKAGES = [
+  {
+    id: 'winter-protection',
+    title: 'Winter Protection Package',
+    badge: 'Seasonal Protection',
+    subtitle: 'Cold weather defense against road salt, grit & harsh moisture',
+    benefit: 'Shield your paint, wheels, and glass against winter road grime with heavy-duty 6-month sealants and water repellent coatings.',
+    price: '£60',
+    duration: '2–2.5 hrs',
+    image: '/723830628_27152605947682802_3120737853125552335_n.jpg',
+    description: [
+      'Snow foam, pre-wash & rinse',
+      '3-bucket safe wash method',
+      'Arches blasted and brushed out',
+      'Full paint decontamination',
+      'Tar removed safely',
+      'Interior door shuts cleaned',
+      'Rain repellent applied to windscreen',
+      'Wheel sealant applied',
+      '6 months paint sealant applied',
+      'Finished off with a fresh interior scent',
+    ],
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20the%20Winter%20Protection%20Package%20%28%C2%A360%29.%20Vehicle%20model%3A%20',
+  },
+  {
+    id: 'new-car-protection',
+    title: 'New Car Protection Package',
+    badge: '1-Year Ceramic Seal',
+    subtitle: 'Showroom preservation and long-lasting ceramic protection',
+    benefit: 'Lock in that pristine factory finish from day one with dedicated surface decontamination and genuine 1-year ceramic coating on paint & glass.',
+    price: 'From £100',
+    duration: '3–4 hrs',
+    image: '/722131074_3250354271804383_1989022274874112064_n.jpg',
+    pureWaterNote: 'We arrive with our own 100% spotless pure water, so no tap is needed — all we ask for is a standard 13A socket and a place to park.',
+    description: [
+      'Pre-wash & safe 3-bucket contact wash',
+      'Full decontamination & tar removal',
+      'Full interior vacuum',
+      'Fabric sealed or leather cleaned & treated',
+      'Wheels cleaned, tyres dressed & glass cleaned',
+      '1 year ceramic coating on paint & glass',
+    ],
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20the%20New%20Car%20Protection%20Package%20%28From%20%C2%A3100%29.%20Vehicle%20model%3A%20',
+  },
+];
+
 export const TESTIMONIALS = [
   {
     name: 'James R.',

@@ -36,7 +36,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { cn } from "./lib/utils";
-import { SERVICES, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS, FAQ_DATA } from "./constants";
+import { SERVICES, ADDON_PACKAGES, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS, FAQ_DATA } from "./constants";
 import InteractiveBentoGallery from "./components/ui/interactive-bento-gallery";
 import DeepCleanPage from "./pages/services/DeepCleanPage";
 import CeramicCoatingPage from "./pages/services/CeramicCoatingPage";
@@ -581,6 +581,156 @@ const Services = () => {
             {COMPANY_DETAILS.address} · {COMPANY_DETAILS.travelRange}
           </p>
         </motion.div>
+
+        {/* Specialist Protection & Add-On Packages */}
+        <div className="mt-20 pt-16 border-t border-[#DDD5C5]">
+          <div className="text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono uppercase tracking-[0.25em] mb-4"
+              style={{ background: 'rgba(220,38,38,0.08)', color: GOLD, border: '1px solid rgba(220,38,38,0.2)' }}
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              Specialist Add-On Services
+            </motion.div>
+            <motion.h3
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl font-bold tracking-tight text-[#0A0A0A]"
+            >
+              Protection Packages & Add-Ons
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="mt-4 text-sm md:text-base text-[#8A8070] max-w-xl mx-auto leading-relaxed"
+            >
+              Upgrade your vehicle with dedicated seasonal shielding or showroom ceramic preservation — delivered right to your driveway.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            {ADDON_PACKAGES.map((pkg, index) => (
+              <motion.div
+                key={pkg.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
+                className="group relative flex flex-col rounded-[36px] overflow-hidden transition-all duration-500 hover:-translate-y-1.5"
+                style={{
+                  background: '#F5F0E8',
+                  border: '1px solid #DDD5C5',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.04)'
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = '0 25px 60px rgba(220,38,38,0.14)';
+                  (e.currentTarget as HTMLElement).style.borderColor = 'rgba(220,38,38,0.35)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = '0 10px 30px rgba(0,0,0,0.04)';
+                  (e.currentTarget as HTMLElement).style.borderColor = '#DDD5C5';
+                }}
+              >
+                {/* Image Header & Badges */}
+                <div className="aspect-[16/9] overflow-hidden relative">
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300 z-10" />
+                  <img
+                    src={pkg.image}
+                    alt={`${pkg.title} - RD Valeting Swindon`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Badge */}
+                  <div
+                    className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5"
+                    style={{ background: 'rgba(10,10,10,0.85)', color: '#FFFFFF', backdropFilter: 'blur(10px)', border: '1px solid rgba(220,38,38,0.4)' }}
+                  >
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#DC2626]" />
+                    {pkg.badge}
+                  </div>
+                  {/* Duration */}
+                  <div
+                    className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#EF4444]"
+                    style={{ background: 'rgba(10,10,10,0.85)', backdropFilter: 'blur(10px)' }}
+                  >
+                    <Timer className="w-3 h-3 inline mr-1" />{pkg.duration}
+                  </div>
+                </div>
+
+                <div className="p-8 md:p-10 flex flex-col justify-between flex-1">
+                  <div>
+                    {/* Header: Title & Price */}
+                    <div className="flex items-start justify-between gap-4 mb-2">
+                      <h4 className="text-2xl md:text-3xl font-bold tracking-tight text-[#0A0A0A]">
+                        {pkg.title}
+                      </h4>
+                      <span className="text-2xl md:text-3xl font-black text-[#DC2626] shrink-0">
+                        {pkg.price}
+                      </span>
+                    </div>
+
+                    <p className="text-xs font-mono uppercase tracking-wider text-[#8A8070] mb-4">
+                      {pkg.subtitle}
+                    </p>
+
+                    <p className="text-sm text-[#5A5040] leading-relaxed mb-6 font-light">
+                      {pkg.benefit}
+                    </p>
+
+                    {/* Features checklist */}
+                    <div className="mb-6 p-5 rounded-2xl bg-[#EDE8DF]/90 border border-[#DDD5C5]">
+                      <div className="space-y-2.5">
+                        {pkg.description.map((feature: string, i: number) => (
+                          <div key={i} className="flex items-start gap-2.5">
+                            <div className="w-4 h-4 rounded-full bg-[#DC2626]/10 text-[#DC2626] flex items-center justify-center shrink-0 mt-0.5">
+                              <CheckCircle2 className="w-3.5 h-3.5" />
+                            </div>
+                            <span className="text-xs md:text-sm text-[#2A241E] font-medium leading-snug">
+                              {feature}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Pure Water Note (if present) */}
+                    {pkg.pureWaterNote && (
+                      <div className="mb-6 p-4 rounded-2xl bg-[#0A0A0A] text-white border border-[#DC2626]/30 flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-xl bg-[#DC2626]/20 flex items-center justify-center shrink-0 text-[#EF4444] mt-0.5">
+                          <Sparkles className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-white mb-0.5">100% Spotless Pure Water Included</p>
+                          <p className="text-[11px] text-white/70 leading-relaxed">
+                            {pkg.pureWaterNote}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Booking CTA Button */}
+                  <a
+                    href={pkg.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3.5 px-6 rounded-2xl font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-3 transition-all duration-300 group/btn bg-[#DC2626] text-white hover:bg-[#B91C1C] shadow-lg shadow-[#DC2626]/20 hover:shadow-[#DC2626]/40 mt-4"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    Book {pkg.title.replace(' Package', '')} ({pkg.price})
+                    <ChevronRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-200" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
