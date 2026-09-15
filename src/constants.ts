@@ -143,7 +143,7 @@ export const ADDON_EXTRAS = [
     description: 'A fabric roof holds dirt and green growth in a way paint never does. The weave is cleaned right through, lifted of staining, and left able to shed water again instead of soaking it up.',
     price: '£40',
     priceColor: '#EF4444',
-    image: '/721462704_1244763094247967_6897281892449763271_n.jpg',
+    image: '/roof.jpg',
     bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20add%20the%20Convertible%20Roof%20Deep%20Clean%20%28%C2%A340%29%20to%20my%20valet.%20Vehicle%20model%3A%20',
   },
   {
@@ -154,7 +154,7 @@ export const ADDON_EXTRAS = [
     description: 'Years of road dust and oil film taken off the bay, then every plastic and hose dressed back to a clean satin finish. The detail nobody expects and every buyer notices when the bonnet goes up.',
     price: '£50',
     priceColor: '#FFFFFF',
-    image: '/724072740_1947948122577232_3374260106430394124_n.jpg',
+    image: '/engine.jpg',
     bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20add%20the%20Engine%20Bay%20Cleaned%20%26%20Dressed%20%28%C2%A350%29%20to%20my%20valet.%20Vehicle%20model%3A%20',
   },
 ];
