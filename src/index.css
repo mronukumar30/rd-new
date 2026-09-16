@@ -1,46 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Satisfy&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&family=Syne:wght@700;800&family=Urbanist:wght@700;800;900&family=Space+Grotesk:wght@700&family=Satisfy&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-outfit: "Outfit", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
+  --font-syne: "Syne", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-urbanist: "Urbanist", sans-serif;
   --font-satisfy: "Satisfy", cursive;
   --font-serif: "Cormorant Garamond", "Playfair Display", serif;
   --font-mono: "JetBrains Mono", monospace;
   --font-bodoni: "Bodoni Moda", serif;
 
   /* RD Valeting — Automotive Crimson Red & Deep Matte Black Palette */
-  --color-primary: #F5F0E8;           /* warm cream — light section backgrounds */
-  --color-secondary: #EDE8DF;         /* slightly deeper cream */
-  --color-accent: #0A0A0A;            /* near-black text */
-  --color-gold: #DC2626;              /* automotive crimson red — primary accent (replaces gold) */
-  --color-gold-light: #EF4444;        /* vivid lighter red — highlights */
-  --color-gold-dark: #991B1B;         /* deeper red — hover states */
-  --color-red: #DC2626;               /* primary brand red */
-  --color-red-light: #EF4444;         /* vivid lighter red */
-  --color-red-dark: #991B1B;          /* deeper red */
+  --color-primary: #F5F0E8;
+  /* warm cream — light section backgrounds */
+  --color-secondary: #EDE8DF;
+  /* slightly deeper cream */
+  --color-accent: #0A0A0A;
+  /* near-black text */
+  --color-gold: #DC2626;
+  /* automotive crimson red — primary accent (replaces gold) */
+  --color-gold-light: #EF4444;
+  /* vivid lighter red — highlights */
+  --color-gold-dark: #991B1B;
+  /* deeper red — hover states */
+  --color-red: #DC2626;
+  /* primary brand red */
+  --color-red-light: #EF4444;
+  /* vivid lighter red */
+  --color-red-dark: #991B1B;
+  /* deeper red */
   --color-red-glow: rgba(220, 38, 38, 0.25);
-  --color-black-king: #0A0A0A;        /* rich black */
-  --color-muted: #8A8070;             /* warm muted text */
-  --color-border: #DDD5C5;            /* warm cream border */
+  --color-black-king: #0A0A0A;
+  /* rich black */
+  --color-muted: #8A8070;
+  /* warm muted text */
+  --color-border: #DDD5C5;
+  /* warm cream border */
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+
   body {
     @apply bg-primary text-accent antialiased overflow-x-hidden;
     background-color: #F5F0E8;
     color: #0A0A0A;
   }
-  
+
   ::selection {
     background-color: #DC2626;
     color: #FFFFFF;
     text-shadow: 0 0 8px rgba(220, 38, 38, 0.4);
   }
+
   ::-moz-selection {
     background-color: #DC2626;
     color: #FFFFFF;
@@ -52,9 +69,23 @@
   .font-outfit {
     font-family: 'Outfit', sans-serif;
   }
+
   .font-montserrat {
     font-family: 'Montserrat', sans-serif;
   }
+
+  .font-syne {
+    font-family: 'Syne', sans-serif;
+  }
+
+  .font-jakarta {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  .font-urbanist {
+    font-family: 'Urbanist', sans-serif;
+  }
+
   .font-satisfy {
     font-family: 'Satisfy', cursive;
   }
@@ -62,7 +93,7 @@
   .glass {
     @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-sm;
   }
-  
+
   .glass-dark {
     @apply bg-black/10 backdrop-blur-xl border border-black/10;
   }
@@ -117,7 +148,8 @@
 
 
   /* Red shimmer border effect */
-  .gold-border, .red-border {
+  .gold-border,
+  .red-border {
     border: 1px solid #DC2626;
     box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.15), inset 0 0 0 1px rgba(220, 38, 38, 0.05);
   }
@@ -130,6 +162,7 @@
     transition: all 500ms;
     cursor: pointer;
   }
+
   .bento-card:hover {
     box-shadow: 0 20px 50px rgba(220, 38, 38, 0.15);
     transform: translateY(-8px);
@@ -144,6 +177,7 @@
     transition: all 500ms;
     cursor: pointer;
   }
+
   .bento-card-dark:hover {
     box-shadow: 0 20px 50px rgba(220, 38, 38, 0.25);
     transform: translateY(-8px);
@@ -155,6 +189,7 @@
     background: rgba(220, 38, 38, 0.25);
     border: 1px solid rgba(220, 38, 38, 0.6);
   }
+
   .hotspot:hover {
     background: rgba(220, 38, 38, 0.5);
   }
@@ -165,15 +200,19 @@
   }
 
   /* Red accent text */
-  .text-gold, .text-red {
+  .text-gold,
+  .text-red {
     color: #DC2626;
   }
-  .text-gold-light, .text-red-light {
+
+  .text-gold-light,
+  .text-red-light {
     color: #EF4444;
   }
 
   /* Red gradient text */
-  .text-gold-gradient, .text-red-gradient {
+  .text-gold-gradient,
+  .text-red-gradient {
     background: linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #991B1B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -187,6 +226,7 @@
     filter: blur(20px);
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     filter: blur(0px);
@@ -195,8 +235,13 @@
 }
 
 @keyframes red-shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
 }
 
 .animate-blur-up {
@@ -204,7 +249,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
+
+  *,
+  ::before,
+  ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -231,6 +279,7 @@
   .credential-item[data-index="0"] {
     padding-right: 2rem !important;
   }
+
   .credential-item[data-index="1"] {
     padding-left: 2rem !important;
     padding-right: 2rem !important;
@@ -239,6 +288,7 @@
     margin-top: 0;
     border-top: none;
   }
+
   .credential-item[data-index="2"] {
     padding-left: 2rem !important;
     border-left: 1px solid rgba(10, 10, 10, 0.1) !important;

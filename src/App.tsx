@@ -251,7 +251,7 @@ const Hero = () => {
             transition={{ duration: 0.9, delay: 0.1 }}
             className="mb-4 sm:mb-5"
           >
-            <h1 className="font-montserrat font-semibold tracking-tight text-white text-5xl sm:text-6xl md:text-7xl lg:text-[76px] leading-[1.05] select-none">
+            <h1 className="font-outfit font-black tracking-tight text-white text-5xl sm:text-6xl md:text-7xl lg:text-[76px] leading-[1.02] select-none">
               Attention <br />
               to every <span className="text-[#DC2626]">detail.</span>
             </h1>
