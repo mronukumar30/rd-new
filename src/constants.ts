@@ -2,6 +2,7 @@ export const SERVICES = [
   {
     id: 'maintenance',
     title: 'Maintenance Plan',
+    badge: 'Best Value',
     subtitle: 'Regular upkeep, scheduled every 2–4 weeks',
     benefit: 'Keep your protection layer topped up and your car consistently sharp — without lifting a finger.',
     description: [
@@ -18,12 +19,13 @@ export const SERVICES = [
     ],
     price: 'From £50',
     duration: '1.5–2 hrs',
-    image: '/719890908_2222286848526617_3057517277440017740_n.jpg',
+    image: '/793160120_2237154940475605_1833440236133772156_n.jpg',
     bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Maintenance%20Plan%20car%20model%20%3A%20',
   },
   {
     id: 'full-valet',
     title: 'Full Valet Package',
+    badge: 'Most Popular',
     subtitle: 'The comprehensive reset your car deserves',
     benefit: 'A ground-up reset that turns an everyday car into something that makes every journey feel like the first one.',
     description: [
@@ -86,7 +88,7 @@ export const ADDON_PACKAGES = [
     benefit: 'Shield your paint, wheels, and glass against winter road grime with heavy-duty 6-month sealants and water repellent coatings.',
     price: '£60',
     duration: '2–2.5 hrs',
-    image: '/723830628_27152605947682802_3120737853125552335_n.jpg',
+    image: '/793802536_1695259291991167_7413069740708566362_n.jpg',
     description: [
       'Snow foam, pre-wash & rinse',
       '3-bucket safe wash method',
@@ -104,12 +106,12 @@ export const ADDON_PACKAGES = [
   {
     id: 'new-car-protection',
     title: 'New Car Protection Package',
-    badge: '1-Year Ceramic Seal',
+    badge: '2-Year Ceramic Seal',
     subtitle: 'Showroom preservation and long-lasting ceramic protection',
-    benefit: 'Lock in that pristine factory finish from day one with dedicated surface decontamination and genuine 1-year ceramic coating on paint & glass.',
+    benefit: 'Lock in that pristine factory finish from day one with dedicated surface decontamination and genuine 2-year ceramic coating on paint & glass.',
     price: 'From £100',
     duration: '3–4 hrs',
-    image: '/722131074_3250354271804383_1989022274874112064_n.jpg',
+    image: '/792999549_1096716916146576_7755589812413831663_n.jpg',
     pureWaterNote: 'We arrive with our own 100% spotless pure water, so no tap is needed — all we ask for is a standard 13A socket and a place to park.',
     description: [
       'Pre-wash & safe 3-bucket contact wash',
@@ -117,7 +119,7 @@ export const ADDON_PACKAGES = [
       'Full interior vacuum',
       'Fabric sealed or leather cleaned & treated',
       'Wheels cleaned, tyres dressed & glass cleaned',
-      '1 year ceramic coating on paint & glass',
+      '2 year ceramic coating on paint & glass',
     ],
     bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20the%20New%20Car%20Protection%20Package%20%28From%20%C2%A3100%29.%20Vehicle%20model%3A%20',
   },
@@ -206,7 +208,7 @@ export const ACCREDITATIONS = [
 export const COMPANY_DETAILS = {
   name: 'RD Valeting',
   tagline: 'Mobile Valeting You Can Trust · Swindon & Wiltshire',
-  address: 'Serving Swindon, Wiltshire, London & Surrounding Areas',
+  address: 'Serving Swindon, Wiltshire & Surrounding Areas',
   travelRange: 'Mobile valeting — we come directly to your driveway or workplace',
   phone: '07393 682 365',
   phoneRaw: '07393682365',

@@ -82,7 +82,12 @@
     },
     {
       "source": "/car-detailing-aylesbury",
-      "destination": "/car-detailing-london",
+      "destination": "/mobile-car-detailing-swindon",
+      "permanent": true
+    },
+    {
+      "source": "/car-detailing-london",
+      "destination": "/mobile-car-detailing-swindon",
       "permanent": true
     }
   ],

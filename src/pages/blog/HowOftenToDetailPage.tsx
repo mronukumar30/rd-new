@@ -12,7 +12,7 @@ export default function HowOftenToDetailPage() {
       readTime="4 min read"
     >
       <p>
-        "How often do I actually need to detail my car?" It’s a question we get asked almost daily by our clients in Luton and Bedfordshire. 
+        "How often do I actually need to detail my car?" It’s a question we get asked almost daily by our clients in Swindon and Wiltshire. 
         The truth is, there is no one-size-fits-all answer. Your detailing schedule depends heavily on how you use your car, where you park it, 
         and what kind of protection it currently has.
       </p>

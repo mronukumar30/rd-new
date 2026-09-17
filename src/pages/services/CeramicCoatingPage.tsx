@@ -1,6 +1,6 @@
 /**
  * Ceramic Coating Service Page
- * Target keywords: "ceramic coating luton", "ceramic coating bedfordshire", "ceramic car coating near me"
+ * Target keywords: "ceramic coating swindon", "ceramic coating wiltshire", "ceramic car coating near me"
  */
 
 import { useEffect } from "react";
@@ -11,8 +11,8 @@ export default function CeramicCoatingPage() {
 
   return (
     <ServicePageTemplate
-      title="Ceramic Coating in Luton, Bedfordshire | 5-Year Protection | RD Valeting"
-      metaDescription="Professional ceramic coating in Luton from £650. 5-year paint protection with machine polishing. Superior water beading, UV resistance & gloss. Fully mobile, fully insured."
+      title="Ceramic Coating in Swindon & Wiltshire | 5-Year Protection | RD Valeting"
+      metaDescription="Professional ceramic coating in Swindon & Wiltshire from £650. 5-year paint protection with machine polishing. Superior water beading, UV resistance & gloss. Fully mobile, fully insured."
       canonicalPath="/ceramic-coating"
       serviceName="Ceramic Coating"
       heroTagline="5-Year Protection. Unrivalled Gloss."
@@ -21,7 +21,7 @@ export default function CeramicCoatingPage() {
       duration="1–1.5 Days"
       heroImage="/Maintenance is key to keeping your car in the best shape possible month after month!Drop us a me (2).jpg"
       heroImagePosition="top"
-      heroImageAlt="Porsche 911 GTS ceramic coating in Luton — RD Valeting"
+      heroImageAlt="Porsche 911 GTS ceramic coating in Swindon — RD Valeting"
       whatIsTitle="Ceramic Protection"
       whatIsContent={[
         "Ceramic coating is a liquid polymer that chemically bonds with your vehicle's factory paintwork to create a semi-permanent layer of protection. Unlike traditional waxes that wash off after a few weeks, a ceramic coating forms a molecular bond that lasts for years.",
@@ -53,7 +53,7 @@ export default function CeramicCoatingPage() {
         "Dramatically easier maintenance — less effort to keep your car clean",
         "Includes full surface preparation & machine polish for pristine bonding",
         "5 years of maintenance plan eligibility to preserve coating performance",
-        "Fully mobile — we come to your driveway in Luton, Bedfordshire, and beyond"
+        "Fully mobile — we come to your driveway across Swindon, Wiltshire, and beyond"
       ]}
       idealFor={[
         "New car owners who want to protect their investment from day one",
@@ -73,7 +73,7 @@ export default function CeramicCoatingPage() {
       ]}
       faqs={[
         {
-          question: "How much does ceramic coating cost in Luton?",
+          question: "How much does ceramic coating cost?",
           answer: "Our ceramic coating package starts from £650. This includes full machine prep, the ceramic coating application, and a complete interior and exterior detail. Pricing depends on vehicle size and paintwork condition."
         },
         {
@@ -97,7 +97,7 @@ export default function CeramicCoatingPage() {
           answer: "After your coating is applied, we enrol you in our maintenance plan — regular scheduled washes every 3 to 6 weeks using pH-neutral, ceramic-safe products. This preserves the coating's hydrophobic properties and gloss for the full lifespan."
         }
       ]}
-      schemaDescription="Professional ceramic coating service in Luton, Bedfordshire. Machine polishing and 5-year ceramic paint protection. Fully mobile, fully insured."
+      schemaDescription="Professional ceramic coating service in Swindon & Wiltshire. Machine polishing and 5-year ceramic paint protection. Fully mobile, fully insured."
       schemaMinPrice="650"
       relatedServices={[
         { name: "Deep Clean", path: "/deep-clean", price: "From £120" },

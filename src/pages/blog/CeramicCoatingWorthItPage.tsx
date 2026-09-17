@@ -86,7 +86,7 @@ export default function CeramicCoatingWorthItPage() {
       </p>
 
       <p>
-        If you are based in Luton, Bedfordshire, or the surrounding areas and want to discuss protecting your vehicle, 
+        If you are based in Swindon, Wiltshire, or the surrounding areas and want to discuss protecting your vehicle, 
         check out our <Link to="/ceramic-coating">Ceramic Coating packages</Link> or get in touch for a bespoke quote.
       </p>
     </BlogPostTemplate>

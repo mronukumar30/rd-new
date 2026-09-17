@@ -81,7 +81,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
             "name": "RD Valeting",
             "url": "https://www.rdvaleting.co.uk/",
             "telephone": "+447393682365",
-            "areaServed": ["Swindon", "Wiltshire", "Gloucestershire", "Somerset", "Berkshire", "London"]
+            "areaServed": ["Swindon", "Wiltshire", "Gloucestershire", "Somerset", "Berkshire"]
           },
           "offers": {
             "@type": "Offer",
@@ -97,7 +97,7 @@ export default function ServicePageTemplate(props: ServicePageProps) {
             { "@type": "City", "name": "Swindon" },
             { "@type": "AdministrativeArea", "name": "Wiltshire" },
             { "@type": "AdministrativeArea", "name": "Gloucestershire" },
-            { "@type": "AdministrativeArea", "name": "London" }
+            { "@type": "AdministrativeArea", "name": "Berkshire" }
           ]
         })}</script>
         <script type="application/ld+json">{JSON.stringify({

@@ -84,7 +84,7 @@ export default function CarDetailingCostUKPage() {
 
       <h2>Ready to Invest in Your Vehicle?</h2>
       <p>
-        If you are in Luton, Bedfordshire, or surrounding areas and want transparent pricing with royal results, 
+        If you are in Swindon, Wiltshire, or surrounding areas and want transparent pricing with royal results, 
         get in touch with us today to discuss the perfect package for your vehicle.
       </p>
     </BlogPostTemplate>

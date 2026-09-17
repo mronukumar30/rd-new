@@ -1,5 +1,5 @@
 /**
- * Location data for 10 core service areas across Swindon, Wiltshire & surrounding regions.
+ * Location data for 9 core service areas across Swindon, Wiltshire & surrounding regions.
  * Each location has unique content tailored to local driving conditions and RD Valeting services.
  */
 
@@ -580,68 +580,8 @@ export const LOCATIONS: LocationData[] = [
       { name: "Newbury", path: "/car-detailing-newbury" },
       { name: "Oxford", path: "/car-detailing-oxford" },
       { name: "Swindon", path: "/mobile-car-detailing-swindon" },
-      { name: "London", path: "/car-detailing-london" }
+      { name: "Marlborough", path: "/car-detailing-marlborough" }
     ],
     mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39750!2d-0.9781!3d51.4543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48769b1897c8ff79%3A0xc48083a2d216503c!2sReading!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
-  },
-
-  // 10. London
-  {
-    slug: "car-detailing-london",
-    title: "Mobile Car Valeting in London | RD Valeting",
-    metaDescription: "Bespoke mobile car detailing & deep cleans for London and M4 corridor clients. Luxury vehicle care directly on your private driveway. Fully insured. Book with Rhys.",
-    heroImage: "/719890908_2222286848526617_3057517277440017740_n.jpg",
-    heroImagePosition: "object-center",
-    heroOverlayOpacity: "bg-black/[0.45]",
-    locationName: "London",
-    county: "Greater London",
-    region: "London",
-    coordinates: { lat: 51.5074, lng: -0.1278 },
-    travelTime: "~75–90 minutes direct via M4",
-    distanceFromBase: "~75 miles east of Swindon",
-    heroTagline: "Bespoke Mobile Car Detailing for London",
-    heroSubtitle: "Delivering studio-grade vehicle care and deep interior decontamination to private residences across West and Central London. Professional, discreet, and uncompromising quality.",
-    introTitle: "London's High-End Mobile Valeting Solution",
-    introParagraphs: [
-      "London motorists face some of the highest concentrations of brake dust, diesel particulate fallout, and road contamination anywhere in the UK. Keeping a luxury or daily vehicle pristine in the capital requires meticulous, dedicated care.",
-      "RD Valeting provides high-end mobile detailing for clients across West London and the Western M4 approach, including Chiswick, Richmond, Kensington, Chelsea, and surrounding boroughs.",
-      "We bring our fully self-contained setup directly to your private driveway or residential mews. Rhys personally carries out every service, ensuring delicate clear coats receive safe hand washing, deep decontamination, and premium protective sealants.",
-      "From comprehensive £100 Deep Cleans to full multi-stage valeting and detailing packages from £150, we deliver flawless results with complete discretion and professionalism."
-    ],
-    localHighlights: [
-      "Covering West & Central London, Richmond, Chiswick, Kensington, Chelsea & M4 borders",
-      "Specialising in prestige, sports, and executive vehicles",
-      "Intensive fallout decontamination combating heavy urban emissions",
-      "Discreet, professional driveway appointments arranged at your convenience",
-      "Comprehensive £2M+ public liability insurance"
-    ],
-    whyChooseUs: [
-      "Dedicated personal service from business owner Rhys",
-      "Studio-grade results delivered right to your private driveway",
-      "Gentle, swirl-free wash techniques for flawless luxury paintwork",
-      "Deep fabric extraction, leather rejuvenation, and steam sanitisation",
-      "Transparent, upfront communication with zero hidden charges"
-    ],
-    faqs: [
-      {
-        question: "Do you travel to London for detailing?",
-        answer: "Yes! We regularly travel direct along the M4 corridor for Deep Clean, Full Valet, and multi-vehicle bookings across West and Central London."
-      },
-      {
-        question: "Do I need a private driveway in London?",
-        answer: "Yes, for London bookings a private off-street driveway, mews space, or dedicated parking bay is required so our mobile unit can operate safely."
-      },
-      {
-        question: "How do I schedule a London appointment with Rhys?",
-        answer: "Please contact Rhys directly via WhatsApp at 07393 682 365 or use our online booking wizard to discuss your vehicle and preferred date."
-      }
-    ],
-    nearbyAreas: [
-      { name: "Reading", path: "/car-detailing-reading" },
-      { name: "Newbury", path: "/car-detailing-newbury" },
-      { name: "Oxford", path: "/car-detailing-oxford" },
-      { name: "Swindon", path: "/mobile-car-detailing-swindon" }
-    ],
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858!2d-0.1278!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1720000000000!5m2!1sen!2suk"
   }
 ];

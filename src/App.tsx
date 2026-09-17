@@ -50,7 +50,6 @@ import BathPage from "./pages/locations/BathPage";
 import NewburyPage from "./pages/locations/NewburyPage";
 import OxfordPage from "./pages/locations/OxfordPage";
 import ReadingPage from "./pages/locations/ReadingPage";
-import LondonPage from "./pages/locations/LondonPage";
 import BlogIndexPage from "./pages/blog/BlogIndexPage";
 import CeramicCoatingWorthItPage from "./pages/blog/CeramicCoatingWorthItPage";
 import CarDetailingCostUKPage from "./pages/blog/CarDetailingCostUKPage";
@@ -502,6 +501,16 @@ const Services = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   style={{ objectPosition: (service as any).objectPosition || 'center' }}
                 />
+                {/* Badge */}
+                {(service as any).badge && (
+                  <div
+                    className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5"
+                    style={{ background: 'rgba(10,10,10,0.85)', color: '#FFFFFF', backdropFilter: 'blur(10px)', border: '1px solid rgba(220,38,38,0.4)' }}
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-[#DC2626]" />
+                    {(service as any).badge}
+                  </div>
+                )}
                 {/* Duration badge */}
                 <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest" style={{ background: 'rgba(10,10,10,0.8)', color: GOLD_LIGHT, backdropFilter: 'blur(12px)' }}>
                   <Timer className="w-3 h-3 inline mr-1" />{service.duration}
@@ -2228,7 +2237,7 @@ const AreasWeCover = () => {
             className="text-[15px] leading-relaxed max-w-xl mx-auto"
             style={{ color: '#8A8070' }}
           >
-            We bring professional car valeting directly to your driveway across Swindon, Wiltshire, London & surrounding areas — we come to you.
+            We bring professional car valeting directly to your driveway across Swindon, Wiltshire & surrounding areas — we come to you.
           </motion.p>
         </div>
       </div>
@@ -2398,7 +2407,7 @@ const AreasWeCover = () => {
                   <span className="text-[10px] font-mono uppercase tracking-[0.2em]" style={{ color: GOLD }}>Serving Across</span>
                 </div>
                 <p className="text-sm font-semibold leading-snug" style={{ color: '#0A0A0A' }}>
-                  Swindon, Wiltshire, London & Surrounding Areas
+                  Swindon, Wiltshire & Surrounding Areas
                 </p>
               </motion.div>
             </motion.div>
@@ -2509,7 +2518,7 @@ export default function App() {
           <Route path="/car-detailing-newbury" element={<NewburyPage />} />
           <Route path="/car-detailing-oxford" element={<OxfordPage />} />
           <Route path="/car-detailing-reading" element={<ReadingPage />} />
-          <Route path="/car-detailing-london" element={<LondonPage />} />
+          <Route path="/car-detailing-london" element={<Navigate to="/mobile-car-detailing-swindon" replace />} />
 
           {/* Legacy redirects from old Luton-area routes */}
           <Route path="/mobile-car-detailing-luton" element={<Navigate to="/mobile-car-detailing-swindon" replace />} />
@@ -2521,7 +2530,7 @@ export default function App() {
           <Route path="/car-detailing-hemel-hempstead" element={<Navigate to="/car-detailing-newbury" replace />} />
           <Route path="/car-detailing-watford" element={<Navigate to="/car-detailing-oxford" replace />} />
           <Route path="/car-detailing-milton-keynes" element={<Navigate to="/car-detailing-reading" replace />} />
-          <Route path="/car-detailing-aylesbury" element={<Navigate to="/car-detailing-london" replace />} />
+          <Route path="/car-detailing-aylesbury" element={<Navigate to="/mobile-car-detailing-swindon" replace />} />
 
           {/* Blog Pages */}
           <Route path="/blog" element={<BlogIndexPage />} />

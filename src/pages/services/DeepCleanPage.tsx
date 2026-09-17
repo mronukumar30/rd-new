@@ -1,6 +1,6 @@
 /**
  * Deep Clean Service Page
- * Target keywords: "deep clean car luton", "full car detail luton", "interior exterior car clean"
+ * Target keywords: "deep clean car swindon", "full car detail swindon", "interior exterior car clean"
  */
 
 import { useEffect } from "react";
