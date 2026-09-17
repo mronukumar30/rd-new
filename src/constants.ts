@@ -109,7 +109,7 @@ export const ADDON_PACKAGES = [
     badge: '2-Year Ceramic Seal',
     subtitle: 'Showroom preservation and long-lasting ceramic protection',
     benefit: 'Lock in that pristine factory finish from day one with dedicated surface decontamination and genuine 2-year ceramic coating on paint & glass.',
-    price: 'From £100',
+    price: 'From £250',
     duration: '3–4 hrs',
     image: '/792999549_1096716916146576_7755589812413831663_n.jpg',
     pureWaterNote: 'We arrive with our own 100% spotless pure water, so no tap is needed — all we ask for is a standard 13A socket and a place to park.',
@@ -121,7 +121,7 @@ export const ADDON_PACKAGES = [
       'Wheels cleaned, tyres dressed & glass cleaned',
       '2 year ceramic coating on paint & glass',
     ],
-    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20the%20New%20Car%20Protection%20Package%20%28From%20%C2%A3100%29.%20Vehicle%20model%3A%20',
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20the%20New%20Car%20Protection%20Package%20%28From%20%C2%A3250%29.%20Vehicle%20model%3A%20',
   },
 ];
 
@@ -329,7 +329,7 @@ export const FAQ_DATA = [
   },
   {
     question: 'Is ceramic coating worth it?',
-    answer: 'If you want the finish to keep itself clean, yes. A ceramic layer is hydrophobic, chemically resistant, and UV-stable — water sheets off and road grime struggles to grip. Paint coating comes as part of our New Car Protection package (from £100), which includes the full valet and glass coating. The glass coating on its own (from £40) does the same job on the windows — rain flies off at speed and your wipers barely need to work.',
+    answer: 'If you want the finish to keep itself clean, yes. A ceramic layer is hydrophobic, chemically resistant, and UV-stable — water sheets off and road grime struggles to grip. Paint coating comes as part of our New Car Protection package (from £250), which includes the full valet and glass coating. The glass coating on its own (from £40) does the same job on the windows — rain flies off at speed and your wipers barely need to work.',
   },
   {
     question: 'What if it rains on the day?',

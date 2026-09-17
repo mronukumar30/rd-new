@@ -93,7 +93,7 @@ const PACKAGES = [
   { name: "Maintenance Plan — From £50", val: "Maintenance Plan (From £50)", desc: "Regular upkeep every 2–4 weeks · Snow foam, safe 2-bucket wash, sealant, tyre dressing & air freshener (1.5–2 hrs)" },
   { name: "Winter Protection Package — £60", val: "Winter Protection Package (£60)", desc: "Seasonal defence · 3-bucket wash, arch blast, decon & tar removal, rain repellent, wheel sealant & 6-month sealant (£60)" },
   { name: "Full Valet Package — From £70", val: "Full Valet Package (From £70)", desc: "Comprehensive reset · 3-bucket safe wash, shampoo carpets, steam/leather seats, tar removal & 4-month sealant (3–4 hrs)" },
-  { name: "New Car Protection Package — From £100", val: "New Car Protection Package (From £100)", desc: "Showroom preservation · Safe wash, decon, interior vacuum & seal/leather treat, 2-yr ceramic on paint & glass (From £100)" },
+  { name: "New Car Protection Package — From £250", val: "New Car Protection Package (From £250)", desc: "Showroom preservation · Safe wash, decon, interior vacuum & seal/leather treat, 2-yr ceramic on paint & glass (From £250)" },
   { name: "Deep Clean Package — From £120", val: "Deep Clean Package (From £120)", desc: "Full restoration · Wet vac extraction, pet hair & stains removed, steam interior, decontamination & air blast (4–5 hrs)" },
 ];
 
