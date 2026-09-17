@@ -288,6 +288,22 @@ export const GALLERY_MEDIA = [
     url: '/722908490_1513785427083168_6885942169468714202_n.jpg',
     span: 'md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2',
   },
+  {
+    id: 9,
+    type: 'image',
+    title: 'Classic Ford Escort Mexico Front — Maintenance Clean',
+    desc: 'Front view of classic black Ford Escort Mexico after a safe maintenance clean cycle.',
+    url: '/810246250_1652500242971675_6428193960142352164_n.jpg',
+    span: 'md:col-span-1 md:row-span-3 sm:col-span-1 sm:row-span-2',
+  },
+  {
+    id: 10,
+    type: 'image',
+    title: 'Classic Ford Escort Mexico Rear — Maintenance Clean',
+    desc: 'Rear profile and chrome trim restoration on classic Ford Escort Mexico.',
+    url: '/810485224_2130482034498125_6768361263938645559_n (1).jpg',
+    span: 'md:col-span-2 md:row-span-2 sm:col-span-1 sm:row-span-2',
+  },
 ];
 
 export const FAQ_DATA = [

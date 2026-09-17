@@ -1559,6 +1559,22 @@ const GALLERY_ITEMS: { id: number; type: "image" | "video"; title: string; servi
     desc: "Spotless mats, pedals, seats and conditioned dash surfaces.",
     url: "/724453567_1741795673842657_7212829807354336478_n.jpg",
   },
+  {
+    id: 12,
+    type: "image" as const,
+    title: "Classic Ford Escort Mexico Front",
+    service: "Maintenance Clean",
+    desc: "Front view of pristine classic black Ford Escort Mexico after maintenance clean.",
+    url: "/810246250_1652500242971675_6428193960142352164_n.jpg",
+  },
+  {
+    id: 13,
+    type: "image" as const,
+    title: "Classic Ford Escort Mexico Rear",
+    service: "Maintenance Clean",
+    desc: "Rear profile and chrome trim detailing on classic Ford Escort Mexico.",
+    url: "/810485224_2130482034498125_6768361263938645559_n (1).jpg",
+  },
 ];
 
 const GalleryVideoCard = ({ url, isActive }: { url: string; isActive: boolean }) => {
