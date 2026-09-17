@@ -81,7 +81,7 @@ export default function MaintenanceCleanPage() {
       schemaDescription="Regular mobile maintenance plan in Swindon, Wiltshire. Scheduled professional care every 2–4 weeks to maintain showroom condition. Fully mobile, fully insured."
       schemaMinPrice="50"
       relatedServices={[
-        { name: "Full Valet Package", path: "/#services", price: "From £70" },
+        { name: "Full Valet Package", path: "/full-valet", price: "From £70" },
         { name: "Deep Clean Package", path: "/deep-clean", price: "From £120" },
         { name: "Ceramic Coating", path: "/ceramic-coating", price: "From £100" },
       ]}

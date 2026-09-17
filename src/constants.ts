@@ -145,7 +145,7 @@ export const ADDON_EXTRAS = [
     description: 'A fabric roof holds dirt and green growth in a way paint never does. The weave is cleaned right through, lifted of staining, and left able to shed water again instead of soaking it up.',
     price: '£40',
     priceColor: '#EF4444',
-    image: '/roof.jpg',
+    image: '/roof (2).jpg',
     bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20add%20the%20Convertible%20Roof%20Deep%20Clean%20%28%C2%A340%29%20to%20my%20valet.%20Vehicle%20model%3A%20',
   },
   {

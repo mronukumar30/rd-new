@@ -39,6 +39,7 @@ import { cn } from "./lib/utils";
 import { SERVICES, ADDON_PACKAGES, ADDON_EXTRAS, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS, FAQ_DATA } from "./constants";
 import InteractiveBentoGallery from "./components/ui/interactive-bento-gallery";
 import DeepCleanPage from "./pages/services/DeepCleanPage";
+import FullValetPage from "./pages/services/FullValetPage";
 import CeramicCoatingPage from "./pages/services/CeramicCoatingPage";
 import MaintenanceCleanPage from "./pages/services/MaintenanceCleanPage";
 import SwindonPage from "./pages/locations/SwindonPage";
@@ -2504,6 +2505,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/deep-clean" element={<DeepCleanPage />} />
+          <Route path="/full-valet" element={<FullValetPage />} />
           <Route path="/ceramic-coating" element={<CeramicCoatingPage />} />
           <Route path="/paint-correction" element={<Navigate to="/ceramic-coating" replace />} />
           <Route path="/maintenance-clean" element={<MaintenanceCleanPage />} />
