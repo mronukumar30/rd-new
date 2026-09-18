@@ -277,35 +277,22 @@ const Hero = () => {
             className="flex flex-wrap items-center gap-3 sm:gap-4 mb-5 sm:mb-12"
           >
             <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                const el = document.getElementById("contact");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="px-7 sm:px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base text-white bg-[#DC2626] hover:bg-[#b91c1c] transition-all duration-300 shadow-[0_4px_25px_rgba(220,38,38,0.45)] hover:shadow-[0_6px_30px_rgba(220,38,38,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2.5 group cursor-pointer"
+              href={COMPANY_DETAILS.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 sm:px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base text-white bg-[#DC2626] hover:bg-[#b91c1c] transition-all duration-300 shadow-[0_4px_25px_rgba(220,38,38,0.45)] hover:shadow-[0_6px_30px_rgba(220,38,38,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2.5 group"
             >
-              <Calendar className="w-5 h-5 text-white" />
-              <span>Book Your Valet Online</span>
+              <MessageCircle className="w-5 h-5 text-white" />
+              <span>Contact me via WhatsApp</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
 
             <a
-              href={COMPANY_DETAILS.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:${COMPANY_DETAILS.phoneRaw}`}
               className="px-7 sm:px-8 py-3.5 rounded-full font-medium text-sm sm:text-base text-white bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/25 hover:border-white/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center gap-2.5 group"
             >
-              <MessageCircle className="w-4 h-4 text-[#25D366] group-hover:scale-110 transition-transform" />
-              <span>WhatsApp Rhys</span>
-            </a>
-
-            <a
-              href={`tel:${COMPANY_DETAILS.phoneRaw}`}
-              className="px-6 py-3.5 rounded-full font-medium text-sm text-white/90 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/15 hover:border-white/30 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 group"
-            >
-              <Phone className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
-              <span>Call</span>
+              <Phone className="w-4 h-4 text-white/80 group-hover:text-white transition-colors" />
+              <span>Call {COMPANY_DETAILS.phone}</span>
             </a>
           </motion.div>
 
