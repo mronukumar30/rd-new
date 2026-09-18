@@ -82,7 +82,7 @@ export default function MaintenanceCleanPage() {
       schemaMinPrice="50"
       relatedServices={[
         { name: "Full Valet Package", path: "/full-valet", price: "From £70" },
-        { name: "Deep Clean Package", path: "/deep-clean", price: "From £120" },
+        { name: "Deep Clean Package", path: "/deep-clean", price: "£150" },
         { name: "Ceramic Coating", path: "/ceramic-coating", price: "From £100" },
       ]}
     />

@@ -72,7 +72,7 @@ export const SERVICES = [
       'Exterior decontamination / tar removal',
       'Interior air freshener',
     ],
-    price: 'From £120',
+    price: '£150',
     duration: '4–5 hrs',
     image: '/724453567_1741795673842657_7212829807354336478_n.jpg',
     bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20book%20a%20Deep%20Clean%20Package%20car%20model%20%3A%20',
@@ -125,7 +125,21 @@ export const ADDON_PACKAGES = [
   },
 ];
 
-export const ADDON_EXTRAS = [
+export interface AddonExtra {
+  id: string;
+  category: string;
+  categoryColor: string;
+  title: string;
+  description: string;
+  price: string;
+  priceColor: string;
+  image: string;
+  bookingUrl: string;
+  duration?: string;
+  features?: string[];
+}
+
+export const ADDON_EXTRAS: AddonExtra[] = [
   {
     id: 'glass-ceramic-coating',
     category: 'RAIN GUARD',
@@ -158,6 +172,30 @@ export const ADDON_EXTRAS = [
     priceColor: '#FFFFFF',
     image: '/engine.jpg',
     bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20add%20the%20Engine%20Bay%20Cleaned%20%26%20Dressed%20%28%C2%A350%29%20to%20my%20valet.%20Vehicle%20model%3A%20',
+  },
+  {
+    id: 'interior-refresh',
+    category: 'INTERIOR ONLY',
+    categoryColor: '#EF4444',
+    title: 'Interior Refresh',
+    duration: '45 min',
+    description: 'A dedicated 45-minute cabin reset for cars that need the inside brought back to life: door shuts, seats, mats, plastics, glass, and fresh scent.',
+    price: '£40',
+    priceColor: '#EF4444',
+    image: '/726419994_1652882425786507_8641372772130684754_n.jpg',
+    features: [
+      'Door shuts cleaned',
+      'Light wipe down & dust removal',
+      'Seats vacuumed & lightly cleaned',
+      'Mats shampooed',
+      'Plastics cleaned and wiped down',
+      'Exterior glass cleaned',
+      'Steering wheel cleaned',
+      'Boot vacuumed',
+      'UV dashboard protection',
+      'Premium air freshener',
+    ],
+    bookingUrl: 'https://wa.me/447393682365?text=Hi%20Rhys%2C%20I%20would%20like%20to%20add%20the%20Interior%20Refresh%20%28%C2%A340%29%20to%20my%20valet.%20Vehicle%20model%3A%20',
   },
 ];
 
@@ -321,7 +359,7 @@ export const FAQ_DATA = [
   },
   {
     question: 'What is the difference between a Full Valet and a Deep Clean?',
-    answer: 'A Full Valet (£70) is a comprehensive reset for a car in normal everyday condition — snow foam, safe three-bucket hand wash, interior refresh, trim dressed, and a spray sealant on the paint for four months of protection. A Deep Clean (£120) goes further, for the car that needs rescuing rather than maintaining: wet extraction machine shampoo through seats and carpets, pet hair and stains lifted, iron fallout and tar chemically purged from the paintwork, and a full steam interior clean. If the car is dusty, take the Full Valet. If it has been lived in, take the Deep Clean.',
+    answer: 'A Full Valet (£70) is a comprehensive reset for a car in normal everyday condition — snow foam, safe three-bucket hand wash, interior refresh, trim dressed, and a spray sealant on the paint for four months of protection. A Deep Clean (£150) goes further, for the car that needs rescuing rather than maintaining: wet extraction machine shampoo through seats and carpets, pet hair and stains lifted, iron fallout and tar chemically purged from the paintwork, and a full steam interior clean. If the car is dusty, take the Full Valet. If it has been lived in, take the Deep Clean.',
   },
   {
     question: 'How often should I book a valet?',

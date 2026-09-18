@@ -80,7 +80,7 @@ export default function FullValetPage() {
         },
         {
           question: "What is the difference between a Full Valet and a Deep Clean?",
-          answer: "The Full Valet (from £70) is a comprehensive reset for a car in everyday condition — snow foam, 3-bucket safe wash, interior refresh, and a 4-month spray sealant. The Deep Clean (from £120) goes further for cars that need rescuing: wet extraction machine shampoo, pet hair and stain removal, iron fallout and tar chemical purge, and a full steam interior clean."
+          answer: "The Full Valet (from £70) is a comprehensive reset for a car in everyday condition — snow foam, 3-bucket safe wash, interior refresh, and a 4-month spray sealant. The Deep Clean (£150) goes further for cars that need rescuing: wet extraction machine shampoo, pet hair and stain removal, iron fallout and tar chemical purge, and a full steam interior clean."
         },
         {
           question: "Does the full valet include a sealant?",
@@ -91,7 +91,7 @@ export default function FullValetPage() {
       schemaMinPrice="70"
       relatedServices={[
         { name: "Maintenance Plan", path: "/maintenance-clean", price: "From £50" },
-        { name: "Deep Clean Package", path: "/deep-clean", price: "From £120" },
+        { name: "Deep Clean Package", path: "/deep-clean", price: "£150" },
         { name: "Ceramic Coating", path: "/ceramic-coating", price: "From £100" },
       ]}
     />

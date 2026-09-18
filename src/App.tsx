@@ -38,6 +38,7 @@ import { Helmet } from "react-helmet-async";
 import { cn } from "./lib/utils";
 import { SERVICES, ADDON_PACKAGES, ADDON_EXTRAS, TESTIMONIALS, GALLERY_MEDIA, COMPANY_DETAILS, FAQ_DATA } from "./constants";
 import InteractiveBentoGallery from "./components/ui/interactive-bento-gallery";
+import ContactBookingSection from "./components/ContactBookingSection";
 import DeepCleanPage from "./pages/services/DeepCleanPage";
 import FullValetPage from "./pages/services/FullValetPage";
 import CeramicCoatingPage from "./pages/services/CeramicCoatingPage";
@@ -81,8 +82,8 @@ const Navbar = () => {
 
       const sectionMap = [
         { label: "Contact", id: "contact" },
-        { label: "About", id: "about" },
         { label: "Our Work", id: "gallery" },
+        { label: "About", id: "about" },
         { label: "Services", id: "services" },
       ];
 
@@ -120,6 +121,8 @@ const Navbar = () => {
       const el = document.getElementById(href.replace("#", ""));
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.href = "/" + href;
       }
     }
   };
@@ -184,10 +187,9 @@ const Navbar = () => {
         {/* Right CTA Button */}
         <div className="flex items-center">
           <a
-            href={COMPANY_DETAILS.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-7 md:px-9 py-3.5 md:py-4 rounded-full text-sm md:text-base font-bold text-white bg-gradient-to-r from-[#DC2626] to-[#EF4444] hover:from-[#b91c1c] hover:to-[#DC2626] shadow-[0_4px_25px_rgba(220,38,38,0.5)] hover:shadow-[0_6px_30px_rgba(220,38,38,0.75)] hover:scale-[1.03] transition-all duration-300 transform active:scale-95 group"
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact", "Contact")}
+            className="inline-flex items-center gap-2.5 px-7 md:px-9 py-3.5 md:py-4 rounded-full text-sm md:text-base font-bold text-white bg-gradient-to-r from-[#DC2626] to-[#EF4444] hover:from-[#b91c1c] hover:to-[#DC2626] shadow-[0_4px_25px_rgba(220,38,38,0.5)] hover:shadow-[0_6px_30px_rgba(220,38,38,0.75)] hover:scale-[1.03] transition-all duration-300 transform active:scale-95 group cursor-pointer"
           >
             <span>Book a Valet</span>
             <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white group-hover:translate-x-1 transition-transform" />
@@ -275,22 +277,35 @@ const Hero = () => {
             className="flex flex-wrap items-center gap-3 sm:gap-4 mb-5 sm:mb-12"
           >
             <a
-              href={COMPANY_DETAILS.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-7 sm:px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base text-white bg-[#DC2626] hover:bg-[#b91c1c] transition-all duration-300 shadow-[0_4px_25px_rgba(220,38,38,0.45)] hover:shadow-[0_6px_30px_rgba(220,38,38,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2.5 group"
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById("contact");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-7 sm:px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base text-white bg-[#DC2626] hover:bg-[#b91c1c] transition-all duration-300 shadow-[0_4px_25px_rgba(220,38,38,0.45)] hover:shadow-[0_6px_30px_rgba(220,38,38,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2.5 group cursor-pointer"
             >
-              <MessageCircle className="w-5 h-5 text-white" />
-              <span>Contact me via WhatsApp</span>
+              <Calendar className="w-5 h-5 text-white" />
+              <span>Book Your Valet Online</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
 
             <a
-              href={`tel:${COMPANY_DETAILS.phoneRaw}`}
+              href={COMPANY_DETAILS.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-7 sm:px-8 py-3.5 rounded-full font-medium text-sm sm:text-base text-white bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/25 hover:border-white/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg flex items-center gap-2.5 group"
             >
-              <Phone className="w-4 h-4 text-white/80 group-hover:text-white transition-colors" />
-              <span>Call {COMPANY_DETAILS.phone}</span>
+              <MessageCircle className="w-4 h-4 text-[#25D366] group-hover:scale-110 transition-transform" />
+              <span>WhatsApp Rhys</span>
+            </a>
+
+            <a
+              href={`tel:${COMPANY_DETAILS.phoneRaw}`}
+              className="px-6 py-3.5 rounded-full font-medium text-sm text-white/90 bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/15 hover:border-white/30 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 group"
+            >
+              <Phone className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
+              <span>Call</span>
             </a>
           </motion.div>
 
@@ -769,7 +784,7 @@ const Services = () => {
               transition={{ delay: 0.2 }}
               className="mt-4 text-xs md:text-sm text-[#8A8070] max-w-2xl mx-auto leading-relaxed font-light"
             >
-              Bolt any of these onto a package. The glass coating goes on after the glass has been properly prepared, which is why it is an upgrade to a valet rather than a service on its own — the roof and engine bay are extra work on the day.
+              Bolt any of these onto a package. The glass coating goes on after the glass has been properly prepared, which is why it is an upgrade to a valet rather than a service on its own — the roof, engine bay, and interior refresh provide targeted specialist care on the day.
             </motion.p>
           </div>
 
@@ -795,18 +810,41 @@ const Services = () => {
                 {/* Right Content */}
                 <div className="flex-1 flex flex-col justify-between py-1">
                   <div>
-                    <span
-                      className="text-[11px] font-mono font-bold tracking-wider uppercase block mb-1"
-                      style={{ color: extra.categoryColor }}
-                    >
-                      {extra.category}
-                    </span>
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <span
+                        className="text-[11px] font-mono font-bold tracking-wider uppercase block"
+                        style={{ color: extra.categoryColor }}
+                      >
+                        {extra.category}
+                      </span>
+                      {extra.duration && (
+                        <span className="inline-flex items-center gap-1 text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-white/10 text-white/90 border border-white/10">
+                          <Timer className="w-2.5 h-2.5 text-[#EF4444]" />
+                          {extra.duration}
+                        </span>
+                      )}
+                    </div>
                     <h4 className="text-lg md:text-xl font-bold text-white tracking-tight leading-snug">
                       {extra.title}
                     </h4>
-                    <p className="text-xs text-white/70 leading-relaxed font-light mt-2">
-                      {extra.description}
-                    </p>
+
+                    {extra.features && extra.features.length > 0 ? (
+                      <div className="mt-2.5 grid grid-cols-1 sm:grid-cols-2 gap-x-2.5 gap-y-1">
+                        {extra.features.map((feat, fIdx) => (
+                          <div
+                            key={fIdx}
+                            className="flex items-center gap-1.5 text-[11px] text-white/80 font-light"
+                          >
+                            <CheckCircle2 className="w-3 h-3 text-[#EF4444] shrink-0" />
+                            <span className="truncate" title={feat}>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-xs text-white/70 leading-relaxed font-light mt-2">
+                        {extra.description}
+                      </p>
+                    )}
                   </div>
 
                   <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/10">
@@ -1025,7 +1063,7 @@ const AboutSection = () => {
   const doubledLogos = [...CarLogos, ...CarLogos, ...CarLogos];
 
   return (
-    <section className="relative w-full" style={{ background: '#F5F0E8' }}>
+    <section id="about" className="relative w-full" style={{ background: '#F5F0E8' }}>
       {/* Brand Marquee Section */}
       <div className="py-8" style={{ background: '#0A0A0A' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
@@ -1905,7 +1943,7 @@ const Gallery = () => {
 
 const Footer = () => {
   return (
-    <footer id="about" className="py-24 px-6 md:px-12" style={{ background: '#0A0A0A', borderTop: `1px solid rgba(220,38,38,0.15)` }}>
+    <footer className="py-24 px-6 md:px-12" style={{ background: '#0A0A0A', borderTop: `1px solid rgba(220,38,38,0.15)` }}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-24">
           <div>
@@ -2507,6 +2545,7 @@ const HomePage = () => (
     <CompanyStripeMarquee />
     <Gallery />
     <AreasWeCover />
+    <ContactBookingSection />
     <FAQSection />
   </>
 );

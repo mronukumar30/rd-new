@@ -54,7 +54,7 @@ const SERVICES_OFFERED = [
   {
     name: "Deep Clean Package",
     path: "/deep-clean",
-    price: "From £120",
+    price: "£150",
     duration: "4–5 Hours",
     description: "Full restoration for the car that needs rescuing — not just washing. Pet hair, stains, tar, and grime eliminated.",
     image: "/724453567_1741795673842657_7212829807354336478_n.jpg",
@@ -149,7 +149,7 @@ export default function LocationPageTemplate({ location }: LocationPageTemplateP
             "name": "Deep Clean Package",
             "description": "Full interior and exterior restoration: wet vac seat & carpet extraction, pet hair & stains removed, interior steam cleaned, exterior decontamination."
           },
-          "priceSpecification": { "@type": "PriceSpecification", "price": "120", "priceCurrency": "GBP" }
+          "priceSpecification": { "@type": "PriceSpecification", "price": "150", "priceCurrency": "GBP" }
         }
       ]
     },

@@ -61,7 +61,7 @@ export const LOCATIONS: LocationData[] = [
       "RD Valeting is based in Swindon and built around a simple promise: exceptional standards, honest pricing, and genuine reliability. From residential driveways in Old Town and Lawn to the newer estates of Priory Vale, Shaw, and Redhouse, we know Swindon inside out.",
       "Daily commutes along the M4, the A419, and Great Western Way expose your car to heavy road film, brake fallout, and harsh seasonal grime. Our tailored valeting packages are engineered to eliminate bonded dirt, restore high-gloss reflections, and keep your vehicle decontaminated all year round.",
       "You never need to drop your car off at a hand car wash or wait around in industrial estates. Rhys arrives on time with a fully self-contained mobile valeting unit, complete with professional-grade chemicals, ultra-soft microfibres, and high-pressure detailing gear.",
-      "As our home base, all Swindon postcodes (SN1 through SN26) receive our fastest booking availability and zero travel supplements. Choose from our £30 Mini Valet, £50 Maintenance Wash, £100 Deep Clean, or comprehensive Full Valet & Detailing."
+      "As our home base, all Swindon postcodes (SN1 through SN26) receive our fastest booking availability and zero travel supplements. Choose from our £30 Mini Valet, £50 Maintenance Wash, £150 Deep Clean, or comprehensive Full Valet & Detailing."
     ],
     localHighlights: [
       "Based in Swindon — zero travel charges across all Swindon postcodes",
@@ -81,7 +81,7 @@ export const LOCATIONS: LocationData[] = [
     faqs: [
       {
         question: "How much does mobile car valeting cost in Swindon?",
-        answer: "Our valeting packages in Swindon start at just £30 for our Mini Valet freshen-up, £50 for our popular Maintenance Wash, £100 for a thorough interior & exterior Deep Clean, and from £150 for our Full Valet & Detailing package. As Swindon is our home base, there is zero travel fee."
+        answer: "Our valeting packages in Swindon start at just £30 for our Mini Valet freshen-up, £50 for our popular Maintenance Wash, £150 for a thorough interior & exterior Deep Clean, and from £150 for our Full Valet & Detailing package. As Swindon is our home base, there is zero travel fee."
       },
       {
         question: "Which areas of Swindon do you cover?",
@@ -149,7 +149,7 @@ export const LOCATIONS: LocationData[] = [
       },
       {
         question: "How much is a car detail in Marlborough?",
-        answer: "Our prices start from £30 for a Mini Valet, £50 for our Maintenance Wash, and £100 for an intensive Deep Clean. We provide transparent, honest pricing with no surprises."
+        answer: "Our prices start from £30 for a Mini Valet, £50 for our Maintenance Wash, and £150 for an intensive Deep Clean. We provide transparent, honest pricing with no surprises."
       },
       {
         question: "Can you detail my car while I'm at work or home?",
@@ -169,7 +169,7 @@ export const LOCATIONS: LocationData[] = [
   {
     slug: "car-detailing-cirencester",
     title: "Mobile Car Valeting in Cirencester | RD Valeting",
-    metaDescription: "Capital of the Cotswolds mobile car valeting & detailing. Mini valets from £30, maintenance washes £50, deep cleans £100. We come to your home in Cirencester. Book today.",
+    metaDescription: "Capital of the Cotswolds mobile car valeting & detailing. Mini valets from £30, maintenance washes £50, deep cleans £150. We come to your home in Cirencester. Book today.",
     heroImage: "/724453567_1741795673842657_7212829807354336478_n.jpg",
     heroImagePosition: "object-top",
     heroOverlayOpacity: "bg-black/[0.50]",
@@ -199,7 +199,7 @@ export const LOCATIONS: LocationData[] = [
       "Convenient home or workplace visits across Cirencester",
       "Safe multi-stage wash process prevents clear coat marring",
       "Thorough decontamination that removes iron fallout and tar",
-      "Clear, honest pricing: £30 Mini Valet, £50 Maintenance, £100 Deep Clean",
+      "Clear, honest pricing: £30 Mini Valet, £50 Maintenance, £150 Deep Clean",
       "Fully insured with owner Rhys personally handling your vehicle"
     ],
     faqs: [
@@ -209,7 +209,7 @@ export const LOCATIONS: LocationData[] = [
       },
       {
         question: "Can you remove stubborn rural mud and pet hair?",
-        answer: "Absolutely. Our Deep Clean package (£100) includes high-suction vacuuming, deep carpet shampooing, steam extraction, and complete interior restoration designed specifically to tackle Cotswold mud and pet hair."
+        answer: "Absolutely. Our Deep Clean package (£150) includes high-suction vacuuming, deep carpet shampooing, steam extraction, and complete interior restoration designed specifically to tackle Cotswold mud and pet hair."
       },
       {
         question: "How long does a deep clean take?",
@@ -229,7 +229,7 @@ export const LOCATIONS: LocationData[] = [
   {
     slug: "car-detailing-chippenham",
     title: "Mobile Car Valeting in Chippenham | RD Valeting",
-    metaDescription: "Professional mobile car valeting & detailing in Chippenham, Wiltshire. Mini valets from £30, maintenance washes £50, deep cleans £100. We come to you. Book today.",
+    metaDescription: "Professional mobile car valeting & detailing in Chippenham, Wiltshire. Mini valets from £30, maintenance washes £50, deep cleans £150. We come to you. Book today.",
     heroImage: "/723830628_27152605947682802_3120737853125552335_n.jpg",
     heroImagePosition: "object-top",
     heroOverlayOpacity: "bg-black/[0.50]",
@@ -246,7 +246,7 @@ export const LOCATIONS: LocationData[] = [
       "Chippenham is one of Wiltshire's most vibrant and rapidly expanding market towns. Situated along the River Avon with rapid links to the M4 corridor, local motorists face heavy motorway grime and stop-and-start commuter wear.",
       "RD Valeting makes caring for your vehicle simple. You don't have to sacrifice your weekend queuing at a car wash or settle for harsh chemical washes that strip waxes and cause paint swirl marks.",
       "Rhys travels directly to your driveway across Chippenham, Cepen Park North & South, Pewsham, and nearby areas like Corsham and Lacock. We arrive fully equipped with premium detailing solutions that protect your paintwork and restore deep interior freshness.",
-      "Enjoy transparent pricing and dependable punctuality. Book your £30 Mini Valet, £50 Maintenance Wash, or £100 Deep Clean online in under a minute."
+      "Enjoy transparent pricing and dependable punctuality. Book your £30 Mini Valet, £50 Maintenance Wash, or £150 Deep Clean online in under a minute."
     ],
     localHighlights: [
       "Covering all Chippenham SN14 & SN15 postcodes, Pewsham, Cepen Park & Monkton Park",
@@ -320,7 +320,7 @@ export const LOCATIONS: LocationData[] = [
       "Personal care from business owner Rhys",
       "High-grade detailing products that protect your vehicle's resale value",
       "Full public liability insurance for complete driveway protection",
-      "Transparent pricing: £30 Mini Valet, £50 Maintenance, £100 Deep Clean"
+      "Transparent pricing: £30 Mini Valet, £50 Maintenance, £150 Deep Clean"
     ],
     faqs: [
       {
@@ -366,7 +366,7 @@ export const LOCATIONS: LocationData[] = [
       "The UNESCO World Heritage City of Bath is world-famous for its Georgian architecture, prestigious residential quarters, and discerning car owners. At RD Valeting, we provide the caliber of mobile car care that matches this exceptional setting.",
       "Bath's hilly topography, limestone masonry dust, and heavy city traffic demand safe, gentle, yet deeply effective cleaning techniques. We employ pH-balanced cleansers, soft lamb's wool wash mitts, and warm-air drying to protect clear coats from unsightly swirl marks and scratches.",
       "We travel straight down the M4 and A46 to private homes across Lansdown, Widcombe, Bathwick, Bathampton, and Combe Down. We arrive fully equipped to detail your vehicle on your driveway while you relax at home.",
-      "From intensive £100 Deep Cleans that reset leather and carpets to showroom condition, to full valets and detailing from £150, Rhys delivers bespoke craftsmanship on every booking."
+      "From intensive £150 Deep Cleans that reset leather and carpets to showroom condition, to full valets and detailing from £150, Rhys delivers bespoke craftsmanship on every booking."
     ],
     localHighlights: [
       "Serving Bath BA1 & BA2: Lansdown, Widcombe, Bathwick, Combe Down & Bathampton",
@@ -440,7 +440,7 @@ export const LOCATIONS: LocationData[] = [
       "Expertise with all vehicle types from daily drivers to luxury performance cars",
       "Full public liability insurance for total protection",
       "Safe, scratch-free hand washing methods",
-      "Clear, upfront prices: £30 Mini Valet, £50 Maintenance, £100 Deep Clean"
+      "Clear, upfront prices: £30 Mini Valet, £50 Maintenance, £150 Deep Clean"
     ],
     faqs: [
       {
@@ -448,8 +448,8 @@ export const LOCATIONS: LocationData[] = [
         answer: "Yes, we regularly take bookings across Newbury, Thatcham, Greenham, and surrounding Berkshire villages."
       },
       {
-        question: "What is included in the Deep Clean (£100) in Newbury?",
-        answer: "The £100 Deep Clean is our complete reset: snow foam, thorough hand wash, wheel & arch decontamination, gloss sealant, full interior vacuum, wet-vac shampoo on upholstery and carpets, dash & trim conditioning, and streak-free windows."
+        question: "What is included in the Deep Clean (£150) in Newbury?",
+        answer: "The £150 Deep Clean is our complete reset: snow foam, thorough hand wash, wheel & arch decontamination, gloss sealant, full interior vacuum, wet-vac shampoo on upholstery and carpets, dash & trim conditioning, and streak-free windows."
       },
       {
         question: "How do I book an appointment for my Newbury home?",
@@ -469,7 +469,7 @@ export const LOCATIONS: LocationData[] = [
   {
     slug: "car-detailing-oxford",
     title: "Mobile Car Valeting in Oxford | RD Valeting",
-    metaDescription: "Professional mobile car valeting & detailing across Oxford, Oxfordshire. Mini valets from £30, maintenance washes £50, deep cleans £100. We come to you. Book today.",
+    metaDescription: "Professional mobile car valeting & detailing across Oxford, Oxfordshire. Mini valets from £30, maintenance washes £50, deep cleans £150. We come to you. Book today.",
     heroImage: "/719890908_2222286848526617_3057517277440017740_n.jpg",
     heroImagePosition: "object-top",
     heroOverlayOpacity: "bg-black/[0.50]",
@@ -500,7 +500,7 @@ export const LOCATIONS: LocationData[] = [
       "Personalised care from owner Rhys with guaranteed high standards",
       "Full interior deep cleaning: stain removal, steam sanitisation, and leather care",
       "Fully insured with comprehensive public liability cover",
-      "Honest, fixed rates: £30 Mini Valet, £50 Maintenance, £100 Deep Clean"
+      "Honest, fixed rates: £30 Mini Valet, £50 Maintenance, £150 Deep Clean"
     ],
     faqs: [
       {
@@ -559,7 +559,7 @@ export const LOCATIONS: LocationData[] = [
       "Prompt and reliable mobile appointments across Reading",
       "Personal care from owner Rhys with guaranteed quality",
       "Safe two-bucket wash technique that preserves your vehicle's gloss",
-      "Transparent package rates: £30 Mini Valet, £50 Maintenance, £100 Deep Clean",
+      "Transparent package rates: £30 Mini Valet, £50 Maintenance, £150 Deep Clean",
       "5-star rated service with hundreds of satisfied clients"
     ],
     faqs: [

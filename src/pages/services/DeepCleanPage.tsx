@@ -12,12 +12,12 @@ export default function DeepCleanPage() {
   return (
     <ServicePageTemplate
       title="Deep Clean Car Valeting in Swindon | Full Interior & Exterior | RD Valeting"
-      metaDescription="Professional deep clean car valeting in Swindon, Wiltshire. Full interior & exterior detail for £100. Fully mobile, fully insured. Book today."
+      metaDescription="Professional deep clean car valeting in Swindon, Wiltshire. Full interior & exterior detail for £150. Fully mobile, fully insured. Book today."
       canonicalPath="/deep-clean"
       serviceName="Deep Clean"
       heroTagline="A Complete Reset for Your Vehicle"
       heroDescription="Our flagship deep clean is a comprehensive interior and exterior detail that restores your vehicle to a factory-fresh finish. Every surface, every crevice, every detail — meticulously cleaned and restored."
-      price="From £120"
+      price="£150"
       duration="3–4 Hours"
       heroImage="/724453567_1741795673842657_7212829807354336478_n.jpg"
       heroImageAlt="Professional deep clean car valeting service in Swindon — interior and exterior restoration by RD Valeting"
@@ -63,7 +63,7 @@ export default function DeepCleanPage() {
       faqs={[
         {
           question: "How much does a deep clean cost in Swindon?",
-          answer: "Our Deep Clean Package is £120 for standard vehicles — a full interior and exterior restoration with no hidden fees and no corners cut."
+          answer: "Our Deep Clean Package is £150 for standard vehicles — a full interior and exterior restoration with no hidden fees and no corners cut."
         },
         {
           question: "How long does a deep clean take?",
@@ -79,7 +79,7 @@ export default function DeepCleanPage() {
         }
       ]}
       schemaDescription="Professional deep clean car valeting service in Swindon, Wiltshire. Full interior and exterior detail. Fully mobile, fully insured."
-      schemaMinPrice="100"
+      schemaMinPrice="150"
       relatedServices={[
         { name: "Maintenance Plan", path: "/maintenance-clean", price: "From £50" },
         { name: "Full Valet Package", path: "/full-valet", price: "From £70" },

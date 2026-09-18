@@ -100,7 +100,7 @@ export default function CeramicCoatingPage() {
       schemaDescription="Professional ceramic coating service in Swindon & Wiltshire. Machine polishing and 5-year ceramic paint protection. Fully mobile, fully insured."
       schemaMinPrice="650"
       relatedServices={[
-        { name: "Deep Clean", path: "/deep-clean", price: "From £120" },
+        { name: "Deep Clean", path: "/deep-clean", price: "£150" },
         { name: "Maintenance Clean", path: "/maintenance-clean", price: "From £50" },
       ]}
     />
