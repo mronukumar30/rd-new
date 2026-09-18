@@ -1,221 +1,183 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
-  Car,
+  ShieldCheck,
+  MessageCircle,
+  ArrowRight,
+  Phone,
+  Star,
+  Check,
+  Plus,
+  ChevronDown,
+  ChevronRight,
   Calendar,
   Clock,
-  User,
-  Phone,
-  MapPin,
-  Sparkles,
-  MessageCircle,
-  Check,
-  ShieldCheck,
-  Droplets,
-  Zap,
-  ArrowRight,
-  Info,
-  CheckCircle2,
-  Copy,
-  ExternalLink,
 } from "lucide-react";
-import { COMPANY_DETAILS, SERVICES, ADDON_PACKAGES, ADDON_EXTRAS } from "../constants";
-
-const RED = "#DC2626";
-const RED_LIGHT = "#EF4444";
-const BORDER_COLOR = "#DDD5C5";
-const CREAM_BG = "#EDE8DF";
+import { COMPANY_DETAILS } from "../constants";
 
 interface BookingPackage {
   id: string;
   name: string;
-  priceNum: number;
   priceDisplay: string;
   duration: string;
-  badge?: string;
-  subtitle: string;
-  includes: string[];
 }
 
 const PACKAGES_LIST: BookingPackage[] = [
   {
+    id: "winter-protection",
+    name: "Winter Protection Package",
+    priceDisplay: "£60",
+    duration: "2–2.5 hrs",
+  },
+  {
     id: "full-valet",
     name: "Full Valet Package",
-    priceNum: 70,
     priceDisplay: "From £70",
     duration: "3–4 hrs",
-    badge: "Most Popular",
-    subtitle: "Complete deep reset — safe 3-bucket wash, carpet shampoo, seat steam/leather clean & 4-month sealant.",
-    includes: [
-      "Snow foam pre-wash & safe hand contact wash",
-      "Door shuts, wheel arches & tar removed",
-      "Interior deep vacuum & upholstery shampooed / leather cleaned",
-      "Glass cleaned streak-free & spray sealant applied",
-    ],
   },
   {
     id: "maintenance",
     name: "Maintenance Plan",
-    priceNum: 50,
     priceDisplay: "From £50",
     duration: "1.5–2 hrs",
-    badge: "Best Value",
-    subtitle: "Regular upkeep every 2–4 weeks to keep your car sharp and protection topped up.",
-    includes: [
-      "Snow foam & 2-bucket safe contact wash",
-      "Wheels, arches & tyres dressed",
-      "Interior vacuum & dashboard wiped",
-      "3-month spray sealant & fresh scent",
-    ],
   },
   {
     id: "deep-clean",
     name: "Deep Clean Package",
-    priceNum: 120,
     priceDisplay: "From £120",
     duration: "4–5 hrs",
-    badge: "Full Reset",
-    subtitle: "For cars needing rescuing — hot wet vac extraction, pet hair/stain removal & decontamination.",
-    includes: [
-      "Hot water wet extraction on seats & carpets",
-      "Pet hair removal & steam blast in all crevices",
-      "Exterior decontamination & fallout remover",
-      "Leather conditioner & full interior dressing",
-    ],
-  },
-  {
-    id: "winter-protection",
-    name: "Winter Protection Package",
-    priceNum: 60,
-    priceDisplay: "£60",
-    duration: "2–2.5 hrs",
-    badge: "Seasonal",
-    subtitle: "Shield paint, wheels, and glass against winter road grime, salt, and harsh moisture.",
-    includes: [
-      "Full decontamination & arch blast",
-      "6-month heavy-duty paint sealant",
-      "Windscreen rain repellent & wheel sealant",
-      "Safe 3-bucket contact wash & interior freshener",
-    ],
   },
   {
     id: "new-car-protection",
     name: "New Car Protection Package",
-    priceNum: 250,
     priceDisplay: "From £250",
     duration: "3–4 hrs",
-    badge: "2-Yr Ceramic",
-    subtitle: "Lock in that showroom factory finish with genuine 2-year ceramic coating on paint & glass.",
-    includes: [
-      "Full paint decontamination & safe wash",
-      "2-Year Ceramic coating on paintwork & glass",
-      "Interior fabric sealed or leather protected",
-      "Spotless pure water finish — zero tap required",
-    ],
   },
   {
     id: "custom",
     name: "Custom / Not Sure",
-    priceNum: 0,
     priceDisplay: "Quote on inspection",
     duration: "Flexible",
-    subtitle: "Not sure what your car needs? Tell Rhys the details and he will recommend the perfect package.",
-    includes: [
-      "Free friendly advice directly from Rhys",
-      "Tailored quote to suit your vehicle's condition",
-      "No obligation to book",
-    ],
   },
-];
-
-const VEHICLE_CATEGORIES = [
-  { id: "hatchback", label: "Hatchback / Small" },
-  { id: "saloon", label: "Saloon / Estate" },
-  { id: "suv", label: "4x4 / SUV" },
-  { id: "prestige", label: "Prestige / Sports" },
-  { id: "van", label: "Van / Commercial" },
-];
-
-const TIME_WINDOWS = [
-  { id: "morning", label: "Morning", sub: "8:00 AM – 12:00 PM" },
-  { id: "afternoon", label: "Afternoon", sub: "12:00 PM – 4:00 PM" },
-  { id: "late", label: "Late Afternoon", sub: "4:00 PM – 7:00 PM" },
-  { id: "flexible", label: "Flexible / ASAP", sub: "Any available slot" },
 ];
 
 const ADDON_OPTIONS = [
   {
     id: "glass-ceramic",
     name: "2-Year Glass Ceramic Coating",
-    priceNum: 40,
     priceDisplay: "+£40",
-    desc: "Hydrophobic rain repellent — rainwater sheets off glass at speed for clear visibility",
+    desc: "Hydrophobic rain-sheet coating",
   },
   {
     id: "convertible-roof",
-    name: "Convertible Roof Deep Clean",
-    priceNum: 40,
+    name: "Convertible Roof Deep Clean & Seal",
     priceDisplay: "+£40",
-    desc: "Remove moss, algae & dirt from fabric roof and restore water repellency",
+    desc: "Waterproof barrier + moss removal",
   },
   {
     id: "engine-bay",
     name: "Engine Bay Cleaned & Dressed",
-    priceNum: 50,
     priceDisplay: "+£50",
-    desc: "Remove road grime & oil film, dress all plastics and hoses to satin finish",
+    desc: "Degreasing + satin finish dressing",
   },
   {
     id: "pet-hair",
     name: "Heavy Pet Hair / Sand Treatment",
-    priceNum: 20,
     priceDisplay: "+£20",
-    desc: "Specialised rubber brushing & high-powered extraction for stubborn fibres",
+    desc: "Rubber brush + powered extraction",
   },
 ];
 
+const TIME_SLOTS = [
+  { id: "morning", label: "Morning", sub: "8am – 12pm" },
+  { id: "afternoon", label: "Afternoon", sub: "12 – 5pm" },
+  { id: "flexible", label: "Flexible", sub: "Any time" },
+];
+
+// Underline input component
+function Field({
+  label,
+  error,
+  children,
+}: {
+  label: string;
+  error?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="relative group">
+      <label
+        className="block text-[10px] font-mono uppercase tracking-[0.22em] font-bold mb-1.5"
+        style={{ color: "#8A8070" }}
+      >
+        {label}
+      </label>
+      {children}
+      {error && (
+        <p className="text-[11px] font-medium mt-1" style={{ color: "#DC2626" }}>
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}
+
+// A single underline-style text input
+function LineInput({
+  type = "text",
+  value,
+  onChange,
+  placeholder,
+  hasError,
+  min,
+}: {
+  type?: string;
+  value: string;
+  onChange: (v: string) => void;
+  placeholder?: string;
+  hasError?: boolean;
+  min?: string;
+}) {
+  return (
+    <input
+      type={type}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder={placeholder}
+      min={min}
+      className="w-full bg-transparent text-sm font-medium pb-2.5 border-b-2 placeholder:text-[#C0B8A8] text-[#0A0A0A] focus:outline-none transition-colors duration-200"
+      style={{
+        borderColor: hasError ? "#DC2626" : "#DDD5C5",
+      }}
+      onFocus={(e) => {
+        e.target.style.borderColor = "#DC2626";
+      }}
+      onBlur={(e) => {
+        e.target.style.borderColor = hasError ? "#DC2626" : "#DDD5C5";
+      }}
+    />
+  );
+}
+
 export default function ContactBookingSection() {
-  // Form State
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [postcode, setPostcode] = useState("");
   const [vehicle, setVehicle] = useState("");
-  const [vehicleCategory, setVehicleCategory] = useState("Saloon / Estate");
-  const [selectedPackageId, setSelectedPackageId] = useState<string>("full-valet");
+  const [preferredDate, setPreferredDate] = useState("");
+  const [preferredTime, setPreferredTime] = useState("flexible");
+  const [selectedPackageId, setSelectedPackageId] = useState<string>(
+    "winter-protection"
+  );
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
-
-  // Default date to tomorrow
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  const defaultDateStr = tomorrow.toISOString().split("T")[0];
-
-  const [preferredDate, setPreferredDate] = useState(defaultDateStr);
-  const [timeWindow, setTimeWindow] = useState("Morning (8:00 AM – 12:00 PM)");
-  const [notes, setNotes] = useState("");
-
-  // Validation & UI state
+  const [addonsOpen, setAddonsOpen] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [copied, setCopied] = useState(false);
-  const [showSummaryModal, setShowSummaryModal] = useState(false);
 
-  // Selected package object
-  const selectedPkg = useMemo(() => {
-    return PACKAGES_LIST.find((p) => p.id === selectedPackageId) || PACKAGES_LIST[0];
-  }, [selectedPackageId]);
-
-  // Calculate estimated total price
-  const estimatedTotal = useMemo(() => {
-    if (selectedPkg.id === "custom") {
-      return "Quote on inspection";
-    }
-    const addonSum = selectedAddons.reduce((acc, addonId) => {
-      const item = ADDON_OPTIONS.find((a) => a.id === addonId);
-      return acc + (item ? item.priceNum : 0);
-    }, 0);
-
-    const total = selectedPkg.priceNum + addonSum;
-    return `From £${total}`;
-  }, [selectedPkg, selectedAddons]);
+  const selectedPkg = useMemo(
+    () =>
+      PACKAGES_LIST.find((p) => p.id === selectedPackageId) || PACKAGES_LIST[0],
+    [selectedPackageId]
+  );
 
   const toggleAddon = (id: string) => {
     setSelectedAddons((prev) =>
@@ -223,27 +185,18 @@ export default function ContactBookingSection() {
     );
   };
 
+  const todayStr = new Date().toISOString().split("T")[0];
+
   const validate = () => {
-    const newErrors: { [key: string]: string } = {};
-
-    if (!fullName.trim()) {
-      newErrors.fullName = "Please enter your name";
-    }
-    if (!vehicle.trim()) {
-      newErrors.vehicle = "Please enter your car make & model (e.g. BMW 3 Series)";
-    }
-    if (!postcode.trim()) {
-      newErrors.postcode = "Please enter your postcode or town (e.g. SN1 2AB)";
-    }
-    if (!phone.trim() || phone.replace(/\s+/g, "").length < 9) {
-      newErrors.phone = "Please enter a valid phone or WhatsApp number";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    const errs: { [key: string]: string } = {};
+    if (!fullName.trim()) errs.fullName = "Name required";
+    if (!phone.trim()) errs.phone = "Mobile / WhatsApp required";
+    if (!postcode.trim()) errs.postcode = "Postcode or town required";
+    if (!vehicle.trim()) errs.vehicle = "Car make & model required";
+    setErrors(errs);
+    return Object.keys(errs).length === 0;
   };
 
-  // Compile formatted WhatsApp message
   const compileWhatsAppText = () => {
     const chosenAddons = selectedAddons
       .map((id) => {
@@ -251,718 +204,593 @@ export default function ContactBookingSection() {
         return item ? `+ ${item.name} (${item.priceDisplay})` : "";
       })
       .filter(Boolean);
+    const addonsText =
+      chosenAddons.length > 0 ? chosenAddons.join("\n  ") : "None";
 
-    const addonsText = chosenAddons.length > 0 ? chosenAddons.join("\n  ") : "None";
+    const timeLabel =
+      TIME_SLOTS.find((t) => t.id === preferredTime)?.label || "Flexible";
+    const timeSubLabel =
+      TIME_SLOTS.find((t) => t.id === preferredTime)?.sub || "Any time";
+
+    const dateText = preferredDate
+      ? new Date(preferredDate).toLocaleDateString("en-GB", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        })
+      : "Date not specified";
 
     return (
-      `🚗 *NEW BOOKING ENQUIRY — RD VALETING*\n\n` +
+      `🚗 *NEW VALET BOOKING ENQUIRY*\n\n` +
       `👤 *Customer Details:*\n` +
       `• Name: ${fullName.trim()}\n` +
       `• Mobile / WhatsApp: ${phone.trim()}\n` +
-      `• Location / Postcode: ${postcode.trim().toUpperCase()}\n\n` +
+      `• Postcode / Town: ${postcode.trim().toUpperCase()}\n\n` +
       `🚙 *Vehicle:*\n` +
-      `• Vehicle: ${vehicle.trim()} (${vehicleCategory})\n\n` +
-      `✨ *Package & Services Needed:*\n` +
-      `• Package: ${selectedPkg.name} (${selectedPkg.priceDisplay})\n` +
-      `• Duration: ${selectedPkg.duration}\n` +
-      `• Optional Add-ons:\n  ${addonsText}\n` +
-      `• Estimated Price: *${estimatedTotal}*\n\n` +
-      `📅 *Preferred Timing:*\n` +
-      `• Date: ${preferredDate}\n` +
-      `• Arrival Window: ${timeWindow}\n` +
-      (notes.trim() ? `\n📝 *Notes / Special Requests:*\n• ${notes.trim()}\n` : "") +
-      `\n💬 Hi Rhys, I would like to book this appointment with RD Valeting. Please let me know if this slot is available!`
+      `• Car: ${vehicle.trim()}\n\n` +
+      `📅 *Preferred Appointment:*\n` +
+      `• Date: ${dateText}\n` +
+      `• Time: ${timeLabel} (${timeSubLabel})\n\n` +
+      `✨ *Package & Addons:*\n` +
+      `• Package: ${selectedPkg.name} (${selectedPkg.priceDisplay} · ${selectedPkg.duration})\n` +
+      `• Optional Add-ons:\n  ${addonsText}\n\n` +
+      `💬 Hi Rhys, I'd like to book this appointment with RD Valeting. Please confirm availability!`
     );
-  };
-
-  const getWhatsAppUrl = () => {
-    const text = compileWhatsAppText();
-    return `https://wa.me/447393682365?text=${encodeURIComponent(text)}`;
   };
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
-      window.open(getWhatsAppUrl(), "_blank", "noopener,noreferrer");
-    } else {
-      // Scroll to top of form smoothly to show errors
-      const el = document.getElementById("booking-form-card");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      const text = compileWhatsAppText();
+      const url = `https://wa.me/447393682365?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank", "noopener,noreferrer");
     }
-  };
-
-  const copyDetailsToClipboard = () => {
-    const text = compileWhatsAppText();
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 3000);
   };
 
   return (
     <section
       id="contact"
-      className="py-24 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden"
+      className="relative overflow-hidden"
       style={{ background: "#F5F0E8" }}
     >
-      {/* Background radial glow */}
-      <div
-        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full opacity-[0.08] pointer-events-none"
-        style={{ background: `radial-gradient(circle, ${RED}, transparent 70%)` }}
-      />
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4 text-[11px] font-mono uppercase tracking-[0.25em] font-bold text-white shadow-sm"
-            style={{ background: `linear-gradient(135deg, ${RED}, ${RED_LIGHT})` }}
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            Direct WhatsApp Booking &amp; Quote
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6"
-            style={{ color: "#0A0A0A" }}
-          >
-            Book Your Valet in Seconds. <br className="hidden sm:block" />
-            <span
-              className="italic font-serif font-light"
-              style={{ color: RED }}
-            >
-              We Come Directly to You.
-            </span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg leading-relaxed text-[#6E6455] max-w-2xl mx-auto"
-          >
-            Fill in your vehicle, postcode, and package below to send a complete, pre-priced booking enquiry straight to Rhys on WhatsApp. No endless questions or back-and-forth.
-          </motion.p>
-        </div>
-
-        {/* Main Grid: Form (Left 7 cols) & Live Booking Summary / Contact Card (Right 5 cols) */}
-        <div
-          id="booking-form-card"
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[800px]">
+        {/* ─── LEFT: Form Panel ─── */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="relative flex flex-col justify-center px-8 sm:px-12 lg:px-14 xl:px-20 py-16 lg:py-20"
+          style={{ background: "#F5F0E8" }}
         >
-          {/* ── LEFT COLUMN: The Interactive Form ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="lg:col-span-7 bg-white rounded-[32px] p-6 sm:p-8 md:p-10 border shadow-xl"
-            style={{
-              borderColor: BORDER_COLOR,
-              boxShadow: "0 20px 60px rgba(10,10,10,0.06)",
-            }}
+          {/* Background large numeral */}
+          <div
+            className="absolute top-0 right-0 text-[220px] font-black leading-none select-none pointer-events-none"
+            style={{ color: "rgba(220,38,38,0.04)", fontFamily: "Outfit, sans-serif" }}
+            aria-hidden="true"
           >
-            <form onSubmit={handleWhatsAppSubmit} className="space-y-8">
-              {/* Step 1: Customer Details */}
-              <div>
-                <div className="flex items-center gap-2.5 mb-4">
-                  <span
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-                    style={{ background: RED }}
-                  >
-                    1
-                  </span>
-                  <h3 className="text-lg font-bold text-[#0A0A0A] tracking-tight">
-                    Your Details &amp; Location
-                  </h3>
-                </div>
+            RD
+          </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#0A0A0A] mb-1.5">
-                      Full Name <span className="text-red-600">*</span>
-                    </label>
-                    <div className="relative">
-                      <input
-                        type="text"
-                        value={fullName}
-                        onChange={(e) => {
-                          setFullName(e.target.value);
-                          if (errors.fullName) setErrors({ ...errors, fullName: "" });
-                        }}
-                        placeholder="e.g. Rhys or John Smith"
-                        className={`w-full px-4 py-3.5 pl-10 rounded-2xl bg-[#F5F0E8]/50 border text-sm text-[#0A0A0A] placeholder:text-[#A09585] focus:outline-none focus:ring-2 transition-all font-medium ${
-                          errors.fullName
-                            ? "border-red-500 focus:ring-red-500"
-                            : "border-[#DDD5C5] focus:ring-red-600 focus:border-red-600"
-                        }`}
-                      />
-                      <User className="w-4 h-4 text-[#8A8070] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                    </div>
-                    {errors.fullName && (
-                      <p className="text-[11px] text-red-600 font-semibold mt-1">
-                        {errors.fullName}
-                      </p>
-                    )}
-                  </div>
+          {/* Eyebrow */}
+          <p
+            className="text-[11px] font-mono uppercase tracking-[0.28em] font-bold mb-5 relative z-10"
+            style={{ color: "#DC2626" }}
+          >
+            Free Enquiry · No Obligation
+          </p>
 
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#0A0A0A] mb-1.5">
-                      Mobile / WhatsApp <span className="text-red-600">*</span>
-                    </label>
-                    <div className="relative">
-                      <input
-                        type="tel"
-                        value={phone}
-                        onChange={(e) => {
-                          setPhone(e.target.value);
-                          if (errors.phone) setErrors({ ...errors, phone: "" });
-                        }}
-                        placeholder="e.g. 07393 682 365"
-                        className={`w-full px-4 py-3.5 pl-10 rounded-2xl bg-[#F5F0E8]/50 border text-sm text-[#0A0A0A] placeholder:text-[#A09585] focus:outline-none focus:ring-2 transition-all font-medium ${
-                          errors.phone
-                            ? "border-red-500 focus:ring-red-500"
-                            : "border-[#DDD5C5] focus:ring-red-600 focus:border-red-600"
-                        }`}
-                      />
-                      <Phone className="w-4 h-4 text-[#8A8070] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                    </div>
-                    {errors.phone && (
-                      <p className="text-[11px] text-red-600 font-semibold mt-1">
-                        {errors.phone}
-                      </p>
-                    )}
-                  </div>
-                </div>
+          {/* Heading */}
+          <div className="mb-8 relative z-10">
+            <h2
+              className="text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight"
+              style={{ color: "#0A0A0A", fontFamily: "Outfit, sans-serif" }}
+            >
+              Book Your
+              <br />
+              <em
+                className="not-italic"
+                style={{
+                  color: "#DC2626",
+                  fontFamily: "Cormorant Garamond, serif",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                }}
+              >
+                Mobile Valet.
+              </em>
+            </h2>
+            <p
+              className="text-sm mt-4 leading-relaxed max-w-xs"
+              style={{ color: "#6E6455" }}
+            >
+              Fill in your details below. Rhys personally replies within the
+              hour — no call centres, no waiting.
+            </p>
+          </div>
 
-                {/* Postcode / Area */}
-                <div className="mt-4">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#0A0A0A] mb-1.5">
-                    Driveway Postcode or Area <span className="text-red-600">*</span>
-                  </label>
+          {/* ── FORM ── */}
+          <form
+            onSubmit={handleWhatsAppSubmit}
+            className="space-y-7 relative z-10 max-w-md"
+          >
+            {/* Step 01: Details */}
+            <div>
+              <p
+                className="text-[10px] font-mono uppercase tracking-[0.22em] font-bold mb-4"
+                style={{ color: "#B0A898" }}
+              >
+                01 / Your Details
+              </p>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-5">
+                <Field label="Full Name" error={errors.fullName}>
+                  <LineInput
+                    value={fullName}
+                    onChange={(v) => {
+                      setFullName(v);
+                      if (errors.fullName)
+                        setErrors((p) => ({ ...p, fullName: "" }));
+                    }}
+                    placeholder="e.g. James Smith"
+                    hasError={!!errors.fullName}
+                  />
+                </Field>
+                <Field label="Mobile / WhatsApp" error={errors.phone}>
+                  <LineInput
+                    type="tel"
+                    value={phone}
+                    onChange={(v) => {
+                      setPhone(v);
+                      if (errors.phone)
+                        setErrors((p) => ({ ...p, phone: "" }));
+                    }}
+                    placeholder="07xxx xxxxxx"
+                    hasError={!!errors.phone}
+                  />
+                </Field>
+                <Field label="Postcode or Town" error={errors.postcode}>
+                  <LineInput
+                    value={postcode}
+                    onChange={(v) => {
+                      setPostcode(v);
+                      if (errors.postcode)
+                        setErrors((p) => ({ ...p, postcode: "" }));
+                    }}
+                    placeholder="e.g. SN1 or Swindon"
+                    hasError={!!errors.postcode}
+                  />
+                </Field>
+                <Field label="Car Make & Model" error={errors.vehicle}>
+                  <LineInput
+                    value={vehicle}
+                    onChange={(v) => {
+                      setVehicle(v);
+                      if (errors.vehicle)
+                        setErrors((p) => ({ ...p, vehicle: "" }));
+                    }}
+                    placeholder="e.g. Audi A5"
+                    hasError={!!errors.vehicle}
+                  />
+                </Field>
+              </div>
+            </div>
+
+            {/* Step 02: Date & Time */}
+            <div>
+              <p
+                className="text-[10px] font-mono uppercase tracking-[0.22em] font-bold mb-4"
+                style={{ color: "#B0A898" }}
+              >
+                02 / Preferred Date & Time
+              </p>
+              <div className="space-y-4">
+                {/* Date picker */}
+                <Field label="Preferred Date">
                   <div className="relative">
-                    <input
-                      type="text"
-                      value={postcode}
-                      onChange={(e) => {
-                        setPostcode(e.target.value);
-                        if (errors.postcode) setErrors({ ...errors, postcode: "" });
-                      }}
-                      placeholder="e.g. SN1 2AB, Swindon, Chippenham, Marlborough"
-                      className={`w-full px-4 py-3.5 pl-10 rounded-2xl bg-[#F5F0E8]/50 border text-sm text-[#0A0A0A] placeholder:text-[#A09585] focus:outline-none focus:ring-2 transition-all font-medium ${
-                        errors.postcode
-                          ? "border-red-500 focus:ring-red-500"
-                          : "border-[#DDD5C5] focus:ring-red-600 focus:border-red-600"
-                      }`}
+                    <LineInput
+                      type="date"
+                      value={preferredDate}
+                      onChange={setPreferredDate}
+                      min={todayStr}
                     />
-                    <MapPin className="w-4 h-4 text-[#8A8070] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <Calendar
+                      className="absolute right-0 bottom-3 pointer-events-none w-4 h-4"
+                      style={{ color: "#8A8070" }}
+                    />
                   </div>
-                  {errors.postcode && (
-                    <p className="text-[11px] text-red-600 font-semibold mt-1">
-                      {errors.postcode}
-                    </p>
-                  )}
-                  <p className="text-[11px] text-[#7A6E5F] mt-1.5 flex items-center gap-1.5">
-                    <Droplets className="w-3.5 h-3.5 text-blue-500 shrink-0" />
-                    <span>
-                      We bring our own 100% spotless pure water. Just a standard 13A socket needed!
-                    </span>
-                  </p>
-                </div>
-              </div>
+                </Field>
 
-              {/* Step 2: Vehicle Details */}
-              <div className="pt-2 border-t border-[#EDE8DF]">
-                <div className="flex items-center gap-2.5 mb-4">
-                  <span
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-                    style={{ background: RED }}
-                  >
-                    2
-                  </span>
-                  <h3 className="text-lg font-bold text-[#0A0A0A] tracking-tight">
-                    Vehicle Details
-                  </h3>
-                </div>
-
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#0A0A0A] mb-1.5">
-                      Vehicle Make &amp; Model <span className="text-red-600">*</span>
-                    </label>
-                    <div className="relative">
-                      <input
-                        type="text"
-                        value={vehicle}
-                        onChange={(e) => {
-                          setVehicle(e.target.value);
-                          if (errors.vehicle) setErrors({ ...errors, vehicle: "" });
-                        }}
-                        placeholder="e.g. BMW 3 Series, Golf R, Range Rover, Tesla Model Y"
-                        className={`w-full px-4 py-3.5 pl-10 rounded-2xl bg-[#F5F0E8]/50 border text-sm text-[#0A0A0A] placeholder:text-[#A09585] focus:outline-none focus:ring-2 transition-all font-medium ${
-                          errors.vehicle
-                            ? "border-red-500 focus:ring-red-500"
-                            : "border-[#DDD5C5] focus:ring-red-600 focus:border-red-600"
-                        }`}
-                      />
-                      <Car className="w-4 h-4 text-[#8A8070] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                    </div>
-                    {errors.vehicle && (
-                      <p className="text-[11px] text-red-600 font-semibold mt-1">
-                        {errors.vehicle}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Vehicle Size Quick Select */}
-                  <div>
-                    <label className="block text-[11px] font-mono uppercase tracking-wider text-[#8A8070] mb-2">
-                      Vehicle Category
-                    </label>
-                    <div className="flex flex-wrap gap-2">
-                      {VEHICLE_CATEGORIES.map((cat) => {
-                        const isSelected = vehicleCategory === cat.label;
-                        return (
-                          <button
-                            type="button"
-                            key={cat.id}
-                            onClick={() => setVehicleCategory(cat.label)}
-                            className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                              isSelected
-                                ? "bg-[#0A0A0A] text-white shadow-sm"
-                                : "bg-[#F5F0E8] text-[#5A5040] hover:bg-[#EDE8DF]"
-                            }`}
-                          >
-                            {cat.label}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 3: Package Selection ("What does it need") */}
-              <div className="pt-2 border-t border-[#EDE8DF]">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2.5">
-                    <span
-                      className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-                      style={{ background: RED }}
-                    >
-                      3
-                    </span>
-                    <h3 className="text-lg font-bold text-[#0A0A0A] tracking-tight">
-                      What does it need? (Select Package)
-                    </h3>
-                  </div>
-                  <span className="text-xs font-mono font-bold" style={{ color: RED }}>
-                    Prices shown upfront
-                  </span>
-                </div>
-
-                {/* Package Cards Selector */}
-                <div className="space-y-3">
-                  {PACKAGES_LIST.map((pkg) => {
-                    const isSelected = selectedPackageId === pkg.id;
-                    return (
-                      <div
-                        key={pkg.id}
-                        onClick={() => setSelectedPackageId(pkg.id)}
-                        className={`p-4 sm:p-4.5 rounded-2xl border-2 transition-all cursor-pointer relative ${
-                          isSelected
-                            ? "border-red-600 bg-red-50/20 shadow-md"
-                            : "border-[#DDD5C5] bg-white hover:border-[#B5AA96]"
-                        }`}
-                        style={isSelected ? { borderColor: RED } : {}}
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-1">
-                              <h4 className="font-bold text-sm sm:text-base text-[#0A0A0A] truncate">
-                                {pkg.name}
-                              </h4>
-                              {pkg.badge && (
-                                <span
-                                  className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full text-white"
-                                  style={{ background: RED }}
-                                >
-                                  {pkg.badge}
-                                </span>
-                              )}
-                            </div>
-                            <p className="text-xs text-[#7A6E5F] leading-snug line-clamp-2 mb-2">
-                              {pkg.subtitle}
-                            </p>
-                            <div className="flex items-center gap-3 text-[11px] text-[#8A8070] font-mono">
-                              <span className="flex items-center gap-1">
-                                <Clock className="w-3 h-3 text-[#A09585]" />
-                                {pkg.duration}
-                              </span>
-                            </div>
-                          </div>
-
-                          <div className="text-right shrink-0 flex flex-col items-end">
-                            <span
-                              className="text-base sm:text-lg font-black tracking-tight"
-                              style={{ color: RED }}
-                            >
-                              {pkg.priceDisplay}
-                            </span>
-                            <div
-                              className={`w-5 h-5 rounded-full flex items-center justify-center mt-2 border transition-all ${
-                                isSelected
-                                  ? "bg-red-600 border-red-600 text-white"
-                                  : "border-[#DDD5C5] bg-white text-transparent"
-                              }`}
-                            >
-                              <Check className="w-3.5 h-3.5 stroke-[3]" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Optional Add-ons */}
-                <div className="mt-5 p-4 rounded-2xl bg-[#F5F0E8]/70 border border-[#DDD5C5]">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#0A0A0A] mb-2.5">
-                    Optional Add-ons &amp; Extras
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {ADDON_OPTIONS.map((addon) => {
-                      const isChecked = selectedAddons.includes(addon.id);
+                {/* Time tiles */}
+                <Field label="Preferred Time Window">
+                  <div className="flex gap-2 mt-0.5">
+                    {TIME_SLOTS.map((slot) => {
+                      const active = preferredTime === slot.id;
                       return (
-                        <div
-                          key={addon.id}
-                          onClick={() => toggleAddon(addon.id)}
-                          className={`p-3 rounded-xl border text-left cursor-pointer transition-all flex items-center justify-between ${
-                            isChecked
-                              ? "bg-white border-red-500 shadow-sm"
-                              : "bg-white/80 border-[#DDD5C5] hover:border-zinc-400"
-                          }`}
+                        <button
+                          key={slot.id}
+                          type="button"
+                          onClick={() => setPreferredTime(slot.id)}
+                          className="flex-1 py-2.5 px-2 rounded-xl border text-center transition-all duration-200 cursor-pointer"
+                          style={{
+                            borderColor: active ? "#DC2626" : "#DDD5C5",
+                            background: active
+                              ? "rgba(220,38,38,0.07)"
+                              : "transparent",
+                          }}
                         >
-                          <div className="min-w-0 pr-2">
-                            <p className="text-xs font-bold text-[#0A0A0A] truncate">
-                              {addon.name}
-                            </p>
-                            <span
-                              className="text-[11px] font-bold font-mono"
-                              style={{ color: RED }}
-                            >
-                              {addon.priceDisplay}
-                            </span>
-                          </div>
-                          <div
-                            className={`w-4 h-4 rounded flex items-center justify-center shrink-0 border transition-all ${
-                              isChecked
-                                ? "bg-red-600 border-red-600 text-white"
-                                : "border-zinc-300 bg-white"
-                            }`}
+                          <p
+                            className="text-xs font-bold"
+                            style={{
+                              color: active ? "#DC2626" : "#0A0A0A",
+                            }}
                           >
-                            {isChecked && <Check className="w-3 h-3 stroke-[3]" />}
-                          </div>
-                        </div>
+                            {slot.label}
+                          </p>
+                          <p
+                            className="text-[10px] mt-0.5"
+                            style={{ color: "#8A8070" }}
+                          >
+                            {slot.sub}
+                          </p>
+                        </button>
                       );
                     })}
                   </div>
-                </div>
+                </Field>
               </div>
+            </div>
 
-              {/* Step 4: Preferred Date & Rough Time */}
-              <div className="pt-2 border-t border-[#EDE8DF]">
-                <div className="flex items-center gap-2.5 mb-4">
-                  <span
-                    className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-                    style={{ background: RED }}
-                  >
-                    4
-                  </span>
-                  <h3 className="text-lg font-bold text-[#0A0A0A] tracking-tight">
-                    Rough Date &amp; Preferred Time
-                  </h3>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#0A0A0A] mb-1.5">
-                      Preferred Date
-                    </label>
-                    <div className="relative">
-                      <input
-                        type="date"
-                        min={new Date().toISOString().split("T")[0]}
-                        value={preferredDate}
-                        onChange={(e) => setPreferredDate(e.target.value)}
-                        className="w-full px-4 py-3.5 pl-10 rounded-2xl bg-[#F5F0E8]/50 border border-[#DDD5C5] text-sm text-[#0A0A0A] focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 font-medium"
-                      />
-                      <Calendar className="w-4 h-4 text-[#8A8070] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#0A0A0A] mb-1.5">
-                      Arrival Time Window
-                    </label>
+            {/* Step 03: Package */}
+            <div>
+              <p
+                className="text-[10px] font-mono uppercase tracking-[0.22em] font-bold mb-4"
+                style={{ color: "#B0A898" }}
+              >
+                03 / Package & Add-ons
+              </p>
+              <div className="space-y-3">
+                {/* Package select */}
+                <Field label="Select Package">
+                  <div className="relative">
                     <select
-                      value={timeWindow}
-                      onChange={(e) => setTimeWindow(e.target.value)}
-                      className="w-full px-4 py-3.5 rounded-2xl bg-[#F5F0E8]/50 border border-[#DDD5C5] text-sm text-[#0A0A0A] focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 font-medium"
+                      value={selectedPackageId}
+                      onChange={(e) => setSelectedPackageId(e.target.value)}
+                      className="w-full bg-transparent text-sm font-semibold pb-2.5 border-b-2 text-[#0A0A0A] focus:outline-none transition-colors duration-200 appearance-none pr-6 cursor-pointer"
+                      style={{ borderColor: "#DDD5C5" }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = "#DC2626";
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = "#DDD5C5";
+                      }}
                     >
-                      {TIME_WINDOWS.map((w) => (
-                        <option key={w.id} value={`${w.label} (${w.sub})`}>
-                          {w.label} ({w.sub})
+                      {PACKAGES_LIST.map((pkg) => (
+                        <option key={pkg.id} value={pkg.id}>
+                          {pkg.name} — {pkg.priceDisplay}
                         </option>
                       ))}
                     </select>
+                    <ChevronDown
+                      className="absolute right-0 bottom-3 pointer-events-none w-4 h-4"
+                      style={{ color: "#8A8070" }}
+                    />
                   </div>
-                </div>
+                </Field>
 
-                {/* Additional Notes */}
-                <div className="mt-4">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#0A0A0A] mb-1.5">
-                    Additional Notes / Requests (Optional)
-                  </label>
-                  <textarea
-                    rows={2}
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                    placeholder="e.g. Any dog hair, spilled drinks, or specific areas you'd like extra focus on? Driveway has outside tap/power socket available."
-                    className="w-full px-4 py-3 rounded-2xl bg-[#F5F0E8]/50 border border-[#DDD5C5] text-sm text-[#0A0A0A] placeholder:text-[#A09585] focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600 font-medium resize-none"
-                  />
-                </div>
-              </div>
-
-              {/* Submit CTA */}
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  className="w-full py-4 px-6 rounded-full font-bold uppercase tracking-wider text-sm text-white shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1EBE5D]"
-                  style={{
-                    boxShadow: "0 10px 30px rgba(37, 211, 102, 0.35)",
-                  }}
-                >
-                  <MessageCircle className="w-5 h-5 shrink-0" />
-                  <span>Send Booking to Rhys on WhatsApp</span>
-                  <ArrowRight className="w-4 h-4 shrink-0" />
-                </button>
-                <p className="text-center text-[11px] text-[#7A6E5F] mt-2.5">
-                  ⚡ Instantly opens WhatsApp with all your vehicle and package details pre-filled.
-                </p>
-              </div>
-            </form>
-          </motion.div>
-
-          {/* ── RIGHT COLUMN: Live Summary & Direct Contact Card ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-5 space-y-6 lg:sticky lg:top-28"
-          >
-            {/* Live Pricing Summary Box */}
-            <div
-              className="rounded-[32px] p-6 sm:p-8 text-white relative overflow-hidden shadow-2xl"
-              style={{
-                background: "#0A0A0A",
-                border: "1px solid rgba(220,38,38,0.3)",
-                boxShadow: "0 25px 70px rgba(10,10,10,0.35)",
-              }}
-            >
-              {/* Subtle top glow */}
-              <div
-                className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-25 pointer-events-none"
-                style={{ background: `radial-gradient(circle, ${RED}, transparent 70%)` }}
-              />
-
-              <div className="relative z-10">
-                <div className="flex items-center justify-between pb-5 border-b border-white/10 mb-6">
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-white/50 block mb-1">
-                      Booking Summary
-                    </span>
-                    <h4 className="text-xl font-black text-white tracking-tight">
-                      {selectedPkg.name}
-                    </h4>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-white/50 block mb-0.5">
-                      Estimated
-                    </span>
-                    <span
-                      className="text-2xl font-black tracking-tight"
-                      style={{ color: RED_LIGHT }}
-                    >
-                      {estimatedTotal}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Breakdown List */}
-                <div className="space-y-3 text-xs mb-6">
-                  <div className="flex items-center justify-between text-white/80">
-                    <span className="text-white/60">Vehicle:</span>
-                    <span className="font-semibold text-white truncate max-w-[200px]">
-                      {vehicle.trim() || "Not specified yet"} ({vehicleCategory})
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-white/80">
-                    <span className="text-white/60">Driveway Area:</span>
-                    <span className="font-semibold text-white truncate max-w-[200px]">
-                      {postcode.trim().toUpperCase() || "Not specified yet"}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-white/80">
-                    <span className="text-white/60">Date &amp; Slot:</span>
-                    <span className="font-semibold text-white">
-                      {preferredDate} · {timeWindow.split(" ")[0]}
-                    </span>
-                  </div>
-
-                  {selectedAddons.length > 0 && (
-                    <div className="pt-2 border-t border-white/10">
-                      <span className="text-white/60 block mb-1.5">Add-ons selected:</span>
-                      <div className="space-y-1">
-                        {selectedAddons.map((id) => {
-                          const item = ADDON_OPTIONS.find((a) => a.id === id);
-                          if (!item) return null;
-                          return (
-                            <div
-                              key={id}
-                              className="flex items-center justify-between text-[11px] text-white/90 pl-2 border-l border-red-500"
-                            >
-                              <span>{item.name}</span>
-                              <span className="font-mono text-red-400 font-bold">
-                                {item.priceDisplay}
-                              </span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Key Package Perks */}
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 mb-6">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-white/50 block mb-2">
-                    Package Inclusions
-                  </span>
-                  <ul className="space-y-1.5 text-xs text-white/80">
-                    {selectedPkg.includes.map((inc, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2
-                          className="w-3.5 h-3.5 shrink-0 mt-0.5"
-                          style={{ color: RED_LIGHT }}
-                        />
-                        <span>{inc}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Direct Action Buttons */}
-                <div className="space-y-3">
-                  <a
-                    href={getWhatsAppUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      if (!validate()) {
-                        e.preventDefault();
-                        const el = document.getElementById("booking-form-card");
-                        if (el) el.scrollIntoView({ behavior: "smooth" });
-                      }
-                    }}
-                    className="w-full py-3.5 px-5 rounded-full font-bold uppercase tracking-wider text-xs text-white flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1EBE5D] transition-all shadow-lg"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    <span>Open in WhatsApp</span>
-                    <ExternalLink className="w-3.5 h-3.5 opacity-80" />
-                  </a>
-
+                {/* Add-ons accordion */}
+                <div>
                   <button
                     type="button"
-                    onClick={copyDetailsToClipboard}
-                    className="w-full py-3 px-5 rounded-full font-bold uppercase tracking-wider text-xs text-white/80 hover:text-white border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 transition-all flex items-center justify-center gap-2"
+                    onClick={() => setAddonsOpen(!addonsOpen)}
+                    className="flex items-center justify-between w-full py-2.5 text-sm font-semibold transition-colors duration-150"
+                    style={{ color: "#0A0A0A" }}
                   >
-                    {copied ? (
-                      <>
-                        <Check className="w-4 h-4 text-green-400" />
-                        <span className="text-green-400">Copied to Clipboard!</span>
-                      </>
+                    <span className="flex items-center gap-2">
+                      <Plus
+                        className="w-3.5 h-3.5"
+                        style={{ color: "#DC2626" }}
+                      />
+                      Optional Add-ons
+                      {selectedAddons.length > 0 && (
+                        <span
+                          className="text-xs font-mono font-bold"
+                          style={{ color: "#DC2626" }}
+                        >
+                          ({selectedAddons.length})
+                        </span>
+                      )}
+                    </span>
+                    {addonsOpen ? (
+                      <ChevronDown className="w-4 h-4" style={{ color: "#8A8070" }} />
                     ) : (
-                      <>
-                        <Copy className="w-4 h-4" />
-                        <span>Copy Message Text</span>
-                      </>
+                      <ChevronRight className="w-4 h-4" style={{ color: "#8A8070" }} />
                     )}
                   </button>
+
+                  <AnimatePresence>
+                    {addonsOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.22 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pt-1 space-y-2">
+                          {ADDON_OPTIONS.map((addon) => {
+                            const isChecked = selectedAddons.includes(addon.id);
+                            return (
+                              <div
+                                key={addon.id}
+                                onClick={() => toggleAddon(addon.id)}
+                                className="flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-all duration-150"
+                                style={{
+                                  borderColor: isChecked ? "#DC2626" : "#E8E2D8",
+                                  background: isChecked
+                                    ? "rgba(220,38,38,0.05)"
+                                    : "rgba(255,255,255,0.6)",
+                                }}
+                              >
+                                <div>
+                                  <p
+                                    className="text-xs font-bold"
+                                    style={{ color: "#0A0A0A" }}
+                                  >
+                                    {addon.name}
+                                  </p>
+                                  <p
+                                    className="text-[11px] mt-0.5"
+                                    style={{ color: "#8A8070" }}
+                                  >
+                                    {addon.desc}
+                                  </p>
+                                </div>
+                                <div className="flex items-center gap-2.5 shrink-0 ml-3">
+                                  <span
+                                    className="text-xs font-mono font-bold"
+                                    style={{ color: "#DC2626" }}
+                                  >
+                                    {addon.priceDisplay}
+                                  </span>
+                                  <div
+                                    className="w-5 h-5 rounded flex items-center justify-center border transition-all"
+                                    style={{
+                                      borderColor: isChecked ? "#DC2626" : "#C0B8A8",
+                                      background: isChecked ? "#DC2626" : "white",
+                                      color: "white",
+                                    }}
+                                  >
+                                    {isChecked && (
+                                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </div>
             </div>
 
-            {/* Direct Contact & Guarantee Badges Card */}
+            {/* CTA */}
+            <div className="pt-1">
+              <button
+                type="submit"
+                className="w-full py-4 px-6 rounded-2xl font-bold text-sm text-white flex items-center justify-center gap-2.5 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
+                style={{
+                  background: "#25D366",
+                  boxShadow: "0 8px 28px rgba(37,211,102,0.30)",
+                }}
+              >
+                <MessageCircle className="w-5 h-5 shrink-0" />
+                <span>Send Booking to Rhys via WhatsApp</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </button>
+              <p
+                className="text-center text-xs mt-2.5"
+                style={{ color: "#A09888" }}
+              >
+                Opens WhatsApp with your details pre-filled. No spam, ever.
+              </p>
+            </div>
+          </form>
+
+          {/* Guarantee strip */}
+          <div
+            className="mt-10 pt-7 border-t relative z-10 max-w-md"
+            style={{ borderColor: "#DDD5C5" }}
+          >
+            <div className="flex items-start gap-4">
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                style={{ background: "rgba(220,38,38,0.09)" }}
+              >
+                <ShieldCheck className="w-5 h-5" style={{ color: "#DC2626" }} />
+              </div>
+              <div>
+                <p
+                  className="text-sm font-black tracking-tight"
+                  style={{ color: "#0A0A0A" }}
+                >
+                  100% Satisfaction Guarantee
+                </p>
+                <p
+                  className="text-xs leading-relaxed mt-1"
+                  style={{ color: "#6E6455" }}
+                >
+                  Not happy with any aspect of your valet? Rhys will make it
+                  right before leaving — no arguments, no call-backs.
+                </p>
+              </div>
+            </div>
+
             <div
-              className="p-6 rounded-[28px] border space-y-4"
+              className="flex items-center gap-1.5 mt-4"
+              style={{ color: "#A09888" }}
+            >
+              <Phone className="w-3.5 h-3.5 shrink-0" />
+              <span className="text-xs">Prefer to call?&nbsp;</span>
+              <a
+                href={`tel:${COMPANY_DETAILS.phoneRaw}`}
+                className="text-xs font-bold transition-colors hover:underline"
+                style={{ color: "#0A0A0A" }}
+              >
+                {COMPANY_DETAILS.phone}
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* ─── RIGHT: Photo Panel ─── */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="relative min-h-[480px] lg:min-h-full overflow-hidden"
+        >
+          {/* Background photo */}
+          <img
+            src="/audi-a5-hero.jpg"
+            alt="Rhys Davis valeting an Audi A5 — RD Valeting Swindon"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "center 20%" }}
+          />
+
+          {/* Dark gradients */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.18) 50%, rgba(0,0,0,0.08) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(0,0,0,0.1) 0%, transparent 60%)",
+            }}
+          />
+
+          {/* ── Guarantee Seal (top-right) ── */}
+          <div className="absolute top-6 right-6 sm:top-8 sm:right-8">
+            <div
+              className="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center"
               style={{
-                background: CREAM_BG,
-                borderColor: BORDER_COLOR,
+                border: "2px solid rgba(255,255,255,0.9)",
+                borderRadius: "50%",
               }}
             >
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center text-white shrink-0 shadow-sm"
-                  style={{ background: RED }}
+              {/* Outer ring dashes */}
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  border: "1px dashed rgba(255,255,255,0.45)",
+                  transform: "scale(1.1)",
+                }}
+              />
+              {/* Inner content */}
+              <div className="text-center px-1">
+                <p
+                  className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.15em] leading-none"
+                  style={{ color: "rgba(255,255,255,0.8)" }}
                 >
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#8A8070] block">
-                    Prefer to speak on the phone?
-                  </span>
-                  <a
-                    href={`tel:${COMPANY_DETAILS.phoneRaw}`}
-                    className="text-base font-bold text-[#0A0A0A] hover:underline"
-                  >
-                    Call Rhys on {COMPANY_DETAILS.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="pt-3 border-t border-[#DDD5C5] grid grid-cols-2 gap-3 text-xs">
-                <div className="flex items-center gap-2 text-[#5A5040]">
-                  <ShieldCheck className="w-4 h-4 text-red-600 shrink-0" />
-                  <span className="font-semibold">Fully Insured</span>
-                </div>
-                <div className="flex items-center gap-2 text-[#5A5040]">
-                  <Droplets className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span className="font-semibold">Pure Water Onboard</span>
-                </div>
-                <div className="flex items-center gap-2 text-[#5A5040]">
-                  <Zap className="w-4 h-4 text-yellow-600 shrink-0" />
-                  <span className="font-semibold">Driveway Mobile</span>
-                </div>
-                <div className="flex items-center gap-2 text-[#5A5040]">
-                  <Sparkles className="w-4 h-4 text-red-600 shrink-0" />
-                  <span className="font-semibold">5★ Google Rated</span>
-                </div>
+                  100%
+                </p>
+                <p
+                  className="text-[13px] sm:text-[15px] font-black leading-tight my-0.5"
+                  style={{ color: "white" }}
+                >
+                  Satis-
+                  <br />
+                  faction
+                </p>
+                <p
+                  className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.15em] leading-none"
+                  style={{ color: "rgba(255,255,255,0.8)" }}
+                >
+                  Guarantee
+                </p>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </div>
+
+          {/* ── 5 stars top-left ── */}
+          <div
+            className="absolute top-6 left-6 sm:top-8 sm:left-8 flex items-center gap-1.5 px-3 py-1.5 rounded-full"
+            style={{
+              background: "rgba(255,255,255,0.12)",
+              backdropFilter: "blur(8px)",
+              border: "1px solid rgba(255,255,255,0.2)",
+            }}
+          >
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-3 h-3 fill-amber-400 text-amber-400"
+                />
+              ))}
+            </div>
+            <span
+              className="text-xs font-semibold"
+              style={{ color: "rgba(255,255,255,0.95)" }}
+            >
+              5.0 Rated
+            </span>
+          </div>
+
+          {/* ── Bottom overlay ── */}
+          <div className="absolute bottom-0 left-0 right-0 px-7 sm:px-10 pb-8 sm:pb-10">
+            {/* Trust badges */}
+            <div className="flex flex-wrap gap-2 mb-5">
+              {["Fully Insured", "Mobile to You", "Owner Operated", "Pure Water Rinse"].map(
+                (badge) => (
+                  <span
+                    key={badge}
+                    className="text-[11px] font-semibold px-2.5 py-1 rounded-full"
+                    style={{
+                      background: "rgba(255,255,255,0.12)",
+                      backdropFilter: "blur(6px)",
+                      border: "1px solid rgba(255,255,255,0.22)",
+                      color: "rgba(255,255,255,0.88)",
+                    }}
+                  >
+                    {badge}
+                  </span>
+                )
+              )}
+            </div>
+
+            {/* Name & title */}
+            <div>
+              <p
+                className="text-[11px] font-mono uppercase tracking-[0.22em] mb-1"
+                style={{ color: "rgba(255,255,255,0.6)" }}
+              >
+                Owner & Master Detailer
+              </p>
+              <p
+                className="text-4xl sm:text-5xl font-black tracking-tight leading-none"
+                style={{ color: "white", fontFamily: "Outfit, sans-serif" }}
+              >
+                Rhys Davis
+              </p>
+              <p
+                className="text-sm mt-1"
+                style={{ color: "rgba(255,255,255,0.6)" }}
+              >
+                RD Valeting · Swindon & Wiltshire
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
